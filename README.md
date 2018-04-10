@@ -10,9 +10,9 @@ Copyright (c) 2017-2018 Crypto Cloud Inc
 What is Sumcoin?
 ----------------
 
-Sumcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+Sumcoin is a smart contract capable version of Bitcoin using scrypt instead of sha256 as a proof-of-work algorithm.
  - 1.25 minute block targets
- - subsidy halves in 1000k blocks (~4 years)
+ - subsidy halves in 1000k blocks (~3.5 years)
  - ~100 million total coins
 
 
