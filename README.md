@@ -7,10 +7,10 @@ Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
 Copyright (c) 2017-2018 Crypto Cloud Inc
 
-What is Sumcoin?
+What is SumCoin?
 ----------------
 
-Sumcoin is a smart contract capable version of Bitcoin using scrypt instead of sha256 as a proof-of-work algorithm.
+SumCoin is a smart contract capable version of Bitcoin using scrypt instead of sha256 as a proof-of-work algorithm.
  - 1.25 minute block targets
  - subsidy halves in 1000k blocks (~3.5 years)
  - ~100 million total coins
