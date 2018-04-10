@@ -1,7 +1,7 @@
 Sumcoin integration/staging tree
 ================================
 
-http://www.####.org
+http://www.SumCoinIndex.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
@@ -12,7 +12,7 @@ What is Sumcoin?
 
 Sumcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 1.25 minute block targets
- - subsidy halves in 100M blocks (~4 years)
+ - subsidy halves in 1000k blocks (~4 years)
  - ~100 million total coins
 
 
@@ -20,7 +20,7 @@ Sumcoin is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
  - 1000 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Sumcoin client sofware, see http://www.######.
+the Sumcoin client sofware, see http://www.SumCoinIndex.org
 
 License
 -------
@@ -46,7 +46,7 @@ match the project's coding conventions (see `doc/coding.txt`) or are
 controversial.
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/sumcoin-project/sumcoin/tags) are created
+completely stable. [Tags](https://github.com/sumcoinlabs/sumcoin/tags) are created
 regularly to indicate new official, stable release versions of Sumcoin.
 
 Testing
