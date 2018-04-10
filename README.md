@@ -5,6 +5,7 @@ http://www.####.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
+Copyright (c) 2017-2018 Crypto Cloud Inc
 
 What is Sumcoin?
 ----------------
