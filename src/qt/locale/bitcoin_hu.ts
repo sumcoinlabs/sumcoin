@@ -2245,8 +2245,8 @@ Cím: %4
     </message>
     <message>
         <location line="-28"/>
-        <source>Listen for connections on &lt;port&gt; (default: 2333 or testnet: 12333)</source>
-        <translation>Csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 2333 or testnet: 12333)</translation>
+        <source>Listen for connections on &lt;port&gt; (default: 3333 or testnet: 13333)</source>
+        <translation>Csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 3333 or testnet: 13333)</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2280,8 +2280,8 @@ Cím: %4
     </message>
     <message>
         <location line="+27"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 2332 or testnet: 12332)</source>
-        <translation>JSON-RPC csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 2332 or testnet: 12332)</translation>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: 3332 or testnet: 13332)</source>
+        <translation>JSON-RPC csatlakozásokhoz figyelendő &lt;port&gt; (alapértelmezett: 3332 or testnet: 13332)</translation>
     </message>
     <message>
         <location line="+37"/>
