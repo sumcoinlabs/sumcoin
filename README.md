@@ -12,12 +12,12 @@ What is SumCoin?
 
 SumCoin is a smart contract capable version of Bitcoin using scrypt instead of sha256 as a proof-of-work algorithm.
  - 1.25 minute block targets
- - subsidy halves in 1000k blocks (~3.5 years)
+ - subsidy halves in 1M blocks (~2 years)
  - ~100 million total coins
 
 
  - 50 coins per block
- - 1000 blocks to retarget difficulty
+ - 1152 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
 the Sumcoin client sofware, see http://www.SumCoinIndex.org
