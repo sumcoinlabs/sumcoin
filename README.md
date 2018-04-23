@@ -2,8 +2,10 @@ Sumcoin integration/staging tree
 ================================
 
 CONTACT US:  SumCoinIndex@gmail.com
-             Twitter @SumCoinOfficial
-             FB      @SumCoinIndex
+
+Twitter https://twitter.com/SumCoinOfficial
+             
+Facebook      @SumCoinIndex
 
 http://www.SumCoinIndex.org
 
