@@ -1,6 +1,10 @@
 Sumcoin integration/staging tree
 ================================
 
+CONTACT US:  SumCoinIndex@gmail.com
+             Twitter @SumCoinOfficial
+             FB      @SumCoinIndex
+
 http://www.SumCoinIndex.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
