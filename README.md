@@ -7,7 +7,9 @@ Twitter https://twitter.com/SumCoinOfficial
              
 Facebook      @SumCoinIndex
 
-http://www.SumCoinIndex.org
+https://www.SumCoinIndex.com
+
+Pricing Info: Currently @ https://www.sumcoinpool.org
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
