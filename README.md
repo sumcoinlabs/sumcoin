@@ -2,14 +2,26 @@ Sumcoin integration/staging tree
 ================================
 
 CONTACT US:  SumCoinIndex@gmail.com
-
 Twitter https://twitter.com/SumCoinOfficial
-             
-Facebook      @SumCoinIndex
+Facebook @SumCoinIndex
 
+
+Main Website
 https://www.SumCoinIndex.com
 
-Pricing Info: Currently @ https://www.sumcoinpool.org
+Official Mining Pool
+https://www.sumcoinpool.org
+
+Pricing Info
+http://sumcoinprice.com/
+
+
+Mining Hardware
+
+CPU, GPU
+Use CPU Miner by Pooler
+SGMINER for AMD Cards :  https://bit.ly/2k6zchT
+
 
 Copyright (c) 2009-2014 Bitcoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
@@ -18,7 +30,7 @@ Copyright (c) 2017-2018 Crypto Cloud Inc
 What is SumCoin?
 ----------------
 
-SumCoin is a smart contract capable version of Bitcoin using scrypt instead of sha256 as a proof-of-work algorithm.
+SumCoin is a smart contract capable, cryptographic blockchain using scrypt proof-of-work algorithm.
  - 1.25 minute block targets
  - subsidy halves in 1M blocks (~2 years)
  - ~100 million total coins
@@ -28,7 +40,7 @@ SumCoin is a smart contract capable version of Bitcoin using scrypt instead of s
  - 1152 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Sumcoin client sofware, see http://www.SumCoinIndex.org
+the Sumcoin client sofware, see http://www.SumCoinIndex.
 
 License
 -------
