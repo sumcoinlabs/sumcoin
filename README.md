@@ -40,7 +40,7 @@ SumCoin is a smart contract capable, cryptographic blockchain using scrypt proof
  - 1152 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
-the Sumcoin client sofware, see http://www.SumCoinIndex.
+the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
 
 License
 -------
