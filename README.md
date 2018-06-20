@@ -15,22 +15,31 @@ https://www.sumcoinpool.org
 Pricing Info
 http://sumcoinprice.com/
 
+SUM Block Explorer 
+http://sumexplorer.com
+
 
 Mining Hardware
 
 CPU, GPU
 Use CPU Miner by Pooler
+(see our link to cpu miner - minerd - in releases)
+
+AMD GPU Cards
 SGMINER for AMD Cards :  https://bit.ly/2k6zchT
 
 
 Copyright (c) 2009-2014 Bitcoin Developers
+Copyright (c) 2011-2017 Litecoin Developers
 Copyright (c) 2017-2018 Sumcoin Developers
 Copyright (c) 2017-2018 Crypto Cloud Inc
 
 What is SumCoin?
 ----------------
 
-SumCoin is a smart contract capable, cryptographic blockchain using scrypt proof-of-work algorithm.
+SumCoin is a smart contract capable, cryptographic blockchain using scrypt proof-of-work algorithm.  Sumcoin tracks all coins in real time and is an aggregate or "sum" of all coins market capitalization.   It is for those who want to gain exposure to the crypto space but my only want to hold one coin to gain maximum exposure.
+
+Times:
  - 1.25 minute block targets
  - subsidy halves in 1M blocks (~2 years)
  - ~100 million total coins
