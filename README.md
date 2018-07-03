@@ -37,7 +37,7 @@ Copyright (c) 2017-2018 Crypto Cloud Inc
 What is SumCoin?
 ----------------
 
-SumCoin is a smart contract capable, cryptographic blockchain using scrypt proof-of-work algorithm.  Sumcoin tracks all coins in real time and is an aggregate or "sum" of all coins market capitalization.   It is for those who want to gain exposure to the crypto space but my only want to hold one coin to gain maximum exposure.
+SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm.  Sumcoin tracks all coins in real time and is an aggregate or "sum" of all coins market capitalization.   It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
 Times:
  - 1.25 minute block targets
@@ -46,7 +46,7 @@ Times:
 
 
  - 50 coins per block
- - 1152 blocks to retarget difficulty
+ - 3622 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of
 the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
