@@ -9,9 +9,6 @@ Facebook @SumCoinIndex
 Main Website
 https://www.SumCoinIndex.com
 
-Official Mining Pool
-https://www.sumcoinpool.org
-
 Pricing Info
 http://sumcoinprice.com/
 
