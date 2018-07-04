@@ -1,123 +1,145 @@
-0.8.7.5 changes
-=============
-- openssl-1.0.1k or older versions patched for CVE-2014-8275 broke compatibility with Bitcoin and Sumcoin.
-  This update patches Sumcoin to maintain compatibility with CVE-2014-8275 patched openssl.
-- If you are running v0.8.7.4 as distributed by sumcoin.org you do not need to upgrade.
-  The binaries distributed on sumcoin.org contain their own copy of openssl so they are unaffected by this issue.
+Bitcoin Core version 0.16.1 is now available from:
 
-0.8.7.4 changes
-=============
-- Enforce v2 blocks at height 710000 on mainnet, 400000 on testnet
-- Add `-maxorphantx=<n>` and `-maxorphanblocks=<n>` options for control over the maximum orphan transactions and blocks
-- Stricter memory limits on CNode
-- Upgrade OpenSSL to 1.0.1i (see https://www.openssl.org/news/secadv_20140806.txt - just to be sure, no critical issues
+  <https://bitcoincore.org/bin/bitcoin-core-0.16.1/>
 
-0.8.7.2 changes
-=============
-- Mac and Windows Official Gitian Builds: upgrade to openssl-1.0.1h for CVE-2014-0224
-                   Linux Gitian build uses Lucid 0.9.8k-7ubuntu8.18
+This is a new major version release, including new features, various bugfixes
+and performance improvements, as well as updated translations.
 
-0.8.7.1 changes
-=============
-- Mac and Windows Official Gitian Builds: upgrade to openssl-1.0.1g for CVE-2014-0160
-                   Linux was not vulnerable with Lucid openssl-0.9.8k
-                   Older versions were only vulnerable with rarely used RPC SSL
-- If you build from source, be sure that your openssl is patched for CVE-2014-0160.
-- Upgrade openssl, qt, miniupnpc, zlib, libpng, qrencode
-- Many bug fixes from Bitcoin 0.8.7rc stable branch
-    including transaction malleability mitigation backports from 0.9
-- Add testnet checkpoints
-- Add new testnet seed
+Please report bugs using the issue tracker at GitHub:
 
-0.8.6.2 changes
-=============
+  <https://github.com/bitcoin/bitcoin/issues>
 
-- Windows only: Fixes issue where network connectivity can fail.
+To receive security and update notifications, please subscribe to:
 
-- Cleanup of SSE2 scrypt detection.
+  <https://bitcoincore.org/en/list/announcements/join/>
 
-- Minor fixes:
-  - s/Bitcoin/Sumcoin/ in the Coin Control example
-  - Fix custom build on MacOS X 10.9
-  - Fix QT5 custom build
-  - Update Debian build instructions
-  - Update Homebrew build 
+How to Upgrade
+==============
 
-0.8.6.1 changes
-=============
+If you are running an older version, shut it down. Wait until it has completely
+shut down (which might take a few minutes for older versions), then run the
+installer (on Windows) or just copy over `/Applications/Bitcoin-Qt` (on Mac)
+or `bitcoind`/`bitcoin-qt` (on Linux).
 
-- Coin Control - experts only GUI selection of inputs before you send a transaction
+The first time you run version 0.15.0 or newer, your chainstate database will be converted to a
+new format, which will take anywhere from a few minutes to half an hour,
+depending on the speed of your machine.
 
-- Disable Wallet - reduces memory requirements, helpful for miner or relay nodes
+Note that the block database format also changed in version 0.8.0 and there is no
+automatic upgrade code from before version 0.8 to version 0.15.0 or higher. Upgrading
+directly from 0.7.x and earlier without re-downloading the blockchain is not supported.
+However, as usual, old wallet versions are still supported.
 
-- 20x reduction in default mintxfee.
+Downgrading warning
+-------------------
 
-- Up to 50% faster PoW validation, faster sync and reindexing.
+Wallets created in 0.16 and later are not compatible with versions prior to 0.16
+and will not work if you try to use newly created wallets in older versions. Existing
+wallets that were created with older versions are not affected by this.
 
-- Peers older than protocol version 70002 are disconnected.  0.8.3.7 is the oldest compatible client.
+Compatibility
+==============
 
-- Internal miner added back to Sumcoin.  setgenerate now works, although it is generally a bad idea as it is significantly slower than external CPU miners.
+Bitcoin Core is extensively tested on multiple operating systems using
+the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-- New RPC commands: getbestblockhash and verifychain
+Bitcoin Core should also work on most other Unix-like systems but is not
+frequently tested on them.
 
-- Improve fairness of the high priority transaction space per block
-
-- OSX block chain database corruption fixes
-  - Update leveldb to 1.13
-  - Use fcntl with `F_FULLSYNC` instead of fsync on OSX
-  - Use native Darwin memory barriers
-  - Replace use of mmap in leveldb for improved reliability (only on OSX)
-
-- Fix nodes forwarding transactions with empty vins and getting banned
-
-- Network code performance and robustness improvements
-
-- Additional debug.log logging for diagnosis of network problems, log timestamps by default
-
-- Fix rare GUI crash on send
-
-0.8.5.1 changes
+Notable changes
 ===============
 
-Workaround negative version numbers serialization bug.
+Miner block size removed
+------------------------
 
-Fix out-of-bounds check (Sumcoin currently does not use this codepath, but we apply this
-patch just to match Bitcoin 0.8.5.)
+The `-blockmaxsize` option for miners to limit their blocks' sizes was
+deprecated in version 0.15.1, and has now been removed. Miners should use the
+`-blockmaxweight` option if they want to limit the weight of their blocks'
+weights.
 
-0.8.4.1 changes
-===============
+0.16.1 change log
+------------------
 
-CVE-2013-5700 Bloom: filter crash issue - Sumcoin 0.8.3.7 disabled bloom by default so was 
-unaffected by this issue, but we include their patches anyway just in case folks want to 
-enable bloomfilter=1.
+### Policy
+- #11423 `d353dd1` [Policy] Several transaction standardness rules (jl2012)
 
-CVE-2013-4165: RPC password timing guess vulnerability
+### Mining
+- #12756 `e802c22` [config] Remove blockmaxsize option (jnewbery)
 
-CVE-2013-4627: Better fix for the fill-memory-with-orphaned-tx attack
+### Block and transaction handling
+- #13199 `c71e535` Bugfix: ensure consistency of m_failed_blocks after reconsiderblock (sdaftuar)
+- #13023 `bb79aaf` Fix some concurrency issues in ActivateBestChain() (skeees)
 
-Fix multi-block reorg transaction resurrection.
+### P2P protocol and network code
+- #12626 `f60e84d` Limit the number of IPs addrman learns from each DNS seeder (EthanHeilman)
 
-Fix non-standard disconnected transactions causing mempool orphans.  This bug could cause 
-nodes running with the -debug flag to crash, although it was lot less likely on Sumcoin 
-as we disabled IsDust() in 0.8.3.x.
+### Wallet
+- #13265 `5d8de76` Exit SyncMetaData if there are no transactions to sync (laanwj)
+- #13030 `5ff571e` Fix zapwallettxes/multiwallet interaction. (jnewbery)
 
-Mac OSX: use 'FD_FULLSYNC' with LevelDB, which will (hopefully!) prevent the database 
-corruption issues have experienced on OSX.
+### GUI
+- #12999 `1720eb3` Show the Window when double clicking the taskbar icon (ken2812221)
+- #12650 `f118a7a` Fix issue: "default port not shown correctly in settings dialog" (251Labs)
+- #13251 `ea487f9` Rephrase Bech32 checkbox texts, and enable it with legacy address default (fanquake)
 
-Add height parameter to getnetworkhashps.
+### Build system
+- #12474 `b0f692f` Allow depends system to support armv7l (hkjn)
+- #12585 `72a3290` depends: Switch to downloading expat from GitHub (fanquake)
+- #12648 `46ca8f3` test: Update trusted git root (MarcoFalke)
+- #11995 `686cb86` depends: Fix Qt build with Xcode 9 (fanquake)
+- #12636 `845838c` backport: #11995 Fix Qt build with Xcode 9 (fanquake)
+- #12946 `e055bc0` depends: Fix Qt build with XCode 9.3 (fanquake)
+- #12998 `7847b92` Default to defining endian-conversion DECLs in compat w/o config (TheBlueMatt)
 
-Fix Norwegian and Swedish translations.
+### Tests and QA
+- #12447 `01f931b` Add missing signal.h header (laanwj)
+- #12545 `1286f3e` Use wait_until to ensure ping goes out (Empact)
+- #12804 `4bdb0ce` Fix intermittent rpc_net.py failure. (jnewbery)
+- #12553 `0e98f96` Prefer wait_until over polling with time.sleep (Empact)
+- #12486 `cfebd40` Round target fee to 8 decimals in assert_fee_amount (kallewoof)
+- #12843 `df38b13` Test starting bitcoind with -h and -version (jnewbery)
+- #12475 `41c29f6` Fix python TypeError in script.py (MarcoFalke)
+- #12638 `0a76ed2` Cache only chain and wallet for regtest datadir (MarcoFalke)
+- #12902 `7460945` Handle potential cookie race when starting node (sdaftuar)
+- #12904 `6c26df0` Ensure bitcoind processes are cleaned up when tests end (sdaftuar)
+- #13049 `9ea62a3` Backports (MarcoFalke)
+- #13201 `b8aacd6` Handle disconnect_node race (sdaftuar)
 
-Minor efficiency improvement in block peer request handling.
+### Miscellaneous
+- #12518 `a17fecf` Bump leveldb subtree (MarcoFalke)
+- #12442 `f3b8d85` devtools: Exclude patches from lint-whitespace (MarcoFalke)
+- #12988 `acdf433` Hold cs_main while calling UpdatedBlockTip() signal (skeees)
+- #12985 `0684cf9` Windows: Avoid launching as admin when NSIS installer ends. (JeremyRand)
 
+### Documentation
+- #12637 `60086dd` backport: #12556 fix version typo in getpeerinfo RPC call help (fanquake)
+- #13184 `4087dd0` RPC Docs: `gettxout*`: clarify bestblock and unspent counts (harding)
+- #13246 `6de7543` Bump to Ubuntu Bionic 18.04 in build-windows.md (ken2812221)
+- #12556 `e730b82` Fix version typo in getpeerinfo RPC call help (tamasblummer)
 
-0.8.3.7 changes
-===============
+Credits
+=======
 
-Fix CVE-2013-4627 denial of service, a memory exhaustion attack that could crash low-memory nodes.
+Thanks to everyone who directly contributed to this release:
 
-Fix a regression that caused excessive writing of the peers.dat file.
+- 251
+- Ben Woosley
+- Chun Kuan Lee
+- David A. Harding
+- e0
+- fanquake
+- Henrik Jonsson
+- JeremyRand
+- Jesse Cohen
+- John Newbery
+- Johnson Lau
+- Karl-Johan Alm
+- Luke Dashjr
+- MarcoFalke
+- Matt Corallo
+- Pieter Wuille
+- Suhas Daftuar
+- Tamas Blummer
+- Wladimir J. van der Laan
 
-Add option for bloom filtering.
-
-Fix Hebrew translation.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/bitcoin/).
