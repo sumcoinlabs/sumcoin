@@ -1350,7 +1350,7 @@ UniValue addwitnessaddress(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Sumcoin address");
     }
 
-    bool p2sh = true;
+    bool p2sh = true; // Is this where the default address is set?
     if (!request.params[1].isNull()) {
         p2sh = request.params[1].get_bool();
     }
