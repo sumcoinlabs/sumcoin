@@ -102,7 +102,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000cdadaa2d8"); // TODO
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000595a9ab76b42f"); // TODO
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xb56850a0d4abd5ecdf9f8abcc243997f0663e65494341b36b623b2695b522697"); //60000 OK maybe don't get chain info until I get to a wallet that's not shit
