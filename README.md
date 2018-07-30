@@ -2,7 +2,7 @@
 
 OBJECT IS INDEX BASED, ALGO BASED COIN FOR USE IN ATM'S
 
-FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER / LEAD DEV Ty Jacobsen SumCoinIndex@gmail.com
+FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER / LEAD DEV @ SumCoinIndex@gmail.com
 
 Sumcoin integration/staging tree
 CONTACT US: SumCoinIndex@gmail.com Twitter https://twitter.com/SumCoinOfficial Facebook @SumCoinIndex
