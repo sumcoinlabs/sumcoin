@@ -1,6 +1,6 @@
 Sumcoin Core version *0.15.1* is now available from:
 
-  <https://download.sumcoin.org/sumcoin-0.15.1/>
+  <https://download.sumcoin.info/sumcoin-0.15.1/>
 
 This is a new minor version release, including various bugfixes and
 performance improvements, as well as updated translations.

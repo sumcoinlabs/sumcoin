@@ -1,6 +1,6 @@
 Sumcoin Core version 0.10.2.2 is now available from:
 
-  <https://download.sumcoin.org/sumcoin-0.10.2.2/>
+  <https://download.sumcoin.info/sumcoin-0.10.2.2/>
 
 This is a new major version release, bringing bug fixes and translation 
 updates. It is recommended to upgrade to this version.

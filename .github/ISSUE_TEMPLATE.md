@@ -2,7 +2,7 @@
 
 General sumcoin questions and/or support requests and are best directed to the [sumcointalk.io forums](https://sumcointalk.io/).
 
-For reporting security issues, please contact the Sumcoin developers on the #sumcoin-dev Freenode IRC channel or alternatively you can email us at contact@sumcoin.org.
+For reporting security issues, please contact the Sumcoin developers on the #sumcoin-dev Freenode IRC channel or alternatively you can email us at contact@sumcoin.info.
 
 If the node is "stuck" during sync or giving "block checksum mismatch" errors, please ensure your hardware is stable by running memtest and observe CPU temperature with a load-test tool such as linpack before creating an issue! -->
 

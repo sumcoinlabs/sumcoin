@@ -480,12 +480,14 @@ bool ConnectSocketDirectly(const CService &addrConnect, const SOCKET& hSocket, i
         LogPrintf("Cannot connect to %s: unsupported network\n", addrConnect.ToString());
         return false;
     }
-    if (connect(hSocket, (struct sockaddr*)&sockaddr, len) == SOCKET_ERROR)
+    //LogPrintf("L484");
+    if (connect(hSocket, (struct sockaddr*)&sockaddr, len) == SOCKET_ERROR) //Error here
     {
         int nErr = WSAGetLastError();
         // WSAEINVAL is here because some legacy version of winsock uses it
         if (nErr == WSAEINPROGRESS || nErr == WSAEWOULDBLOCK || nErr == WSAEINVAL)
         {
+			LogPrintf("L492\n");
             struct timeval timeout = MillisToTimeval(nTimeout);
             fd_set fdset;
             FD_ZERO(&fdset);
@@ -494,6 +496,7 @@ bool ConnectSocketDirectly(const CService &addrConnect, const SOCKET& hSocket, i
             if (nRet == 0)
             {
                 LogPrint(BCLog::NET, "connection to %s timeout\n", addrConnect.ToString());
+                LogPrintf("Failed connection to %s? \n", addrConnect.ToString());
                 return false;
             }
             if (nRet == SOCKET_ERROR)

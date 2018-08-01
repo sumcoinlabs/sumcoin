@@ -1,6 +1,6 @@
 Sumcoin Core version 0.10.4.0 is now available from:
 
-  <https://download.sumcoin.org/sumcoin-0.10.4.0/>
+  <https://download.sumcoin.info/sumcoin-0.10.4.0/>
 
 This is a new minor version release, bringing bug fixes, the BIP65
 (CLTV) consensus change, and relay policy preparation for BIP113. It is

@@ -130,6 +130,7 @@ static std::vector<CAddress> convertSeed6(const std::vector<SeedSpec6> &vSeedsIn
     // it'll get a pile of addresses with newer timestamps.
     // Seed nodes are given a random 'last seen time' of between one and two
     // weeks ago.
+    //LogPrintf("Called convertSeed6\n");;
     const int64_t nOneWeek = 7*24*60*60;
     std::vector<CAddress> vSeedsOut;
     vSeedsOut.reserve(vSeedsIn.size());
@@ -243,6 +244,7 @@ void SetLimited(enum Network net, bool fLimited)
 {
     if (net == NET_UNROUTABLE || net == NET_INTERNAL)
         return;
+    //LogPrintf("Net unreachable");
     LOCK(cs_mapLocalHost);
     vfLimited[net] = fLimited;
 }
@@ -365,6 +367,7 @@ static CAddress GetBindAddress(SOCKET sock)
 
 CNode* CConnman::ConnectNode(CAddress addrConnect, const char *pszDest, bool fCountFailure)
 {
+	//LogPrintf("Called connect node\n");
     if (pszDest == nullptr) {
         if (IsLocal(addrConnect))
             return nullptr;
