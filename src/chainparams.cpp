@@ -78,8 +78,8 @@ public:
         consensus.BIP16Height = 1; // Hopefully also first block
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("1713222425d0b5b402b81c5fd9928708ebd2233ccdcd8b08ec19da962890650e"); // Should be first block
-        consensus.BIP65Height = 95000; // Neither have happened yet
-        consensus.BIP66Height = 95000; // 
+        consensus.BIP65Height = 90000; // Neither have happened yet
+        consensus.BIP66Height = 90000; // 
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 3.14159 * 24 * 60 * 60; // pi days (why), or  ~271433 seconds
         consensus.nPowTargetSpacing = 1.25 * 60;
@@ -93,13 +93,13 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1530459988; // January 28, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1535760001; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1533355200; // August 4, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1536120000; // August 4, 2018
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1530459988; // January 28, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1535760001; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1533355200; // January 28, 2017
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1536120000; // September 5, 2018
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000595a9ab76b42f"); // TODO
