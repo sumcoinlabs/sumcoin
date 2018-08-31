@@ -4,6 +4,8 @@ OBJECT IS INDEX BASED, ALGO BASED COIN FOR USE IN ATM'S
 
 FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER / LEAD DEV @ SumCoinIndex@gmail.com
 
+//---
+
 Sumcoin integration/staging tree
 CONTACT US: SumCoinIndex@gmail.com Twitter https://twitter.com/SumCoinIndex Facebook @SumCoinIndex
 
@@ -12,6 +14,10 @@ Main Website https://www.SumCoinIndex.com
 Pricing Info http://sumcoinprice.com/
 
 SUM Block Explorer http://sumexplorer.com
+
+Download versions & other Information: HTTP://Sumcoin.cash
+
+//---
 
 Mining Hardware
 
