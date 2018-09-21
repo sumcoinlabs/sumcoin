@@ -17,6 +17,8 @@ SUM Block Explorer http://sumexplorer.com
 
 Download versions & other Information: HTTP://Sumcoin.cash
 
+Pricing JSON API :  http://159.65.72.249/sumprice/price.json
+
 //---
 
 Mining Hardware
