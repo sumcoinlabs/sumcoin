@@ -1,12 +1,15 @@
-!! NOTICE TO ANY EXCHANGE - YOU ARE NOT AUTHORIZED TO LIST THIS COIN WITHOUT AUTHORIZATION!!
 
-OBJECT IS INDEX BASED, ALGO BASED COIN FOR USE IN ATM'S
+
+### !! NOTICE TO ANY EXCHANGE - YOU ARE NOT AUTHORIZED TO LIST THIS COIN WITHOUT AUTHORIZATION!!
+
+OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S**
 
 FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER / LEAD DEV @ SumCoinIndex@gmail.com
 
 //---
 
-Sumcoin integration/staging tree
+## Sumcoin integration/staging tree
+
 CONTACT US: SumCoinIndex@gmail.com Twitter https://twitter.com/SumCoinIndex Facebook @SumCoinIndex
 
 Main Website https://www.SumCoinIndex.com
@@ -21,7 +24,7 @@ Pricing JSON API :  http://159.65.72.249/sumprice/price.json
 
 //---
 
-Mining Hardware
+### Mining Hardware
 
 CPU, GPU Use CPU Miner by Pooler (see our link to cpu miner - minerd - in releases)
 
@@ -29,10 +32,11 @@ AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
 
 Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright (c) 2017-2018 Crypto Cloud Inc
 
-What is SumCoin?
+## What is SumCoin?
+
 SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all coins market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
-Times:
+## Times:
 
 1.25 minute block targets
 
@@ -46,10 +50,12 @@ subsidy halves in 1M blocks (~2 years)
 
 For more information, as well as an immediately useable, binary version of the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
 
-License
+### License
+
 Sumcoin is released under the terms of the MIT license. See COPYING for more information or see http://opensource.org/licenses/MIT.
 
-Development process
+### Development process
+
 Developers work in their own trees, then submit pull requests when they think their feature or bug fix is ready.
 
 If it is a simple/trivial/non-controversial change, then one of the Sumcoin development team members simply pulls it.
@@ -60,7 +66,8 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
-Testing
+### Testing
+
 Testing and code review is the bottleneck for development; we get more pull requests than we can review and test. Please be patient and help out, and remember this is a security-critical project where any mistake might cost people lots of money.
 
 Automated Testing
