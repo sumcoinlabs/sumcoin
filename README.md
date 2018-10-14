@@ -20,7 +20,7 @@ SUM Block Explorer http://sumexplorer.com
 
 Download versions & other Information: HTTP://Sumcoin.cash
 
-Pricing JSON API :  http://159.65.72.249/sumprice/price.json
+Pricing JSON API :  
 
 //---
 
@@ -34,7 +34,7 @@ Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Deve
 
 ## What is SumCoin?
 
-SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all coins market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
+SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
 ## Times:
 
