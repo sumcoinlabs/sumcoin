@@ -2,9 +2,9 @@
 
 ### !! NOTICE TO ANY EXCHANGE - YOU ARE NOT AUTHORIZED TO LIST THIS COIN WITHOUT AUTHORIZATION!!
 
-OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S**
+OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S** 
 
-FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER / LEAD DEV @ SumCoinIndex@gmail.com
+FOR QUESTIONS, AUTHORIZATIONS, CONTACT FOUNDER /  DEV @ SumCoinIndex@gmail.com
 
 //---
 
@@ -14,21 +14,47 @@ CONTACT US: SumCoinIndex@gmail.com Twitter https://twitter.com/SumCoinIndex Face
 
 Main Website https://www.SumCoinIndex.com
 
+Mining Pool Website http://sumcoinpool.org
+
+## Stratum connect info 
+stratum+tcp://sumcoinpool.org:3340
+
 Pricing Info http://sumcoinprice.com/
 
 SUM Block Explorer http://sumexplorer.com
 
+TODO - Explore price reflection - use sumcoinprice.com in interum 
+
 Download versions & other Information: HTTP://Sumcoin.cash
 
-Pricing JSON API :  
+Pricing JSON API :  http://159.65.72.249/sumprice/price.json
+
+## How Index Algo works
+
+1. Top 100 coins Total combined Market cap (pulled from coin market cap)
+
+2. Divide n by 100
+
+3. Multiply n by Fiegenbaum constant
+
+4. Divide n by Fully diluted Sum of 100 M
+
+n = SUM Price
+
+Set Cron to frequency of calls
 
 //---
 
-### Mining Hardware
+## Mining Hardware
+
+### Sumcoin Algo is Scrypt
 
 CPU, GPU Use CPU Miner by Pooler (see our link to cpu miner - minerd - in releases)
 
 AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
+
+Moonlander 2 USB Asic Miner : https://www.futurebit.io/
+
 
 Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright (c) 2017-2018 Crypto Cloud Inc
 
@@ -46,7 +72,7 @@ subsidy halves in 1M blocks (~2 years)
 
 50 coins per block
 
-3622 blocks to retarget difficulty
+3619 blocks to retarget difficulty (pi in days)
 
 For more information, as well as an immediately useable, binary version of the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
 
