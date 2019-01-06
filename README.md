@@ -28,7 +28,7 @@ TODO - Explore price reflection - use sumcoinprice.com in interum
 Download versions & other Information: HTTP://Sumcoin.cash
 
 ## PRICE Data
-Exchange rate Pricing JSON API :  http://sumcoinindex.com/rates/price2.json Full add "price.json"
+Exchange rate Pricing JSON API :  http://sumcoinindex.com/rates/price2.json 
 
 AND
                     http://159.65.72.249/sumprice/price.json
