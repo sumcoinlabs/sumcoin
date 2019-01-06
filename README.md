@@ -23,17 +23,21 @@ Pricing Info http://sumcoinprice.com/
 
 SUM Block Explorer http://sumexplorer.com
 
-TODO - Explore price reflection - use sumcoinprice.com in interum 
+TODO - Add charts from db to sumcoinprice.com
 
-Download versions & other Information: HTTP://Sumcoin.cash
+Download versions & other Information: http://Sumcoin.cash
 
 ## PRICE Data
-Exchange rate Pricing JSON API :  http://sumcoinindex.com/rates/price2.json 
+
+Exchange rate Pricing JSON API : 
+https://sumcoinindex.com/rates/price2.json 
 
 AND
-                    http://159.65.72.249/sumprice/price.json
 
-## How Index Algo works
+http://159.65.72.249/sumprice/price.json
+
+
+# How Index Algo works #
 
 1. Top 100 coins Total combined Market cap (pulled from coin market cap)
 
@@ -62,7 +66,7 @@ Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
 Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright (c) 2017-2018 Crypto Cloud Inc
 
-## What is SumCoin?
+## What is Sumcoin?
 
 SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
