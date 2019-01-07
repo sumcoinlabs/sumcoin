@@ -100,6 +100,61 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
+### Build Dependencies/instructions:
+ 
+sudo apt-get install git
+ 
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+ 
+sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+ 
+sudo apt-get install libboost-all-dev
+ 
+sudo apt-get install software-properties-common
+ 
+sudo add-apt-repository ppa:bitcoin/bitcoin
+ 
+sudo apt-get update
+ 
+sudo apt-get install libdb4.8-dev libdb4.8++-dev
+ 
+sudo apt-get install libminiupnpc-dev
+ 
+sudo apt-get install libzmq3-dev
+ 
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+ 
+sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
+ 
+git clone -b 0.16 https://github.com/sumcoinlabs/sumcoin.git
+
+### File Swap info (if needed):
+
+Create swapfile using:
+sudo fallocate -l 2G /swapfile  
+sudo chmod 600 /swapfile 
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+### Make:
+
+Go to sumcoin directory and run the following:
+./autogen.sh
+./configure --disable-tests --without-gui
+ make
+
+It will then start compiling and take a while. 
+
+### IF you needed swapfile - BE sure to turn it off again:
+
+When it is done, turn off the swapfile with:
+sudo swapoff /swapfile  
+
+### Run: 
+
+After this it's ready to run. The executable will be in sumcoin/src. Run with:
+./sumcoind -server -daemon
+
 ### Testing
 
 Testing and code review is the bottleneck for development; we get more pull requests than we can review and test. Please be patient and help out, and remember this is a security-critical project where any mistake might cost people lots of money.
