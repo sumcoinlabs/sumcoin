@@ -37,21 +37,7 @@ AND
 http://159.65.72.249/sumprice/price.json
 
 
-# How Index Algo works #
 
-1. Top 100 coins Total combined Market cap (pulled from coin market cap)
-
-2. Divide n by 100
-
-3. Multiply n by Fiegenbaum constant
-
-4. Divide n by Fully diluted Sum of 100 M
-
-n = SUM Price
-
-Set Cron to frequency of calls
-
-//---
 
 ## Mining Hardware
 
