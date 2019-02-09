@@ -12,7 +12,15 @@ FOR QUESTIONS, AUTHORIZATIONS, CONTACT : ATTN DEVS @ SumCoinIndex@gmail.com
 
 CONTACT US: SumCoinIndex@gmail.com Twitter https://twitter.com/SumCoinIndex Facebook @SumCoinIndex
 
-Main Website https://www.SumCoinIndex.com
+Main Website https://SumcoinIndex.com
+
+### Email 
+Support@sumcoinindex.com
+
+### Urgent, Call:
+1-408-786-7919
+
+# Mining
 
 Mining Pool Website http://sumcoinpool.org
 
@@ -30,13 +38,20 @@ Download versions & other Information: http://Sumcoin.cash
 ## PRICE Data
 
 Exchange rate Pricing JSON API : 
-https://sumcoinindex.com/rates/price2.json 
+
+### Integer, Rate, Symbol :
+
+https://sumcoinindex.com/rates/price.json
 
 AND
 
-http://159.65.72.249/sumprice/price.json
+### Last buy, last price, last sell rate data
+https://sumcoinindex.com/rates/price2.json
 
 
+
+# To Buy, Sell or Trade (Coin to Coin)
+HTTPS://SumcoinTrade.com 
 
 
 ## Mining Hardware
