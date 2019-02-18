@@ -103,7 +103,9 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
-### Build Dependencies/instructions:
+### Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+ 
+Dependencies:
  
 sudo apt-get install git
  
@@ -128,10 +130,29 @@ sudo apt-get install libzmq3-dev
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
  
 sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
- 
-git clone -b 0.16 https://github.com/sumcoinlabs/sumcoin.git
 
-### File Swap info (if needed):
+### Next, Clone the project
+``` 
+git clone https://github.com/sumcoinlabs/sumcoin.git
+```
+### Change directories into Sumcoin
+```
+cd sumcoin
+```
+### From the Sumcoin Directory, run each command
+```
+./autogen.sh
+```
+Next,
+```
+./configure
+```
+last, make the executables
+```
+make
+```
+
+## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
 
 Create swapfile using:
 sudo fallocate -l 2G /swapfile  
