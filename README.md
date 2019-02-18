@@ -6,6 +6,9 @@ OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S**
 
 FOR QUESTIONS, AUTHORIZATIONS, CONTACT : ATTN DEVS @ Support@SumcoinIndex.com
 
+### BATM Setup instructions:
+https://github.com/sumcoinlabs/sumcoin/wiki/Sumcoin-Core-(sumcoind)-BATM-Configuration
+
 //---
 
 ## Sumcoin integration/staging tree
