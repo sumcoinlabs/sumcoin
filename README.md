@@ -4,6 +4,9 @@
 
 OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S** 
 
+### See General Bytes Twitter for example:
+https://twitter.com/generalbytes/status/1098174237163077633
+
 FOR QUESTIONS, AUTHORIZATIONS, CONTACT : ATTN DEVS @ Support@SumcoinIndex.com
 
 ### BATM Setup instructions:
