@@ -168,8 +168,8 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 1000000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
-        consensus.BIP34Height = 1; // Prolly 1, hash needs to be adjusted
-        consensus.BIP34Hash = uint256S();
+        consensus.BIP34Height = 0; // Prolly 1, hash needs to be adjusted
+        consensus.BIP34Hash = uint256S("b5da610844f1b7206cef38c2ed6809742542683d2218cc94d3eb4be313581e3f");
         consensus.BIP65Height = 300; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.BIP66Height = 300; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
