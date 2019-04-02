@@ -78,8 +78,8 @@ public:
         consensus.BIP16Height = 1; // Hopefully also first block
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("a8b6d75b7f4e9176cbc63527376f3d9c36903b8d858d3065a50c84a6f749e3c3"); // Should be first block
-        consensus.BIP65Height = 100; // Neither have happened yet
-        consensus.BIP66Height = 100; //
+        consensus.BIP65Height = 1000; // Neither have happened yet
+        consensus.BIP66Height = 1000; //
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 1 * 24 * 60 * 60; // 1 day
         consensus.nPowTargetSpacing = 30;
