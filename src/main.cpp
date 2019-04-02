@@ -1087,16 +1087,19 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 50 * COIN;
+    int64 nSubsidy = 100 * COIN;
 
+    if (nHeight == 1)
+        return 18000000 * COIN;
+    
     // Subsidy is cut in half every 1000000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 1000000); // Sumcoin: 840k blocks in ~4 years
+    nSubsidy >>= (nHeight / 420000); // Sumcoin: 840k blocks in ~4 years
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 3.14159 * 24 * 60 * 60; // Sumcoin: 3.14159 days or 3 Days, 3 Hours, 39.816 Mins
-static const int64 nTargetSpacing = 1.25 * 60; // Sumcoin: 1 minute 15 seconds
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // Sumcoin: 3.14159 days or 3 Days, 3 Hours, 39.816 Mins
+static const int64 nTargetSpacing = 30; // Sumcoin: 1 minute 15 seconds
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 //
@@ -3122,7 +3125,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfd, 0xc2, 0xb7, 0xd3 }; // Sumcoin: changed to random values.
+unsigned char pchMessageStart[4] = { 0xfd, 0xc2, 0xb7, 0xd4 }; // Sumcoin: changed to random values.
 
 
 void static ProcessGetData(CNode* pfrom)
