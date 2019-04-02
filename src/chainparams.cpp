@@ -77,7 +77,7 @@ public:
         consensus.nSubsidyHalvingInterval = 420000;
         consensus.BIP16Height = 1; // Hopefully also first block
         consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("fd302ca6c079b832f2a340940e819e827aed8ea67f81daf292b67968038da552"); // Should be first block
+        consensus.BIP34Hash = uint256S("a8b6d75b7f4e9176cbc63527376f3d9c36903b8d858d3065a50c84a6f749e3c3"); // Should be first block
         consensus.BIP65Height = 100; // Neither have happened yet
         consensus.BIP66Height = 100; //
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
