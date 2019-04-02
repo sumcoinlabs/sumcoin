@@ -77,7 +77,7 @@ public:
         consensus.nSubsidyHalvingInterval = 420000;
         consensus.BIP16Height = 1; // Hopefully also first block
         consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("a8b6d75b7f4e9176cbc63527376f3d9c36903b8d858d3065a50c84a6f749e3c3"); // Should be first block
+        consensus.BIP34Hash = uint256S("fd302ca6c079b832f2a340940e819e827aed8ea67f81daf292b67968038da552"); // Should be first block
         consensus.BIP65Height = 100; // Neither have happened yet
         consensus.BIP66Height = 100; //
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -105,7 +105,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000000"); // TODO
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x97bc40d77f589dd9599934663dcf1f5b5bbfb5fb0c7d1583b15e3943c1b0eaf4");
+        consensus.defaultAssumeValid = uint256S("0x926f03dea56cd7827040acb3982c2983fb3d973d443f5612b941ecbc0ce264dc");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
