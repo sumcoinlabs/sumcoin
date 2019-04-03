@@ -80,21 +80,22 @@ Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumc
 
 ## Times:
 
-1.25 minute block targets
+0.5 Min block targets
 
-subsidy halves in 1M blocks (~2 years)
+subsidy halves in 420 K blocks (~5 Months)
 
 ~100 million total coins
 
-50 coins per block
+Initial reward
+100 coins per block
 
-3619 blocks to retarget difficulty (pi in days)
+720 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
 
 ### License
 
-Sumcoin is released under the terms of the MIT license. See COPYING for more information or see http://opensource.org/licenses/MIT.
+Sumcoin is released under the terms of Classic Proprietary License. See COPYING for more information or see https://en.wikipedia.org/wiki/Proprietary_software.
 
 ### Development process
 
@@ -108,7 +109,7 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
-### Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
 Dependencies:
  
@@ -152,9 +153,13 @@ Next,
 ```
 ./configure
 ```
-last, make the executables
+or
 ```
-make
+./configure --disable-test
+```
+or
+```
+./configure --disable-tests --without-gui
 ```
 
 ## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
@@ -166,14 +171,15 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
-### Make:
 
-Go to sumcoin directory and run the following:
-./autogen.sh
-./configure --disable-tests --without-gui
- make
+# Make
 
-It will then start compiling and take a while. 
+Last, make the executables
+```
+make
+```
+
+*It will then start compiling and take a while.*
 
 ### IF you needed swapfile - BE sure to turn it off again:
 
@@ -183,7 +189,20 @@ sudo swapoff /swapfile
 ### Run: 
 
 After this it's ready to run. The executable will be in sumcoin/src. Run with:
+```
 ./sumcoind -server -daemon
+```
+**With GUI**
+/sumcoin/src/qt/:./sumcoin-qt
+
+
+## Configure your settings
+
+1. navigate to hidden folders
+2. create sumcoin.conf file
+3. inside, set the following parameters from the list below
+
+//TODO
 
 ### Testing
 
