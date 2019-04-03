@@ -1,4 +1,6 @@
 
+# Sumcoin is NOT an OPEN Source Coin
+If you have questions and wish to license, you should contact us at the email below for commercial uses
 
 ### !! NOTICE TO ANY EXCHANGE OR DEVELOPERS ETC -  THIS COIN IS INDEX BASED AND YOU SHOULD CONTACT US WITH QUESTIONS!!
 
@@ -70,11 +72,11 @@ AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
 Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
 
-Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright (c) 2017-2018 Crypto Cloud Inc
+Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright  (c) 2017-2019 Crypto Cloud Inc (c) 2017-2019 Sigma Systems Inc
 
 ## What is Sumcoin?
 
-SumCoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
+Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
 ## Times:
 
