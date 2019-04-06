@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0xfd302ca6c079b832f2a340940e819e827aed8ea67f81daf292b67968038da552");
+uint256 hashGenesisBlock("0x37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // Sumcoin: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -363,7 +363,7 @@ unsigned int LimitOrphanTxSize(unsigned int nMaxOrphans)
 bool CTxOut::IsDust() const
 {
     // Sumcoin: IsDust() detection disabled, allows any valid dust to be relayed.
-    // The fees imposed on each dust txo is considered sufficient spam deterrant. 
+    // The fees imposed on each dust txo is considered sufficient spam deterrant.
     return false;
 }
 
@@ -1089,11 +1089,8 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 100 * COIN;
 
-    if (nHeight == 1)
-        return 18000000 * COIN;
-    
     // Subsidy is cut in half every 1000000 blocks, which will occur approximately every 4 years
-    nSubsidy >>= (nHeight / 420000); // Sumcoin: 840k blocks in ~4 years
+    nSubsidy >>= (nHeight / 500000); // Sumcoin: 840k blocks in ~4 years
 
     return nSubsidy + nFees;
 }
@@ -2782,7 +2779,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 97ddfbbae6
 
         // Genesis block
-        const char* pszTimestamp = "Trump tweets: NO MORE DACA DEAL";
+        const char* pszTimestamp = "Fighting flares on outskirts of Tripoli";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2794,14 +2791,14 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1522540800;
+        block.nTime    = 1554579000;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 206966;
+        block.nNonce   = 133964;
 
         if (fTestNet)
         {
-            block.nTime    = 1523718091;
-            block.nNonce   = 387183082;
+            block.nTime    = 1554579000;
+            block.nNonce   = 133964;
         }
 
 if (true && block.GetHash() != hashGenesisBlock)
@@ -2812,7 +2809,7 @@ if (true && block.GetHash() != hashGenesisBlock)
             uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
             uint256 thash;
             char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
- 
+
             loop
             {
 #if defined(USE_SSE2)
@@ -2852,7 +2849,7 @@ if (true && block.GetHash() != hashGenesisBlock)
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0x2329f0923a84994a50ac0bfcb4054d4d959591a0d66ce1ccd93be2168700466b"));
+        assert(block.hashMerkleRoot == uint256("0xb82fb0f59328af96928f3a7648461f3db41fbfc2fef4e5ec6f7cf78ca067eacc"));
         block.print();
         assert(hash == hashGenesisBlock);
 
@@ -3125,7 +3122,7 @@ bool static AlreadyHave(const CInv& inv)
 // The message start string is designed to be unlikely to occur in normal data.
 // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 // a large 4-byte int at any alignment.
-unsigned char pchMessageStart[4] = { 0xfd, 0xc2, 0xb7, 0xd4 }; // Sumcoin: changed to random values.
+unsigned char pchMessageStart[4] = { 0xfa, 0xc0, 0xb5, 0xd0 }; // Sumcoin: changed to random values.
 
 
 void static ProcessGetData(CNode* pfrom)
