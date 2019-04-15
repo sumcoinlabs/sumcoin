@@ -168,10 +168,14 @@ or
 
 Create swapfile using:
 ```
-sudo fallocate -l 2G /swapfile  
-sudo chmod 600 /swapfile 
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
+```
+To turn off after you 'make'
+```
+sudo swapoff /swapfile
 ```
 
 # Make
@@ -183,18 +187,47 @@ make
 
 *It will then start compiling and take a while.*
 
-### IF you needed swapfile - BE sure to turn it off again:
+### *IF you needed swapfile - BE sure to turn it off again:*
 
 When it is done, turn off the swapfile with:
-sudo swapoff /swapfile  
-
+```
+sudo swapoff /swapfile
+```
 ### Run: 
 
 After this it's ready to run. The executable will be in sumcoin/src. Run with:
 ```
 ./sumcoind -server -daemon
 ```
-**With GUI**
+## Setup a configuration file to run as a node
+
+Stop the server from sumcoin/src:
+```
+./sumcoin-cli stop
+```
+Navigate to sumcoin data dir from home dir
+```
+cd .sumcoin
+```
+```
+touch sumcoin.conf
+nano sumcoin.conf
+```
+Paste the following **make your own user/password***
+```
+server=1
+daemon=1
+rpcuser=user
+rpcpassword=password
+```
+
+Restart Sumcoin.   You will now be running as a node each time you start
+```
+cd sumcoin/src
+./sumcoind -server -daemon
+```
+
+**With GUI** - Not for Linux terminal
 /sumcoin/src/qt/:./sumcoin-qt
 
 
