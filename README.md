@@ -112,6 +112,8 @@ The master branch is regularly built and tested, but is not guaranteed to be com
 ### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
 Dependencies:
+
+sudo apt-get update
  
 sudo apt-get install git
  
