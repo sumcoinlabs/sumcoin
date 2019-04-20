@@ -169,23 +169,24 @@ or
 
 ## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
 
-Create swapfile using:
+Create swapfile using (copy and paste in all 4 for an easy life):
 ```
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
+sudo fallocate -l 2G /swapfile;
+sudo chmod 600 /swapfile;
+sudo mkswap /swapfile;
 sudo swapon /swapfile
-```
-To turn off after you 'make'
-```
-sudo swapoff /swapfile
 ```
 
 # Make
 
-Last, make the executables
+Last, make the executables (This could take a bit)
 ```
 make
+```
+
+### IF using a 1 GB Droplet be sure to turn OFF after you 'make'
+```
+sudo swapoff /swapfile
 ```
 
 *It will then start compiling and take a while.*
