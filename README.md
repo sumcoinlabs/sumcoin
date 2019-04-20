@@ -111,7 +111,8 @@ The master branch is regularly built and tested, but is not guaranteed to be com
 
 ### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
-Dependencies:
+Dependencies (paste all 3 seperately):
+
 ```
 sudo apt-get update;
  
@@ -140,7 +141,7 @@ sudo apt-get install -y libzmq3-dev;
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
  
 sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler
-
+```
 ### Next, Clone the project
 ``` 
 git clone https://github.com/sumcoinlabs/sumcoin.git
