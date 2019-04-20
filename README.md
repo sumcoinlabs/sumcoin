@@ -112,7 +112,7 @@ The master branch is regularly built and tested, but is not guaranteed to be com
 ### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
 Dependencies:
-
+```
 sudo apt-get update;
  
 sudo apt-get install git;
@@ -123,10 +123,12 @@ sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chr
  
 sudo apt-get install -y libboost-all-dev;
  
-sudo apt-get install -y software-properties-common;
- 
+sudo apt-get install -y software-properties-common
+```
+```
 sudo add-apt-repository ppa:bitcoin/bitcoin
- 
+```
+```
 sudo apt-get update;
  
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
