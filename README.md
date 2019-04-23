@@ -1,31 +1,36 @@
-Sumcoin is NOT an OPEN Source Coin
+# Sumcoin is NOT an OPEN Source Coin
 If you have questions and wish to license, you should contact us at the email below for commercial uses
 
-!! NOTICE TO ANY EXCHANGE OR DEVELOPERS ETC - THIS COIN IS INDEX BASED AND YOU SHOULD CONTACT US WITH QUESTIONS!!
-OBJECT IS INDEX BASED, ALGO BASED COIN FOR USE IN ATM'S
+### !! NOTICE TO ANY EXCHANGE OR DEVELOPERS ETC -  THIS COIN IS INDEX BASED AND YOU SHOULD CONTACT US WITH QUESTIONS!!
 
-See General Bytes Twitter for example:
+OBJECT IS **INDEX BASED**, ALGO BASED COIN FOR USE IN **ATM'S** 
+
+### See General Bytes Twitter for example:
 https://twitter.com/generalbytes/status/1098174237163077633
 
 FOR QUESTIONS, AUTHORIZATIONS, CONTACT : ATTN DEVS @ Support@SumcoinIndex.com
 
-BATM Setup instructions:
+### BATM Setup instructions:
 https://github.com/sumcoinlabs/sumcoin/wiki/Sumcoin-Core-(sumcoind)-BATM-Configuration
 
 //---
 
-Sumcoin integration/staging tree
+## Sumcoin integration/staging tree
+
 CONTACT US: Support@SumcoinIndex.com Twitter https://twitter.com/SumCoinIndex Facebook @SumCoinIndex
 
 Main Website https://SumcoinIndex.com
 
-Email
+### Email 
 Support@SumcoinIndex.com
 
-Mining
+
+
+# Mining
+
 Mining Pool Website http://sumcoinpool.org
 
-Stratum connect info
+## Stratum connect info 
 stratum+tcp://sumcoinpool.org:3340
 
 Pricing Info http://sumcoinprice.com/
@@ -36,50 +41,63 @@ TODO - Add charts from db to sumcoinprice.com
 
 Download versions & other Information: http://Sumcoin.cash
 
-PRICE Data
-Exchange rate Pricing JSON API :
+## PRICE Data
 
-Integer, Rate, Symbol :
+Exchange rate Pricing JSON API : 
+
+### Integer, Rate, Symbol :
+
 https://sumcoinindex.com/rates/price.json
 
 AND
 
-Last buy, last price, last sell rate data
+### Last buy, last price, last sell rate data
 https://sumcoinindex.com/rates/price2.json
 
-To Buy, Sell or Trade (Coin to Coin)
-HTTPS://SumcoinTrade.com
 
-Mining Hardware
-Sumcoin Algo is Scrypt
+
+# To Buy, Sell or Trade (Coin to Coin)
+HTTPS://SumcoinTrade.com 
+
+
+## Mining Hardware
+
+### Sumcoin Algo is Scrypt
+
 CPU, GPU Use CPU Miner by Pooler (see our link to cpu miner - minerd - in releases)
 
 AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
 
 Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
-Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright (c) 2017-2019 Crypto Cloud Inc (c) 2017-2019 Sigma Systems Inc
 
-What is Sumcoin?
+Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2017 Litecoin Developers Copyright (c) 2017-2018 Sumcoin Developers Copyright  (c) 2017-2019 Crypto Cloud Inc (c) 2017-2019 Sigma Systems Inc
+
+## What is Sumcoin?
+
 Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "sum" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
-Times:
+## Times:
+
 0.5 Min block targets
 
 subsidy halves in 420 K blocks (~5 Months)
 
 ~100 million total coins
 
-Initial reward 100 coins per block
+Initial reward
+100 coins per block
 
 720 blocks to retarget difficulty
 
 For more information, as well as an immediately useable, binary version of the Sumcoin client sofware, see https://github.com/sumcoinlabs/sumcoin/releases
 
-License
+### License
+
 Sumcoin is released under the terms of Classic Proprietary License. See COPYING for more information or see https://en.wikipedia.org/wiki/Proprietary_software.
 
-Development process
+### Development process
+
 Developers work in their own trees, then submit pull requests when they think their feature or bug fix is ready.
 
 If it is a simple/trivial/non-controversial change, then one of the Sumcoin development team members simply pulls it.
@@ -90,9 +108,11 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
-Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+ 
 Dependencies (paste all 3 seperately):
 
+```
 sudo apt-get update;
  
 sudo apt-get install git;
@@ -104,7 +124,11 @@ sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chr
 sudo apt-get install -y libboost-all-dev;
  
 sudo apt-get install -y software-properties-common
+```
+```
 sudo add-apt-repository ppa:bitcoin/bitcoin
+```
+```
 sudo apt-get update;
  
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
@@ -116,141 +140,223 @@ sudo apt-get install -y libzmq3-dev;
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
  
 sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
-Next, Clone the project
+```
+### Next, Clone the project
+``` 
 git clone https://github.com/sumcoinlabs/sumcoin.git
-Change directories into Sumcoin
+```
+### Change directories into Sumcoin
+```
 cd sumcoin
-From the Sumcoin Directory, run each command
+```
+### From the Sumcoin Directory, run each command
+```
 ./autogen.sh
+```
 Next,
-
+```
 ./configure
+```
 or
-
+```
 ./configure --disable-test
+```
 or
-
+```
 ./configure --disable-tests --without-gui
-SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
-Create swapfile using (copy and paste in all 4 for an easy life):
+```
 
+## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
+
+Create swapfile using (copy and paste in all 4 for an easy life):
+```
 sudo fallocate -l 2G /swapfile;
 sudo chmod 600 /swapfile;
 sudo mkswap /swapfile;
 sudo swapon /swapfile;
-Make
+```
+
+# Make
+
 Last, make the executables (This could take a bit)
-
+```
 make
-IF using a 1 GB Droplet be sure to turn OFF after you 'make'
-sudo swapoff /swapfile
-It will then start compiling and take a while.
+```
 
-IF you needed swapfile - BE sure to turn it off again:
+### IF using a 1 GB Droplet be sure to turn OFF after you 'make'
+```
+sudo swapoff /swapfile
+```
+
+*It will then start compiling and take a while.*
+
+### *IF you needed swapfile - BE sure to turn it off again:*
+
 When it is done, turn off the swapfile with:
-
+```
 sudo swapoff /swapfile
-Run:
-After this it's ready to run. The executable will be in sumcoin/src. Run with:
+```
+### Run: 
 
+**After this it's ready to run.**  The executable will be in sumcoin/src. Run with:
+```
 ./sumcoind -server -daemon
-Setup a configuration file to run as a node
-Stop the server from sumcoin/src:
+```
+## Setup a configuration file to run as a node
 
+Stop the server from sumcoin/src:
+```
 ./sumcoin-cli stop
-Navigate to sumcoin data dir from home dir
+```
+## Navigate to sumcoin data dir from home dir
+```
 cd .sumcoin
+```
+```
 touch sumcoin.conf
 nano sumcoin.conf
-Paste the following make your own user/password*
+```
+## Paste the following **make your own user/password***
+```
 server=1
 daemon=1
 rpcuser=YOURuserNAME
 rpcpassword=YOURpassword
-Restart Sumcoin. You will now be running as a node each time you start
-cd sumcoin/src/:./sumcoind -server -daemon
-With GUI - Works for Linux terminal
+```
 
+## Restart Sumcoin.   You will now be running as a node each time you start
+```
+cd sumcoin/src/:./sumcoind -server -daemon
+```
+
+**With GUI** - Works for Linux terminal
+```
 cd sumcoin/src/qt/:./sumcoin-qt
-Configure your settings
-navigate to hidden folders
-create sumcoin.conf file
-inside, set the following parameters from the list below
+```
+
+## Configure your settings
+
+1. navigate to hidden folders
+2. create sumcoin.conf file
+3. inside, set the following parameters from the list below
+
 //TODO
 
-Testing
+### Testing
+
 Testing and code review is the bottleneck for development; we get more pull requests than we can review and test. Please be patient and help out, and remember this is a security-critical project where any mistake might cost people lots of money.
 
-Automated Testing Developers are strongly encouraged to write unit tests for new code, and to submit new unit tests for old code.
+Automated Testing
+Developers are strongly encouraged to write unit tests for new code, and to submit new unit tests for old code.
 
 Unit tests for the core code are in src/test/. To compile and run them:
 
-cd src; make -f makefile.unix test Unit tests for the GUI code are in src/qt/test/. To compile and run them:
+cd src; make -f makefile.unix test
+Unit tests for the GUI code are in src/qt/test/. To compile and run them:
 
-qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro make -f Makefile.test ./sumcoin-qt_test
+qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+make -f Makefile.test
+./sumcoin-qt_test
 
-ATM Setup
-How to Setup Sumcoin For General Bytes ATM's
-Sumcoin Core (sumcoind) Configuration
+
+
+
+# ATM Setup
+
+
+## How to Setup Sumcoin For General Bytes ATM's
+
+
+
+## Sumcoin Core (sumcoind) Configuration
+
 The following example is based on the presumption that you have completed the prior steps of CAS installation on a hosted Internet server running Ubuntu 16.04 LTS, or higher, that the server is online, and the BATM has been successfully installed, configured, and tested for proper connectivity to the CAS.
 
 A further presumption is that the sumcoind daemon has been installed, configured, and tested for proper use. This guide is merely designed to help you setup a working sumcoind daemon with a working CAS.
 
 This is a step-by-step guide for adding sumcoind as a Hot Wallet Buy source. This is only an example and not to be construed as an endorsement for any particular exchange or wallet.
 
-This has been tested on sumcoin Core v 0.16.1
-First, open a terminal window and login to your server as root.
-Create an RPC token for CAS to communicate with sumcoind: The RPC token is designed to eliminate the need for hard-coded passwords in configuration and script files. You will receive a password here ONCE. This password is required for CAS; it's your “RPC Password”. You must save it during this step.
+### This has been tested on sumcoin Core v 0.16.1
 
-Download rpcauth.py on GitHub (all one line):
-Not required if you compile your own binaries
+ 
+### First, open a terminal window and login to your server as root.
+ 
+Create an RPC token for CAS to communicate with sumcoind:
+The RPC token is designed to eliminate the need for hard-coded passwords in configuration and script files. You will receive a password here ONCE. This password is required for CAS; it's your “RPC Password”. You must save it during this step.
+
+## Download rpcauth.py on GitHub  (all one line):
+### Not required if you compile your own binaries 
+
+```
 wget https://raw.githubusercontent.com/sumcoinlabs/sumcoin/master/share/rpcauth/rpcauth.py -O ~/.sumcoin/rpcauth.py
-May Be Deprecated
+```
+_May Be Deprecated_
+### Modify the file permissions to allow the script to execute:
 
-Modify the file permissions to allow the script to execute:
+```
 chmod +x ~/.sumcoin/rpcauth.py
-Best Method
-Then finally run the RPC token generator that you just installed and enabled:
-Path,
+```
+## Best Method
+### Then finally run the RPC token generator that you just installed and enabled:
+### Path, 
 root@root:~/sumcoin/share/rpcauth
 
+```
 ./rpcauth.py AnyNameYouWantHere
-Example Result
+```
+## Example Result 
+
 root@root:~/sumcoin/share/rpcauth$ ./rpcauth.py sumcoinatm
 
-String to be appended to sumcoin.conf:
+**String to be appended to sumcoin.conf:**
 
-rpcauth=AnyNameYouWantHere:aac8dlfjsdfkjds876dfpdsfjhlsdlkfasd8plkdjf8d8984lndlkdfjsdflkjsadfkfjkhlkjhdjdfh3b90e44ddca2 Your password: T0Dx2VLjgikeTANOGosdifoIJH80Xn2E0Tcx-jdlh1GIcr8c=
-
-Save
-The name you entered above, the resulting token, AND the generated password. You'll need it in the next step. The “AnyNameYouWantHere” is the “RPC User”, and the generated password is your “RPC Password” for CAS. The token is put in the sumcoin.conf file (as described below).
-
-A sample token is all one line and should look similiar to this:
-AnyNameYouWantHere:aac8dlfjsdfkjds876dfpdsfjhlsdlkfasd8plkdjf8d8984lndlkdfjsdflkjsadfkfjkhlkjhdjdfh3b90e44ddca2
-
-The generated password may look like:
+rpcauth=AnyNameYouWantHere:aac8dlfjsdfkjds876dfpdsfjhlsdlkfasd8plkdjf8d8984lndlkdfjsdflkjsadfkfjkhlkjhdjdfh3b90e44ddca2
+Your password:
 T0Dx2VLjgikeTANOGosdifoIJH80Xn2E0Tcx-jdlh1GIcr8c=
 
-Modify the sumcoin.conf configuration file:
+
+## Save 
+The name you entered above, the resulting token, AND the generated password. You'll need it in the next step. The “AnyNameYouWantHere” is the “RPC User”, and the generated password is your “RPC Password” for CAS. The token is put in the sumcoin.conf file (as described below).
+
+### A sample token is all one line and should look similiar to this:
+
+AnyNameYouWantHere:aac8dlfjsdfkjds876dfpdsfjhlsdlkfasd8plkdjf8d8984lndlkdfjsdflkjsadfkfjkhlkjhdjdfh3b90e44ddca2
+
+### The generated password may look like:
+T0Dx2VLjgikeTANOGosdifoIJH80Xn2E0Tcx-jdlh1GIcr8c=
+ 
+### Modify the sumcoin.conf configuration file:
+
 While you might (under certain circumstances) might want to start the daemon exclusively from a command line, we urge you to change the following settings within sumcoind.conf and run sumcoind without parameters. Keep it simple!
 
-Locate the Sumcoin Core configuration file.
-sumcoin.conf in data dir -
-Add (or modify) the following settings in the configuration file:
+## Locate the Sumcoin Core configuration file. 
+
+- sumcoin.conf in data dir -  
+
+### Add (or modify) the following settings in the configuration file:
+
+```
 deprecatedrpc=accounts
 deprecatedrpc=estimatefee
 addresstype=legacy
 server=1
 daemon=1
 rpcallowip=your_Server_IP_for_CAS
+```
+
 The RPC (Remote Procedure Call) uses "credentials" to communicate between programs. It's required, and can be a security issue if insecure. Depending on the RPC settings and your firewall, you might expose your wallet to the world - and that would be unwise. Research the subject before randomly changing any settings.
 
-Add your RPC user credentials:
+### Add your RPC user credentials:
+
+```
 rpcuser=AnyNameYouWantHere
 rpcpassword=DontUseThis!YouHaveBeenWarned!
 -or (preferred)-
 rpcauth=AnyNameYouWantHere:e5305a4d7e2c760b196882d2896f77$c5b5e7f6970f7c0544244189f45622887642dca2f36761bcecc1d8055fe8416d
-Your end result should look like this Example in sumcoin.conf (Tested v0.16.1)
+```
+
+### Your end result should look like this Example in sumcoin.conf (Tested v0.16.1)
+```
 addresstype=legacy
 deprecatedrpc=accounts
 deprecatedrpc=estimatefee
@@ -258,66 +364,89 @@ server=1
 daemon=1
 rpcallowip=your_Server_IP_for_CAS
 rpcauth=WalletName:bbc8fHC2jkeyojdlnlfnd89c1d61cee0aa70aa947e060617fd9231fac102b25cchh3jwls7bBb90e44ddca2
-Use either the top method or bottom (preferred) method.
-If using the first/top method, the rpcpassword is whatever you want it to be.
-The “rpcuser/rpcpassword” method is deprecated because it is considered a security risk. If using the second/bottom method:
+```
+### Use either the top method or bottom (preferred) method.
+
+If using the first/top method, the rpcpassword is whatever you want it to be.      
+The “rpcuser/rpcpassword” method is deprecated because it is considered a security risk.
+If using the second/bottom method:      
 the "rpcauth" is all one line,
 
-Replace the “rpcauth” info with the token generated in the previous step. RPC tokens (like this) are the preferred method of RPC authorization.
+Replace the “rpcauth” info with the token generated in the previous step. 
+RPC tokens (like this) are the preferred method of RPC authorization.
+ 
 
-Start the sumcoind daemon (background process):
-Once you have modified sumcoin.conf, (re)start the daemon:
+
+### Start the sumcoind daemon (background process):
+
+Once you have modified sumcoin.conf, **(re)start the daemon:**
 
 root@root:./sumcoind -server -daemon
 
-It may take several minutes for Sumcoin Core to completely start.
+### It may take several minutes for Sumcoin Core to completely start.
+
 Sumcoin Core and CAS will not be able to communicate until Sumcoin Core has "warmed up". It may take a few minutes - or longer.
 
 Ascertain that you have a default address. Use:
-
+```
 sumcoin-cli listaccounts
-One of three things will be displayed:
+```
+### One of three things will be displayed:
 "Sumcoin Core is still "warming up". Give it a few minutes and try again."
 
-"Empty brackets {} indicate that no address exists. You must create one." Anything between the brackets means you can safely skip to the next part.
+"Empty brackets {} indicate that no address exists. You must create one."
+_Anything between the brackets means you can safely skip to the next part._
 
 If you get empty brackets (result #2), then create a default Wallet Address and Account name by running:
-
+```
 sumcoin-cli getnewaddress "makeUpWalletNameBetweenQuotes"
-You can safely skip this if you are CERTAIN one has already been created.
+```
+### You can safely skip this if you are CERTAIN one has already been created.
 CAS will NOT work with Sumcoin Core unless at least one address exists!
 
 NOTE: sumcoind will take several hours (or longer) to completely synchronize with the Sumcoin network. CAS will NOT work with sumcoind until the synchronization is COMPLETE.
 
-Configure CAS to communicate with your sumcoin Core wallet:
-Assemble the required information for CAS:
-User: this is the “RPC User” you created earlier. For this example we'll just say it's “rpcuser”. Password: is the “RPCPassword” created by rpcauth.py earlier, or the one you made up (if you don't implement a token). For this example, we'll make the password just plain “rpcpw”.
+ 
+## Configure CAS to communicate with your sumcoin Core wallet:
 
-Accountname:
+### Assemble the required information for CAS:
+
+User: this is the “RPC User” you created earlier. For this example we'll just say it's “rpcuser”.
+Password: is the “RPCPassword” created by rpcauth.py earlier, or the one you made up (if you don't implement a token).  For this example, we'll make the password just plain “rpcpw”.
+
+### Accountname: 
 this is the account name of your wallet. An account name is neither required nor suggested. Account usage is deprecated in sumcoind, however to view any existing accounts, type:
-
+```
 sumcoin-cli listaccounts
-This parameter may be safely omitted if only a default account exists (""). If you choose to specify an account, select one named in the list. Whether using the default ("") or not, we'll refer to it as "walletname" in the examples below.
+```
+This parameter may be safely omitted if only a default account exists ("").
+If you choose to specify an account, select one named in the list.
+Whether using the default ("") or not, we'll refer to it as "walletname" in the examples below.
+ 
 
-Next, add a new crypto-currency type to CAS:
-Enter the “Crypto Settings” menu in the left-hand column.
-Click on the “+ ADD” button.
-Create a suitable description, i.e. “sumcoind SUM”.
-Select “SUM” for the required Crypto Currency* setting.
-Set Configuration Cash Currency* to“USD” (or whatever your local currency might be).
-Set Buy Rate Source to whatever source you prefer.
-Set Minimum Cash Amount PerTransaction* to zero – this enables any sale.
-Select your Hot Wallet Buy source to “sumcoin Core - sumcoind”.
-Enter the Parameters for the Hot Wallet Buy source as determined in the previous step:
-Example (typical):
+
+### Next, add a new crypto-currency type to CAS:
+* Enter the “Crypto Settings” menu in the left-hand column. 
+* Click on the “+ ADD” button. 
+* Create a suitable description, i.e. “sumcoind SUM”.
+* Select “SUM” for the required Crypto Currency* setting.
+* Set Configuration Cash Currency* to“USD” (or whatever your local currency might be).
+* Set Buy Rate Source to whatever source you prefer.
+* Set Minimum Cash Amount PerTransaction* to zero – this enables any sale.
+* Select your Hot Wallet Buy source to “sumcoin Core - sumcoind”.
+* Enter the Parameters for the Hot Wallet Buy source as determined in the previous step:
+
+### Example (typical): 
 “http:walletName:rpcpw:CASserverIP:3332”
 
-Example with a specific wallet:
+### Example with a specific wallet: 
 “http:rpcuser:rpcpw:CASserverIP:3332:walletname”
 
-Click on “SUBMIT” to save your settings.
-Finally, test it out by selecting Test Hot Wallet Buy from the RUN SUM SETTINGS TEST.
-Presuming everything was entered correctly, you should receive confirmation of success!
-You should also now configure the Hot Wallet Sell using the same parameters if you implement it on a BATMThree (or other 2-way).
+## Click on “SUBMIT” to save your settings.
 
-  ##     You're done!
+## Finally, test it out by selecting Test Hot Wallet Buy from the RUN SUM SETTINGS TEST.
+
+### Presuming everything was entered correctly, you should receive confirmation of success!
+You should also now configure the Hot Wallet Sell using the same parameters if you implement it on a BATMThree (or other 2-way).
+ 
+      ##     You're done!
