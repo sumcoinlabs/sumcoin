@@ -1,5 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2017 The Bitcoin Core developers
+// Copyright (c) 2016-2019 The Sumcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -161,7 +162,7 @@ public:
 };
 
 /**
- * Testnet (v3)
+ * Testnet 
  */
 class CTestNetParams : public CChainParams {
 public:
@@ -170,29 +171,29 @@ public:
         consensus.nSubsidyHalvingInterval = 1000000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
         consensus.BIP34Height = 0; // Prolly 1, hash needs to be adjusted
-        consensus.BIP34Hash = uint256S("ed6f3bd7c6929d539381d82611e118c4f7dd3b211983939919387c440ee74ac8");
-        consensus.BIP65Height = 300; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
-        consensus.BIP66Height = 300; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP34Hash = uint256S("1713222425d0b5b402b81c5fd9928708ebd2233ccdcd8b08ec19da962890650e");
+        consensus.BIP65Height = 90000; // 4281442e2586fa16db1d50a51382da270b8821d34d7acb91bcabc21190f2fa8d
+        consensus.BIP66Height = 90000; // 4281442e2586fa16db1d50a51382da270b8821d34d7acb91bcabc21190f2fa8d
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3.14159 * 24 * 60 * 60; // pi
+        consensus.nPowTargetTimespan = 3.14159 * 24 * 60 * 60; // pi days (why), or  ~271433 seconds
         consensus.nPowTargetSpacing = 1.25 * 60;
-        consensus.fPowAllowMinDifficultyBlocks = true;
+        consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 10857; // 75% of 8064
+        consensus.nMinerConfirmationWindow = 14476; // nPowTargetTimespan / nPowTargetSpacing * 4
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1483228800; // January 1, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1517356801; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1533355200; // August 4, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1536120000; // August 4, 2018
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1483228800; // January 1, 2017
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1533355200; // January 28, 2017
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1536120000; // September 5, 2018
 
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000000000000ff");
@@ -200,17 +201,17 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xed6f3bd7c6929d539381d82611e118c4f7dd3b211983939919387c440ee74ac8"); //190
 
-        pchMessageStart[0] = 0xf6;
-        pchMessageStart[1] = 0xc7;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd1;
+        pchMessageStart[0] = 0xfd;
+        pchMessageStart[1] = 0xc2;
+        pchMessageStart[2] = 0xb7;
+        pchMessageStart[3] = 0xd3;
         nDefaultPort = 13333;
-        nPruneAfterHeight = 1000;
+        nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1554579100, 238464, 0x1e0ffff0, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1523718257, 2086000341, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xed6f3bd7c6929d539381d82611e118c4f7dd3b211983939919387c440ee74ac8"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb82fb0f59328af96928f3a7648461f3db41fbfc2fef4e5ec6f7cf78ca067eacc"));
+        assert(consensus.hashGenesisBlock == uint256S("0x8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea"));
+        assert(genesis.hashMerkleRoot == uint256S("0xccd37098b85fc0f190dc74b18c0d6a42f52ac8833348d6ff3663489fc66e31e2"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -233,13 +234,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("ed6f3bd7c6929d539381d82611e118c4f7dd3b211983939919387c440ee74ac8")},
+                {    0, uint256S("0x8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block a0afbded94d4be233e191525dc2d467af5c7eab3143c852c3cd549831022aad6 (height 343833)
-            1554579100,
+            // Data as of block 78177.
+            1532280528,
             0,
             0.01
         };
@@ -305,6 +306,9 @@ public:
         checkpointData = {
             {
                 {0, uint256S("19decb2815da5a7779c72af78fe6268c2a76ec94e940503a6c3ffafb282ef397")},
+                    { 1000, uint256S("0x9bc8eda5e597adb6c98cd39381682e44512b8d0fea81f10d6f7734aa5f73dcda")},
+                    {10000, uint256S("0x2b2c78658d5a9c8b14788cab7e37177dd92dd18462d1cac5827a7ce3b576a78d")},
+
             }
         };
 
