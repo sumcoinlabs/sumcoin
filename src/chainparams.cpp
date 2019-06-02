@@ -217,7 +217,7 @@ public:
         pchMessageStart[1] = 0xc2;
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0xd3;
-        nDefaultPort = 13333;
+        nDefaultPort = 3333;
         nPruneAfterHeight = 100000;
 
         genesis = CreateGenesisBlockTest(1523718257, 2086000341, 0x1e0ffff0, 1, 50 * COIN);
@@ -225,16 +225,15 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea"));
         assert(genesis.hashMerkleRoot == uint256S("0xccd37098b85fc0f190dc74b18c0d6a42f52ac8833348d6ff3663489fc66e31e2"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+		vSeeds.emplace_back("seeder.mybloodhurts.com");
         // nodes with support for servicebits filtering should be at the top
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,125);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,8);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,253);
-        base58Prefixes[EXT_PUBLIC_KEY] = {0x06, 0x32, 0x89, 0xCC};
-        base58Prefixes[EXT_SECRET_KEY] = {0x01, 0x37, 0x80, 0x96};
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //IDK
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
+        base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
+        base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAB, 0xE6};
 
         bech32_hrp = "tsum";
 
