@@ -41,7 +41,7 @@ For help:  Open an Issue
 
 
 # Mining
-## Mining Pools (submit your site too)
+## Mining Pools 
 
 https://pools.show/coin/SUM
 
