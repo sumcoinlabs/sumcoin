@@ -41,10 +41,9 @@ For help:  Open an Issue
 
 
 # Mining
-## Known mining pools
+## Mining Pools (submit your site too)
 
-http://sumcoinpool.org
-http://minesum.com 
+https://pools.show/coin/SUM
 
 
 
