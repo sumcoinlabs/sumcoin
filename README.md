@@ -1,19 +1,36 @@
 
 # Sumcoin is an Index Based Coin
 
-## !! NOTICE TO ANY EXCHANGE OR DEVELOPERS ETC -  THIS COIN IS INDEX BASED AND YOU SHOULD READ THIS!!
+## !! NOTICE TO ANY EXCHANGE OR DEVELOPERS  -  SUMCOIN IS INDEX BASED - READ THIS BEFORE INTEGRATING!!
 
 ### OBJECT IS **INDEX BASED** 
-**Use Rates API for your APP**
+
+# **Use Rates API for your APP**
 
 
+### Rate API Sources 
 
-# Rate API Sources 
-
+https://rates.sumcoinindex.com/api/rates
 https://rates.slicewallet.org/api/rates
 https://sumcoinindex.com/rates/price2.json
 https://sumcoinindex.com/rates/price.json
 http://sumcoinprice.com/
+
+### tx fees
+
+https://rates.sumcoinindex.com/api/fee_per_kb
+https://rates.slicewallet.org/api/fee_per_kb
+
+
+## Social and resources
+
+Mining Stats: https://miningpoolstats.stream/sumcoin
+
+Tele: https://t.me/sumcoinindex
+Twitter: https://twitter.com/SumcoinIndex
+Explorer: http://sumexplorer.com
+Mining Calc: https://sumprofit.org
+Nodes:  http://www.sumnode.io/
 
 
 ### BATM Setup instructions:
