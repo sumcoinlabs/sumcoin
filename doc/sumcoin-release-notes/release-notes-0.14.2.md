@@ -7,7 +7,7 @@ and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoin-project/sumcoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -50,13 +50,13 @@ Reset Testnet
 -------------
 
 Testnet3 has been deprecated and replaced with Testnet4. The server port has been changed to 19335 however the RPC port remains
-the same (19332).
+the same (13332).
 
 Testnet faucets can be located at:
 - http://testnet.sumcointools.com
 - http://testnet.thrasher.io
 
-Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/sumcoin-project/sumcoin/blob/master/src/chainparams.cpp#L220).
+Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/sumcoinlabs/sumcoin/blob/master/src/chainparams.cpp#L220).
 
 Performance Improvements
 --------------
@@ -124,7 +124,7 @@ ZMQ On Windows
 
 Previously the ZeroMQ notification system was unavailable on Windows
 due to various issues with ZMQ. These have been fixed upstream and
-now ZMQ can be used on Windows. Please see [this document](https://github.com/sumcoin-project/sumcoin/blob/master/doc/zmq.md) for
+now ZMQ can be used on Windows. Please see [this document](https://github.com/sumcoinlabs/sumcoin/blob/master/doc/zmq.md) for
 help with using ZMQ in general.
 
 Nested RPC Commands in Debug Console

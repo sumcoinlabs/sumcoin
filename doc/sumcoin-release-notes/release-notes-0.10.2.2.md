@@ -7,7 +7,7 @@ updates. It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoin-project/sumcoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -52,9 +52,9 @@ is included in as separate release-notes.  This section describes the Sumcoin-sp
 Protocol:
 - Scrypt Proof-of-Work instead of sha256d, however block hashes are sha256d for performance reasons.
 - Sumcoin TCP port 3333 (instead of 8333)
-- RPC TCP port 9332 (instead of 8332)
+- RPC TCP port 3332 (instead of 8332)
 - Testnet TCP port 13333 (instead of 18333)
-- Testnet RPC TCP port 19332 (instead of 18332)
+- Testnet RPC TCP port 13332 (instead of 18332)
 - 84 million coin limit  (instead of 21 million)
 - Magic 0xfbc0b6db       (instead of 0xf9beb4d9)
 - Target Block Time 2.5 minutes (instead of 10 minutes)

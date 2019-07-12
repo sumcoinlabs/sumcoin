@@ -531,7 +531,7 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/sumcoin-project/sumcoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/sumcoinlabs/sumcoin>";
     const std::string URL_WEBSITE = "<https://sumcoin.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +

@@ -7,7 +7,7 @@ and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/sumcoin-project/sumcoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -92,7 +92,7 @@ Initial Block Download, startup, transaction and block validation much faster:
   validation. In version 0.15, SHA256 hardware optimization is disabled in release builds by
   default, but can be enabled by using `--enable-experimental-asm` when building.
 - Refill of the keypool no longer flushes the wallet between each key which resulted in a ~20x speedup in creating a new wallet. Part of this speedup was used to increase the default keypool to 1000 keys to make recovery more robust. (See [PR 10831](https://github.com/bitcoin/bitcoin/pull/10831)).
-- Scrypt hashing has been optimized for architectures supporting SSE 2 (See [PR 362](https://github.com/sumcoin-project/sumcoin/pull/362)). This boosts scrypt hashing performance by a factor of 2. In version 0.15, scrypt hardware optimization is disabled in release builds by default, but can be enabled by using `--enable-sse2` when building.
+- Scrypt hashing has been optimized for architectures supporting SSE 2 (See [PR 362](https://github.com/sumcoinlabs/sumcoin/pull/362)). This boosts scrypt hashing performance by a factor of 2. In version 0.15, scrypt hardware optimization is disabled in release builds by default, but can be enabled by using `--enable-sse2` when building.
 
 Fee Estimation Improvements
 ---------------------------
@@ -145,7 +145,7 @@ Sumcoin Core 0.15.0 contains the following changes to the RPC interface and `sum
 
 * When running Sumcoin Core with a single wallet, there are **no** changes to the RPC interface or `sumcoin-cli`. All RPC calls and `sumcoin-cli` commands continue to work as before.
 * When running Sumcoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `sumcoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
-* When running Sumcoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9332/wallet/wallet1.dat/`. `sumcoin-cli` commands should be run with a `-rpcwallet` option, for example `sumcoin-cli -rpcwallet=wallet1.dat getbalance`.
+* When running Sumcoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:3332/wallet/wallet1.dat/`. `sumcoin-cli` commands should be run with a `-rpcwallet` option, for example `sumcoin-cli -rpcwallet=wallet1.dat getbalance`.
 * A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
 
 Note that while multi-wallet is now fully supported, the RPC multi-wallet interface should be considered unstable for version 0.15.0, and there may backwards-incompatible changes in future versions.

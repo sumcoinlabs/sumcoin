@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/sumcoin-project/sumcoin.git"
+- "url": "https://github.com/sumcoinlabs/sumcoin.git"
   "dir": "sumcoin"
 files: []
 script: |

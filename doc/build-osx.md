@@ -43,7 +43,7 @@ Build Sumcoin Core
 
 1. Clone the Sumcoin Core source code and cd into `sumcoin`
 
-        git clone https://github.com/sumcoin-project/sumcoin
+        git clone https://github.com/sumcoinlabs/sumcoin
         cd sumcoin
 
 2.  Build Sumcoin Core:

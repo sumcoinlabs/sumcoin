@@ -8,7 +8,7 @@ recommended to upgrade to this version as soon as possible.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoin-project/sumcoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 Upgrading and downgrading
 =========================
