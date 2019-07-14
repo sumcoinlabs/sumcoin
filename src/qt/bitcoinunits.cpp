@@ -67,7 +67,7 @@ QString BitcoinUnits::description(int unit)
     case BTC: return QString("Sumcoins");
     case mBTC: return QString("mSUMs (1 / 1" THIN_SP_UTF8 "000)");
     case uBTC: return QString("uSUMs (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-    case SAT: return QString("Sumtoshis (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case SAT: return QString("Sumtoshis (sumtoshi) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
