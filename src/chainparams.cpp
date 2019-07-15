@@ -1,6 +1,9 @@
 // Copyright (c) 2010 Satoshi Nakamoto
+// Copyright (c) 2016 Sumtoshi
 // Copyright (c) 2009-2019 The Bitcoin Core developers
 // Copyright (c) 2016-2019 The Sumcoin Core developers
+
+
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -174,6 +177,9 @@ public:
                 {230400, uint256S("0x8857a4bd70e6aee0eec8902cd88ed378c3d73d625a3920c67d393c83176d12af")},
                 {259200, uint256S("0x886fbe4eebd29e5aba9c3cb1d2319aaba6053d6e6956d7af79f99da19641895e")},
                 {285120, uint256S("0x1b33c03b4a819112be0828d0cedcb2cb01c490ce224b9197ebb622bb13e26680")},
+                {299520, uint256S("0xccf2603d011cacfc304b64f5f439e375ad0fe8192e72febfc49b7b5cbd5333b2")},
+                {308160, uint256S("0x313129813e763104d2918147853910c89248bcee086e3540f4af364c1bb3a0c6")},
+
             }
         };
 
