@@ -10,27 +10,28 @@
 
 ### Rate API Sources 
 
-https://rates.sumcoinindex.com/api/rates
-https://rates.slicewallet.org/api/rates
-https://sumcoinindex.com/rates/price2.json
-https://sumcoinindex.com/rates/price.json
-http://sumcoinprice.com/
+* https://rates.sumcoinindex.com/api/rates
+  * https://sumcoinindex.com/rates/price2.json
+  * https://sumcoinindex.com/rates/marketcap.json
 
-### tx fees
+* https://rates.slicewallet.org/api/rates
 
-https://rates.sumcoinindex.com/api/fee_per_kb
-https://rates.slicewallet.org/api/fee_per_kb
+
+### tx fees api
+
+* https://rates.sumcoinindex.com/api/fee_per_kb
+* https://rates.slicewallet.org/api/fee_per_kb
 
 
 ## Social and resources
 
-Mining Stats: https://miningpoolstats.stream/sumcoin
+* Mining Stats: https://miningpoolstats.stream/sumcoin
 
-Tele: https://t.me/sumcoinindex
-Twitter: https://twitter.com/SumcoinIndex
-Explorer: http://sumexplorer.com
-Mining Calc: https://sumprofit.org
-Nodes:  http://www.sumnode.io/
+* Tele: https://t.me/sumcoinindex
+* Twitter: https://twitter.com/SumcoinIndex
+* Explorer: http://sumexplorer.com
+* Mining Calc: https://sumprofit.org
+* Nodes:  http://www.sumnode.io/
 
 
 ### BATM Setup instructions:
@@ -66,10 +67,10 @@ https://pools.show/coin/SUM
 
 # Block Explorers
 
-SUM Block Explorer http://sumexplorer.com
-Sumcoin Testnet http://sumexplorer-testnet.com/
+* SUM Block Explorer http://sumexplorer.com
+* Sumcoin Testnet http://sumexplorer-testnet.com/
 
-Download versions & other Information: http://Sumcoin.cash
+Download versions & other Information: http://sumcoin.cash
 
 
 
@@ -79,9 +80,9 @@ Download versions & other Information: http://Sumcoin.cash
 
 CPU, GPU Use CPU Miner by Pooler (link to cpu miner - minerd - in releases)
 
-AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
+* AMD GPU Cards SGMINER for AMD Cards : https://bit.ly/2k6zchT
 
-Moonlander 2 USB Asic Miner : https://www.futurebit.io/
+* Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
 
 Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2016 Litecoin Developers Copyright (c) 2016-2019 Sumcoin Developers Copyright  
@@ -121,60 +122,84 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
-### Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+## Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
-Dependencies (paste all 3 seperately):
+### Dependencies (paste all 3 seperately):
 
 ```
 sudo apt-get update;
- 
+```
+```
 sudo apt-get install git;
- 
+```
+```
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils;
- 
+```
+```
 sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev;
- 
+```
+```
 sudo apt-get install -y libboost-all-dev;
- 
+```
+``` 
 sudo apt-get install -y software-properties-common
 ```
+
 ```
 sudo add-apt-repository ppa:bitcoin/bitcoin
 ```
+
 ```
 sudo apt-get update;
- 
+```
+```
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
- 
+```
+```
 sudo apt-get install -y libminiupnpc-dev;
- 
+```
+```
 sudo apt-get install -y libzmq3-dev;
- 
+```
+```
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
- 
+```
+```
 sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
 ```
+
 ### Next, Clone the project
+
 ``` 
 git clone https://github.com/sumcoinlabs/sumcoin.git
 ```
+
 ### Change directories into Sumcoin
+
 ```
 cd sumcoin
 ```
+
 ### From the Sumcoin Directory, run each command
+
 ```
 ./autogen.sh
 ```
-Next,
+
+* Next,
+
 ```
 ./configure
 ```
+
 or
+
 ```
 ./configure --disable-test
 ```
+
 or
+
 ```
 ./configure --disable-tests --without-gui
 ```
@@ -182,6 +207,7 @@ or
 ## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
 
 Create swapfile using (copy and paste in all 4 for an easy life):
+
 ```
 sudo fallocate -l 2G /swapfile;
 sudo chmod 600 /swapfile;
@@ -191,12 +217,14 @@ sudo swapon /swapfile;
 
 # Make
 
-Last, make the executables (This could take a bit)
+### Last, make the executables (This could take a bit)
+
 ```
 make
 ```
 
 ### IF using a 1 GB Droplet be sure to turn OFF after you 'make'
+
 ```
 sudo swapoff /swapfile
 ```
@@ -205,31 +233,41 @@ sudo swapoff /swapfile
 
 ### *IF you needed swapfile - BE sure to turn it off again:*
 
-When it is done, turn off the swapfile with:
+### When it is done, turn off the swapfile with:
+
 ```
 sudo swapoff /swapfile
 ```
+
 ### Run: 
 
 **After this it's ready to run.**  The executable will be in sumcoin/src. Run with:
+
 ```
 ./sumcoind -server -daemon
 ```
+
 ## Setup a configuration file to run as a node
 
-Stop the server from sumcoin/src:
+### Stop the server from sumcoin/src:
+
 ```
 ./sumcoin-cli stop
 ```
+
 ## Navigate to sumcoin data dir from home dir
+
 ```
 cd .sumcoin
 ```
+
 ```
 touch sumcoin.conf
 nano sumcoin.conf
 ```
+
 ## Paste the following **make your own user/password***
+
 ```
 server=1
 daemon=1
@@ -238,20 +276,22 @@ rpcpassword=YOURpassword
 ```
 
 ## Restart Sumcoin.   You will now be running as a node each time you start
+
 ```
 cd sumcoin/src/:./sumcoind -server -daemon
 ```
 
 **With GUI** - Works for Linux terminal
+
 ```
 cd sumcoin/src/qt/:./sumcoin-qt
 ```
 
 ## Configure your settings
 
-1. navigate to hidden folders
-2. create sumcoin.conf file
-3. inside, set the following parameters from the list below
+* 1. navigate to hidden folders
+* 2. create sumcoin.conf file
+* 3. inside, set the following parameters from the list below
 
 //TODO
 
@@ -450,9 +490,11 @@ Whether using the default ("") or not, we'll refer to it as "walletname" in the 
 * Enter the Parameters for the Hot Wallet Buy source as determined in the previous step:
 
 ### Example (typical): 
+
 “http:walletName:rpcpw:CASserverIP:3332”
 
 ### Example with a specific wallet: 
+
 “http:rpcuser:rpcpw:CASserverIP:3332:walletname”
 
 ## Click on “SUBMIT” to save your settings.
