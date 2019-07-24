@@ -25,12 +25,17 @@
 
 ## Social and resources
 
+### Mining 
 * Mining Stats: https://miningpoolstats.stream/sumcoin
+* Mining Calc: https://sumprofit.org
 
+### Chat
+* Discord: https://discordapp.com/invite/ffJT5s8
 * Tele: https://t.me/sumcoinindex
 * Twitter: https://twitter.com/SumcoinIndex
-* Explorer: http://sumexplorer.com
-* Mining Calc: https://sumprofit.org
+* Explorer: https://sumexplorer.com
+
+### Maps
 * Nodes:  http://www.sumnode.io/
 
 
