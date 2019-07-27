@@ -144,6 +144,8 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
+	vSeeds.emplace_back("dnsseed.sumnode.io");
+	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
