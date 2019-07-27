@@ -146,6 +146,7 @@ public:
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
+	vSeeds.emplace_back("dnsseed.sumexplorer.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
