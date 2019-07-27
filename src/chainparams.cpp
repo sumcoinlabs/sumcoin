@@ -123,7 +123,7 @@ public:
         pchMessageStart[0] = 0xfa;
         pchMessageStart[1] = 0xc0;
         pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xd0; //Plus one to differentiate networks
+        pchMessageStart[3] = 0xd0; //
         nDefaultPort = 3333;
         nPruneAfterHeight = 100000;
 
@@ -135,10 +135,12 @@ public:
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
+	vSeeds.emplace_back("dnsseed.sumnode.io");
+	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); 
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //IDK
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); 
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAB, 0xE6};
@@ -169,6 +171,7 @@ public:
                 {259200, uint256S("0x886fbe4eebd29e5aba9c3cb1d2319aaba6053d6e6956d7af79f99da19641895e")},
                 {285120, uint256S("0x1b33c03b4a819112be0828d0cedcb2cb01c490ce224b9197ebb622bb13e26680")},
                 {313920, uint256S("0x137bfb551a6d4e9136d241e1a2391ac310acc0475b0afa2c51cabda16cc1e055")},
+                {342720, uint256S("0x5f4d51dba279f2cb7ae0d7ec85a4f204d3577510fc01ba2c2cf2032315d8a296")},
 
             }
         };
