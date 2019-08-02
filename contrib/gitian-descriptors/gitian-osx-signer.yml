@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/sumcoin-project/sumcoin-detached-sigs.git"
+- "url": "https://github.com/sumcoinlabs/sumcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "sumcoin-osx-unsigned.tar.gz"

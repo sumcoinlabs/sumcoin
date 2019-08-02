@@ -7,7 +7,7 @@ It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoin-project/sumcoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 Compatibility
 ==============
