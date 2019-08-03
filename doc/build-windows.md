@@ -58,6 +58,10 @@ installing the toolchain will be different.
 
 First, install the general dependencies:
 
+```
+sudo apt-get update
+```
+
     sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git
 
 A host toolchain (`build-essential`) is necessary because some dependency
@@ -91,11 +95,11 @@ The next three steps are an example of how to acquire the source in an appropria
 Once the source code is ready the build steps are below.
 
     PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
-    cd depends
+    cd sumcoin/depends
     make HOST=x86_64-w64-mingw32
     cd ..
     ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
+    CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/ --enable-upnp-default
     make
 
 ## Building for 32-bit Windows
@@ -125,7 +129,7 @@ Then build using:
     make HOST=i686-w64-mingw32
     cd ..
     ./autogen.sh # not required when building from tarball
-    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/
+    CONFIG_SITE=$PWD/depends/i686-w64-mingw32/share/config.site ./configure --prefix=/ --enable-upnp-default
     make
 
 ## Depends system
