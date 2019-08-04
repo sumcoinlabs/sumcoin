@@ -53,8 +53,10 @@ Build Sumcoin Core
     You can disable the GUI build by passing `--without-gui` to configure.
 
         ./autogen.sh
-        ./configure
+        ./configure --enable-upnp-default
         make
+        
+        make deploy ( for .dmg  )
 
 3.  It is recommended to build and run the unit tests:
 
