@@ -5,6 +5,10 @@
 
 ### OBJECT IS **INDEX BASED** 
 
+
+![image](https://user-images.githubusercontent.com/19527587/63079030-868d0100-befa-11e9-8d0d-d1cb079772f5.png)
+
+
 # **Use Rates API for your APP**
 
 
@@ -65,6 +69,9 @@ For help:  Open an Issue
 
 # Mining
 ## Mining Pools 
+
+
+https://miningpoolstats.stream/sumcoin
 
 https://pools.show/coin/SUM
 
