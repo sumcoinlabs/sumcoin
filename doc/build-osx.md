@@ -33,6 +33,9 @@ like so
 ```shell
 ./contrib/install_db4.sh .
 ```
+If you run Berkeley DB 'run .coinfigure' this way
+
+    ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" ...
 
 from the root of the repository.
 
