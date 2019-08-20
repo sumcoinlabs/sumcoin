@@ -126,7 +126,7 @@ class RpcCreateMultiSigTest(BitcoinTestFramework):
 
         node0.generate(1)
 
-        outval = value - decimal.Decimal("0.00001000")
+        outval = value - decimal.Decimal("0.0001000")
         rawtx = node2.createrawtransaction([{"txid": txid, "vout": vout}], [{self.final: outval}])
 
         prevtx_err = dict(prevtxs[0])

@@ -8,7 +8,7 @@ from decimal import Decimal
 
 from test_framework.messages import COIN, COutPoint, CTransaction, CTxIn, CTxOut
 from test_framework.script import CScript, OP_DROP
-from test_framework.test_framework import BitcoinTestFramework
+from test_framework.test_framework import BitcoinTestFramework, SkipTest
 from test_framework.util import assert_equal, assert_raises_rpc_error, bytes_to_hex_str, satoshi_round
 
 MAX_REPLACEMENT_LIMIT = 100
@@ -84,6 +84,9 @@ class ReplaceByFeeTest(BitcoinTestFramework):
         self.skip_if_no_wallet()
 
     def run_test(self):
+        if True:
+            raise SkipTest("Litecoin has RBF disabled.")
+
         # Leave IBD
         self.nodes[0].generate(1)
 
