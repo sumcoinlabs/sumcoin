@@ -140,46 +140,21 @@ The master branch is regularly built and tested, but is not guaranteed to be com
 
 ```
 sudo apt-get update;
-```
-```
 sudo apt-get install git;
-```
-```
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils;
-```
-```
 sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev;
-```
-```
 sudo apt-get install -y libboost-all-dev;
-```
-``` 
-sudo apt-get install -y software-properties-common
-```
+sudo apt-get install -y software-properties-common;
 
-```
-sudo add-apt-repository ppa:bitcoin/bitcoin
-```
+sudo add-apt-repository ppa:bitcoin/bitcoin;
 
-```
 sudo apt-get update;
-```
-```
 sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
-```
-```
 sudo apt-get install -y libminiupnpc-dev;
-```
-```
 sudo apt-get install -y libzmq3-dev;
-```
-```
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
-```
-```
 sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
 ```
-
 ### Next, Clone the project
 
 ``` 
@@ -247,9 +222,6 @@ sudo swapoff /swapfile
 
 ### When it is done, turn off the swapfile with:
 
-```
-sudo swapoff /swapfile
-```
 
 ### Run: 
 
