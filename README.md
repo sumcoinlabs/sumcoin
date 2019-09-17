@@ -475,11 +475,11 @@ Whether using the default ("") or not, we'll refer to it as "walletname" in the 
 
 ### Example (typical): 
 
-“http:walletName:rpcpw:CASserverIP:3332”
+“http:walletName:rpcpw:DaemonIP:3332”
 
 ### Example with a specific wallet: 
 
-“http:rpcuser:rpcpw:CASserverIP:3332:walletname”
+“http:rpcuser:rpcpw:DaemonIP:3332:walletname”
 
 ## Click on “SUBMIT” to save your settings.
 
