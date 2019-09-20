@@ -139,6 +139,8 @@ public:
 	vSeeds.emplace_back("dnsseed.sumcoin.org");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 	vSeeds.emplace_back("dnsseed.sumexplorer.com");
+	vSeeds.emplace_back("sumdnsseed.moonypool.com");
+
 
 	    
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); 
@@ -182,9 +184,10 @@ public:
                 {452160, uint256S("0x51c53d431e8ebf232842fe37c81bf2fb4d40b171065a23cea9824d818e643ba5")},
                 {457920, uint256S("0x717050f4a4a96f2d7b4c13fe2db70dc2998c31fea01607d9529b8dfeb434bc56")},
                 {472320, uint256S("0x3dccd8aaef590f102c7e3cd8200eb666a68d0356a24c87b51617314adb73e24c")},
+		{501120, uint256S("0xb0f6796740602fa097685f4d572090e956b33154914bd20ef2bedbf01a706d31")},
 
 		    
-		    //{501120, uint256S("0x")},
+		    //{529920, uint256S("0x")},	
 
             }
         };
