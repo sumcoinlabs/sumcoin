@@ -185,9 +185,12 @@ public:
                 {457920, uint256S("0x717050f4a4a96f2d7b4c13fe2db70dc2998c31fea01607d9529b8dfeb434bc56")},
                 {472320, uint256S("0x3dccd8aaef590f102c7e3cd8200eb666a68d0356a24c87b51617314adb73e24c")},
 		{501120, uint256S("0xb0f6796740602fa097685f4d572090e956b33154914bd20ef2bedbf01a706d31")},
+		{527040, uint256S("0x1b3eb4800f56305d50c86c373131faafead605efeb6bf61c5df4044a1aec4d7f")},
 
 		    
-		    //{529920, uint256S("0x")},	
+		    //{529920, uint256S("0x")},
+		    //{544320,
+		    //{558720
 
             }
         };
