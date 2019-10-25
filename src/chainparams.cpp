@@ -145,9 +145,7 @@ public:
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
-	vSeeds.emplace_back("dnsseed.sumcoin.org");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
-	vSeeds.emplace_back("dnsseed.sumexplorer.com");
 	vSeeds.emplace_back("sumdnsseed.moonypool.com");
 	vSeeds.emplace_back("dnsseed.sumfaucet.co");
 
@@ -200,10 +198,11 @@ public:
 		{558720, uint256S("0x25ed1e5a99938e5fd2503c4be4a435d7d582387f0d07587f5fccf03f7244282a")},
 		{573120, uint256S("0x7eefb09f6c5ad6874352b4c089d0dd8e9cf34b4d2537bcbef6bd0ea70a065998")},
 		{587520, uint256S("0x5952411159da3f15c29795673730166b1adb6d66e4abe681c1b6ea994589cb6b")},
+		{601920, uint256S("0x794df734a9ddcf3b7d460de7fde59e2ef83e9311e19800662344c46b2cec66e5")},
 
 		    
-		    //{601920, uint256S("0x")},
-		    //{616320,
+		    //{616320, uint256S("0x")},
+		    //{630720,
 		    
 
             }
