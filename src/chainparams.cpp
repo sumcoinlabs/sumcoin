@@ -136,18 +136,15 @@ public:
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
-	vSeeds.emplace_back("dnsseed.sumcoin.org");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
-	vSeeds.emplace_back("dnsseed.sumexplorer.com");
 	vSeeds.emplace_back("sumdnsseed.moonypool.com");
 	vSeeds.emplace_back("dnsseed.sumfaucet.co");
 
 
-	    
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); 
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); 
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //  
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);  //  hexid = "BF"
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAB, 0xE6};
 
@@ -161,7 +158,7 @@ public:
 
         checkpointData = {
             {
-                {  0,    uint256S("0x37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e")},
+                 {  0,    uint256S("0x37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e")},
                 { 2880,  uint256S("0x31dfe91b64cbbb167b4e4c644ad7b008bb4bb8ca4e42aea02f938f445dc37cff")},
                 { 5760,  uint256S("0x87de6e561bb0ab66095b272450cabbb0b11fb272e5ae37123ba1464a5de74f5c")},
                 { 8640,  uint256S("0x19c100388b8a8bc0230f43c4355733e2b3375e08f1667449678ec14f66174aae")},
@@ -184,7 +181,7 @@ public:
                 {443520, uint256S("0xb17262650aeaf2eb01cab804e17f736f0942ac7a4a3f71461d7adeea5e34e768")},
                 {452160, uint256S("0x51c53d431e8ebf232842fe37c81bf2fb4d40b171065a23cea9824d818e643ba5")},
                 {457920, uint256S("0x717050f4a4a96f2d7b4c13fe2db70dc2998c31fea01607d9529b8dfeb434bc56")},
-                {472320, uint256S("0x3dccd8aaef590f102c7e3cd8200eb666a68d0356a24c87b51617314adb73e24c")},
+		{472320, uint256S("0x3dccd8aaef590f102c7e3cd8200eb666a68d0356a24c87b51617314adb73e24c")},
 		{501120, uint256S("0xb0f6796740602fa097685f4d572090e956b33154914bd20ef2bedbf01a706d31")},
 		{527040, uint256S("0x1b3eb4800f56305d50c86c373131faafead605efeb6bf61c5df4044a1aec4d7f")},
 		{529920, uint256S("0xbe82c887af163c8c3a117497cfa909113067e25a8258b6644684c28d28ff1fdd")},
@@ -192,10 +189,11 @@ public:
 		{558720, uint256S("0x25ed1e5a99938e5fd2503c4be4a435d7d582387f0d07587f5fccf03f7244282a")},
 		{573120, uint256S("0x7eefb09f6c5ad6874352b4c089d0dd8e9cf34b4d2537bcbef6bd0ea70a065998")},
 		{587520, uint256S("0x5952411159da3f15c29795673730166b1adb6d66e4abe681c1b6ea994589cb6b")},
+		{601920, uint256S("0x794df734a9ddcf3b7d460de7fde59e2ef83e9311e19800662344c46b2cec66e5")},
 
 		    
-		    //{601920, uint256S("0x")},
-		    //{616320,
+		    //{616320, uint256S("0x")},
+		    //{630720,
 		    
 
             }
