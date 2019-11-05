@@ -1,9 +1,15 @@
 
-# Sumcoin is an Index Based Coin
+Sumcoin is an Index Based Coin
+==============================
 
 ## !! NOTICE TO ANY EXCHANGE OR DEVELOPERS  -  SUMCOIN IS INDEX BASED - READ THIS BEFORE INTEGRATING!!
 
 ### OBJECT IS **INDEX BASED** 
+
+
+
+Sumcoin Core integration/staging tree [SUM, 𝚺]
+==============================================
 
 
 ![image](https://user-images.githubusercontent.com/19527587/63079030-868d0100-befa-11e9-8d0d-d1cb079772f5.png)
@@ -25,6 +31,38 @@
 
 * https://rates.sumcoinindex.com/api/fee_per_kb
 * https://rates.slicewallet.org/api/fee_per_kb
+
+
+
+Specifications
+--------------
+Specification | Descriptor
+------------- | ----------
+Ticker Symbol                  | SUM
+Algorithm                      | SCRYPT
+Maxiumum Supply                | 100,000,000
+SegWit                         | Activated at block 220
+Mainnet RPC Port               | 3332
+Mainnet P2P Port               | 3333
+Testnet RPC Port               | 13332
+Testnet P2P Port               | 13333
+Block Time                     | 30 Seconds
+Coinbase Transaction Maturity  | 100 Blocks
+Confirmation                   | 6 Blocks
+Difficulty Adjustment Interval | 2880 Blocks
+Protocol Support               | IPV4, IPV6, TOR, I2P
+
+Block Rewards
+-------------
+Year | Block | Reward
+---- | ----- | ------
+2019-2019 | 1-50M           | 50 SUM
+2019-2020 | 50M - 75M       | 25 SUM
+2020-2020 | 75M - 87.5M     | 12.5 SUM
+2020-2021 | 87.5M - 93.75   | 6.25 SUM
+2021-2022 | 93.75 - 96.875M | 3.125 SUM
+...       | ...             | ...
+
 
 
 ## Social and resources
