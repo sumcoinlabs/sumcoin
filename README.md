@@ -52,15 +52,16 @@ Confirmation                   | 6 Blocks
 Difficulty Adjustment Interval | 2880 Blocks
 Protocol Support               | IPV4, IPV6, TOR, I2P
 
-Block Rewards
+Block Rewards (Estimates)
 -------------
 Year | Block | Reward
 ---- | ----- | ------
-2019-2019 | 1-50M           | 50 SUM
-2019-2020 | 50M - 75M       | 25 SUM
-2020-2020 | 75M - 87.5M     | 12.5 SUM
-2020-2021 | 87.5M - 93.75   | 6.25 SUM
-2021-2022 | 93.75 - 96.875M | 3.125 SUM
+2019-2019 | 1-50M           | 100 SUM
+2019-2020 | 50M - 75M       | 50 SUM
+2020-2020 | 75M - 87.5M     | 25 SUM
+2020-2021 | 87.5M - 93.75   | 12.5 SUM
+2021-2022 | 93.75 - 96.875M | 6.25 SUM
+2022-2023 | 93.75 - 96.875M | 3.125 SUM
 ...       | ...             | ...
 
 
