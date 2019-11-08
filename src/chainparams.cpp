@@ -148,6 +148,7 @@ public:
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 	vSeeds.emplace_back("sumdnsseed.moonypool.com");
 	vSeeds.emplace_back("dnsseed.sumfaucet.co");
+    vSeeds.emplace_back("sumdnsseed.beyondcoin.io")
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
