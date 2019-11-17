@@ -954,7 +954,7 @@ std::string CopyrightHolders(const std::string& strPrefix)
         //strYear.replace(strYear.find("2011"), sizeof("2011")-1, "2009"); //Weird string error here
         //strCopyrightHolders += "\n" + strYear + "The Bitcoin Core developers";
         //std::cout <<"EEEEE"<<std::endl;
-        strCopyrightHolders += "\n 2009-2018 The Bitcoin Core developers";
+        strCopyrightHolders += "\n 2009-2019 The Bitcoin Core developers";
     }
     return strCopyrightHolders;
 }
