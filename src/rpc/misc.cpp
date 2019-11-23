@@ -190,8 +190,8 @@ UniValue validateaddress(const JSONRPCRequest& request)
             "  \"hdmasterkeyid\" : \"<hash160>\" (string, optional) The Hash160 of the HD master pubkey\n"
             "}\n"
             "\nExamples:\n"
-            + HelpExampleCli("validateaddress", "\"LER4HnAEFwYHbmGxCfP2po1nPrUeiK8KM2\"")
-            + HelpExampleRpc("validateaddress", "\"LER4HnAEFwYHbmGxCfP2po1nPrUeiK8KM2\"")
+            + HelpExampleCli("validateaddress", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\"")
+            + HelpExampleRpc("validateaddress", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\"")
         );
 
 #ifdef ENABLE_WALLET
@@ -336,11 +336,11 @@ UniValue verifymessage(const JSONRPCRequest& request)
             "\nUnlock the wallet for 30 seconds\n"
             + HelpExampleCli("walletpassphrase", "\"mypassphrase\" 30") +
             "\nCreate the signature\n"
-            + HelpExampleCli("signmessage", "\"LEr4hNAefWYhBMgxCFP2Po1NPrUeiK8kM2\" \"my message\"") +
+            + HelpExampleCli("signmessage", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\" \"my message\"") +
             "\nVerify the signature\n"
-            + HelpExampleCli("verifymessage", "\"LEr4hNAefWYhBMgxCFP2Po1NPrUeiK8kM2\" \"signature\" \"my message\"") +
+            + HelpExampleCli("verifymessage", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\" \"signature\" \"my message\"") +
             "\nAs json rpc\n"
-            + HelpExampleRpc("verifymessage", "\"LEr4hNAefWYhBMgxCFP2Po1NPrUeiK8kM2\", \"signature\", \"my message\"")
+            + HelpExampleRpc("verifymessage", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\", \"signature\", \"my message\"")
         );
 
     LOCK(cs_main);
@@ -391,7 +391,7 @@ UniValue signmessagewithprivkey(const JSONRPCRequest& request)
             "\nCreate the signature\n"
             + HelpExampleCli("signmessagewithprivkey", "\"privkey\" \"my message\"") +
             "\nVerify the signature\n"
-            + HelpExampleCli("verifymessage", "\"LEr4hNAefWYhBMgxCFP2Po1NPrUeiK8kM2\" \"signature\" \"my message\"") +
+            + HelpExampleCli("verifymessage", "\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\" \"signature\" \"my message\"") +
             "\nAs json rpc\n"
             + HelpExampleRpc("signmessagewithprivkey", "\"privkey\", \"my message\"")
         );
