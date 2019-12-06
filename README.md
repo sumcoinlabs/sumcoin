@@ -18,7 +18,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 # **Use Rates API for your APP**
 
 
-### Rate API Sources 
+## Rate API Sources 
 
 * https://rates.sumcoinindex.com/api/rates
   * https://sumcoinindex.com/rates/price2.json
@@ -66,23 +66,30 @@ Year | Block | Reward
 
 
 
-## Social and resources
+# Social and resources
 
-### Mining 
+## Mining 
 * Mining Stats: https://miningpoolstats.stream/sumcoin
 * Mining Calc: https://sumprofit.org
 
-### Chat
+## Chat
 * Discord: https://discordapp.com/invite/ffJT5s8
 * Tele: https://t.me/sumcoinindex
 * Twitter: https://twitter.com/SumcoinIndex
 * Explorer: https://sumexplorer.com
 
-### Maps
+
+
+## Maps
 * Nodes:  http://www.sumnode.io/
 
 
-### BATM Setup instructions:
+https://user-images.githubusercontent.com/51257210/66169341-4ba37180-e5fd-11e9-9069-24eae46dc2b6.png
+
+
+
+
+## BATM Setup instructions:
 https://github.com/sumcoinlabs/sumcoin/wiki/Sumcoin-Core-(sumcoind)-BATM-Configuration
 
 //---
