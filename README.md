@@ -84,8 +84,7 @@ Year | Block | Reward
 * Nodes:  http://www.sumnode.io/
 
 
-https://user-images.githubusercontent.com/51257210/66169341-4ba37180-e5fd-11e9-9069-24eae46dc2b6.png
-
+![Map](https://user-images.githubusercontent.com/51257210/66169341-4ba37180-e5fd-11e9-9069-24eae46dc2b6.png)
 
 
 
