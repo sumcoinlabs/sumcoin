@@ -1,9 +1,9 @@
 Sumcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/sumcoinlabs/litecoin.svg?branch=master)](https://travis-ci.org/sumcoinlabs/litecoin)
+[![Build Status](https://travis-ci.org/sumcoinlabs/sumcoin.svg?branch=master)](https://travis-ci.org/sumcoinlabs/sumcoin)
 
-https://litecoin.org
+https://sumcoin.org
 
 What is Sumcoin?
 ----------------
@@ -15,7 +15,7 @@ out collectively by the network. Sumcoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Sumcoin Core software, see [https://litecoin.org](https://litecoin.org).
+the Sumcoin Core software, see [https://sumcoin.org](https://sumcoin.org).
 
 License
 -------
@@ -27,17 +27,17 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/sumcoinlabs/litecoin/tags) are created
+completely stable. [Tags](https://github.com/sumcoinlabs/sumcoin/tags) are created
 regularly to indicate new official, stable release versions of Sumcoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/litecoin-dev)
+The developer [mailing list](https://groups.google.com/forum/#!forum/sumcoin-dev)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
 
-Developer IRC can be found on Freenode at #litecoin-dev.
+Developer IRC can be found on Freenode at #sumcoin-dev.
 
 Testing
 -------

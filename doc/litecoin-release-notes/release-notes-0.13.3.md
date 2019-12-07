@@ -1,20 +1,20 @@
 Sumcoin Core version 0.13.3 is now available from:
 
-  <https://download.litecoin.org/litecoin-0.13.3/>
+  <https://download.sumcoin.org/sumcoin-0.13.3/>
 
 This is a new minor version release, including new features, various bugfixes and performance improvements.
 It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoinlabs/litecoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 Compatibility
 ==============
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
 an OS initially released in 2001. This means that not even critical security
-updates will be released anymore. Without security updates, using a litecoin
+updates will be released anymore. Without security updates, using a sumcoin
 wallet on a XP machine is irresponsible at least.
 
 In addition to that, with 0.12.x there have been varied reports of Bitcoin Core
@@ -64,7 +64,7 @@ Testnet faucets can be located at:
 - http://testnet.litecointools.com
 - http://testnet.thrasher.io
 
-Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/sumcoinlabs/litecoin/blob/0.13/src/chainparams.cpp#L214).
+Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/sumcoinlabs/sumcoin/blob/0.13/src/chainparams.cpp#L214).
 
 Credits
 =======

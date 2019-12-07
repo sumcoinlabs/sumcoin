@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
-        <translation>کیف litecoin رمزنگاری شد. به یاد داشته باشید رمزنگار کردن کیف litecoin نمیتواند به صورت کامل litecoin شما را در مقابل سرقت آنها توسط بدافزارهایی که ممکن است بر روی کامپیوتر شما نصب شوند، محافظت نماید.</translation>
+        <translation>کیف sumcoin رمزنگاری شد. به یاد داشته باشید رمزنگار کردن کیف sumcoin نمیتواند به صورت کامل sumcoin شما را در مقابل سرقت آنها توسط بدافزارهایی که ممکن است بر روی کامپیوتر شما نصب شوند، محافظت نماید.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -390,8 +390,8 @@
         <translation>نوارابزار برگه‌ها</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>درخواست پرداخت ( تولید کد کیوار و ادرس litecoin)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>درخواست پرداخت ( تولید کد کیوار و ادرس sumcoin)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -402,8 +402,8 @@
         <translation>نمایش لیست آدرس های دریافت و لیبل ها</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>بازکردن یک litecoin: آدرس یا درخواست پرداخت</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>بازکردن یک sumcoin: آدرس یا درخواست پرداخت</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

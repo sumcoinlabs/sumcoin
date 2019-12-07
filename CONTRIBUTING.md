@@ -18,14 +18,14 @@ Communication Channels
 ----------------------
 
 Most communication about Sumcoin Core development happens on IRC, in the
-#litecoin-dev channel on Freenode. The easiest way to participate on IRC is
+#sumcoin-dev channel on Freenode. The easiest way to participate on IRC is
 with the web client, [webchat.freenode.net](https://webchat.freenode.net/).
 
 Discussion about code base improvements happens in GitHub issues and on pull
 requests.
 
 The developer
-[mailing list](https://groups.google.com/forum/#!forum/litecoin-dev)
+[mailing list](https://groups.google.com/forum/#!forum/sumcoin-dev)
 should be used to discuss complicated or controversial changes before working on
 a patch set.
 
@@ -74,12 +74,12 @@ the pull request affects. Valid areas as:
 
   - *Consensus* for changes to consensus critical code
   - *Docs* for changes to the documentation
-  - *Qt* for changes to litecoin-qt
+  - *Qt* for changes to sumcoin-qt
   - *Mining* for changes to the mining code
   - *Net* or *P2P* for changes to the peer-to-peer network code
   - *RPC/REST/ZMQ* for changes to the RPC, REST or ZMQ APIs
   - *Scripts and tools* for changes to the scripts and tools
-  - *Tests* for changes to the litecoin unit tests or QA tests
+  - *Tests* for changes to the sumcoin unit tests or QA tests
   - *Trivial* should **only** be used for PRs that do not change generated
     executable code. Notably, refactors (change of function arguments and code
     reorganization) and changes in behavior should **not** be marked as trivial.

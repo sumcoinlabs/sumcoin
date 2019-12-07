@@ -1,17 +1,17 @@
 Sumcoin Core version *0.15.0* is now available from:
 
-  <https://download.litecoin.org/litecoin-0.15.0/>
+  <https://download.sumcoin.org/sumcoin-0.15.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/sumcoinlabs/litecoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://groups.google.com/forum/#!forum/litecoin-dev>
+  <https://groups.google.com/forum/#!forum/sumcoin-dev>
 
 How to Upgrade
 ==============
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
 installer (on Windows) or just copy over `/Applications/Sumcoin-Qt` (on Mac)
-or `litecoind`/`litecoin-qt` (on Linux).
+or `sumcoind`/`sumcoin-qt` (on Linux).
 
 The first time you run version 0.15.0, your chainstate database will be converted to a
 new format, which will take anywhere from a few minutes to half an hour,
@@ -92,7 +92,7 @@ Initial Block Download, startup, transaction and block validation much faster:
   validation. In version 0.15, SHA256 hardware optimization is disabled in release builds by
   default, but can be enabled by using `--enable-experimental-asm` when building.
 - Refill of the keypool no longer flushes the wallet between each key which resulted in a ~20x speedup in creating a new wallet. Part of this speedup was used to increase the default keypool to 1000 keys to make recovery more robust. (See [PR 10831](https://github.com/bitcoin/bitcoin/pull/10831)).
-- Scrypt hashing has been optimized for architectures supporting SSE 2 (See [PR 362](https://github.com/sumcoinlabs/litecoin/pull/362)). This boosts scrypt hashing performance by a factor of 2. In version 0.15, scrypt hardware optimization is disabled in release builds by default, but can be enabled by using `--enable-sse2` when building.
+- Scrypt hashing has been optimized for architectures supporting SSE 2 (See [PR 362](https://github.com/sumcoinlabs/sumcoin/pull/362)). This boosts scrypt hashing performance by a factor of 2. In version 0.15, scrypt hardware optimization is disabled in release builds by default, but can be enabled by using `--enable-sse2` when building.
 
 Fee Estimation Improvements
 ---------------------------
@@ -141,11 +141,11 @@ Multi-wallet is enabled by using more than one `-wallet` argument when starting 
 
 **In Sumcoin-Qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 0.15 other loaded wallets will remain synchronized to the node's current tip in the background. This can be useful if running a pruned node, since loading a wallet where the most recent sync is beyond the pruned height results in having to download and revalidate the whole blockchain. Continuing to synchronize all wallets in the background avoids this problem.
 
-Sumcoin Core 0.15.0 contains the following changes to the RPC interface and `litecoin-cli` for multi-wallet:
+Sumcoin Core 0.15.0 contains the following changes to the RPC interface and `sumcoin-cli` for multi-wallet:
 
-* When running Sumcoin Core with a single wallet, there are **no** changes to the RPC interface or `litecoin-cli`. All RPC calls and `litecoin-cli` commands continue to work as before.
-* When running Sumcoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `litecoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
-* When running Sumcoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9332/wallet/wallet1.dat/`. `litecoin-cli` commands should be run with a `-rpcwallet` option, for example `litecoin-cli -rpcwallet=wallet1.dat getbalance`.
+* When running Sumcoin Core with a single wallet, there are **no** changes to the RPC interface or `sumcoin-cli`. All RPC calls and `sumcoin-cli` commands continue to work as before.
+* When running Sumcoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `sumcoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
+* When running Sumcoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9332/wallet/wallet1.dat/`. `sumcoin-cli` commands should be run with a `-rpcwallet` option, for example `sumcoin-cli -rpcwallet=wallet1.dat getbalance`.
 * A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
 
 Note that while multi-wallet is now fully supported, the RPC multi-wallet interface should be considered unstable for version 0.15.0, and there may backwards-incompatible changes in future versions.

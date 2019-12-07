@@ -2,7 +2,7 @@ FreeBSD build guide
 ======================
 (updated for FreeBSD 12.0)
 
-This guide describes how to build litecoind and command-line utilities on FreeBSD.
+This guide describes how to build sumcoind and command-line utilities on FreeBSD.
 
 This guide does not contain instructions for building the GUI.
 
@@ -13,7 +13,7 @@ You will need the following dependencies, which can be installed as root via pkg
 ```shell
 pkg install autoconf automake boost-libs git gmake libevent libtool openssl pkgconf
 
-git clone https://github.com/sumcoinlabs/litecoin.git
+git clone https://github.com/sumcoinlabs/sumcoin.git
 ```
 
 In order to run the test suite (recommended), you will need to have Python 3 installed:

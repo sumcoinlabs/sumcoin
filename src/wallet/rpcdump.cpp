@@ -718,7 +718,7 @@ UniValue dumpprivkey(const JSONRPCRequest& request)
                 "\nReveals the private key corresponding to 'address'.\n"
                 "Then the importprivkey can be used with this output\n",
                 {
-                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The litecoin address for the private key"},
+                    {"address", RPCArg::Type::STR, RPCArg::Optional::NO, "The sumcoin address for the private key"},
                 },
                 RPCResult{
             "\"key\"                (string) The private key\n"
@@ -768,7 +768,7 @@ UniValue dumpwallet(const JSONRPCRequest& request)
                 "Note that if your wallet contains keys which are not derived from your HD seed (e.g. imported keys), these are not covered by\n"
                 "only backing up the seed itself, and must be backed up too (e.g. ensure you back up the whole dumpfile).\n",
                 {
-                    {"filename", RPCArg::Type::STR, RPCArg::Optional::NO, "The filename with path (either absolute or relative to litecoind)"},
+                    {"filename", RPCArg::Type::STR, RPCArg::Optional::NO, "The filename with path (either absolute or relative to sumcoind)"},
                 },
                 RPCResult{
             "{                           (json object)\n"
@@ -1506,7 +1506,7 @@ UniValue importmulti(const JSONRPCRequest& mainRequest)
                                       "block from time %d, which is after or within %d seconds of key creation, and "
                                       "could contain transactions pertaining to the key. As a result, transactions "
                                       "and coins using this key may not appear in the wallet. This error could be "
-                                      "caused by pruning or data corruption (see litecoind log for details) and could "
+                                      "caused by pruning or data corruption (see sumcoind log for details) and could "
                                       "be dealt with by downloading and rescanning the relevant blocks (see -reindex "
                                       "and -rescan options).",
                                 GetImportTimestamp(request, now), scannedTime - TIMESTAMP_WINDOW - 1, TIMESTAMP_WINDOW)));

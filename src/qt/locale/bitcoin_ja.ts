@@ -414,8 +414,8 @@
         <translation>タブツールバー</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>支払いをリクエストする (QRコードと litecoin: URIを生成する)&lt;</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>支払いをリクエストする (QRコードと sumcoin: URIを生成する)&lt;</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>受け取ったことがあるアドレスとラベルの一覧を表示する</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>litecoin: URIや支払いリクエストを開く</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>sumcoin: URIや支払いリクエストを開く</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -944,7 +944,7 @@
         <translation>フォーム</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
         <translation>最近の取引がまだ表示されていない可能性があります。そのため、ウォレットの残高が正しく表示されていないかもしれません。この情報は、ウォレットが Sumcoin ネットワークへの同期が完了すると正確なものとなります。詳細は下記を参照してください。</translation>
     </message>
     <message>
@@ -1364,7 +1364,7 @@
         <translation>支払いリクエスト エラー</translation>
     </message>
     <message>
-        <source>Cannot start litecoin: click-to-pay handler</source>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
         <translation>Sumcoin を起動できません: click-to-pay handler</translation>
     </message>
     <message>
@@ -1372,8 +1372,8 @@
         <translation>URIの処理</translation>
     </message>
     <message>
-        <source>'litecoin://' is not a valid URI. Use 'litecoin:' instead.</source>
-        <translation>'litecoin://' は正しいURIではありません｡ 'litecoin:'を使用してください｡</translation>
+        <source>'sumcoin://' is not a valid URI. Use 'sumcoin:' instead.</source>
+        <translation>'sumcoin://' は正しいURIではありません｡ 'sumcoin:'を使用してください｡</translation>
     </message>
     <message>
         <source>You are using a BIP70 URL which will be unsupported in the future.</source>
@@ -2231,7 +2231,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>ダスト:</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for sumcoin transactions than the network can process.</source>
         <translation>ブロック内の空きよりトランザクション流量が少ない場合、マイナーや中継ノードは最低限の手数料でも処理することがあります。この最低限の手数料だけを支払っても問題ありませんが、一度トランザクションの需要がネットワークの処理能力を超えてしまった場合には、トランザクションが永久に承認されなくなってしまう可能性があることにご注意ください。</translation>
     </message>
     <message>
@@ -2470,8 +2470,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>このアドレスに対するラベルを入力することで、送金したことがあるアドレスの一覧に追加することができます</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
-        <translation>litecoin: URIに添付されていたメッセージです。これは参照用として取引とともに保存されます。注意: メッセージは Sumcoin ネットワーク上へ送信されません。</translation>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <translation>sumcoin: URIに添付されていたメッセージです。これは参照用として取引とともに保存されます。注意: メッセージは Sumcoin ネットワーク上へ送信されません。</translation>
     </message>
     <message>
         <source>Pay To:</source>

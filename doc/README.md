@@ -5,7 +5,7 @@ Setup
 ---------------------
 Sumcoin Core is the original Sumcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sumcoin transactions, which requires approximately 22 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Sumcoin Core, visit [litecoin.org](https://litecoin.org/).
+To download Sumcoin Core, visit [sumcoin.org](https://sumcoin.org/).
 
 Running
 ---------------------
@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Sumcoin Core on your native p
 
 Unpack the files into a directory and run:
 
-- `bin/litecoin-qt` (GUI) or
-- `bin/litecoind` (headless)
+- `bin/sumcoin-qt` (GUI) or
+- `bin/sumcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run litecoin-qt.exe.
+Unpack the files into a directory, and then run sumcoin-qt.exe.
 
 ### macOS
 
@@ -28,9 +28,9 @@ Drag Sumcoin Core to your applications folder, and then run Sumcoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Sumcoin Wiki](https://litecoin.info/)
+* See the documentation at the [Sumcoin Wiki](https://sumcoin.info/)
 for help and more information.
-* Ask for help on [#litecoin](http://webchat.freenode.net?channels=litecoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=litecoin).
+* Ask for help on [#sumcoin](http://webchat.freenode.net?channels=sumcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=sumcoin).
 * Ask for help on the [LitecoinTalk](https://litecointalk.io/) forums, in the [Technical Support section](https://litecointalk.io/c/technical-support).
 
 Building
@@ -66,7 +66,7 @@ The Sumcoin repo's [root README](/README.md) contains relevant information on th
 
 ### Resources
 * Discuss on the [LitecoinTalk](https://litecointalk.io/) forums.
-* Discuss general Sumcoin development on #litecoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=litecoin-dev.
+* Discuss general Sumcoin development on #sumcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=sumcoin-dev.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

@@ -48,15 +48,15 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("litecoin:");
+const QString BITCOIN_IPC_PREFIX("sumcoin:");
 #ifdef ENABLE_BIP70
 // BIP70 payment protocol messages
 const char* BIP70_MESSAGE_PAYMENTACK = "PaymentACK";
 const char* BIP70_MESSAGE_PAYMENTREQUEST = "PaymentRequest";
 // BIP71 payment protocol media types
-const char* BIP71_MIMETYPE_PAYMENT = "application/litecoin-payment";
-const char* BIP71_MIMETYPE_PAYMENTACK = "application/litecoin-paymentack";
-const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/litecoin-paymentrequest";
+const char* BIP71_MIMETYPE_PAYMENT = "application/sumcoin-payment";
+const char* BIP71_MIMETYPE_PAYMENTACK = "application/sumcoin-paymentack";
+const char* BIP71_MIMETYPE_PAYMENTREQUEST = "application/sumcoin-paymentrequest";
 #endif
 
 //
@@ -224,7 +224,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start litecoin: click-to-pay handler"));
+                tr("Cannot start sumcoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -284,9 +284,9 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("litecoin://", Qt::CaseInsensitive))
+    if (s.startsWith("sumcoin://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'litecoin://' is not a valid URI. Use 'litecoin:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'sumcoin://' is not a valid URI. Use 'sumcoin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
     else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // bitcoin: URI

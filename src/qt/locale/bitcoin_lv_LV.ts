@@ -274,12 +274,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un litecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un sumcoin: URIs)</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Atvērt litecoin URI vai maksājuma pieprasījumu</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Atvērt sumcoin URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -543,7 +543,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt litecoin &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt sumcoin &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>

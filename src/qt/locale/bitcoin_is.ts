@@ -394,8 +394,8 @@
         <translation>Tólaborð flipa</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Óska eftir greiðslum (býr til QR kóða og litecoin: URI)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Óska eftir greiðslum (býr til QR kóða og sumcoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -406,8 +406,8 @@
         <translation>Sýna færslugildi sem notuð hafa verið til að taka við mynt og merkingar þeirra</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Opna litecoin: URI eða greiðslubeiðni</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Opna sumcoin: URI eða greiðslubeiðni</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>

@@ -85,7 +85,7 @@ static bool AppInit(int argc, char* argv[])
         }
         else
         {
-            strUsage += "\nUsage:  litecoind [options]                     Start " PACKAGE_NAME " Daemon\n";
+            strUsage += "\nUsage:  sumcoind [options]                     Start " PACKAGE_NAME " Daemon\n";
             strUsage += "\n" + gArgs.GetHelpMessage();
         }
 
@@ -115,7 +115,7 @@ static bool AppInit(int argc, char* argv[])
         // Error out when loose non-argument tokens are encountered on command line
         for (int i = 1; i < argc; i++) {
             if (!IsSwitchChar(argv[i][0])) {
-                tfm::format(std::cerr, "Error: Command line contains unexpected token '%s', see litecoind -h for a list of options.\n", argv[i]);
+                tfm::format(std::cerr, "Error: Command line contains unexpected token '%s', see sumcoind -h for a list of options.\n", argv[i]);
                 return false;
             }
         }

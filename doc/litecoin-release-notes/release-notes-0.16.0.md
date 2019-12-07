@@ -1,17 +1,17 @@
 Sumcoin Core version 0.16.0 is now available from:
 
-  <https://download.litecoin.org/litecoin-0.16.0/>
+  <https://download.sumcoin.org/sumcoin-0.16.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/sumcoinlabs/litecoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://groups.google.com/forum/#!forum/litecoin-dev>
+  <https://groups.google.com/forum/#!forum/sumcoin-dev>
 
 How to Upgrade
 ==============
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over `/Applications/Sumcoin-Qt` (on Mac)
-or `litecoind`/`litecoin-qt` (on Linux).
+or `sumcoind`/`sumcoin-qt` (on Linux).
 
 The first time you run version 0.15.0 or newer, your chainstate database will be converted to a
 new format, which will take anywhere from a few minutes to half an hour,
@@ -86,7 +86,7 @@ to new wallets; wallets made with previous versions will not be upgraded to be H
 
 Sumcoin Core now has more flexibility in where the wallets directory can be
 located. Previously wallet database files were stored at the top level of the
-litecoin data directory. The behavior is now:
+sumcoin data directory. The behavior is now:
 
 - For new installations (where the data directory doesn't already exist),
   wallets will now be stored in a new `wallets/` subdirectory inside the data
@@ -182,14 +182,14 @@ The `validateaddress` RPC output has been extended with a few new fields, and su
 Other changed command-line options
 ----------------------------------
 - `-debuglogfile=<file>` can be used to specify an alternative debug logging file.
-- litecoin-cli now has an `-stdinrpcpass` option to allow the RPC password to be read from standard input.
+- sumcoin-cli now has an `-stdinrpcpass` option to allow the RPC password to be read from standard input.
 - The `-usehd` option has been removed.
-- litecoin-cli now supports a new `-getinfo` flag which returns an output like that of the now-removed `getinfo` RPC.
+- sumcoin-cli now supports a new `-getinfo` flag which returns an output like that of the now-removed `getinfo` RPC.
 
 Testing changes
 ----------------
 - The default regtest JSON-RPC port has been changed to 19443 to avoid conflict with testnet's default of 19332.
-- Segwit is now always active in regtest mode by default. Thus, if you upgrade a regtest node you will need to either -reindex or use the old rules by adding `vbparams=segwit:0:999999999999` to your regtest litecoin.conf. Failure to do this will result in a CheckBlockIndex() assertion failure that will look like: Assertion `(pindexFirstNeverProcessed != nullptr) == (pindex->nChainTx == 0)' failed.
+- Segwit is now always active in regtest mode by default. Thus, if you upgrade a regtest node you will need to either -reindex or use the old rules by adding `vbparams=segwit:0:999999999999` to your regtest sumcoin.conf. Failure to do this will result in a CheckBlockIndex() assertion failure that will look like: Assertion `(pindexFirstNeverProcessed != nullptr) == (pindex->nChainTx == 0)' failed.
 
 0.16.0 change log
 ------------------

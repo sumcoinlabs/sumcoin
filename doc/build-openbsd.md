@@ -2,7 +2,7 @@ OpenBSD build guide
 ======================
 (updated for OpenBSD 6.4)
 
-This guide describes how to build litecoind and command-line utilities on OpenBSD.
+This guide describes how to build sumcoind and command-line utilities on OpenBSD.
 
 OpenBSD is most commonly used as a server OS, so this guide does not contain instructions for building the GUI.
 
@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/sumcoinlabs/litecoin.git
+git clone https://github.com/sumcoinlabs/sumcoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

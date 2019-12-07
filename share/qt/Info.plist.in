@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.litecoin.Sumcoin-Qt</string>
+  <string>org.sumcoin.Sumcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.litecoin.LitecoinPayment</string>
+      <string>org.sumcoin.LitecoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>litecoin</string>
+        <string>sumcoin</string>
       </array>
     </dict>
   </array>
@@ -58,7 +58,7 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.litecoin.paymentrequest</string>
+      <string>org.sumcoin.paymentrequest</string>
       <key>UTTypeDescription</key>
       <string>Sumcoin payment request</string>
       <key>UTTypeConformsTo</key>
@@ -68,7 +68,7 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-litecoin-payment-request</string>
+        <string>application/x-sumcoin-payment-request</string>
         <key>public.filename-extension</key>
         <array>
           <string>litecoinpaymentrequest</string>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.litecoin.paymentrequest</string>
+        <string>org.sumcoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

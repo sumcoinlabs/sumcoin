@@ -394,8 +394,8 @@
         <translation>Alatke za tabove</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Zatražite plaćanje (generiše QR kodove i litecoin: URI-e)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Zatražite plaćanje (generiše QR kodove i sumcoin: URI-e)</translation>
     </message>
     <message>
         <source>Error</source>

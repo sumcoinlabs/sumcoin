@@ -526,7 +526,7 @@
     </message>
     <message>
         <location line="-271"/>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -541,7 +541,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Open a litecoin: URI or payment request</source>
+        <source>Open a sumcoin: URI or payment request</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1195,7 +1195,7 @@
     </message>
     <message>
         <location line="+119"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1739,7 +1739,7 @@
     </message>
     <message>
         <location line="-529"/>
-        <source>Cannot start litecoin: click-to-pay handler</source>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1754,7 +1754,7 @@
     </message>
     <message>
         <location line="-53"/>
-        <source>&apos;litecoin://&apos; is not a valid URI. Use &apos;litecoin:&apos; instead.</source>
+        <source>&apos;sumcoin://&apos; is not a valid URI. Use &apos;sumcoin:&apos; instead.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2889,7 +2889,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+543"/>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for sumcoin transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3197,7 +3197,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+54"/>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

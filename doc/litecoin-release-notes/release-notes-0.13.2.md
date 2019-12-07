@@ -1,20 +1,20 @@
 Sumcoin Core version 0.13.2 is now available from:
 
-  <https://download.litecoin.org/litecoin-0.13.2.1/>
+  <https://download.sumcoin.org/sumcoin-0.13.2.1/>
 
 This is a new major version release, including new features, various bugfixes and performance improvements, as well as updated translations.
 It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/sumcoinlabs/litecoin/issues>
+  <https://github.com/sumcoinlabs/sumcoin/issues>
 
 Compatibility
 ==============
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
 an OS initially released in 2001. This means that not even critical security
-updates will be released anymore. Without security updates, using a litecoin
+updates will be released anymore. Without security updates, using a sumcoin
 wallet on a XP machine is irresponsible at least.
 
 In addition to that, with 0.12.x there have been varied reports of Bitcoin Core
@@ -124,7 +124,7 @@ overridden with the option `-rpccookiefile`.
 This is similar to Tor's CookieAuthentication: see
 https://www.torproject.org/docs/tor-manual.html.en
 
-This allows running litecoind without having to do any manual configuration.
+This allows running sumcoind without having to do any manual configuration.
 
 Relay: Any sequence of pushdatas in OP_RETURN outputs now allowed
 -----------------------------------------------------------------
@@ -271,7 +271,7 @@ However, rescans as well as the RPCs `importwallet`, `importaddress`,
 `importprivkey` are disabled.
 
 To enable block pruning set `prune=<N>` on the command line or in
-`litecoin.conf`, where `N` is the number of MiB to allot for
+`sumcoin.conf`, where `N` is the number of MiB to allot for
 raw block & undo data.
 
 A value of 0 disables pruning. The minimal value above 0 is 550. Your
@@ -330,7 +330,7 @@ and are affected by this change:
 - RPC `decodescript`
 - REST `/rest/tx/` (JSON format)
 - REST `/rest/block/` (JSON format when including extended tx details)
-- `litecoin-tx -json`
+- `sumcoin-tx -json`
 
 For example, the `scriptSig.asm` property of a transaction input that
 previously showed an assembly representation of:
@@ -387,7 +387,7 @@ caching. A sample config for apache2 could look like:
         # AuthType Digest
         # ...
 
-        # optional bypass litecoind rpc basic auth
+        # optional bypass sumcoind rpc basic auth
         # RequestHeader set Authorization "Basic <hash>"
         # get the <hash> from the shell with: base64 <<< litecoinrpc:<password>
     </Location>
@@ -401,7 +401,7 @@ Other P2P Changes
 -----------------
 
 The list of banned peers is now stored on disk rather than in memory.
-Restarting litecoind will no longer clear out the list of banned peers; instead
+Restarting sumcoind will no longer clear out the list of banned peers; instead
 a new RPC call (`clearbanned`) can be used to manually clear the list.  The new
 `setban` RPC call can also be used to manually ban or unban a peer.
 
@@ -415,21 +415,21 @@ For this reason the default was changed to 300 MiB in this release.
 For nodes on low-memory systems, the database cache can be changed back to
 100 MiB (or to another value) by either:
 
-- Adding `dbcache=100` in litecoin.conf
+- Adding `dbcache=100` in sumcoin.conf
 - Changing it in the GUI under `Options → Size of database cache`
 
 Note that the database cache setting has the most performance impact
 during initial sync of a node, and when catching up after downtime.
 
 
-litecoin-cli: arguments privacy
+sumcoin-cli: arguments privacy
 ------------------------------
 
 The RPC command line client gained a new argument, `-stdin`
 to read extra arguments from standard input, one per line until EOF/Ctrl-D.
 For example:
 
-    $ src/litecoin-cli -stdin walletpassphrase
+    $ src/sumcoin-cli -stdin walletpassphrase
     mysecretcode
     120
     ..... press Ctrl-D here to end input
@@ -462,9 +462,9 @@ executables.
 
 The following extra files can be found in the download directory or torrent:
 
-- `litecoin-${VERSION}-arm-linux-gnueabihf.tar.gz`: Linux binaries for the most
+- `sumcoin-${VERSION}-arm-linux-gnueabihf.tar.gz`: Linux binaries for the most
   common 32-bit ARM architecture.
-- `litecoin-${VERSION}-aarch64-linux-gnu.tar.gz`: Linux binaries for the most
+- `sumcoin-${VERSION}-aarch64-linux-gnu.tar.gz`: Linux binaries for the most
   common 64-bit ARM architecture.
 
 ARM builds are still experimental. If you have problems on a certain device or
@@ -751,7 +751,7 @@ Low-level RPC changes
     - RPC `decodescript`
     - REST `/rest/tx/` (JSON format)
     - REST `/rest/block/` (JSON format when including extended tx details)
-    - `litecoin-tx -json`
+    - `sumcoin-tx -json`
 
 - The sorting of the output of the `getrawmempool` output has changed.
 
@@ -942,9 +942,9 @@ Additional detail on the ARM architecture targeted by each is provided below.
 
 The following extra files can be found in the download directory or torrent:
 
-- `litecoin-${VERSION}-arm-linux-gnueabihf.tar.gz`: Linux binaries targeting
+- `sumcoin-${VERSION}-arm-linux-gnueabihf.tar.gz`: Linux binaries targeting
   the 32-bit ARMv7-A architecture.
-- `litecoin-${VERSION}-aarch64-linux-gnu.tar.gz`: Linux binaries targeting
+- `sumcoin-${VERSION}-aarch64-linux-gnu.tar.gz`: Linux binaries targeting
   the 64-bit ARMv8-A architecture.
 
 ARM builds are still experimental. If you have problems on a certain device or

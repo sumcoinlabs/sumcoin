@@ -386,7 +386,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     <message>
         <source>Sign messages with your Sumcoin addresses to prove you own them</source>
-        <translation>sahkan mesej bersama alamat litecoin anda untuk menunjukkan alamat ini anda punya</translation>
+        <translation>sahkan mesej bersama alamat sumcoin anda untuk menunjukkan alamat ini anda punya</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
@@ -410,8 +410,8 @@ Alihkan fail data ke dalam tab semasa</translation>
 </translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Request payments (generates QR codes and litecoin: URIs)
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Request payments (generates QR codes and sumcoin: URIs)
 </translation>
     </message>
     <message>

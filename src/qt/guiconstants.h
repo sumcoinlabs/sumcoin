@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Sumcoin"
-#define QAPP_ORG_DOMAIN "litecoin.org"
+#define QAPP_ORG_DOMAIN "sumcoin.org"
 #define QAPP_APP_NAME_DEFAULT "Sumcoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Sumcoin-Qt-testnet"
 #define QAPP_APP_NAME_REGTEST "Sumcoin-Qt-regtest"

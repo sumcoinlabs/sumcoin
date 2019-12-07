@@ -335,7 +335,7 @@
     </message>
     <message>
         <source>Send coins to a Sumcoin address</source>
-        <translation>ارسال کوین به آدرس litecoin</translation>
+        <translation>ارسال کوین به آدرس sumcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -359,7 +359,7 @@
     </message>
     <message>
         <source>Sumcoin</source>
-        <translation>litecoin</translation>
+        <translation>sumcoin</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -406,7 +406,7 @@
         <translation>نوار ابزار</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
         <translation>درخواست پرداخت (ساخت کد QR و Sumcoin: URIs)</translation>
     </message>
     <message>
@@ -418,7 +418,7 @@
         <translation>نمایش لیست آدرس‌ها و لیبل‌های دریافتی استفاده شده</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
+        <source>Open a sumcoin: URI or payment request</source>
         <translation>بازکردن Sumcoin: آدرس یا درخواست پرداخت</translation>
     </message>
     <message>
@@ -697,7 +697,7 @@
     </message>
     <message>
         <source>The entered address "%1" is not a valid Sumcoin address.</source>
-        <translation>آدرس وارد شده "%1" آدرس معتبر litecoin نیست.</translation>
+        <translation>آدرس وارد شده "%1" آدرس معتبر sumcoin نیست.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -754,7 +754,7 @@
     </message>
     <message>
         <source>Sumcoin</source>
-        <translation>litecoin</translation>
+        <translation>sumcoin</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -908,7 +908,7 @@
     </message>
     <message>
         <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>اتصال به شبکه litecoin با استفاده از پراکسی SOCKS5 برای استفاده از سرویس مخفی تور</translation>
+        <translation>اتصال به شبکه sumcoin با استفاده از پراکسی SOCKS5 برای استفاده از سرویس مخفی تور</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -991,7 +991,7 @@
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه litecoin به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
+        <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه sumcoin به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1713,7 +1713,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>Warning: Invalid Sumcoin address</source>
-        <translation>هشدار: آدرس litecoin نامعتبر</translation>
+        <translation>هشدار: آدرس sumcoin نامعتبر</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1756,7 +1756,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>The Sumcoin address to send the payment to</source>
-        <translation>آدرس litecoin برای ارسال پرداحت به آن</translation>
+        <translation>آدرس sumcoin برای ارسال پرداحت به آن</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2306,7 +2306,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     <name>bitcoin-core</name>
     <message>
         <source>Sumcoin Core</source>
-        <translation>هسته litecoin</translation>
+        <translation>هسته sumcoin</translation>
     </message>
     <message>
         <source>Change index out of range</source>
@@ -2398,7 +2398,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>Transaction too large for fee policy</source>
-        <translation>حجم تراکنش خیلی زیاد است به خاطر سیاست های کارمزدی litecoin</translation>
+        <translation>حجم تراکنش خیلی زیاد است به خاطر سیاست های کارمزدی sumcoin</translation>
     </message>
     <message>
         <source>Transaction too large</source>

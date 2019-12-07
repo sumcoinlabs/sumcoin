@@ -394,8 +394,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en litecoin: URI's)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en sumcoin: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -406,8 +406,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Skep 'n litecoin: URI of betalingsversoek</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Skep 'n sumcoin: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

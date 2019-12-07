@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>Your wallet is now encrypted. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
-        <translation>Ví bạn đã được mã hóa bây giờ. Hãy nhớ rằng việc mã hóa ví bạn không thể hoàn toàn bảo vệ litecoin của bạn bị đánh cắp bới phần mềm độc hại dính vào máy tính bạn</translation>
+        <translation>Ví bạn đã được mã hóa bây giờ. Hãy nhớ rằng việc mã hóa ví bạn không thể hoàn toàn bảo vệ sumcoin của bạn bị đánh cắp bới phần mềm độc hại dính vào máy tính bạn</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -410,8 +410,8 @@
         <translation>Các thanh công cụ</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Yêu cầu thanh toán (tạo QR code và litecoin: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Yêu cầu thanh toán (tạo QR code và sumcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -422,8 +422,8 @@
         <translation>Hiển thị danh sách các địa chỉ và nhãn đã dùng để nhận</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
-        <translation>Mở một litecoin: URI hoặc yêu cầu thanh toán</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Mở một sumcoin: URI hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -902,8 +902,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
-        <translation>Giao dịch gần đây có thể chưa được hiển thị, và vì vậy số dư wallet của bạn có thể không dúng. Thông tin này sẽ được làm đúng khi wallet hoàn thành đồng bộ với litecoin network, như chi tiết bên dưới.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
+        <translation>Giao dịch gần đây có thể chưa được hiển thị, và vì vậy số dư wallet của bạn có thể không dúng. Thông tin này sẽ được làm đúng khi wallet hoàn thành đồng bộ với sumcoin network, như chi tiết bên dưới.</translation>
     </message>
     <message>
         <source>Attempting to spend litecoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1274,8 +1274,8 @@
         <translation>Payment request error</translation>
     </message>
     <message>
-        <source>Cannot start litecoin: click-to-pay handler</source>
-        <translation>Không thể khởi tạo litecoin: click-to-pay handler</translation>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
+        <translation>Không thể khởi tạo sumcoin: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -2268,8 +2268,8 @@
         <translation>Nhập một label cho cái address này để thêm vào danh sách địa chỉ đã sử dụng</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
-        <translation>Một tin nhắn được đính kèm với số litecoin: URI mà sẽ được lưu giữ với transaction dành cho tài liệu tham khảo. Lưu ý: Tin nhắn này sẽ không được gửi thông qua Sumcoin network.</translation>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <translation>Một tin nhắn được đính kèm với số sumcoin: URI mà sẽ được lưu giữ với transaction dành cho tài liệu tham khảo. Lưu ý: Tin nhắn này sẽ không được gửi thông qua Sumcoin network.</translation>
     </message>
     <message>
         <source>Pay To:</source>

@@ -406,8 +406,8 @@
         <translation>Panel nástrojov</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and litecoin: URIs)</source>
-        <translation>Vyžiadať platby (vygeneruje sa QR kód a litecoin: URI)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Vyžiadať platby (vygeneruje sa QR kód a sumcoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -418,7 +418,7 @@
         <translation>Ukázať zoznam použitých prijímacích adries a štítkov</translation>
     </message>
     <message>
-        <source>Open a litecoin: URI or payment request</source>
+        <source>Open a sumcoin: URI or payment request</source>
         <translation>Otvoriť Sumcoin: URI alebo vyžiadanie platby</translation>
     </message>
     <message>
@@ -884,7 +884,7 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the litecoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
         <translation>Nedávne transakcie ešte nemusia byť viditeľné takže zostatok vo vašej peňaženke môže byť nesprávny. Táto informácia sa opraví keď sa vaša peňaženka zosynchronizuje s Sumcoin sieťou ako je popísané nižšie.</translation>
     </message>
     <message>
@@ -1292,7 +1292,7 @@
         <translation>Chyba pri žiadosti o platbu</translation>
     </message>
     <message>
-        <source>Cannot start litecoin: click-to-pay handler</source>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
         <translation>Nemôžem spustiť Sumcoin: click-to-pay handler</translation>
     </message>
     <message>
@@ -1300,8 +1300,8 @@
         <translation>Narábanie s URI</translation>
     </message>
     <message>
-        <source>'litecoin://' is not a valid URI. Use 'litecoin:' instead.</source>
-        <translation>'litecoin://' je nesprávna URI. Namiesto toho použite 'litecoin'.</translation>
+        <source>'sumcoin://' is not a valid URI. Use 'sumcoin:' instead.</source>
+        <translation>'sumcoin://' je nesprávna URI. Namiesto toho použite 'sumcoin'.</translation>
     </message>
     <message>
         <source>Payment request fetch URL is invalid: %1</source>
@@ -1415,7 +1415,7 @@
     </message>
     <message>
         <source>Enter a Sumcoin address (e.g. %1)</source>
-        <translation>Vložte litecoin adresu (napr. %1)</translation>
+        <translation>Vložte sumcoin adresu (napr. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2362,7 +2362,7 @@ Zapamätajte si: Keďže cena poplatku je počítaná za bajt, tak poplatok o ho
         <translation>Zadajte štítok pre túto adresu aby ste ju pridali do zoznamu použitých adries.</translation>
     </message>
     <message>
-        <source>A message that was attached to the litecoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
         <translation>Správa pripojená k Sumcoin URI ktorá bude uložená spolu s transakciou pre vašu referenciu. Poznámka: Táto správa nebude odoslaná cez Sumcoin sieť.</translation>
     </message>
     <message>
