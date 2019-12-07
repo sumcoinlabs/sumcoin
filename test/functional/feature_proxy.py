@@ -18,8 +18,8 @@ Test plan:
     - proxy on IPv6
 
 - Create various proxies (as threads)
-- Create litecoinds that connect to them
-- Manipulate the litecoinds using addnode (onetry) an observe effects
+- Create sumcoinds that connect to them
+- Manipulate the sumcoinds using addnode (onetry) an observe effects
 
 addnode connect to IPv4
 addnode connect to IPv6

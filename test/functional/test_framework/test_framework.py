@@ -106,9 +106,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
 
         parser = argparse.ArgumentParser(usage="%(prog)s [options]")
         parser.add_argument("--nocleanup", dest="nocleanup", default=False, action="store_true",
-                            help="Leave litecoinds and test.* datadir on exit or error")
+                            help="Leave sumcoinds and test.* datadir on exit or error")
         parser.add_argument("--noshutdown", dest="noshutdown", default=False, action="store_true",
-                            help="Don't stop litecoinds after the test execution")
+                            help="Don't stop sumcoinds after the test execution")
         parser.add_argument("--cachedir", dest="cachedir", default=os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "/../../cache"),
                             help="Directory for caching pregenerated datadirs (default: %(default)s)")
         parser.add_argument("--tmpdir", dest="tmpdir", help="Root directory for datadirs")
@@ -201,7 +201,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         else:
             for node in self.nodes:
                 node.cleanup_on_exit = False
-            self.log.info("Note: litecoinds were not stopped and may still be running")
+            self.log.info("Note: sumcoinds were not stopped and may still be running")
 
         should_clean_up = (
             not self.options.nocleanup and
@@ -348,7 +348,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def start_nodes(self, extra_args=None, *args, **kwargs):
-        """Start multiple litecoinds"""
+        """Start multiple sumcoinds"""
 
         if extra_args is None:
             extra_args = [None] * self.num_nodes
