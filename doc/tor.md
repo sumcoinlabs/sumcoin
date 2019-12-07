@@ -1,4 +1,4 @@
-# TOR SUPPORT IN LITECOIN
+# TOR SUPPORT IN SUMCOIN
 
 It is possible to run Sumcoin Core as a Tor hidden service, and connect to such services.
 
