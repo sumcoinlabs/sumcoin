@@ -482,7 +482,7 @@ namespace cxx14
 
   }
 
-  namespace test_binary_literals
+  namespace test_binary_sumrals
   {
 
     constexpr auto ivii = 0b0000000000101010;

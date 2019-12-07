@@ -6,9 +6,9 @@ src/sumcoind
 src/sumcoin-cli
 src/sumcoin-tx
 src/sumcoin-wallet
-src/test/test_litecoin
-src/test/test_litecoin_fuzzy
-src/qt/test/test_litecoin-qt
+src/test/test_sumcoin
+src/test/test_sumcoin_fuzzy
+src/qt/test/test_sumcoin-qt
 
 # autoreconf
 Makefile.in
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_litecoin.coverage/
+test_sumcoin.coverage/
 total.coverage/
 coverage_percent.txt
 
