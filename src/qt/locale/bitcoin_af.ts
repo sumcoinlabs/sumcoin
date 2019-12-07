@@ -62,11 +62,11 @@
         <translation>Ontvanger adresse</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hierdie is die adresse vanwaar u Litecoin betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hierdie is die adresse vanwaar u Sumcoin betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Sumcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>Hierdie is die adresse waar u Litecoins sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
     </message>
     <message>
@@ -322,8 +322,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Stuur munte na 'n Litecoin adres</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Stuur munte na 'n Sumcoin adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,8 +346,8 @@
         <translation>&amp;Verifieer boodskap...</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -370,12 +370,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Litecoin addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Litecoin adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u Sumcoin adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Litecoin addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Litecoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Sumcoin adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -504,8 +504,8 @@
         <translation>Inkomende transaksie</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Litecoin can no longer continue safely and will quit.</source>
-        <translation>'N fatale fout het voorgekom. Litecoin kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>'N fatale fout het voorgekom. Sumcoin kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
     </message>
 </context>
 <context>
@@ -694,8 +694,8 @@
         <translation>Wysig stuur adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Litecoin address.</source>
-        <translation>Die ingevoerde adres "%1" is nie 'n geldige Litecoin adres nie.</translation>
+        <source>The entered address "%1" is not a valid Sumcoin address.</source>
+        <translation>Die ingevoerde adres "%1" is nie 'n geldige Sumcoin adres nie.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -767,8 +767,8 @@
         <translation>Gebruik 'n persoonlike data gids:</translation>
     </message>
     <message>
-        <source>Litecoin</source>
-        <translation>Litecoin</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1120,8 +1120,8 @@
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Litecoin address (e.g. %1)</source>
-        <translation>Voer in 'n Litecoin adres (bv. %1)</translation>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
+        <translation>Voer in 'n Sumcoin adres (bv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1697,7 +1697,7 @@ transaksievertragingsrisiko.</translation>
         <translation>Betalings versoek verstryk.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Litecoin address</source>
+        <source>Warning: Invalid Sumcoin address</source>
         <translation>Waarskuwing: Ongeldige Litecoinadres</translation>
     </message>
     <message>
@@ -1730,7 +1730,7 @@ Is u seker?</translation>
         <translation>Hierdie is 'n gewone betaling</translation>
     </message>
     <message>
-        <source>The Litecoin address to send the payment to</source>
+        <source>The Sumcoin address to send the payment to</source>
         <translation>Die Litecoinadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
@@ -2039,8 +2039,8 @@ word die fooi eweredig verdeel.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Kern</translation>
+        <source>Sumcoin Core</source>
+        <translation>Sumcoin Kern</translation>
     </message>
     <message>
         <source>Error loading %s</source>

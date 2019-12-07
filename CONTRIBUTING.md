@@ -1,7 +1,7 @@
-Contributing to Litecoin Core
+Contributing to Sumcoin Core
 ============================
 
-The Litecoin Core project operates an open contributor model where anyone is
+The Sumcoin Core project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
@@ -17,7 +17,7 @@ release cycle, overall merging, moderation and appointment of maintainers.
 Communication Channels
 ----------------------
 
-Most communication about Litecoin Core development happens on IRC, in the
+Most communication about Sumcoin Core development happens on IRC, in the
 #litecoin-dev channel on Freenode. The easiest way to participate on IRC is
 with the web client, [webchat.freenode.net](https://webchat.freenode.net/).
 
@@ -192,11 +192,11 @@ workload on reviewing.
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the Litecoin Core project (and related
-projects such as libsecp256k1), and is not to be confused with overall Litecoin
+The following applies to code changes to the Sumcoin Core project (and related
+projects such as libsecp256k1), and is not to be confused with overall Sumcoin
 Network Protocol consensus changes.
 
-Whether a pull request is merged into Litecoin Core rests with the project merge
+Whether a pull request is merged into Sumcoin Core rests with the project merge
 maintainers and ultimately the project lead.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -214,7 +214,7 @@ In general, all pull requests must:
   - Where bugs are fixed, where possible, there should be unit tests
     demonstrating the bug and also proving the fix. This helps prevent regression.
 
-Patches that change Litecoin consensus rules are considerably more involved than
+Patches that change Sumcoin consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -255,7 +255,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus critical code.
 
-Where a patch set proposes to change the Litecoin consensus, it must have been
+Where a patch set proposes to change the Sumcoin consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.
@@ -295,7 +295,7 @@ about:
 Release Policy
 --------------
 
-The project leader is the release manager for each Litecoin Core release.
+The project leader is the release manager for each Sumcoin Core release.
 
 Copyright
 ---------

@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Litecoin-Qt</string>
+  <string>Sumcoin-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Litecoin-Qt</string>
+  <string>Sumcoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.litecoin.Litecoin-Qt</string>
+  <string>org.litecoin.Sumcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.litecoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Litecoin payment request</string>
+      <string>Sumcoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

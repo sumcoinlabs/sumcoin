@@ -13,7 +13,7 @@ You will need the following dependencies, which can be installed as root via pkg
 ```shell
 pkg install autoconf automake boost-libs git gmake libevent libtool openssl pkgconf
 
-git clone https://github.com/litecoin-project/litecoin.git
+git clone https://github.com/sumcoinlabs/litecoin.git
 ```
 
 In order to run the test suite (recommended), you will need to have Python 3 installed:
@@ -34,7 +34,7 @@ BerkeleyDB is only necessary for the wallet functionality. To skip this, pass
 export BDB_PREFIX="$PWD/db4"
 ```
 
-## Building Litecoin Core
+## Building Sumcoin Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error):
 

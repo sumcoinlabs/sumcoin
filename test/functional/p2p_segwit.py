@@ -529,7 +529,7 @@ class SegWitTest(BitcoinTestFramework):
             # 'non-mandatory-script-verify-flag (Witness program was passed an
             # empty witness)' (otherwise).
             # TODO: support multiple acceptable reject reasons.
-            # Litecoin: SCRIPT_VERIFY_WITNESS is enforced when segwit is activated
+            # Sumcoin: SCRIPT_VERIFY_WITNESS is enforced when segwit is activated
             test_witness_block(self.nodes[0], self.test_node, block, accepted=True, with_witness=False)
 
         connect_nodes(self.nodes[0], 2)
@@ -2077,7 +2077,7 @@ class SegWitTest(BitcoinTestFramework):
 
         self.nodes[0].sendtoaddress(self.nodes[0].getnewaddress(address_type='bech32'), 5)
         self.nodes[0].generate(1)
-        unspent = next(u for u in self.nodes[0].listunspent() if u['spendable'] and u['address'].startswith('rltc'))
+        unspent = next(u for u in self.nodes[0].listunspent() if u['spendable'] and u['address'].startswith('rsum'))
 
         raw = self.nodes[0].createrawtransaction([{"txid": unspent['txid'], "vout": unspent['vout']}], {self.nodes[0].getnewaddress(): 1})
         tx = FromHex(CTransaction(), raw)

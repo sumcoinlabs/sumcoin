@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/litecoin-project/litecoin.git
+git clone https://github.com/sumcoinlabs/litecoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -48,7 +48,7 @@ from the root of the repository. Then set `BDB_PREFIX` for the next section:
 export BDB_PREFIX="$PWD/db4"
 ```
 
-### Building Litecoin Core
+### Building Sumcoin Core
 
 **Important**: use `gmake`, not `make`. The non-GNU `make` will exit with a horrible error.
 

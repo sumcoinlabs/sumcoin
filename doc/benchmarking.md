@@ -1,12 +1,12 @@
 Benchmarking
 ============
 
-Litecoin Core has an internal benchmarking framework, with benchmarks
+Sumcoin Core has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms (e.g. SHA1, SHA256, SHA512, RIPEMD160), as well as the rolling bloom filter.
 
 Running
 ---------------------
-After compiling Litecoin-core, the benchmarks can be run with:
+After compiling Sumcoin-core, the benchmarks can be run with:
 
     src/bench/bench_Litecoin
 

@@ -39,7 +39,7 @@ class BumpFeeTest(BitcoinTestFramework):
 
     def run_test(self):
         if True:
-            raise SkipTest("Litecoin has RBF disabled.")
+            raise SkipTest("Sumcoin has RBF disabled.")
 
         # Encrypt wallet for test_locked_wallet_fails test
         self.nodes[1].encryptwallet(WALLET_PASSPHRASE)

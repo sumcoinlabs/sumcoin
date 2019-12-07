@@ -18,7 +18,7 @@ request is opened. All sets of tests can also be run locally.
 
 # Running tests locally
 
-Before tests can be run locally, Litecoin Core must be built.  See the [building instructions](/doc#building) for help.
+Before tests can be run locally, Sumcoin Core must be built.  See the [building instructions](/doc#building) for help.
 
 
 ### Functional tests

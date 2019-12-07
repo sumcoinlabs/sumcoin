@@ -22,7 +22,7 @@ libtool
 pkg-config
 python37
 
-git clone https://github.com/litecoin-project/litecoin.git
+git clone https://github.com/sumcoinlabs/litecoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -47,7 +47,7 @@ from the root of the repository. Then set `BDB_PREFIX` for the next section:
 export BDB_PREFIX="$PWD/db4"
 ```
 
-### Building Litecoin Core
+### Building Sumcoin Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

@@ -38,17 +38,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-Build Litecoin Core
+Build Sumcoin Core
 ------------------------
 
-1. Clone the Litecoin Core source code:
+1. Clone the Sumcoin Core source code:
 
-        git clone https://github.com/litecoin-project/litecoin
+        git clone https://github.com/sumcoinlabs/litecoin
         cd litecoin
 
-2.  Build Litecoin Core:
+2.  Build Sumcoin Core:
 
-    Configure and build the headless Litecoin Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Sumcoin Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -76,7 +76,7 @@ Build Litecoin Core
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, Litecoin Core may be compiled in
+When the intention is to run only a P2P node without a wallet, Sumcoin Core may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
@@ -88,21 +88,21 @@ Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC 
 Running
 -------
 
-Litecoin Core is now available at `./src/litecoind`
+Sumcoin Core is now available at `./src/litecoind`
 
 Before running, you may create an empty configuration file:
 
-    mkdir -p "/Users/${USER}/Library/Application Support/Litecoin"
+    mkdir -p "/Users/${USER}/Library/Application Support/Sumcoin"
 
-    touch "/Users/${USER}/Library/Application Support/Litecoin/litecoin.conf"
+    touch "/Users/${USER}/Library/Application Support/Sumcoin/litecoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Litecoin/litecoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Sumcoin/litecoin.conf"
 
 The first time you run litecoind, it will start downloading the blockchain. This process could take many hours, or even days on slower than average systems.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Litecoin/debug.log
+    tail -f $HOME/Library/Application\ Support/Sumcoin/debug.log
 
 Other commands:
 -------
