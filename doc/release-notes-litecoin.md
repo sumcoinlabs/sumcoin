@@ -631,7 +631,7 @@ Changes for particular platforms
 - #12676 Show `bip125-replaceable` flag, when retrieving mempool entries (dexX7)
 - #13723 PSBT key path cleanups (sipa)
 - #14008 Preserve a format of RPC command definitions (kostyantyn)
-- #9332 Let wallet `importmulti` RPC accept labels for standard scriptPubKeys (ryanofsky)
+- #3332 Let wallet `importmulti` RPC accept labels for standard scriptPubKeys (ryanofsky)
 - #13983 Return more specific reject reason for submitblock (MarcoFalke)
 - #13152 Add getnodeaddresses RPC command (chris-belcher)
 - #14298 rest: Improve performance for JSON calls (alecalve)
