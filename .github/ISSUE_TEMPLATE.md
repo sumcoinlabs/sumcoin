@@ -1,6 +1,6 @@
 <!-- This issue tracker is only for technical issues related to Sumcoin Core.
 
-General sumcoin questions and/or support requests and are best directed to the [litecointalk.io forums](https://litecointalk.io/).
+General sumcoin questions and/or support requests and are best directed to the [sumcointalk.io forums](https://sumcointalk.io/).
 
 For reporting security issues, please contact the Sumcoin developers on the #sumcoin-dev Freenode IRC channel or alternatively you can email us at contact@sumcoin.org.
 

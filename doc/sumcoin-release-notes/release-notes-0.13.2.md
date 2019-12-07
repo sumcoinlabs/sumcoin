@@ -380,7 +380,7 @@ caching. A sample config for apache2 could look like:
     SSLCertificateFile /etc/apache2/ssl/server.crt
     SSLCertificateKeyFile /etc/apache2/ssl/server.key
 
-    <Location /litecoinrpc>
+    <Location /sumcoinrpc>
         ProxyPass http://127.0.0.1:3332/
         ProxyPassReverse http://127.0.0.1:3332/
         # optional enable digest auth
@@ -389,7 +389,7 @@ caching. A sample config for apache2 could look like:
 
         # optional bypass sumcoind rpc basic auth
         # RequestHeader set Authorization "Basic <hash>"
-        # get the <hash> from the shell with: base64 <<< litecoinrpc:<password>
+        # get the <hash> from the shell with: base64 <<< sumcoinrpc:<password>
     </Location>
 
     # Or, balance the load:
@@ -819,8 +819,8 @@ covered by the txid. This provides several immediate benefits:
   (such as hardware wallets), reduces the amount of data the signature
   generator needs to download, and allows the signature generator to operate
   more quickly.  This is made possible by having the generator sign the amount
-  of litecoins they think they are spending, and by having full nodes refuse to
-  accept those signatures unless the amount of litecoins being spent is exactly
+  of sumcoins they think they are spending, and by having full nodes refuse to
+  accept those signatures unless the amount of sumcoins being spent is exactly
   the same as was signed.  For non-segwit transactions, wallets instead had to
   download the complete previous transactions being spent for every payment
   they made, which could be a slow operation on hardware wallets and in other
