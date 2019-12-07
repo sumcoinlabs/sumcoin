@@ -201,7 +201,7 @@ information, pass `-debug=tor`.
 Notifications through ZMQ
 -------------------------
 
-Litecoind can now (optionally) asynchronously notify clients through a
+Sumcoind can now (optionally) asynchronously notify clients through a
 ZMQ-based PUB socket of the arrival of new transactions and blocks.
 This feature requires installation of the ZMQ C API library 4.x and
 configuring its use through the command line or configuration file.

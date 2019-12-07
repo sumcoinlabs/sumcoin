@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.sumcoin.LitecoinPayment</string>
+      <string>org.sumcoin.SumcoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>sumcoin</string>

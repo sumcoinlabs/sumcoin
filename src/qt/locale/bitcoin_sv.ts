@@ -915,7 +915,7 @@ Försök igen.</translation>
     </message>
     <message>
         <source>%1 will download and store a copy of the Sumcoin block chain.</source>
-        <translation>%1 kommer att ladda ner och lagra en kopia av Litecoins blockkedja.</translation>
+        <translation>%1 kommer att ladda ner och lagra en kopia av Sumcoins blockkedja.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -3139,7 +3139,7 @@ Notera: Då avgiften beräknas per byte kommer en avgift på 50 satoshi tas ut f
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Skicka Litecoins</translation>
+        <translation>Skicka Sumcoins</translation>
     </message>
     <message>
         <source>Fee bump error</source>

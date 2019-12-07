@@ -31,7 +31,7 @@ Drag Sumcoin Core to your applications folder, and then run Sumcoin Core.
 * See the documentation at the [Sumcoin Wiki](https://sumcoin.info/)
 for help and more information.
 * Ask for help on [#sumcoin](http://webchat.freenode.net?channels=sumcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=sumcoin).
-* Ask for help on the [LitecoinTalk](https://litecointalk.io/) forums, in the [Technical Support section](https://litecointalk.io/c/technical-support).
+* Ask for help on the [SumcoinTalk](https://litecointalk.io/) forums, in the [Technical Support section](https://litecointalk.io/c/technical-support).
 
 Building
 ---------------------
@@ -65,7 +65,7 @@ The Sumcoin repo's [root README](/README.md) contains relevant information on th
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [LitecoinTalk](https://litecointalk.io/) forums.
+* Discuss on the [SumcoinTalk](https://litecointalk.io/) forums.
 * Discuss general Sumcoin development on #sumcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=sumcoin-dev.
 
 ### Miscellaneous

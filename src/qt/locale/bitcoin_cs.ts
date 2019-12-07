@@ -503,7 +503,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
-        <translation>Seznam argumentů Litecoinu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <translation>Seznam argumentů Sumcoinu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -2427,7 +2427,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
     </message>
     <message>
         <source>The Sumcoin address to send the payment to</source>
-        <translation>Litecoinová adresa příjemce</translation>
+        <translation>Sumcoinová adresa příjemce</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2524,7 +2524,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
     </message>
     <message>
         <source>The Sumcoin address to sign the message with</source>
-        <translation>Litecoinová adresa, kterou se zpráva podepíše</translation>
+        <translation>Sumcoinová adresa, kterou se zpráva podepíše</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2580,7 +2580,7 @@ Poznámka: Jelikož je poplatek počítaný za bajt, poplatek o hodnotě "100 sa
     </message>
     <message>
         <source>The Sumcoin address the message was signed with</source>
-        <translation>Litecoinová adresa, kterou je zpráva podepsána</translation>
+        <translation>Sumcoinová adresa, kterou je zpráva podepsána</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>

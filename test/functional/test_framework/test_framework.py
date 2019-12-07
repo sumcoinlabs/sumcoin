@@ -43,7 +43,7 @@ TEST_EXIT_PASSED = 0
 TEST_EXIT_FAILED = 1
 TEST_EXIT_SKIPPED = 77
 
-TMPDIR_PREFIX = "litecoin_func_test_"
+TMPDIR_PREFIX = "sumcoin_func_test_"
 
 
 class SkipTest(Exception):

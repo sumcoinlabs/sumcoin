@@ -2974,7 +2974,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Litecoini Gönder</translation>
+        <translation>Sumcoini Gönder</translation>
     </message>
     <message>
         <source>Increasing transaction fee failed</source>

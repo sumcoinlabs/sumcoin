@@ -2036,7 +2036,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send Litecoins</translation>
+        <translation>Send Sumcoins</translation>
     </message>
     <message>
         <source>Coin Control Features</source>

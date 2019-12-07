@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas são suas informações para o envio de pagamentos por Litecoins. Sempre cheque a quantia enviada e as informações do destinatário, antes de enviar os Litecoins.</translation>
+        <translation>Estas são suas informações para o envio de pagamentos por Sumcoins. Sempre cheque a quantia enviada e as informações do destinatário, antes de enviar os Sumcoins.</translation>
     </message>
     <message>
         <source>These are your Sumcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas são suas informações para o recebimento de pagamentos por Litecoins. É recomendado que seja feito o uso de um novo conjunto de informações para cada transação.</translation>
+        <translation>Estas são suas informações para o recebimento de pagamentos por Sumcoins. É recomendado que seja feito o uso de um novo conjunto de informações para cada transação.</translation>
     </message>
     <message>
         <source>Export Address List</source>

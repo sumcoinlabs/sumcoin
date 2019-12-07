@@ -503,7 +503,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
-        <translation>Ukáž %1 zoznam možných nastavení Litecoinu pomocou príkazového riadku</translation>
+        <translation>Ukáž %1 zoznam možných nastavení Sumcoinu pomocou príkazového riadku</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -1183,7 +1183,7 @@
     </message>
     <message>
         <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Pripojiť k Litecoinovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
+        <translation>Pripojiť k Sumcoinovej sieti cez separované SOCKS5 proxy pre skrytú službu Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -2121,7 +2121,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Poslať Litecoins</translation>
+        <translation>Poslať Sumcoins</translation>
     </message>
     <message>
         <source>Coin Control Features</source>

@@ -295,7 +295,7 @@
     </message>
     <message>
         <source>Send coins to a Sumcoin address</source>
-        <translation>Saada münte Litecoini aadressile</translation>
+        <translation>Saada münte Sumcoini aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -343,11 +343,11 @@
     </message>
     <message>
         <source>Sign messages with your Sumcoin addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Litecoini aadressiga</translation>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Sumcoini aadressiga</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Litecoini aadressiga</translation>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Sumcoini aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -379,7 +379,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Sumcoin network</source>
-        <translation><numerusform>%n aktiivne ühendus Litecoini võrku</numerusform><numerusform>%n aktiivset ühendust Litecoini võrku</numerusform></translation>
+        <translation><numerusform>%n aktiivne ühendus Sumcoini võrku</numerusform><numerusform>%n aktiivset ühendust Sumcoini võrku</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -737,7 +737,7 @@
     </message>
     <message>
         <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Litecoini kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <translation>Sumcoini kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1458,7 +1458,7 @@
     </message>
     <message>
         <source>Sign the message to prove you own this Sumcoin address</source>
-        <translation>Allkirjasta sõnum Litecoini aadressi sulle kuulumise tõestamiseks</translation>
+        <translation>Allkirjasta sõnum Sumcoini aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1482,7 +1482,7 @@
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Litecoini aadressiga.</translation>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Sumcoini aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1918,7 +1918,7 @@
     <name>bitcoin-core</name>
     <message>
         <source>Sumcoin Core</source>
-        <translation>Litecoini tuumik</translation>
+        <translation>Sumcoini tuumik</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>

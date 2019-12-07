@@ -479,7 +479,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
-        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Litecoinin komentorivivalinnoista</translation>
+        <translation>Näytä %1 ohjeet saadaksesi listan mahdollisista Sumcoinin komentorivivalinnoista</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -878,7 +878,7 @@
     </message>
     <message>
         <source>%1 will download and store a copy of the Sumcoin block chain.</source>
-        <translation>%1 lataa ja tallentaa kopion Litecoinin lohkoketjusta.</translation>
+        <translation>%1 lataa ja tallentaa kopion Sumcoinin lohkoketjusta.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1286,7 +1286,7 @@
     </message>
     <message>
         <source>Your current total balance</source>
-        <translation>Tililläsi tällä hetkellä olevien Litecoinien määrä</translation>
+        <translation>Tililläsi tällä hetkellä olevien Sumcoinien määrä</translation>
     </message>
     <message>
         <source>Your current balance in watch-only addresses</source>
@@ -1321,7 +1321,7 @@
     </message>
     <message>
         <source>Cannot start sumcoin: click-to-pay handler</source>
-        <translation>Litecoinia ei voi käynnistää: klikkaa-maksaaksesi -käsittelijän virhe</translation>
+        <translation>Sumcoinia ei voi käynnistää: klikkaa-maksaaksesi -käsittelijän virhe</translation>
     </message>
     <message>
         <source>URI handling</source>

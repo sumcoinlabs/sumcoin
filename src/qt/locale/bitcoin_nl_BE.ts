@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit zijn uw Sumcoin adressen om betalingen te verzenden. Controleer altijd het bedrag en het ontvang adres voordat u Litecoins verstuurd.</translation>
+        <translation>Dit zijn uw Sumcoin adressen om betalingen te verzenden. Controleer altijd het bedrag en het ontvang adres voordat u Sumcoins verstuurd.</translation>
     </message>
     <message>
         <source>These are your Sumcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>

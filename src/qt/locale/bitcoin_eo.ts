@@ -1150,7 +1150,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Sendi Litecoinn</translation>
+        <translation>Sendi Sumcoinn</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -1832,7 +1832,7 @@
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Sendi Litecoinn</translation>
+        <translation>Sendi Sumcoinn</translation>
     </message>
     </context>
 <context>
