@@ -91,7 +91,7 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1555788600; //
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1553988600; //
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1555788600; //
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
