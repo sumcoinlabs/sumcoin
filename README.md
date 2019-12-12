@@ -141,7 +141,7 @@ CPU, GPU Use CPU Miner by Pooler (link to cpu miner - minerd - in releases)
 * Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
 
-Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2016 Sumcoin Developers Copyright (c) 2016-2019 Sumcoin Developers Copyright  
+Copyright (c) 2009-2020 Bitcoin Developers Copyright (c) 2011-2020 Litecoin Developers Copyright (c) 2016-2020 Sumcoin Developers Copyright  
 
 ## What is Sumcoin?
 
