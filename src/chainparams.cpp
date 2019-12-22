@@ -1,4 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
+// Copyright (c) 2016 Sumtoshi
 // Copyright (c) 2009-2017 The Bitcoin Core developers
 // Copyright (c) 2016-2019 The Sumcoin Core developers
 // Distributed under the MIT software license, see the accompanying
@@ -110,10 +111,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // September 5, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000ee9d951a67ce966"); // to block 717120
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000fcd8c770c4d5a94"); // to block 760320
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xe915f62ce603df21a207da25a3cd3e344c5bd210d7c91b870016637a8cd1f3c4");
+        consensus.defaultAssumeValid = uint256S("0x479416d69a39b40f82055a36ced8fde8bff7cc9488d88c4c51adb327bdfa2dbc"); //760320
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -198,10 +199,12 @@ public:
 		{688320, uint256S("0x4dd168a040c72b40d35bda63273dd2127f3e2ac84f8aadbed415fc19be3fbc85")},
 		{702720, uint256S("0xb5ac308d7c89dafa60abbb95b715945dd9b9672176dd280939ce75804e266a20")},
 		{717120, uint256S("0x42c18d5a929ea22e18843c8922e9bf0951728b831cee1ac9712b9abd1e04d785")},
+		{731520, uint256S("0x5550f8dd5325e477140b7bce941c47d46c97f26344006c4ab36b6db63caab896")},
+		{760320, uint256S("0x479416d69a39b40f82055a36ced8fde8bff7cc9488d88c4c51adb327bdfa2dbc")},
 
 		    
-		    //{731520, uint256S("0x")},
-		    //{760320,
+		    //{789120, uint256S("0x")},
+		    //{817920,
 		    
 
             }
@@ -274,7 +277,7 @@ public:
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //IDK
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAB, 0xE6};
