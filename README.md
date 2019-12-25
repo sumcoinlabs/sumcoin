@@ -1,3 +1,4 @@
+<html>
 <table>
 <tbody>
  <tr>
@@ -10,7 +11,7 @@
  </tr> 
 </tbody
 </table>
-
+ </html>
 
 Sumcoin is an Index Based Coin
 ==============================
