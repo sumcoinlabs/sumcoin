@@ -1,3 +1,16 @@
+<table>
+<tbody>
+ <tr>
+  <td>Twitter</td>
+  <td>
+   <a href="https://twitter.com/sumcoinindex" rel="nofollow">
+    <img src="https://camo.githubusercontent.com/d4ddbb597e350f99050aeda320d0278687e416e3/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f626f6b65682e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f77" alt="Follow Sumcoin on Twitter" data-canonical-src="https://img.shields.io/twitter/follow/bokeh.svg?style=social&amp;label=Follow" style="max-width:100%;">
+    </a>
+  </td>
+ </tr> 
+</tbody
+</table>
+
 
 Sumcoin is an Index Based Coin
 ==============================
