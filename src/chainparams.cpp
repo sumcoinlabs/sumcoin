@@ -111,10 +111,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // September 5, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000fcd8c770c4d5a94"); // to block 760320
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000105419d087ed8e7a"); // to block 789120
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x479416d69a39b40f82055a36ced8fde8bff7cc9488d88c4c51adb327bdfa2dbc"); //760320
+        consensus.defaultAssumeValid = uint256S("0xa5286d30fc85315092839b73630c2463c683e4b6d698140dda6938752a250025"); //789120
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -201,10 +201,11 @@ public:
 		{717120, uint256S("0x42c18d5a929ea22e18843c8922e9bf0951728b831cee1ac9712b9abd1e04d785")},
 		{731520, uint256S("0x5550f8dd5325e477140b7bce941c47d46c97f26344006c4ab36b6db63caab896")},
 		{760320, uint256S("0x479416d69a39b40f82055a36ced8fde8bff7cc9488d88c4c51adb327bdfa2dbc")},
+		{789120, uint256S("0xa5286d30fc85315092839b73630c2463c683e4b6d698140dda6938752a250025")},
 
 		    
-		    //{789120, uint256S("0x")},
-		    //{817920,
+		    //{817920, uint256S("0x")},
+		    //{846720,
 		    
 
             }
