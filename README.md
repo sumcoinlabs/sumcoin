@@ -58,6 +58,8 @@ Maxiumum Supply                | 100,000,000
 SegWit                         | Activated at block 220
 Mainnet RPC Port               | 3332
 Mainnet P2P Port               | 3333
+Electrum Mainnet RPC Port      | 53332
+Electrum Mainnet P2P Port      | 53333
 Testnet RPC Port               | 13332
 Testnet P2P Port               | 13333
 Block Time                     | 30 Seconds
@@ -66,17 +68,17 @@ Confirmation                   | 6 Blocks
 Difficulty Adjustment Interval | 2880 Blocks
 Protocol Support               | IPV4, IPV6, TOR, I2P
 
-Block Rewards (Estimates)
+Block Rewards (Estimates) * Note there are 32 Reward Halvings which will take 14.87 years to find all 100 M Sumcoins
 -------------
 Year | Block | Reward
 ---- | ----- | ------
-2019-2019 | 1-50M           | 100 SUM
-2019-2020 | 50M - 75M       | 50 SUM
-2020-2020 | 75M - 87.5M     | 25 SUM
-2020-2021 | 87.5M - 93.75   | 12.5 SUM
-2021-2022 | 93.75 - 96.875M | 6.25 SUM
-2022-2023 | 93.75 - 96.875M | 3.125 SUM
-...       | ...             | ...
+Spring 2019 - Fall 2019 | 1-50M           | 100 SUM
+Fall 2019 - Spring 2020 | 50M - 75M       | 50 SUM
+Spring 2020 - Fall 2020 | 75M - 87.5M     | 25 SUM
+Fall 2020 - Spring 2021 | 87.5M - 93.75   | 12.5 SUM
+Spring 2021 - Fall 2022 | 93.75 - 96.875M | 6.25 SUM
+Fall 2022 - Spring 2023 | 96.87 - 99.995M | 3.125 SUM
+...                     | ...             | ...
 
 
 
