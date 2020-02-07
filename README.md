@@ -219,7 +219,7 @@ sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
 ### Next, Clone the project
 
 ``` 
-git clone https://github.com/sumcoinlabs/sumcoin.git
+git clone -b 0.17 https://github.com/sumcoinlabs/sumcoin.git
 ```
 
 ### Change directories into Sumcoin
