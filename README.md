@@ -31,7 +31,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 # **Use Rates API for your APP**
 
-
+# SUM / USD
 ## Rate API Sources 
 
 * https://rates.sumcoinindex.com/api/rates
@@ -40,9 +40,13 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 * https://rates.slicewallet.org/api/rates
 
+# SUM / BTC 
+## Rate API Sources 
 
-### tx fees api
+* https://sumcoinindex.com/rates/SUM_BTC.json
 
+# TX fees api
+## Fee sum/kb API 
 * https://rates.sumcoinindex.com/api/fee_per_kb
 * https://rates.slicewallet.org/api/fee_per_kb
 
