@@ -43,7 +43,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 # SUM / BTC 
 ## Rate API Sources 
 
-* https://sumcoinindex.com/rates/SUM_BTC.json
+* https://sumcoinindex.com/rates/sum_btc.json
 
 # TX fees api
 ## Fee sum/kb API 
