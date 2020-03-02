@@ -201,24 +201,36 @@ The master branch is regularly built and tested, but is not guaranteed to be com
 
 ## Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
  
+## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
+
+Create swapfile using (copy and paste in all 4 for an easy life):
+
+```
+sudo fallocate -l 2G /swapfile;
+sudo chmod 600 /swapfile;
+sudo mkswap /swapfile;
+sudo swapon /swapfile;
+``` 
+ 
+ 
 ### Dependencies (paste all 3 seperately):
 
 ```
-sudo apt-get update;
-sudo apt-get install git;
-sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils;
-sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev;
-sudo apt-get install -y libboost-all-dev;
-sudo apt-get install -y software-properties-common;
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+sudo apt-get install -y libboost-all-dev
+sudo apt-get install -y software-properties-common
 
-sudo add-apt-repository ppa:bitcoin/bitcoin;
+sudo add-apt-repository ppa:bitcoin/bitcoin
 
-sudo apt-get update;
-sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
-sudo apt-get install -y libminiupnpc-dev;
-sudo apt-get install -y libzmq3-dev;
-sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
-sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
+sudo apt-get update
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
+sudo apt-get install -y libminiupnpc-dev
+sudo apt-get install -y libzmq3-dev
+sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler
 ```
 ### Next, Clone the project
 
@@ -238,33 +250,20 @@ cd sumcoin
 ./autogen.sh
 ```
 
-* Next,
-
+Next choose configuration option
+* Full Build
 ```
 ./configure
 ```
 
-or
-
+* Build with GUI without tests (faster)
 ```
-./configure --disable-test
+./configure --disable-tests
 ```
 
-or
-
+* Build without tests or GUI
 ```
 ./configure --disable-tests --without-gui
-```
-
-## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
-
-Create swapfile using (copy and paste in all 4 for an easy life):
-
-```
-sudo fallocate -l 2G /swapfile;
-sudo chmod 600 /swapfile;
-sudo mkswap /swapfile;
-sudo swapon /swapfile;
 ```
 
 # Make
@@ -274,6 +273,9 @@ sudo swapon /swapfile;
 ```
 make
 ```
+*It will then start compiling and take a while.*
+
+
 
 ### IF using a 1 GB Droplet be sure to turn OFF after you 'make'
 
@@ -281,14 +283,8 @@ make
 sudo swapoff /swapfile
 ```
 
-*It will then start compiling and take a while.*
 
-### *IF you needed swapfile - BE sure to turn it off again:*
-
-### When it is done, turn off the swapfile with:
-
-
-### Run: 
+# Run: 
 
 **After this it's ready to run.**  The executable will be in sumcoin/src. Run with:
 
@@ -342,7 +338,7 @@ cd sumcoin/src/qt/:./sumcoin-qt
 * 2. create sumcoin.conf file
 * 3. inside, set the following parameters from the list below
 
-//TODO
+
 
 ### Testing
 
@@ -356,7 +352,7 @@ Unit tests for the core code are in src/test/. To compile and run them:
 cd src; make -f makefile.unix test
 Unit tests for the GUI code are in src/qt/test/. To compile and run them:
 
-qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+qmake SUMCOIN_QT_TEST=1 -o Makefile.test sumcoin-qt.pro
 make -f Makefile.test
 ./sumcoin-qt_test
 
@@ -392,7 +388,7 @@ The RPC token is designed to eliminate the need for hard-coded passwords in conf
 ```
 wget https://raw.githubusercontent.com/sumcoinlabs/sumcoin/master/share/rpcauth/rpcauth.py -O ~/.sumcoin/rpcauth.py
 ```
-_May Be Deprecated_
+
 ### Modify the file permissions to allow the script to execute:
 
 ```
