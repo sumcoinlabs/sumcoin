@@ -100,10 +100,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // April 2019
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000ee9d951a67ce966"); // to block 717120
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000001462a06d69a47a3e"); // to block 990720
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x42c18d5a929ea22e18843c8922e9bf0951728b831cee1ac9712b9abd1e04d785"); //717120
+        consensus.defaultAssumeValid = uint256S("0x7a14741c8b5c10eab3464cd23b65554f1bc5c940e2ccb69461802e61e4f73b96"); //990720
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -193,10 +193,20 @@ public:
              	{688320, uint256S("0x4dd168a040c72b40d35bda63273dd2127f3e2ac84f8aadbed415fc19be3fbc85")},
              	{702720, uint256S("0xb5ac308d7c89dafa60abbb95b715945dd9b9672176dd280939ce75804e266a20")},
              	{717120, uint256S("0x42c18d5a929ea22e18843c8922e9bf0951728b831cee1ac9712b9abd1e04d785")},
+		{731520, uint256S("0x5550f8dd5325e477140b7bce941c47d46c97f26344006c4ab36b6db63caab896")},
+		{760320, uint256S("0x479416d69a39b40f82055a36ced8fde8bff7cc9488d88c4c51adb327bdfa2dbc")},
+		{789120, uint256S("0xa5286d30fc85315092839b73630c2463c683e4b6d698140dda6938752a250025")},
+		{817920, uint256S("0xef7aa22745d200dd6966995139e3ef35ebd97561f32555bfdeada1c2cdbce8be")},
+		{846720, uint256S("0x16590b7ad48ea99a484e1c2fa686895623c4bb9ed14d832717351a588cad742b")},
+		{875520, uint256S("0x1b15368afbefac00ea2833cd0dc486464f7a2bc45cf849863d8ecbb959c343f3")},
+		{904320, uint256S("0x91a89c6516c90db046e458484c2e72b91fbad522b7abc727dd12d500645a5969")},
+		{933120, uint256S("0x48365c2a8bed4d5052d49550378c681ea2570a95c76317a4d182090be7272127")},
+		{961920, uint256S("0x5dd8e1fbbfb66b4919d880ca374de804ddb7673d0a5b9cb231e6b1470a73d7d0")},
+		{990720, uint256S("0x7a14741c8b5c10eab3464cd23b65554f1bc5c940e2ccb69461802e61e4f73b96")},
 
-
-                //{731520, uint256S("0x")},
-                //{760320,
+		    
+		    //{1019520, uint256S("0x")},
+		    //{1048320,
             }
         };
 
