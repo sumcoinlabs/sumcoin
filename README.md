@@ -1,9 +1,24 @@
+<html>
+<table>
+<tbody>
+ <tr>
+  <td>Twitter</td>
+  <td>
+   <a href="https://twitter.com/sumcoinindex" rel="nofollow">
+    <img src="https://camo.githubusercontent.com/d4ddbb597e350f99050aeda320d0278687e416e3/68747470733a2f2f696d672e736869656c64732e696f2f747769747465722f666f6c6c6f772f626f6b65682e7376673f7374796c653d736f6369616c266c6162656c3d466f6c6c6f77" alt="Follow Sumcoin on Twitter" data-canonical-src="https://img.shields.io/twitter/follow/bokeh.svg?style=social&amp;label=Follow" style="max-width:100%;">
+    </a>
+  </td>
+ </tr> 
+</tbody
+</table>
+ </html>
+
 Sumcoin is an Index Based Coin
 ==============================
 
 ## !! NOTICE TO ANY EXCHANGE OR DEVELOPERS  -  SUMCOIN IS INDEX BASED - READ THIS BEFORE INTEGRATING!!
 
-### OBJECT IS **INDEX BASED**
+### OBJECT IS **INDEX BASED** 
 
 
 
@@ -16,8 +31,8 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 # **Use Rates API for your APP**
 
-
-## Rate API Sources
+# SUM / USD
+## Rate API Sources 
 
 * https://rates.sumcoinindex.com/api/rates
   * https://sumcoinindex.com/rates/price2.json
@@ -25,9 +40,13 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 * https://rates.slicewallet.org/api/rates
 
+# SUM / BTC 
+## Rate API Sources 
 
-### tx fees api
+* https://sumcoinindex.com/rates/sum_btc.json
 
+# TX fees api
+## Fee sum/kb API 
 * https://rates.sumcoinindex.com/api/fee_per_kb
 * https://rates.slicewallet.org/api/fee_per_kb
 
@@ -43,6 +62,8 @@ Maxiumum Supply                | 100,000,000
 SegWit                         | Activated at block 220
 Mainnet RPC Port               | 3332
 Mainnet P2P Port               | 3333
+Electrum Mainnet RPC Port      | 53332
+Electrum Mainnet P2P Port      | 53333
 Testnet RPC Port               | 13332
 Testnet P2P Port               | 13333
 Block Time                     | 30 Seconds
@@ -51,23 +72,23 @@ Confirmation                   | 6 Blocks
 Difficulty Adjustment Interval | 2880 Blocks
 Protocol Support               | IPV4, IPV6, TOR, I2P
 
-Block Rewards (Estimates)
+Block Rewards (Estimates) * Note there are 32 Reward Halvings which will take 14.87 years to find all 100 M Sumcoins
 -------------
 Year | Block | Reward
 ---- | ----- | ------
-2019-2019 | 1-50M           | 100 SUM
-2019-2020 | 50M - 75M       | 50 SUM
-2020-2020 | 75M - 87.5M     | 25 SUM
-2020-2021 | 87.5M - 93.75   | 12.5 SUM
-2021-2022 | 93.75 - 96.875M | 6.25 SUM
-2022-2023 | 93.75 - 96.875M | 3.125 SUM
-...       | ...             | ...
+Spring 2019 - Fall 2019 | 1-50M           | 100 SUM
+Fall 2019 - Spring 2020 | 50M - 75M       | 50 SUM
+Spring 2020 - Fall 2020 | 75M - 87.5M     | 25 SUM
+Fall 2020 - Spring 2021 | 87.5M - 93.75   | 12.5 SUM
+Spring 2021 - Fall 2022 | 93.75 - 96.875M | 6.25 SUM
+Fall 2022 - Spring 2023 | 96.87 - 99.995M | 3.125 SUM
+...                     | ...             | ...
 
 
 
 # Social and resources
 
-## Mining
+## Mining 
 * Mining Stats: https://miningpoolstats.stream/sumcoin
 * Mining Calc: https://sumprofit.org
 
@@ -112,7 +133,7 @@ For help:  Open an Issue
 
 
 # Mining
-## Mining Pools
+## Mining Pools 
 
 
 https://miningpoolstats.stream/sumcoin
@@ -141,7 +162,7 @@ CPU, GPU Use CPU Miner by Pooler (link to cpu miner - minerd - in releases)
 * Moonlander 2 USB Asic Miner : https://www.futurebit.io/
 
 
-Copyright (c) 2009-2020 Bitcoin Developers Copyright (c) 2011-2020 Litecoin Developers Copyright (c) 2016-2020 Sumcoin Developers Copyright  
+Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2016 Litecoin Developers Copyright (c) 2016-2019 Sumcoin Developers Copyright  
 
 ## What is Sumcoin?
 
@@ -164,7 +185,7 @@ For more information, as well as an immediately useable, binary version of the S
 
 ### License
 
-Sumcoin is released under the terms of MIT.
+Sumcoin is released under the terms of MIT. 
 
 ### Development process
 
@@ -179,30 +200,42 @@ The patch will be accepted if there is broad consensus that it is a good thing. 
 The master branch is regularly built and tested, but is not guaranteed to be completely stable. Tags are created regularly to indicate new official, stable release versions of Sumcoin.
 
 ## Linux Build Dependencies/instructions: (Also see Sumcoin Wiki for the same info)
+ 
+## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
 
+Create swapfile using (copy and paste in all 4 for an easy life):
+
+```
+sudo fallocate -l 2G /swapfile;
+sudo chmod 600 /swapfile;
+sudo mkswap /swapfile;
+sudo swapon /swapfile;
+``` 
+ 
+ 
 ### Dependencies (paste all 3 seperately):
 
 ```
-sudo apt-get update;
-sudo apt-get install git;
-sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils;
-sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev;
-sudo apt-get install -y libboost-all-dev;
-sudo apt-get install -y software-properties-common;
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+sudo apt-get install -y libboost-all-dev
+sudo apt-get install -y software-properties-common
 
-sudo add-apt-repository ppa:bitcoin/bitcoin;
+sudo add-apt-repository ppa:bitcoin/bitcoin
 
-sudo apt-get update;
-sudo apt-get install -y libdb4.8-dev libdb4.8++-dev;
-sudo apt-get install -y libminiupnpc-dev;
-sudo apt-get install -y libzmq3-dev;
-sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler;
-sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler;
+sudo apt-get update
+sudo apt-get install -y libdb4.8-dev libdb4.8++-dev
+sudo apt-get install -y libminiupnpc-dev
+sudo apt-get install -y libzmq3-dev
+sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler
 ```
 ### Next, Clone the project
 
-```
-git clone https://github.com/sumcoinlabs/sumcoin.git
+``` 
+git clone -b 0.17 https://github.com/sumcoinlabs/sumcoin.git
 ```
 
 ### Change directories into Sumcoin
@@ -217,33 +250,20 @@ cd sumcoin
 ./autogen.sh
 ```
 
-* Next,
-
+Next choose configuration option
+* Full Build
 ```
 ./configure
 ```
 
-or
-
+* Build with GUI without tests (faster)
 ```
-./configure --disable-test
+./configure --disable-tests
 ```
 
-or
-
+* Build without tests or GUI
 ```
 ./configure --disable-tests --without-gui
-```
-
-## SPECIAL NOTE if using only 1 GB RAM - File Swap info (if needed):
-
-Create swapfile using (copy and paste in all 4 for an easy life):
-
-```
-sudo fallocate -l 2G /swapfile;
-sudo chmod 600 /swapfile;
-sudo mkswap /swapfile;
-sudo swapon /swapfile;
 ```
 
 # Make
@@ -253,6 +273,9 @@ sudo swapon /swapfile;
 ```
 make
 ```
+*It will then start compiling and take a while.*
+
+
 
 ### IF using a 1 GB Droplet be sure to turn OFF after you 'make'
 
@@ -260,14 +283,8 @@ make
 sudo swapoff /swapfile
 ```
 
-*It will then start compiling and take a while.*
 
-### *IF you needed swapfile - BE sure to turn it off again:*
-
-### When it is done, turn off the swapfile with:
-
-
-### Run:
+# Run: 
 
 **After this it's ready to run.**  The executable will be in sumcoin/src. Run with:
 
@@ -321,7 +338,7 @@ cd sumcoin/src/qt/:./sumcoin-qt
 * 2. create sumcoin.conf file
 * 3. inside, set the following parameters from the list below
 
-//TODO
+
 
 ### Testing
 
@@ -335,7 +352,7 @@ Unit tests for the core code are in src/test/. To compile and run them:
 cd src; make -f makefile.unix test
 Unit tests for the GUI code are in src/qt/test/. To compile and run them:
 
-qmake BITCOIN_QT_TEST=1 -o Makefile.test bitcoin-qt.pro
+qmake SUMCOIN_QT_TEST=1 -o Makefile.test sumcoin-qt.pro
 make -f Makefile.test
 ./sumcoin-qt_test
 
@@ -359,19 +376,19 @@ This is a step-by-step guide for adding sumcoind as a Hot Wallet Buy source. Thi
 
 ### This has been tested on sumcoin Core v 0.16.1
 
-
+ 
 ### First, open a terminal window and login to your server as root.
-
+ 
 Create an RPC token for CAS to communicate with sumcoind:
 The RPC token is designed to eliminate the need for hard-coded passwords in configuration and script files. You will receive a password here ONCE. This password is required for CAS; it's your “RPC Password”. You must save it during this step.
 
 ## Download rpcauth.py on GitHub  (all one line):
-### Not required if you compile your own binaries
+### Not required if you compile your own binaries 
 
 ```
 wget https://raw.githubusercontent.com/sumcoinlabs/sumcoin/master/share/rpcauth/rpcauth.py -O ~/.sumcoin/rpcauth.py
 ```
-_May Be Deprecated_
+
 ### Modify the file permissions to allow the script to execute:
 
 ```
@@ -379,13 +396,13 @@ chmod +x ~/.sumcoin/rpcauth.py
 ```
 ## Best Method
 ### Then finally run the RPC token generator that you just installed and enabled:
-### Path,
+### Path, 
 root@root:~/sumcoin/share/rpcauth
 
 ```
 ./rpcauth.py AnyNameYouWantHere
 ```
-## Example Result
+## Example Result 
 
 root@root:~/sumcoin/share/rpcauth$ ./rpcauth.py sumcoinatm
 
@@ -396,7 +413,7 @@ Your password:
 T0Dx2VLjgikeTANOGosdifoIJH80Xn2E0Tcx-jdlh1GIcr8c=
 
 
-## Save
+## Save 
 The name you entered above, the resulting token, AND the generated password. You'll need it in the next step. The “AnyNameYouWantHere” is the “RPC User”, and the generated password is your “RPC Password” for CAS. The token is put in the sumcoin.conf file (as described below).
 
 ### A sample token is all one line and should look similiar to this:
@@ -405,12 +422,12 @@ AnyNameYouWantHere:aac8dlfjsdfkjds876dfpdsfjhlsdlkfasd8plkdjf8d8984lndlkdfjsdflk
 
 ### The generated password may look like:
 T0Dx2VLjgikeTANOGosdifoIJH80Xn2E0Tcx-jdlh1GIcr8c=
-
+ 
 ### Modify the sumcoin.conf configuration file:
 
 While you might (under certain circumstances) might want to start the daemon exclusively from a command line, we urge you to change the following settings within sumcoind.conf and run sumcoind without parameters. Keep it simple!
 
-## Locate the Sumcoin Core configuration file.
+## Locate the Sumcoin Core configuration file. 
 
 - sumcoin.conf in data dir -  
 
@@ -453,9 +470,9 @@ The “rpcuser/rpcpassword” method is deprecated because it is considered a se
 If using the second/bottom method:      
 the "rpcauth" is all one line,
 
-Replace the “rpcauth” info with the token generated in the previous step.
+Replace the “rpcauth” info with the token generated in the previous step. 
 RPC tokens (like this) are the preferred method of RPC authorization.
-
+ 
 
 
 ### Start the sumcoind daemon (background process):
@@ -487,7 +504,7 @@ CAS will NOT work with Sumcoin Core unless at least one address exists!
 
 NOTE: sumcoind will take several hours (or longer) to completely synchronize with the Sumcoin network. CAS will NOT work with sumcoind until the synchronization is COMPLETE.
 
-
+ 
 ## Configure CAS to communicate with your sumcoin Core wallet:
 
 ### Assemble the required information for CAS:
@@ -495,7 +512,7 @@ NOTE: sumcoind will take several hours (or longer) to completely synchronize wit
 User: this is the “RPC User” you created earlier. For this example we'll just say it's “rpcuser”.
 Password: is the “RPCPassword” created by rpcauth.py earlier, or the one you made up (if you don't implement a token).  For this example, we'll make the password just plain “rpcpw”.
 
-### Accountname:
+### Accountname: 
 this is the account name of your wallet. An account name is neither required nor suggested. Account usage is deprecated in sumcoind, however to view any existing accounts, type:
 ```
 sumcoin-cli listaccounts
@@ -503,12 +520,12 @@ sumcoin-cli listaccounts
 This parameter may be safely omitted if only a default account exists ("").
 If you choose to specify an account, select one named in the list.
 Whether using the default ("") or not, we'll refer to it as "walletname" in the examples below.
-
+ 
 
 
 ### Next, add a new crypto-currency type to CAS:
-* Enter the “Crypto Settings” menu in the left-hand column.
-* Click on the “+ ADD” button.
+* Enter the “Crypto Settings” menu in the left-hand column. 
+* Click on the “+ ADD” button. 
 * Create a suitable description, i.e. “sumcoind SUM”.
 * Select “SUM” for the required Crypto Currency* setting.
 * Set Configuration Cash Currency* to“USD” (or whatever your local currency might be).
@@ -517,11 +534,11 @@ Whether using the default ("") or not, we'll refer to it as "walletname" in the 
 * Select your Hot Wallet Buy source to “sumcoin Core - sumcoind”.
 * Enter the Parameters for the Hot Wallet Buy source as determined in the previous step:
 
-### Example (typical):
+### Example (typical): 
 
 “http:walletName:rpcpw:DaemonIP:3332”
 
-### Example with a specific wallet:
+### Example with a specific wallet: 
 
 “http:rpcuser:rpcpw:DaemonIP:3332:walletname”
 
@@ -531,5 +548,5 @@ Whether using the default ("") or not, we'll refer to it as "walletname" in the 
 
 ### Presuming everything was entered correctly, you should receive confirmation of success!
 You should also now configure the Hot Wallet Sell using the same parameters if you implement it on a BATMThree (or other 2-way).
-
+ 
       ##     You're done!
