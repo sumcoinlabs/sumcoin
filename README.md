@@ -51,6 +51,10 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 * https://rates.slicewallet.org/api/fee_per_kb
 
 
+# Exchange example
+
+![image](https://user-images.githubusercontent.com/37975862/76591248-6683e700-64b5-11ea-9ead-8356d3d53cd8.png)
+
 
 Specifications
 --------------
