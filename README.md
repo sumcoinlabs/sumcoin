@@ -68,8 +68,9 @@ If using an ATM, Mobile App for Peer to Peer or fix rate platform this is not ne
 <li>Traders/members should not be able to place Sell orders less than the Index price</li>
 
 <li>If existing orders are present they should be automatically canceled as Index price grows more than a reasonable % amount. </li>
+
 <li>
-*Each exchange should determine what quantifies what a reasonable % is.  While Sumcoin devs feel **no more** than **3% +/-** to the [Index rate](https://sumcoinprice.com/) avoids arbitrage,  this will be left to the exchanges to decide the exact tolerances of.
+Each exchange should determine what quantifies what a reasonable % is.  While Sumcoin devs feel **no more** than **3% +/-** to the [Index rate](https://sumcoinprice.com/) avoids arbitrage,  this will be left to the exchanges to decide the exact tolerances of.
 </li>
 </ol>
 
