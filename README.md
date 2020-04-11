@@ -51,12 +51,29 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 * https://rates.slicewallet.org/api/fee_per_kb
 
 
-# Correct Exchange example
+# Correct Online Exchange example
+
+## Paremeters to address price spread vs Index Algorithm Rate
 https://www.satoexchange.com/market/SUM/BTC
 ![image](https://user-images.githubusercontent.com/37975862/76591248-6683e700-64b5-11ea-9ead-8356d3d53cd8.png)
 
+![image](https://user-images.githubusercontent.com/37975862/79033623-dcd74000-7b6c-11ea-8271-69ca8f6dbc2e.png)
 
-Specifications
+If using an ATM, Mobile App for Peer to Peer or fix rate platform this is not needed, but if you run an online exchange our team suggests following how SatoExchange did it.
+
+### Basic principals to adhere to Index Rate with online exchange
+<ol>
+ <li>Traders/members should not be able to place Buy orders greater than the Index price</li>
+
+<li>Traders/members should not be able to place Sell orders less than the Index price</li>
+
+<li>If existing orders are present they should be automatically canceled as Index price grows more than a reasonable % amount. </li>
+<li>
+*Each exchange should determine what quantifies what a reasonable % is.  While Sumcoin devs feel **no more** than **3% +/-** to the [Index rate](https://sumcoinprice.com/) avoids arbitrage,  this will be left to the exchanges to decide the exact tolerances of.
+</li>
+</ol>
+
+# Specifications
 --------------
 Specification | Descriptor
 ------------- | ----------
@@ -105,7 +122,7 @@ Fall 2022 - Spring 2023 | 96.87 - 99.995M | 3.125 SUM
 
 
 ## Maps
-* Nodes:  http://www.sumnode.io/
+* Nodes:  https://www.sumnode.io/
 
 
 ![Map](https://user-images.githubusercontent.com/51257210/66169341-4ba37180-e5fd-11e9-9069-24eae46dc2b6.png)
@@ -148,10 +165,10 @@ https://pools.show/coin/SUM
 
 # Block Explorers
 
-* SUM Block Explorer http://sumexplorer.com
+* SUM Block Explorer https://sumexplorer.com
 * Sumcoin Testnet http://sumexplorer-testnet.com/
 
-Download versions & other Information: http://sumcoin.cash
+Download versions & other Information: https://sumcoin.org
 
 
 
