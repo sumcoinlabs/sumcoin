@@ -73,7 +73,7 @@ If using an ATM, Mobile App for Peer to Peer or fix rate platform this is not ne
 <li>If existing orders are present they should be automatically canceled as Index price grows more than a reasonable % amount. </li>
 
 <li>
-Each exchange should determine what quantifies what a reasonable % is.  While Sumcoin devs feel <strong>no more</strong> than <strong>3% +/-</strong> to the <strong>Index rate</strong> avoids arbitrage,  this will be left to the exchanges to decide the exact tolerances of.
+Each exchange should determine what quantifies what a reasonable % is.  While Sumcoin devs feel <strong>no more</strong> than <strong>1% +/-</strong> to the <strong>Index rate</strong> avoids arbitrage,  this will be left to the exchanges to decide the exact tolerances of.
 </li>
 </ol>
 
