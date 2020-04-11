@@ -20,6 +20,9 @@ Sumcoin is an Index Based Coin
 
 ### OBJECT IS **INDEX BASED** 
 
+# What is Sumcoin?
+
+Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and its value is an aggregate or "SUM" of all top 100 coins by market capitalization. This is done using algorithms that track and calculate the market, without human interaction.  It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can also reduce risk factors.
 
 
 Sumcoin Core integration/staging tree [SUM, 𝚺]
@@ -186,9 +189,6 @@ CPU, GPU Use CPU Miner by Pooler (link to cpu miner - minerd - in releases)
 
 Copyright (c) 2009-2014 Bitcoin Developers Copyright (c) 2011-2016 Litecoin Developers Copyright (c) 2016-2019 Sumcoin Developers Copyright  
 
-## What is Sumcoin?
-
-Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and is an aggregate or "SUM" of all top 100 coins by market capitalization. It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can reduce risk factors.
 
 ## Times:
 
