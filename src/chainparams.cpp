@@ -143,6 +143,7 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
+	vSeeds.emplace_back("dnsseed.sumwallet.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
