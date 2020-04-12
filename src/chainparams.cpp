@@ -135,6 +135,7 @@ public:
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
+	vSeeds.emplace_back("dnsseed.sumwallet.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
