@@ -141,6 +141,7 @@ public:
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 	vSeeds.emplace_back("sumdnsseed.moonypool.com");
 	vSeeds.emplace_back("dnsseed.sumfaucet.co");
+	vSeeds.emplace_back("dnsseed.sumcoin.space");
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
@@ -212,10 +213,11 @@ public:
 		{990720, uint256S("0x7a14741c8b5c10eab3464cd23b65554f1bc5c940e2ccb69461802e61e4f73b96")},
 	       {1019520, uint256S("0xab7a59f310e2e86d81af0ca1f608d24127d8af934825c34ba3897eab1ab398cf")},
 	       {1048320, uint256S("0xc12e7cae889b0dd49f6d3d39fc40ff7ec5aadbfffb20d6ac4cb461c05f88e638")},
+	       {1077120, uint256S("0x259ec9e319169f587e3f9f8e38a0bfd5ca0cbc33a1e7c05c51b9b93fd1d17458")},
 
 		    
-		    //{1077120, uint256S("0x")},
-		    //{1105920,
+		    //{1134720, uint256S("0x")},
+		    //{1163520,
 		    
 
             }
