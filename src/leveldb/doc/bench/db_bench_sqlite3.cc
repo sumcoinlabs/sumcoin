@@ -80,7 +80,7 @@ static const char* FLAGS_db = NULL;
 
 inline
 static void ExecErrorCheck(int status, char *err_msg) {
-  if (status != SQLITE_OK) {
+  if (status != SQSUM_OK) {
     fprintf(stderr, "SQL error: %s\n", err_msg);
     sqlite3_free(err_msg);
     exit(1);
@@ -89,7 +89,7 @@ static void ExecErrorCheck(int status, char *err_msg) {
 
 inline
 static void StepErrorCheck(int status) {
-  if (status != SQLITE_DONE) {
+  if (status != SQSUM_DONE) {
     fprintf(stderr, "SQL step error: status = %d\n", status);
     exit(1);
   }
@@ -97,7 +97,7 @@ static void StepErrorCheck(int status) {
 
 inline
 static void ErrorCheck(int status) {
-  if (status != SQLITE_OK) {
+  if (status != SQSUM_OK) {
     fprintf(stderr, "sqlite3 error: status = %d\n", status);
     exit(1);
   }
@@ -107,7 +107,7 @@ inline
 static void WalCheckpoint(sqlite3* db_) {
   // Flush all writes to disk
   if (FLAGS_WAL_enabled) {
-    sqlite3_wal_checkpoint_v2(db_, NULL, SQLITE_CHECKPOINT_FULL, NULL, NULL);
+    sqlite3_wal_checkpoint_v2(db_, NULL, SQSUM_CHECKPOINT_FULL, NULL, NULL);
   }
 }
 
@@ -204,7 +204,7 @@ class Benchmark {
   }
 
   void PrintEnvironment() {
-    fprintf(stderr, "SQLite:     version %s\n", SQLITE_VERSION);
+    fprintf(stderr, "SQLite:     version %s\n", SQSUM_VERSION);
 
 #if defined(__linux)
     time_t now = time(NULL);
@@ -541,10 +541,10 @@ class Benchmark {
         snprintf(key, sizeof(key), "%016d", k);
 
         // Bind KV values into replace_stmt
-        status = sqlite3_bind_blob(replace_stmt, 1, key, 16, SQLITE_STATIC);
+        status = sqlite3_bind_blob(replace_stmt, 1, key, 16, SQSUM_STATIC);
         ErrorCheck(status);
         status = sqlite3_bind_blob(replace_stmt, 2, value,
-                                   value_size, SQLITE_STATIC);
+                                   value_size, SQSUM_STATIC);
         ErrorCheck(status);
 
         // Execute replace_stmt
@@ -614,11 +614,11 @@ class Benchmark {
         snprintf(key, sizeof(key), "%016d", k);
 
         // Bind key value into read_stmt
-        status = sqlite3_bind_blob(read_stmt, 1, key, 16, SQLITE_STATIC);
+        status = sqlite3_bind_blob(read_stmt, 1, key, 16, SQSUM_STATIC);
         ErrorCheck(status);
 
         // Execute read statement
-        while ((status = sqlite3_step(read_stmt)) == SQLITE_ROW) {}
+        while ((status = sqlite3_step(read_stmt)) == SQSUM_ROW) {}
         StepErrorCheck(status);
 
         // Reset SQLite statement for another use
@@ -653,7 +653,7 @@ class Benchmark {
 
     status = sqlite3_prepare_v2(db_, read_str.c_str(), -1, &pStmt, NULL);
     ErrorCheck(status);
-    for (int i = 0; i < reads_ && SQLITE_ROW == sqlite3_step(pStmt); i++) {
+    for (int i = 0; i < reads_ && SQSUM_ROW == sqlite3_step(pStmt); i++) {
       bytes_ += sqlite3_column_bytes(pStmt, 1) + sqlite3_column_bytes(pStmt, 2);
       FinishedSingleOp();
     }

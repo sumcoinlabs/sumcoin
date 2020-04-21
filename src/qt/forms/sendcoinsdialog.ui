@@ -324,7 +324,7 @@
                   <enum>Qt::ActionsContextMenu</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">0.00 LTC</string>
+                  <string notr="true">0.00 SUM</string>
                  </property>
                  <property name="textInteractionFlags">
                   <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -404,7 +404,7 @@
                   <enum>Qt::ActionsContextMenu</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">0.00 LTC</string>
+                  <string notr="true">0.00 SUM</string>
                  </property>
                  <property name="textInteractionFlags">
                   <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -455,7 +455,7 @@
                   <enum>Qt::ActionsContextMenu</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">0.00 LTC</string>
+                  <string notr="true">0.00 SUM</string>
                  </property>
                  <property name="textInteractionFlags">
                   <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -484,7 +484,7 @@
                   <enum>Qt::ActionsContextMenu</enum>
                  </property>
                  <property name="text">
-                  <string notr="true">0.00 LTC</string>
+                  <string notr="true">0.00 SUM</string>
                  </property>
                  <property name="textInteractionFlags">
                   <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
@@ -848,7 +848,7 @@
                  <item>
                   <widget class="QLabel" name="labelCustomPerKilobyte">
                    <property name="toolTip">
-                    <string>If the custom fee is set to 1000 satoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 satoshis in fee, while &quot;total at least&quot; pays 1000 satoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
+                    <string>If the custom fee is set to 1000 sumtoshis and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 sumtoshis in fee, while &quot;total at least&quot; pays 1000 sumtoshis. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                    </property>
                    <property name="text">
                     <string>per kilobyte</string>
@@ -878,7 +878,7 @@
                  <item>
                   <widget class="QCheckBox" name="checkBoxMinimumFee">
                    <property name="toolTip">
-                    <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</string>
+                    <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for sumcoin transactions than the network can process.</string>
                    </property>
                    <property name="text">
                     <string/>
@@ -891,7 +891,7 @@
                     <bool>true</bool>
                    </property>
                    <property name="toolTip">
-                    <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for litecoin transactions than the network can process.</string>
+                    <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for sumcoin transactions than the network can process.</string>
                    </property>
                    <property name="text">
                     <string>(read the tooltip)</string>
@@ -1237,7 +1237,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string notr="true">123.456 LTC</string>
+          <string notr="true">123.456 SUM</string>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>

@@ -174,8 +174,8 @@ def assert_array_result(object_array, to_match, expected, should_not_find=False)
 def check_json_precision():
     """Make sure json library being used does not lose precision converting BTC values"""
     n = Decimal("20000000.00000003")
-    satoshis = int(json.loads(json.dumps(float(n))) * 1.0e8)
-    if satoshis != 2000000000000003:
+    sumtoshis = int(json.loads(json.dumps(float(n))) * 1.0e8)
+    if sumtoshis != 2000000000000003:
         raise RuntimeError("JSON encode/decode loses precision")
 
 def count_bytes(hex_string):
@@ -287,7 +287,7 @@ def initialize_datadir(dirname, n):
     datadir = os.path.join(dirname, "node" + str(n))
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "litecoin.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "sumcoin.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("port=" + str(p2p_port(n)) + "\n")
         f.write("rpcport=" + str(rpc_port(n)) + "\n")
@@ -300,8 +300,8 @@ def get_datadir_path(dirname, n):
 def get_auth_cookie(datadir):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "litecoin.conf")):
-        with open(os.path.join(datadir, "litecoin.conf"), 'r', encoding='utf8') as f:
+    if os.path.isfile(os.path.join(datadir, "sumcoin.conf")):
+        with open(os.path.join(datadir, "sumcoin.conf"), 'r', encoding='utf8') as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line

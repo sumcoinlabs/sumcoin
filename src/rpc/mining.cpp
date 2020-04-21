@@ -161,7 +161,7 @@ UniValue generatetoaddress(const JSONRPCRequest& request)
             "\nMine blocks immediately to a specified address (before the RPC call returns)\n"
             "\nArguments:\n"
             "1. nblocks      (numeric, required) How many blocks are generated immediately.\n"
-            "2. address      (string, required) The address to send the newly generated litecoin to.\n"
+            "2. address      (string, required) The address to send the newly generated sumcoin to.\n"
             "3. maxtries     (numeric, optional) How many iterations to try (default = 1000000).\n"
             "\nResult:\n"
             "[ blockhashes ]     (array) hashes of blocks generated\n"
@@ -235,7 +235,7 @@ UniValue prioritisetransaction(const JSONRPCRequest& request)
             "1. \"txid\"       (string, required) The transaction id.\n"
             "2. dummy          (numeric, optional) API-Compatibility for previous API. Must be zero or null.\n"
             "                  DEPRECATED. For forward compatibility use named arguments and omit this parameter.\n"
-            "3. fee_delta      (numeric, required) The fee value (in satoshis) to add (or subtract, if negative).\n"
+            "3. fee_delta      (numeric, required) The fee value (in sumtoshis) to add (or subtract, if negative).\n"
             "                  The fee is not actually paid, only the algorithm for selecting transactions into a block\n"
             "                  considers the transaction as it would have paid a higher (or lower) fee.\n"
             "\nResult:\n"
@@ -438,10 +438,10 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
 
     if (g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0)
-        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Litecoin is not connected!");
+        throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Sumcoin is not connected!");
 
     if (IsInitialBlockDownload())
-        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Litecoin is downloading blocks...");
+        throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Sumcoin is downloading blocks...");
 
     static unsigned int nTransactionsUpdatedLast;
 
@@ -823,7 +823,7 @@ UniValue estimatesmartfee(const JSONRPCRequest& request)
             "       \"CONSERVATIVE\"\n"
             "\nResult:\n"
             "{\n"
-            "  \"feerate\" : x.x,     (numeric, optional) estimate fee-per-kilobyte (in LTC)\n"
+            "  \"feerate\" : x.x,     (numeric, optional) estimate fee-per-kilobyte (in SUM)\n"
             "  \"errors\": [ str... ] (json array of strings, optional) Errors encountered during processing\n"
             "  \"blocks\" : n         (numeric) block number where estimate was found\n"
             "}\n"

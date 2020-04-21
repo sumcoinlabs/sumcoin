@@ -771,8 +771,8 @@ EOF
 	    echo ${UNAME_MACHINE}-unknown-osf1
 	fi
 	exit ;;
-    parisc*:Lites*:*:*)
-	echo hppa1.1-hp-lites
+    parisc*:mSUM*:*:*)
+	echo hppa1.1-hp-mSUM
 	exit ;;
     C1*:ConvexOS:*:* | convex:ConvexOS:C1*:*)
 	echo c1-convex-bsd
