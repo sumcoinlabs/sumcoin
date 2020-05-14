@@ -58,9 +58,8 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 ## Paremeters to address price spread vs Index Algorithm Rate
 https://www.satoexchange.com/market/SUM/BTC
-![image](https://user-images.githubusercontent.com/37975862/76591248-6683e700-64b5-11ea-9ead-8356d3d53cd8.png)
-
-![image](https://user-images.githubusercontent.com/37975862/79033623-dcd74000-7b6c-11ea-8271-69ca8f6dbc2e.png)
+![image](https://user-images.githubusercontent.com/37975862/81912734-3bd50e00-958c-11ea-85ab-63cda911f484.png)
+![image](https://user-images.githubusercontent.com/37975862/81913029-a5551c80-958c-11ea-963c-1fa228f36a97.png)
 
 If using an ATM, Mobile App for Peer to Peer or fix rate platform this is not needed, but if you run an online exchange our team suggests following how SatoExchange did it.
 
