@@ -150,6 +150,7 @@ public:
 	vSeeds.emplace_back("sumdnsseed.moonypool.com");
 	vSeeds.emplace_back("dnsseed.sumfaucet.co");
 	vSeeds.emplace_back("dnsseed.sumcoin.space");
+	vSeeds.emplace_back("dnsseed.sumcamper.com");
 
 
 
