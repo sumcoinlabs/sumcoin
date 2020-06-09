@@ -144,6 +144,7 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
 	vSeeds.emplace_back("dnsseed.jandsmining.com");
+	vSeeds.emplace_back("dnsseed.coinstop.org");
         vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	vSeeds.emplace_back("dnsseed.sumnode.io");
 	vSeeds.emplace_back("dnsseed.sumcoinmining.org");
