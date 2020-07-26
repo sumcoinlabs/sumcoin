@@ -84,6 +84,13 @@ Ticker Symbol                  | SUM
 Algorithm                      | SCRYPT
 Maxiumum Supply                | 100,000,000
 SegWit                         | Activated at block 220
+BIP58 Prefix Public            | 0x04, 0x88, 0xB4, 0x1C
+BIP58 Prefix Private           | 0x04, 0x88, 0xAB, 0xE6
+BIP32 public:                  | 0x0488b41c
+BIP32 private:                 | 0x0488abe6
+pubKeyHash:                    | 0x3F
+scriptHash:                    | 0xC8
+wif:                           | 0xbf
 Mainnet RPC Port               | 3332
 Mainnet P2P Port               | 3333
 Electrum Mainnet RPC Port      | 53332
