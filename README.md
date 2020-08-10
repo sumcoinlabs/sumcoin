@@ -98,6 +98,7 @@ Electrum Mainnet RPC Port      | 53332
 Electrum Mainnet P2P Port      | 53333
 Testnet RPC Port               | 13332
 Testnet P2P Port               | 13333
+regtest port                   | 19444
 Block Time                     | 30 Seconds
 Coinbase Transaction Maturity  | 100 Blocks
 Confirmation                   | 6 Blocks
