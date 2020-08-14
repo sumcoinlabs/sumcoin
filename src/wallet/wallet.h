@@ -38,7 +38,9 @@ bool RemoveWallet(const std::shared_ptr<CWallet>& wallet);
 bool HasWallets();
 std::vector<std::shared_ptr<CWallet>> GetWallets();
 std::shared_ptr<CWallet> GetWallet(const std::string& name);
-
+extern CFeeRate payTxFee;
+//! -paytxfee default
+static const CAmount DEFAULT_TRANSACTION_FEE = 0;
 //! Default for -keypool
 static const unsigned int DEFAULT_KEYPOOL_SIZE = 1000;
 //! -paytxfee default

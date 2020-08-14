@@ -35,6 +35,7 @@
 
 #include <boost/algorithm/string/replace.hpp>
 
+CFeeRate payTxFee(DEFAULT_TRANSACTION_FEE);
 static const size_t OUTPUT_GROUP_MAX_ENTRIES = 10;
 
 static CCriticalSection cs_wallets;
