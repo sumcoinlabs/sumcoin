@@ -193,6 +193,16 @@ unsigned int CScript::GetSigOpCount(const CScript& scriptSig) const
     CScript subscript(vData.begin(), vData.end());
     return subscript.GetSigOpCount(true);
 }
+bool CScript::IsPayToPublicKeyHash() const
+{
+    // Extra-fast test for pay-to-pubkey-hash CScripts:
+    return (this->size() == 25 &&
+	    (*this)[0] == OP_DUP &&
+	    (*this)[1] == OP_HASH160 &&
+	    (*this)[2] == 0x14 &&
+	    (*this)[23] == OP_EQUALVERIFY &&
+	    (*this)[24] == OP_CHECKSIG);
+}
 
 bool CScript::IsPayToScriptHash() const
 {

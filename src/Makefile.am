@@ -91,6 +91,9 @@ endif
 # bitcoin core #
 BITCOIN_CORE_H = \
   addrdb.h \
+  addressindex.h \
+  spentindex.h \
+  timestampindex.h \
   addrman.h \
   base58.h \
   bech32.h \
@@ -157,6 +160,7 @@ BITCOIN_CORE_H = \
   rpc/rawtransaction.h \
   rpc/register.h \
   rpc/util.h \
+  rpc/misc.h \
   scheduler.h \
   script/descriptor.h \
   script/ismine.h \
