@@ -1154,13 +1154,13 @@ static UniValue sendmany(const JSONRPCRequest& request)
             "                                    the number of addresses.\n"
             "\nExamples:\n"
             "\nSend two amounts to two different addresses:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\"") +
             "\nSend two amounts to two different addresses setting the confirmation and comment:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\" 6 \"testing\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\" 6 \"testing\"") +
             "\nSend two amounts to two different addresses, subtract fee from amount:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\" 1 \"\" \"[\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\",\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\"]\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\" 1 \"\" \"[\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\",\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\"]\"") +
             "\nAs a json rpc call\n"
-            + HelpExampleRpc("sendmany", "\"\", {\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\":0.01,\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\":0.02}, 6, \"testing\"");
+            + HelpExampleRpc("sendmany", "\"\", {\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\":0.01,\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\":0.02}, 6, \"testing\"");
     } else {
         help_text = "sendmany \"\" \"fromaccount\" {\"address\":amount,...} ( minconf \"comment\" [\"address\",...] replaceable conf_target \"estimate_mode\")\n"
             "\nSend multiple times. Amounts are double-precision floating point numbers."
@@ -1193,13 +1193,13 @@ static UniValue sendmany(const JSONRPCRequest& request)
             "                                    the number of addresses.\n"
             "\nExamples:\n"
             "\nSend two amounts to two different addresses:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\"") +
             "\nSend two amounts to two different addresses setting the confirmation and comment:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\" 6 \"testing\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\" 6 \"testing\"") +
             "\nSend two amounts to two different addresses, subtract fee from amount:\n"
-            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\":0.02}\" 1 \"\" \"[\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\",\\\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\\\"]\"") +
+            + HelpExampleCli("sendmany", "\"\" \"{\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\":0.01,\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\":0.02}\" 1 \"\" \"[\\\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\\\",\\\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\\\"]\"") +
             "\nAs a json rpc call\n"
-            + HelpExampleRpc("sendmany", "\"\", {\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\":0.01,\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\":0.02}, 6, \"testing\"");
+            + HelpExampleRpc("sendmany", "\"\", {\"SbsFGHLbdwkUwkxcT7ywnDz6FjNhYT8aBE\":0.01,\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\":0.02}, 6, \"testing\"");
     }
 
     if (request.fHelp || request.params.size() < 2 || request.params.size() > 8) throw std::runtime_error(help_text);
@@ -1711,7 +1711,7 @@ static UniValue listreceivedbyaddress(const JSONRPCRequest& request)
             + HelpExampleCli("listreceivedbyaddress", "")
             + HelpExampleCli("listreceivedbyaddress", "6 true")
             + HelpExampleRpc("listreceivedbyaddress", "6, true, true")
-            + HelpExampleRpc("listreceivedbyaddress", "6, true, true, \"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\"")
+            + HelpExampleRpc("listreceivedbyaddress", "6, true, true, \"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\"")
         );
 
     // Make sure the results are valid at least up to the most recent block
@@ -4198,8 +4198,8 @@ UniValue getaddressinfo(const JSONRPCRequest& request)
             "    ]\n"
             "}\n"
             "\nExamples:\n"
-            + HelpExampleCli("getaddressinfo", "\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\"")
-            + HelpExampleRpc("getaddressinfo", "\"LbhhnrHHVFP1eUjP1tdNIYeEVsNHfN9FCw\"")
+            + HelpExampleCli("getaddressinfo", "\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\"")
+            + HelpExampleRpc("getaddressinfo", "\"SitgU9J5cx45K3QQXkdmvqFy7AsjxmHERr\"")
         );
     }
 
