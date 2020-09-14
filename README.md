@@ -54,14 +54,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 * https://rates.slicewallet.org/api/fee_per_kb
 
 
-# Correct Online Exchange example
 
-## Paremeters to address price spread vs Index Algorithm Rate
-https://www.satoexchange.com/market/SUM/BTC
-![image](https://user-images.githubusercontent.com/37975862/81912734-3bd50e00-958c-11ea-85ab-63cda911f484.png)
-![image](https://user-images.githubusercontent.com/37975862/81913029-a5551c80-958c-11ea-963c-1fa228f36a97.png)
-
-If using an ATM, Mobile App for Peer to Peer or fix rate platform this is not needed, but if you run an online exchange our team suggests following how SatoExchange did it.
 
 ### Basic principals to adhere to Index Rate with online exchange
 <ol>
