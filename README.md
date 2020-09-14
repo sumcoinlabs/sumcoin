@@ -43,10 +43,11 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 
 * https://rates.slicewallet.org/api/rates
 
-# SUM / BTC 
+# SUM / BTC / USDT
 ## Rate API Sources 
 
 * https://sumcoinindex.com/rates/sum_btc.json
+* https://sumcoinindex.com/rates/SUM_USDT.json
 
 # TX fees api
 ## Fee sum/kb API 
@@ -120,15 +121,16 @@ Fall 2022 - Spring 2023 | 96.87 - 99.995M | 3.125 SUM
 
 ## Chat
 * Discord: https://discordapp.com/invite/ffJT5s8
-* Tele: https://t.me/sumcoinindex
+* Telegram: https://t.me/sumcoins
 * Twitter: https://twitter.com/SumcoinIndex
-* Explorer: https://sumexplorer.com
+* Explorer 1: https://insight.sumcore.org
+* Explorer 2: https://sumexplorer.com
 
 
 
 ## Maps
 * Nodes:  https://www.sumnode.io/
-
+* Note:  Dependancies may not be working for map display as of Sept 2020
 
 ![Map](https://user-images.githubusercontent.com/51257210/66169341-4ba37180-e5fd-11e9-9069-24eae46dc2b6.png)
 
