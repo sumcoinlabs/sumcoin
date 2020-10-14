@@ -84,6 +84,7 @@ public:
     void UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64_t nStartTime, int64_t nTimeout);
 protected:
     CChainParams() {}
+    CBlock FindNewGenesisBlock(CBlock genesis);
 
     Consensus::Params consensus;
     CMessageHeader::MessageStartChars pchMessageStart;
