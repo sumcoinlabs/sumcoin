@@ -198,9 +198,9 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
     arith_uint256 bnNew;
     bnNew = ((kgw_dual2 + kgw_dual1)/2);
 	
-    // DUAL KGW3 increased rapidly the Diff if Blocktime to last block under Blocktime/6 sec   15seconds.	
+    // DUAL KGW3 increased rapidly the Diff if Blocktime to last block under Blocktime/2 sec   15seconds.	
     if(kgwdebug){ LogPrintf("START::kgwdebug::BLOCK %d nActualTimespanshort = %d Blocktime/6 = %d \n" , pindexLast->nHeight+1, nActualTimespanshort, Blocktime/6 ); }
-    if(nActualTimespanshort < Blocktime/6){  
+    if(nActualTimespanshort < Blocktime/2){  
         if(kgwdebug){ LogPrintf("ISSHORT::kgwdebug::BLOCK %d PREDIFF: bnNew.GetCompact() %I %08x %s bnNew first  \n", pindexLast->nHeight+1, bnNew.GetCompact(), bnNew.GetCompact(), bnNew.ToString().c_str() ); }
 	    const int64_t nLongShortNew1 = 85;  
         const int64_t nLongShortNew2 = 100; 
@@ -217,7 +217,7 @@ unsigned int static GetNextWorkRequired_V2(const CBlockIndex* pindexLast, const 
 
     // Reduce difficulty if current block generation time has already exceeded maximum time limit.
 	if ((pblock->nTime - pindexLast->GetBlockTime()) > nLongTimeLimit){
-	bnNew = bnPowLimit/15;
+	bnNew = bnPowLimit*15;
        	if(kgwdebug){
            	LogPrintf("ISLONG::kgwdebug::BLOCK %d bnNew.GetCompact() %I Maximum block time hit - adjusted diff to %08x %s\n",pindexLast->nHeight+1, bnNew.GetCompact(), bnNew.GetCompact(), bnNew.ToString().c_str()); 
 	           }
