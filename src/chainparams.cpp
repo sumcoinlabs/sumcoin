@@ -323,8 +323,8 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        consensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
-        consensus.nCoinbaseMaturity = 100;
+        tuneupconsensus.nHeightEffective = 12650;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
         pConsensusRoot = &tuneupconsensus;
@@ -449,8 +449,8 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        consensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
-        consensus.nCoinbaseMaturity = 100;
+        tuneupconsensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
         pConsensusRoot = &tuneupconsensus;
