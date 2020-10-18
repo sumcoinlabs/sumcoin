@@ -58,6 +58,21 @@ struct Params {
     int BIP65Height;
     /** Block height at which BIP66 becomes active */
     int BIP66Height;
+    /** Initial block POW diffmode 1 */
+    int DiffMode;
+	/** Block height at which DiffModeV2 becomes active */
+    int DiffModeV2;
+
+    int SubnHeight; //fork height for sub
+    int SubV;
+    int SubBlks;
+    /** Height-aware consensus parameters */
+    uint32_t nHeightEffective; // When these parameters come into use
+    int nCoinbaseMaturity;
+    struct Params *pLeft = nullptr;      // Left hand branch
+    const Consensus::Params *GetMaturity(uint32_t nTargetHeight) const;
+
+
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.
