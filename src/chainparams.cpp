@@ -314,16 +314,16 @@ public:
 
         // new tuneupconsensus parameters
         consensus.DiffMode = 1;  //always 1
-        consensus.DiffModeV2 = 12305; //set to height for the new diffmode
-        consensus.SubnHeight = 12405; //fork height for sub
-        consensus.SubV = 4937975;
-        consensus.SubBlks = 20;
+        consensus.DiffModeV2 = 300; //set to height for the new diffmode
+        consensus.SubnHeight = 1005; //fork height for sub
+        consensus.SubV = 9989950;
+        consensus.SubBlks = 10;
         consensus.nHeightEffective = 0;
         consensus.nCoinbaseMaturity = 10;
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 12650;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 200;  //fork height after this block for coinbase maturity 
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
