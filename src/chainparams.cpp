@@ -79,6 +79,8 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
  */
 
 class CMainParams : public CChainParams {
+private:
+    Consensus::Params tuneupconsensus;    
 public:
     CMainParams() {
         strNetworkID = "main";
@@ -126,8 +128,27 @@ public:
          nDefaultPort = 3333;
          nPruneAfterHeight = 100000;
 
+         // new parameters
+         consensus.DiffMode = 1;  //always 1
+         consensus.DiffModeV2 = 1334635; //set to hieght for the new diffmode
+         consensus.SubnHeight = 1334735;
+         consensus.SubV = 1385975;
+         consensus.SubBlks = 12;
+         consensus.nHeightEffective = 0;
+         consensus.nCoinbaseMaturity = 10;
+
+         // new tuneupconsensus parameters
+         tuneupconsensus = consensus;
+         tuneupconsensus.nHeightEffective = 1334535;  //fork height after this block for coinbase maturity 
+         tuneupconsensus.nCoinbaseMaturity = 100;
+
+         // Assemble the binary search tree of parameters
+         pConsensusRoot = &tuneupconsensus;
+         tuneupconsensus.pLeft = &consensus;        
+        
          genesis = CreateGenesisBlock(1554579000, 133964, 0x1e0ffff0, 1, 100 * COIN);
          consensus.hashGenesisBlock = genesis.GetHash();
+         tuneupconsensus.hashGenesisBlock = consensus.hashGenesisBlock;        
          assert(consensus.hashGenesisBlock == uint256S("0x37d4696c5072cd012f3b7c651e5ce56a1383577e4edacc2d289ec9b25eebfd5e"));
          assert(genesis.hashMerkleRoot == uint256S("0xb82fb0f59328af96928f3a7648461f3db41fbfc2fef4e5ec6f7cf78ca067eacc"));
 
@@ -229,21 +250,23 @@ public:
  * Testnet (v3)
  */
 class CTestNetParams : public CChainParams {
+private:
+    Consensus::Params tuneupconsensus;    
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 1000000;
+        consensus.nSubsidyHalvingInterval = 500000;
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("1713222425d0b5b402b81c5fd9928708ebd2233ccdcd8b08ec19da962890650e");
-        consensus.BIP65Height = 90000; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
-        consensus.BIP65Height = 90000; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP65Height = 50; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP66Height = 50; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 3.14159 * 24 * 60 * 60; // 3.5 days
         consensus.nPowTargetSpacing = 1.25 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 10857; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 14476; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 5; // 
+        consensus.nMinerConfirmationWindow = 10; // 
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -270,9 +293,28 @@ public:
         pchMessageStart[3] = 0xd3;
         nDefaultPort = 13333;
         nPruneAfterHeight = 100000;
+        
+        // new tuneupconsensus parameters
+        consensus.DiffMode = 1;  //always 1
+        consensus.DiffModeV2 = 12305; //set to height for the new diffmode
+        consensus.SubnHeight = 12405; //fork height for sub
+        consensus.SubV = 4937975;
+        consensus.SubBlks = 20;
+        consensus.nHeightEffective = 0;
+        consensus.nCoinbaseMaturity = 10;
+
+        // new tuneupconsensus parameters
+        tuneupconsensus = consensus;
+        consensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
+        consensus.nCoinbaseMaturity = 100;
+
+        // Assemble the binary search tree of parameters
+        pConsensusRoot = &tuneupconsensus;
+        tuneupconsensus.pLeft = &consensus;
 
         genesis = CreateGenesisBlockTest(1523718257, 2086000341, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+        tuneupconsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         assert(consensus.hashGenesisBlock == uint256S("0x8f4af36aa0bdb9ae5a34d191bcbd80748569e4ef2e47587f0a3f5749dde17eea"));
         assert(genesis.hashMerkleRoot == uint256S("0xccd37098b85fc0f190dc74b18c0d6a42f52ac8833348d6ff3663489fc66e31e2"));
 
@@ -327,6 +369,8 @@ public:
  * Regression test
  */
 class CRegTestParams : public CChainParams {
+private:
+    Consensus::Params tuneupconsensus;    
 public:
     CRegTestParams() {
         strNetworkID = "regtest";
@@ -364,9 +408,28 @@ public:
         pchMessageStart[3] = 0xda;
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
+        
+        // new tuneupconsensus parameters
+        consensus.DiffMode = 1;  //always 1
+        consensus.DiffModeV2 = 12305; //set to height for the new diffmode
+        consensus.SubnHeight = 12405; //fork height for sub
+        consensus.SubV = 4937975;
+        consensus.SubBlks = 20;
+        consensus.nHeightEffective = 0;
+        consensus.nCoinbaseMaturity = 10;
+
+        // new tuneupconsensus parameters
+        tuneupconsensus = consensus;
+        consensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
+        consensus.nCoinbaseMaturity = 100;
+
+        // Assemble the binary search tree of parameters
+        pConsensusRoot = &tuneupconsensus;
+        tuneupconsensus.pLeft = &consensus;
 
         genesis = CreateGenesisBlock(1554579800, 659710, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+        tuneupconsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         assert(consensus.hashGenesisBlock == uint256S("0x19decb2815da5a7779c72af78fe6268c2a76ec94e940503a6c3ffafb282ef397"));
         assert(genesis.hashMerkleRoot == uint256S("0xb82fb0f59328af96928f3a7648461f3db41fbfc2fef4e5ec6f7cf78ca067eacc"));
 
@@ -404,6 +467,23 @@ static std::unique_ptr<CChainParams> globalChainParams;
 const CChainParams &Params() {
     assert(globalChainParams);
     return *globalChainParams;
+}
+
+const Consensus::Params *Consensus::Params::GetMaturity(uint32_t nTargetHeight) const {
+    if (nTargetHeight < this -> nHeightEffective && this -> pLeft != NULL) {
+        return this -> pLeft -> GetMaturity(nTargetHeight);
+    } 
+    // Dogecoin logic include a pRight fork with additional options that we are currently
+    // not using.
+    //else if (nTargetHeight > this -> nHeightEffective && this -> pRight != NULL) {
+    //    const Consensus::Params *pCandidate = this -> pRight -> GetConsensus(nTargetHeight);
+    //    if (pCandidate->nHeightEffective <= nTargetHeight) {
+    //        return pCandidate;
+    //    }
+    // }
+
+    // No better match below the target height
+    return this;
 }
 
 std::unique_ptr<CChainParams> CreateChainParams(const std::string& chain)
