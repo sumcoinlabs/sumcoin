@@ -1040,6 +1040,7 @@ bool ReadBlockFromDisk(CBlock& block, const CBlockIndex* pindex, const Consensus
 
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
+    int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
     if(nHeight <= consensusParams.SubnHeight){
     // Force block reward to zero when right shift is undefined.
     if (halvings >= 32)
