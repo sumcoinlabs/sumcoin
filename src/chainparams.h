@@ -52,6 +52,9 @@ public:
         MAX_BASE58_TYPES
     };
 
+    const Consensus::Params& GetMaturity(uint32_t nTargetHeight) const {
+        return *(pConsensusRoot -> GetMaturity(nTargetHeight));
+    }
     const Consensus::Params& GetConsensus() const { return consensus; }
     const CMessageHeader::MessageStartChars& MessageStart() const { return pchMessageStart; }
     int GetDefaultPort() const { return nDefaultPort; }
@@ -77,7 +80,9 @@ public:
 protected:
     CChainParams() {}
 
+    CBlock FindNewGenesisBlock(CBlock genesis);
     Consensus::Params consensus;
+    Consensus::Params *pConsensusRoot; // Binary search tree root
     CMessageHeader::MessageStartChars pchMessageStart;
     int nDefaultPort;
     uint64_t nPruneAfterHeight;
