@@ -159,17 +159,13 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
             vSeeds.emplace_back("dnsseed.sumcoinpool.org");
-	    vSeeds.emplace_back("dnsseed.jandsmining.com");
-	    vSeeds.emplace_back("dnsseed.coinstop.org");
+	    vSeeds.emplace_back("dnsseed.minesum.com");
             vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
 	    vSeeds.emplace_back("dnsseed.sumnode.io");
 	    vSeeds.emplace_back("dnsseed.sumcoinmining.org");
 	    vSeeds.emplace_back("sumdnsseed.moonypool.com");
-	    vSeeds.emplace_back("dnsseed.sumfaucet.co");
 	    vSeeds.emplace_back("dnsseed.sumcoin.space");
-	    vSeeds.emplace_back("dnsseed.sumcamper.com");
-	    vSeeds.emplace_back("dnsseed.sum-husker.com");
-	    vSeeds.emplace_back("dnsseed.sumexplorer.com");
+
 
 
 
