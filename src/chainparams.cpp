@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2016 Sumtoshi
-// Copyright (c) 2009-2019 The Bitcoin Core developers
-// Copyright (c) 2016-2020 The Sumcoin Core developers
+// Copyright (c) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2022 The Sumcoin Core developers
 
 
 // Distributed under the MIT software license, see the accompanying
@@ -79,7 +79,7 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
 
 class CMainParams : public CChainParams {
 private:
-    Consensus::Params tuneupconsensus;    
+    Consensus::Params tuneupconsensus;
 public:
     CMainParams() {
         strNetworkID = "main";
@@ -139,7 +139,7 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 1323910;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 1323910;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -170,7 +170,7 @@ public:
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //  
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);  //  hexid = "BF"
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
@@ -250,10 +250,10 @@ public:
 	       {1820160, uint256S("0x67c14f74e3b52c7744786d014e25c27270203d8b6f4ec5081f5deb371262e635")},
 	       {2368300, uint256S("0x79c6f56bff70c17a2ea17b926f0abb3af1f017348ab796cd29be7fb00327bf1d")},
 
-		    
+
 		    //{1704960, uint256S("0x")},
 		    //{,
-		    
+
 
             }
         };
@@ -273,7 +273,7 @@ public:
  */
 class CTestNetParams : public CChainParams {
 private:
-    Consensus::Params tuneupconsensus;    
+    Consensus::Params tuneupconsensus;
 public:
     CTestNetParams() {
         strNetworkID = "test";
@@ -288,8 +288,8 @@ public:
         consensus.nPowTargetSpacing = 30;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 5; // 
-        consensus.nMinerConfirmationWindow = 10; // 
+        consensus.nRuleChangeActivationThreshold = 5; //
+        consensus.nMinerConfirmationWindow = 10; //
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -328,7 +328,7 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 200;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 200;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -348,10 +348,10 @@ public:
         //bool fOverflow;
         //arith_uint256 bnTarget;
         //bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-        
+
         //if (UintToArith256(consensus.hashGenesisBlock) > bnTarget)
         //    genesis = FindNewGenesisBlock(genesis);
-        
+
         //printf("Testnet Genesis:\n %s \n\n",genesis.ToString().c_str());
         // end of one use code
    // Testnet Genesis:
@@ -454,7 +454,7 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -511,7 +511,7 @@ const CChainParams &Params() {
 const Consensus::Params *Consensus::Params::GetMaturity(uint32_t nTargetHeight) const {
     if (nTargetHeight < this -> nHeightEffective && this -> pLeft != NULL) {
         return this -> pLeft -> GetMaturity(nTargetHeight);
-    } 
+    }
     // Dogecoin logic include a pRight fork with additional options that we are currently
     // not using.
     //else if (nTargetHeight > this -> nHeightEffective && this -> pRight != NULL) {
@@ -553,13 +553,13 @@ CBlock CChainParams::FindNewGenesisBlock(CBlock block){
     // if this gets called, it means the genesis block has failed the nBits POW test
     // we need to mine a new one that works. Just like mining, we loop through changing
     // nonces until we get a hash low enough to satisfy the nBits
-   
+
     bool fNegative;
     bool fOverflow;
-    arith_uint256 hashTarget; 
+    arith_uint256 hashTarget;
     arith_uint256 thash;
     char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
-    
+
     hashTarget.SetCompact(block.nBits, &fNegative, &fOverflow);
     printf("Finding new Genesis Block...\n");
     while(true)
@@ -596,6 +596,6 @@ CBlock CChainParams::FindNewGenesisBlock(CBlock block){
     printf("block.nNonce = %u \n", block.nNonce);
     printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
     printf("block = %s\n",block.ToString().c_str());
-    
+
     return(block);
 }
