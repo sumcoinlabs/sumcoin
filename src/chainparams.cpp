@@ -55,7 +55,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     printf("%s\n", hash.ToString().c_str());
     printf("%s\n", genesis.ToString().c_str());
     printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-    // genesis.print();
+    genesis.print();
 
     assert(false);
 
