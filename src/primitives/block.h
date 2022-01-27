@@ -9,6 +9,7 @@
 #include <primitives/transaction.h>
 #include <serialize.h>
 #include <uint256.h>
+#include <util/strencodings.h>
 
 /** Nodes collect new transactions into a block, hash them into a hash tree,
  * and scan through nonce values to make the block's hash satisfy proof-of-work
@@ -156,6 +157,29 @@ public:
         for (const auto& tx : vtx)
             maxTransactionTime = std::max(maxTransactionTime, (int64_t)tx->nTime);
         return maxTransactionTime;
+    }
+
+    mutable std::vector<uint256> vMerkleTree;
+
+    void print() const
+    {
+        printf("CBlock(hash=%s, ver=%d, hashPrevBlock=%s, hashMerkleRoot=%s, nTime=%u, nBits=%08x, nNonce=%u, vtx=%" "zu"", vchBlockSig=%s)\n",
+            GetHash().ToString().c_str(),
+            nVersion,
+            hashPrevBlock.ToString().c_str(),
+            hashMerkleRoot.ToString().c_str(),
+            nTime, nBits, nNonce,
+            vtx.size(),
+            HexStr(vchBlockSig.begin(), vchBlockSig.end()).c_str());
+        for (unsigned int i = 0; i < vtx.size(); i++)
+        {
+            printf("  ");
+            vtx[i]->print();
+        }
+        printf("  vMerkleTree: ");
+        for (unsigned int i = 0; i < vMerkleTree.size(); i++)
+            printf("%s ", vMerkleTree[i].ToString().c_str());
+        printf("\n");
     }
 
     unsigned int GetStakeEntropyBit() const; // peercoin: entropy bit for stake modifier if chosen by modifier

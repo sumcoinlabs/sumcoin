@@ -321,6 +321,11 @@ public:
     /** Construct a CTransaction that qualifies as IsNull() */
     CTransaction();
 
+    void print() const
+    {
+        printf("%s", ToString().c_str());
+    }
+
     /** Convert a CMutableTransaction into a CTransaction. */
     explicit CTransaction(const CMutableTransaction &tx);
     CTransaction(CMutableTransaction &&tx);
