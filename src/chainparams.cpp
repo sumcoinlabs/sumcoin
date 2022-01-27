@@ -26,7 +26,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     txNew.nVersion = 1;
     txNew.vin.resize(1);
     txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(9999) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
     txNew.vout[0].nValue = genesisReward;
     txNew.vout[0].scriptPubKey = genesisOutputScript;
     txNew.nTime = nTimeTx;
@@ -76,8 +76,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTimeTx, uint32_t nTimeBlock, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "Fighting flares on outskirts of Tripoli";
-    const CScript genesisOutputScript = CScript();
-    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTimeTx, nTimeBlock, nNonce, nBits, nVersion, genesisReward);
+    const CScript genesisOutputScript = CScript() << ParseHex("04e7cf35e1cdf80e8930abd12a54bbfc7f11967357798197184d93b5aceff942221d22c1c885a556ff27a13c9172fdd22f4e392a6f3f02f04149142b0220b7191f") << OP_CHECKSIG;
+    return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTimeTx, nTimeBlock, nNonce, nBits, nVersion, 10000 * COIN);
 }
 
 /**
@@ -129,7 +129,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579300, 0, 0x1e0ffff0, 1, 0);
+        genesis = CreateGenesisBlock(1554579000, 1554579300, 0, 0x1e0ffff0, 1, 10000 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000006b2281d8b8f412a087f2271a133114038c0181cc6904d240bc3eb953"));
         assert(genesis.hashMerkleRoot == uint256S("0xa14add4166fd2eb3c8f52566d23b68438094f4a72e359ad7f92506f0f813ea2f"));
