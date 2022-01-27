@@ -89,8 +89,8 @@ public:
         strNetworkID = CBaseChainParams::MAIN;
         //consensus.BIP16Height = 0;
         consensus.BIP34Height = 100000;
-        consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
-        consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
+        consensus.powLimit =            uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 20;
+        consensus.bnInitialHashTarget = uint256S("0x00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
 // -        consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
 // -        consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
@@ -129,7 +129,7 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579300, 0, 0x1d03ffff, 1, 0);
+        genesis = CreateGenesisBlock(1554579000, 1554579300, 0, 0x1e0ffff0, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000006b2281d8b8f412a087f2271a133114038c0181cc6904d240bc3eb953"));
         assert(genesis.hashMerkleRoot == uint256S("0xa14add4166fd2eb3c8f52566d23b68438094f4a72e359ad7f92506f0f813ea2f"));
@@ -194,8 +194,8 @@ public:
     CTestNetParams() {
         strNetworkID = CBaseChainParams::TESTNET;
         // consensus.BIP16Height = 0;
-        consensus.BIP34Height = 293368;
-        consensus.BIP34Hash = uint256S("00000002c0b976c7a5c9878f1cec63fb4d88d68d614aedeaf8158c42d904795e");
+        consensus.BIP34Height = 0;
+        consensus.BIP34Hash = uint256S("0x00");
         consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
         consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
 
@@ -228,7 +228,7 @@ public:
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554578100, 1554578400, 0, 0x1d03ffff, 1, 0);
+        genesis = CreateGenesisBlock(1554578100, 1554578400, 0, 0x1e0ffff0, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0"));
         assert(genesis.hashMerkleRoot == uint256S("0"));
@@ -324,7 +324,7 @@ public:
         m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554578100, 1554578400, 0, 0x1d03ffff, 1, 0);
+        genesis = CreateGenesisBlock(1554578100, 1554578400, 0, 0x1e0ffff0, 1, 0);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0"));
