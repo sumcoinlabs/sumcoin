@@ -129,10 +129,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfc;
-        pchMessageStart[1] = 0xc4;
-        pchMessageStart[2] = 0xba;
-        pchMessageStart[3] = 0xd2;
+        pchMessageStart[0] = 0xf1;
+        pchMessageStart[1] = 0xe6;
+        pchMessageStart[2] = 0xf9;
+        pchMessageStart[3] = 0xa2;
         vAlertPubKey = ParseHex("04a8a03f1089ad6e9c13b7edc2ece07e9537ad7031575ae19c5ef69d5310f3a9ec86873fc0bf10c7da6c379d33cde306c13f58bcbcd556bceb6b1b35090a80e058");
         nDefaultPort = 9999;
         nPruneAfterHeight = 100000;
@@ -171,24 +171,19 @@ public:
         checkpointData = {
             {
                 {0,     uint256S("0x00000da5ed0c69a3200c4c896492fc965e47011843d9e5de05041867c8e1b4f1")},
-                // {10,    uint256S("0x7bb955c37fc263a094857d69d2b36afc56f2b94e20dd6549815dda1f1d5278f3")},
-                // {1000,  uint256S("0x2ec0adf2e97568b59d784ab178a68a718c589fd86a15185cc00e1c34935d3b08")},
-                // {2000,  uint256S("0xe38fc8a702609c7dcd993411a9a71998663d41aa3f56dee1804d883a1aab0540")},
-                // {3000,  uint256S("0xea2f24581c635c32db51f30a7f95ee3b903772fd95d612c91be294c9853f4698")},
-                // {4000,  uint256S("0x5fb871be5a8cb3b94516096c3c9f4311522ba040c72f56ccffd4406690eadb97")},
-                // {5000,  uint256S("0x7f9f4c038fd3f3c882b266caa07c702d083d9a8680ec54afb9715325e3944c22")},
-                // {6000,  uint256S("0xd5ab5fc17b776313bf83bda05e16e03a8507f87b44f92e3668ae9450aa85924d")},
-                // {7000,  uint256S("0x62d0fe4a0e1b5dc2b121e5147072260eaebff1c0faadafce339b49e0e02a8300")},
-                // {8000,  uint256S("0x10aad1efb42dd1a138636a36ee055915f8e047f4ce748202e607503efafcd378")},
-                // {9000,  uint256S("0x4f50e614c0ffb4bd463361c09ec1abcf66912e96f983ea9d1aa1a3e94b36df7a")},
+                {10,    uint256S("0x0000000084f8c88d3086b7e5f5b441506817fbfb1e8e3629c95726bf4a2ddeb2")},
+                {100,   uint256S("0x0000000052b6cf49b78bf49118bc10c37a7e03eb4ead43c28d0e1395a0b8f563")},
+                {200,   uint256S("0x00000000302868778d39eaeacd193c4c4449c19accdd8278fb7dc09e6ff99933")},
+                {300,   uint256S("0x000000004f4d1c11bc31bb5bd4c4cb53a7832fd82296b38491a3ec755f4cff31")},
+                {400,   uint256S("0x00000000f0d05d03585d9c1948c90d7dbce5b068d2e443ca279230568743b952")}
                 // {10001, uint256S("0xe56b6548995455c55562c46463f6856bbb28624b2761261ac8d11c0de731d70a")} // Last PoW            
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1554578100, // * UNIX timestamp of last known number of transactions
-            0,    // * total number of transactions between genesis and that timestamp
+            1554783917, // * UNIX timestamp of last known number of transactions
+            401,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
@@ -226,12 +221,12 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f"); //1135275
+        consensus.defaultAssumeValid = uint256S("0x00000000f3288c058d3fef6e6de1ff85e2d67c6a87b46d3f75a5289c6fde68b2"); //1135275
 
-        pchMessageStart[0] = 0xf2;
-        pchMessageStart[1] = 0xc3;
-        pchMessageStart[2] = 0xb9;
-        pchMessageStart[3] = 0xd4;
+        pchMessageStart[0] = 0xf1;
+        pchMessageStart[1] = 0xe6;
+        pchMessageStart[2] = 0xf9;
+        pchMessageStart[3] = 0xa2;
         vAlertPubKey = ParseHex("04e7cf35e1cdf80e8930abd12a54bbfc7f11967357798197184d93b5aceff942221d22c1c885a556ff27a13c9172fdd22f4e392a6f3f02f04149142b0220b7191f");
         nDefaultPort = 19999;
         nPruneAfterHeight = 100000;
@@ -324,10 +319,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f");
 
-        pchMessageStart[0] = 0xf2;
-        pchMessageStart[1] = 0xc3;
-        pchMessageStart[2] = 0xb9;
-        pchMessageStart[3] = 0xd4;
+        pchMessageStart[0] = 0xf1;
+        pchMessageStart[1] = 0xe6;
+        pchMessageStart[2] = 0xf9;
+        pchMessageStart[3] = 0xa1;
         vAlertPubKey = ParseHex("04383862439513e940f6fcbf62d365c162a5256920c2c25b0b4266fdee4a443d71cfe224dbccff6fdb2ea57a37eb0cbec5637ebea06f63c70ca093672fbdc27643");
         nDefaultPort = 19999;
         nPruneAfterHeight = 1000;

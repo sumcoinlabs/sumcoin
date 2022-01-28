@@ -4539,7 +4539,8 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         CAmount nReward = GetProofOfStakeReward(nCoinAge, txNew.nTime, ::ChainActive().Tip()->nMoneySupply);
         // Refuse to create mint that has zero or negative reward
         if(nReward <= 0) {
-          return false;
+            LogPrintf("Reward for PoS is 0. Continuing\n");
+        //   return false;
         }
         nCredit += nReward;
     }

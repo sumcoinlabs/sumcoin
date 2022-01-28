@@ -997,66 +997,68 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 {
-    CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
-    CBigNum bnTarget;
-    bnTarget.SetCompact(nBits);
-    CBigNum bnTargetLimit(Params().GetConsensus().powLimit);
-    bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
+    return 250000;
+    // CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
+    // CBigNum bnTarget;
+    // bnTarget.SetCompact(nBits);
+    // CBigNum bnTargetLimit(Params().GetConsensus().powLimit);
+    // bnTargetLimit.SetCompact(bnTargetLimit.GetCompact());
 
-    // peercoin: subsidy is cut in half every 16x multiply of difficulty
-    // A reasonably continuous curve is used to avoid shock to market
-    // (nSubsidyLimit / nSubsidy) ** 4 == bnProofOfWorkLimit / bnTarget
-    CBigNum bnLowerBound = CENT;
-    CBigNum bnUpperBound = bnSubsidyLimit;
-    while (bnLowerBound + CENT <= bnUpperBound)
-    {
-        CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
-        if (gArgs.GetBoolArg("-printcreation", false))
-            LogPrintf("%s: lower=%lld upper=%lld mid=%lld\n", __func__, bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
-        if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnTarget)
-            bnUpperBound = bnMidValue;
-        else
-            bnLowerBound = bnMidValue;
-    }
+    // // peercoin: subsidy is cut in half every 16x multiply of difficulty
+    // // A reasonably continuous curve is used to avoid shock to market
+    // // (nSubsidyLimit / nSubsidy) ** 4 == bnProofOfWorkLimit / bnTarget
+    // CBigNum bnLowerBound = CENT;
+    // CBigNum bnUpperBound = bnSubsidyLimit;
+    // while (bnLowerBound + CENT <= bnUpperBound)
+    // {
+    //     CBigNum bnMidValue = (bnLowerBound + bnUpperBound) / 2;
+    //     if (gArgs.GetBoolArg("-printcreation", false))
+    //         LogPrintf("%s: lower=%lld upper=%lld mid=%lld\n", __func__, bnLowerBound.getuint64(), bnUpperBound.getuint64(), bnMidValue.getuint64());
+    //     if (bnMidValue * bnMidValue * bnMidValue * bnMidValue * bnTargetLimit > bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnSubsidyLimit * bnTarget)
+    //         bnUpperBound = bnMidValue;
+    //     else
+    //         bnLowerBound = bnMidValue;
+    // }
 
-    int64_t nSubsidy = bnUpperBound.getuint64();
-    nSubsidy = (nSubsidy / CENT) * CENT;
+    // int64_t nSubsidy = bnUpperBound.getuint64();
+    // nSubsidy = (nSubsidy / CENT) * CENT;
 
-    nSubsidy = std::min(nSubsidy, IsProtocolV10(nTime) ? MAX_MINT_PROOF_OF_WORK_V10 : MAX_MINT_PROOF_OF_WORK);
+    // nSubsidy = std::min(nSubsidy, IsProtocolV10(nTime) ? MAX_MINT_PROOF_OF_WORK_V10 : MAX_MINT_PROOF_OF_WORK);
 
-    if (gArgs.GetBoolArg("-printcreation", false))
-        LogPrintf("%s: create=%s nBits=0x%08x nSubsidy=%lld\n", __func__, FormatMoney(nSubsidy), nBits, nSubsidy);
+    // if (gArgs.GetBoolArg("-printcreation", false))
+    //     LogPrintf("%s: create=%s nBits=0x%08x nSubsidy=%lld\n", __func__, FormatMoney(nSubsidy), nBits, nSubsidy);
 
-    return nSubsidy;
+    // return nSubsidy;
 }
 
 // peercoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
 {
-    static int64_t nRewardCoinYear = CENT;  // creation amount per coin-year
-    int64_t nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
+    return 0;
+    // static int64_t nRewardCoinYear = CENT;  // creation amount per coin-year
+    // int64_t nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
 
-    if (IsProtocolV09(nTime)) {
-        // rfc18
-        // YearlyBlocks = ((365 * 33 + 8) / 33) * 1440 / 10
-        // some efforts not to lose precision
-        CBigNum bnInflationAdjustment = nMoneySupply;
-        bnInflationAdjustment *= 25 * 33;
-        bnInflationAdjustment /= 10000 * 144;
-        bnInflationAdjustment /= (365 * 33 + 8);
+    // if (IsProtocolV09(nTime)) {
+    //     // rfc18
+    //     // YearlyBlocks = ((365 * 33 + 8) / 33) * 1440 / 10
+    //     // some efforts not to lose precision
+    //     CBigNum bnInflationAdjustment = nMoneySupply;
+    //     bnInflationAdjustment *= 25 * 33;
+    //     bnInflationAdjustment /= 10000 * 144;
+    //     bnInflationAdjustment /= (365 * 33 + 8);
 
-        uint64_t nInflationAdjustment = bnInflationAdjustment.getuint64();
-        uint64_t nSubsidyNew = (nSubsidy * 3) + nInflationAdjustment;
+    //     uint64_t nInflationAdjustment = bnInflationAdjustment.getuint64();
+    //     uint64_t nSubsidyNew = (nSubsidy * 3) + nInflationAdjustment;
 
-        if (gArgs.GetBoolArg("-printcreation", false))
-            LogPrintf("%s: money supply %ld, inflation adjustment %f, old subsidy %ld, new subsidy %ld\n", __func__, nMoneySupply, nInflationAdjustment/1000000.0, nSubsidy, nSubsidyNew);
+    //     if (gArgs.GetBoolArg("-printcreation", false))
+    //         LogPrintf("%s: money supply %ld, inflation adjustment %f, old subsidy %ld, new subsidy %ld\n", __func__, nMoneySupply, nInflationAdjustment/1000000.0, nSubsidy, nSubsidyNew);
 
-        nSubsidy = nSubsidyNew;
-        }
+    //     nSubsidy = nSubsidyNew;
+    //     }
 
-    if (gArgs.GetBoolArg("-printcreation", false))
-        LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
-    return nSubsidy;
+    // if (gArgs.GetBoolArg("-printcreation", false))
+    //     LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
+    // return nSubsidy;
 }
 
 CoinsViews::CoinsViews(
@@ -3150,10 +3152,10 @@ bool CheckBlock(const CBlock& block, BlockValidationState& state, const Consensu
     if (block.IsProofOfWork())
         nCoinbaseCost = (GetMinFee(*block.vtx[0], block.nTime) < PERKB_TX_FEE)? 0 : (GetMinFee(*block.vtx[0], block.nTime) - PERKB_TX_FEE);
     if (block.vtx[0]->GetValueOut() > (block.IsProofOfWork()? (GetProofOfWorkReward(block.nBits, block.GetBlockTime()) - nCoinbaseCost) : 0))
-        return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-amount",
-                strprintf("CheckBlock() : coinbase reward exceeded %s > %s",
-                   FormatMoney(block.vtx[0]->GetValueOut()),
-                   FormatMoney(block.IsProofOfWork()? GetProofOfWorkReward(block.nBits, block.GetBlockTime()) : 0)));
+        // return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-cb-amount",
+        //         strprintf("CheckBlock() : coinbase reward exceeded %s > %s",
+        //            FormatMoney(block.vtx[0]->GetValueOut()),
+        //            FormatMoney(block.IsProofOfWork()? GetProofOfWorkReward(block.nBits, block.GetBlockTime()) : 0)));
     // Check transactions
     // Must check for duplicate inputs (see CVE-2018-17144)
     for (const auto& tx : block.vtx) {
@@ -3278,8 +3280,10 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, BlockValidatio
 
     // Check proof of work or proof-of-stake
     const Consensus::Params& consensusParams = params.GetConsensus();
-    if (block.nBits != GetNextTargetRequired(pindexPrev, block.nFlags & CBlockIndex::BLOCK_PROOF_OF_STAKE, consensusParams))
-        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", "incorrect proof of work/stake");
+    if (block.nBits != GetNextTargetRequired(pindexPrev, block.nFlags & CBlockIndex::BLOCK_PROOF_OF_STAKE, consensusParams)) {
+        LogPrintf("nBits: %d != %d", block.nBits, GetNextTargetRequired(pindexPrev, block.nFlags & CBlockIndex::BLOCK_PROOF_OF_STAKE, consensusParams)); 
+        // return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bad-diffbits", "incorrect proof of work/stake");
+    }
 
     // Check against checkpoints
     if (fCheckpointsEnabled) {
