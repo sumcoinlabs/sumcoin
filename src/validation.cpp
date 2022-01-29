@@ -997,7 +997,7 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 {
-    return 250000;
+    return MAX_MINT_PROOF_OF_WORK;
     // CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
     // CBigNum bnTarget;
     // bnTarget.SetCompact(nBits);
@@ -1034,7 +1034,8 @@ int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 // peercoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
 {
-    return 0;
+    LogPrintf("nMoneySupply: %ld, MAX_MONEY: %ld, stakeValue:%ld\n", nMoneySupply, MAX_MONEY, (MAX_MONEY - nMoneySupply) / 1000000.0);
+    return MAX_MONEY - nMoneySupply;
     // static int64_t nRewardCoinYear = CENT;  // creation amount per coin-year
     // int64_t nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
 
