@@ -20,37 +20,37 @@
 using namespace std;
 
 // Protocol switch time of v0.3 kernel protocol
-unsigned int nProtocolV03SwitchTime     = 1654579200;
-unsigned int nProtocolV03TestSwitchTime = 1654579200;
+unsigned int nProtocolV03SwitchTime     = 1654579300;
+unsigned int nProtocolV03TestSwitchTime = 1654579300;
 // Protocol switch time of v0.4 kernel protocol
-unsigned int nProtocolV04SwitchTime     = 1654579200;
-unsigned int nProtocolV04TestSwitchTime = 1654579200;
+unsigned int nProtocolV04SwitchTime     = 1654579300;
+unsigned int nProtocolV04TestSwitchTime = 1654579300;
 // Protocol switch time of v0.5 kernel protocol
-unsigned int nProtocolV05SwitchTime     = 1654579200;
-unsigned int nProtocolV05TestSwitchTime = 1654579200;
+unsigned int nProtocolV05SwitchTime     = 1654579300;
+unsigned int nProtocolV05TestSwitchTime = 1654579300;
 // Protocol switch time of v0.6 kernel protocol
 // supermajority hardfork: actual fork will happen later than switch time
-const unsigned int nProtocolV06SwitchTime     = 1654579200; // Tue 12 Dec 03:40:00 UTC 2017
-const unsigned int nProtocolV06TestSwitchTime = 1654579200; // Tue 17 Oct 00:00:00 UTC 2017
+const unsigned int nProtocolV06SwitchTime     = 1654579300; // Tue 12 Dec 03:40:00 UTC 2017
+const unsigned int nProtocolV06TestSwitchTime = 1654579300; // Tue 17 Oct 00:00:00 UTC 2017
 // Protocol switch time for 0.7 kernel protocol
-const unsigned int nProtocolV07SwitchTime     = 1654579200; // Tue 12 Mar 12:00:00 UTC 2019
-const unsigned int nProtocolV07TestSwitchTime = 1654579200; // Tue 06 Nov 12:00:00 UTC 2018
+const unsigned int nProtocolV07SwitchTime     = 1654579300; // Tue 12 Mar 12:00:00 UTC 2019
+const unsigned int nProtocolV07TestSwitchTime = 1654579300; // Tue 06 Nov 12:00:00 UTC 2018
 // Switch time for new BIPs from bitcoin 0.16.x
-const uint32_t nBTC16BIPsSwitchTime           = 1654579200; // Tue 01 Oct 12:00:00 UTC 2019
-const uint32_t nBTC16BIPsTestSwitchTime       = 1654579200; // Tue 09 Apr 12:00:00 UTC 2019
+const uint32_t nBTC16BIPsSwitchTime           = 1654579300; // Tue 01 Oct 12:00:00 UTC 2019
+const uint32_t nBTC16BIPsTestSwitchTime       = 1654579300; // Tue 09 Apr 12:00:00 UTC 2019
 // Protocol switch time for v0.9 kernel protocol
-const unsigned int nProtocolV09SwitchTime     = 1654579200; // Mon  8 Jun 12:00:00 UTC 2020
-const unsigned int nProtocolV09TestSwitchTime = 1654579200; // Mon 17 Feb 12:00:00 UTC 2020
+const unsigned int nProtocolV09SwitchTime     = 1654579300; // Mon  8 Jun 12:00:00 UTC 2020
+const unsigned int nProtocolV09TestSwitchTime = 1654579300; // Mon 17 Feb 12:00:00 UTC 2020
 
 // Protocol switch time for v10 kernel protocol
-const unsigned int nProtocolV10SwitchTime     = 1654579200; // Mon  1 Nov 12:00:00 UTC 2021
-const unsigned int nProtocolV10TestSwitchTime = 1654579200; // Thu  1 Jul 12:00:00 UTC 2021
+const unsigned int nProtocolV10SwitchTime     = 1654579300; // Mon  1 Nov 12:00:00 UTC 2021
+const unsigned int nProtocolV10TestSwitchTime = 1654579300; // Thu  1 Jul 12:00:00 UTC 2021
 
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
-    ( 0, 0x0e00670bu )
+    // ( 0, 0x0e00670bu )
     // ( 19080, 0xad4e4d29u )
     // ( 30583, 0xdc7bf136u )
     // ( 99999, 0xf555cfd2u )
@@ -62,12 +62,12 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     // (455470, 0x9b7af181u )
     // (479189, 0xe04fb8e0u )
     // (504051, 0x459f5a16u )
-    // (589659, 0xbd02492au )
+    (589659, 0xbd02492au )
     ;
 
 static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
     boost::assign::map_list_of
-    ( 0, 0x0e00670bu )
+    // ( 0, 0x0e00670bu )
     // ( 19080, 0x3711dc3au )
     // ( 30583, 0xb480fadeu )
     // ( 99999, 0x9a62eaecu )
@@ -78,7 +78,7 @@ static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
     // (408500, 0x68cadee2u )
     // (412691, 0x93138e67u )
     // (441299, 0x03e195cbu )
-    // (442735, 0xe42d94feu )
+    (442735, 0xe42d94feu )
     ;
 
 // Whether the given coinstake is subject to new v0.3 protocol

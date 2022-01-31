@@ -98,19 +98,17 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         //consensus.BIP16Height = 0;
-        consensus.BIP34Height = 10000;
-        consensus.powLimit =            uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 20;
-        consensus.bnInitialHashTarget = uint256S("0x00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
-// -        consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
-// -        consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
+        consensus.BIP34Height = 100000;
+        consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
+        consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
         consensus.nStakeTargetSpacing = 10 * 60; // 10-minute block spacing
         consensus.nTargetSpacingWorkMax = 12 * consensus.nStakeTargetSpacing; // 2-hour
         consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
-        consensus.nStakeMinAge = 60 * 60 * 30; // 1 hour     //60 * 60 * 24 * 30; // minimum age for coin age
-        consensus.nStakeMaxAge = 60 * 60 * 90; // 8 hours    //60 * 60 * 24 * 90; // minimum age for coin age
+        consensus.nStakeMinAge = 60 * 60 * 24 * 1; // 1 day         //60 * 60 * 24 * 30; // minimum age for coin age
+        consensus.nStakeMaxAge = 60 * 60 * 24 * 30; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
         consensus.nModifierInterval = 6 * 60 * 60; // Modifier interval: time to elapse before new modifier is computed
-        consensus.nCoinbaseMaturity = 30;
+        consensus.nCoinbaseMaturity = 500;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -139,9 +137,9 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579300, 3204424, 0x1e0fffff, 1, 0);
+        genesis = CreateGenesisBlock(1554579000, 1554579300, 464441699, 0x1d00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000da5ed0c69a3200c4c896492fc965e47011843d9e5de05041867c8e1b4f1"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56"));
         assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -170,29 +168,20 @@ public:
 
         checkpointData = {
             {
-                {0,         uint256S("0x00000da5ed0c69a3200c4c896492fc965e47011843d9e5de05041867c8e1b4f1")},
-                {10,        uint256S("0x0000000084f8c88d3086b7e5f5b441506817fbfb1e8e3629c95726bf4a2ddeb2")},
-                {100,       uint256S("0x0000000052b6cf49b78bf49118bc10c37a7e03eb4ead43c28d0e1395a0b8f563")},
-                {200,       uint256S("0x00000000302868778d39eaeacd193c4c4449c19accdd8278fb7dc09e6ff99933")},
-                {300,       uint256S("0x000000004f4d1c11bc31bb5bd4c4cb53a7832fd82296b38491a3ec755f4cff31")},
-                {400,       uint256S("0x00000000f8e25bbd5c6d58b4a21b7c13a17b29e2078a1df791cf363723920507")}, // Last PoW 
-                // {401,       uint256S("0xa973a7b37bb3c35957ea116b55454884d03b91909226d2262b5a6d91d3b4d55f")}, // PoS
-                // {1000,      uint256S("0x0deebba1f94c9d9047c51a61e3c24eef0ab6d2d9694e05bd69fb971c730b344a")},    
-                // {2000,      uint256S("0x8ac1c20885b1a0a085403352ab8307faad14535915c6234a0cc90ebafb8ec4e5")},               
-                // {3000,      uint256S("0x49a00c86a2da2397f37a6918dc345a9a1c290eccdaa9dabf5490f660423259d6")},               
-                // {4000,      uint256S("0x3bcd70692d50f16f2a35fdae95e5aab2bb4d146ea054995eed29d2b0d2e80847")},               
-                // {5000,      uint256S("0x8e850a43209bb51018035fc85232904df665e56325875b64ab8e2d89e1955665")},               
-                // {6000,      uint256S("0xa9c7da59576647c17731340b96a6c478ee2f8c236a8a1cf85df924e54e0e430d")},
-                // {6876,      uint256S("0x6e97e70427b972602428c755d421c4986f2e585f4894b6050e0197781e31e25b")}                              
+                {0,         uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56")},
+                {100,       uint256S("0x0000000000478c57c5b8d62ab73353f6f5c9d538808912e7111ce90f20460d6b")},
+                {500,       uint256S("0x00000000001104d16645f5f56f352b92ba6addce22f410ee759403f7a5f4036e")},
+                {1000,      uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210")},
+                {1342,      uint256S("0x0ecb1ac1acd8701b01a6c6014179787cdd60aa8ba69bbb0fb0dceb4642d295b1")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1554786349, // * UNIX timestamp of last known number of transactions
-            401,    // * total number of transactions between genesis and that timestamp
+            1560473626, // * UNIX timestamp of last known number of transactions
+            1685,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
-            0.0001502382733 // * estimated number of transactions per second after that timestamp
+            0.000285853589354 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
         };
     }

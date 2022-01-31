@@ -19,8 +19,8 @@ static const CAmount MIN_TX_FEE_PREV7 = CENT;
 static const CAmount MIN_TX_FEE = CENT / 10;
 static const CAmount PERKB_TX_FEE = CENT;
 static const CAmount MIN_TXOUT_AMOUNT = CENT;
-static const CAmount MAX_MINT_PROOF_OF_WORK = 250000; // 250,000 for the initial PoW;
-static const CAmount MAX_MINT_PROOF_OF_WORK_V10 = 250000; // 250,000 for the initial PoW;
+static const CAmount MAX_MINT_PROOF_OF_WORK = 100000; // 100,000 for the initial PoW;
+static const CAmount MAX_MINT_PROOF_OF_WORK_V10 = 100000; // 100,000 for the initial PoW;
 static const std::string CURRENCY_UNIT = "SUMC";
 
 /** No amount larger than this (in satoshi) is valid.
