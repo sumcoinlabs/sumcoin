@@ -20,8 +20,8 @@
 using namespace std;
 
 // Protocol switch time of v0.3 kernel protocol
-unsigned int nProtocolV03SwitchTime     = 1654579300;
-unsigned int nProtocolV03TestSwitchTime = 1654579300;
+unsigned int nProtocolV03SwitchTime     = 1557013300;
+unsigned int nProtocolV03TestSwitchTime = 1557013300;
 // Protocol switch time of v0.4 kernel protocol
 unsigned int nProtocolV04SwitchTime     = 1654579300;
 unsigned int nProtocolV04TestSwitchTime = 1654579300;
@@ -49,8 +49,8 @@ const unsigned int nProtocolV10TestSwitchTime = 1654579300; // Thu  1 Jul 12:00:
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
-    boost::assign::map_list_of
-    ( 1001, 0x59342909 )
+    boost::assign::map_list_of(0,0)
+    // ( 0, 280430b448 )
     // ( 19080, 0xad4e4d29u )
     // ( 30583, 0xdc7bf136u )
     // ( 99999, 0xf555cfd2u )

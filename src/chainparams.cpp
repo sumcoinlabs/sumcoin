@@ -172,14 +172,15 @@ public:
                 {100,       uint256S("0x0000000000478c57c5b8d62ab73353f6f5c9d538808912e7111ce90f20460d6b")},
                 {500,       uint256S("0x00000000001104d16645f5f56f352b92ba6addce22f410ee759403f7a5f4036e")},
                 {1000,      uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210")}, // Last PoW
-                {1005,      uint256S("0x14cc1d196eab184326176891c275cbe699185d91a52234c9422f42599e05b8bf")} // PoS
+                {1005,      uint256S("0x14cc1d196eab184326176891c275cbe699185d91a52234c9422f42599e05b8bf")}, // PoS
+                {1023,      uint256S("0xc6008f55bdcd10a56b171cdaec74a42880d060f040f356baaf34fde391bea709")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1557012318, // * UNIX timestamp of last known number of transactions
-            1011,    // * total number of transactions between genesis and that timestamp
+            1557014863, // * UNIX timestamp of last known number of transactions
+            1047,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
