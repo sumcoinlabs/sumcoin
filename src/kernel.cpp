@@ -20,8 +20,8 @@
 using namespace std;
 
 // Protocol switch time of v0.3 kernel protocol
-unsigned int nProtocolV03SwitchTime     = 1557013300;
-unsigned int nProtocolV03TestSwitchTime = 1557013300;
+unsigned int nProtocolV03SwitchTime     = 1654579300; // 1557013395 (when switch occurs but is breaking for now)
+unsigned int nProtocolV03TestSwitchTime = 1654579300;
 // Protocol switch time of v0.4 kernel protocol
 unsigned int nProtocolV04SwitchTime     = 1654579300;
 unsigned int nProtocolV04TestSwitchTime = 1654579300;
