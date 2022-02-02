@@ -4,7 +4,7 @@ static char *peercoin256[] = {
 "256 256 57 1 ",
 "  c #37AE50",
 ". c #3AAF52",
-"X c #3CB054",
+"X c #276BCF",
 "o c #40B257",
 "O c #43B35A",
 "+ c #48B55F",

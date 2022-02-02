@@ -10,7 +10,7 @@ static char *peercoin32[] = {
 "+  c #3BAF53",
 "@  c #3BB053",
 "#  c #3BB054",
-"$  c #3CB054",
+"$  c #276BCF",
 "%  c #3DB155",
 "&  c #3EB156",
 "*  c #3FB156",
