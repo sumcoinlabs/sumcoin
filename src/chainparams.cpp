@@ -97,17 +97,17 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
-        //consensus.BIP16Height = 0;
-        consensus.BIP34Height = 100000;
+        // consensus.BIP16Height = 10001;
+        consensus.BIP34Height = 0;
         consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
         consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
         consensus.nStakeTargetSpacing = 10 * 60; // 10-minute block spacing
         consensus.nTargetSpacingWorkMax = 12 * consensus.nStakeTargetSpacing; // 2-hour
         consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
-        consensus.nStakeMinAge = 60 * 60 * 24 * 1; // 1 day         //60 * 60 * 24 * 30; // minimum age for coin age
-        consensus.nStakeMaxAge = 60 * 60 * 24 * 30; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
-        consensus.nModifierInterval = 6 * 60 * 60; // Modifier interval: time to elapse before new modifier is computed
+        consensus.nStakeMinAge = 60 * 60 * 24 * 1; // minimum age for coin age
+        consensus.nStakeMaxAge = 60 * 60 * 24 * 90; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
+        consensus.nModifierInterval = 6 * 60; // Modifier interval: time to elapse before new modifier is computed
         consensus.nCoinbaseMaturity = 500;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
@@ -115,12 +115,12 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00"); // 350000
         // consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000002a0fac8b39f476"); // 350000
+        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); //3E8"); // 1000
 
         // By default assume that the signatures in ancestors of this block are valid.
         // consensus.defaultAssumeValid = uint256S("0xa3a0ffa0dbca75923ad6a53d3878d62f8b35c363282df3f13ded9e4fda921e63");  // 380000
-        consensus.defaultAssumeValid = uint256S("0x00000da5ed0c69a3200c4c896492fc965e47011843d9e5de05041867c8e1b4f1");  // 380000
+        consensus.defaultAssumeValid =  uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56");  // 380000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -171,17 +171,17 @@ public:
                 {0,         uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56")},
                 {100,       uint256S("0x0000000000478c57c5b8d62ab73353f6f5c9d538808912e7111ce90f20460d6b")},
                 {500,       uint256S("0x00000000001104d16645f5f56f352b92ba6addce22f410ee759403f7a5f4036e")},
-                {1000,      uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210")},
-                {1342,      uint256S("0x0ecb1ac1acd8701b01a6c6014179787cdd60aa8ba69bbb0fb0dceb4642d295b1")}
+                {1000,      uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210")}, // Last PoW
+                {1005,      uint256S("0x14cc1d196eab184326176891c275cbe699185d91a52234c9422f42599e05b8bf")} // PoS
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1560473626, // * UNIX timestamp of last known number of transactions
-            1685,    // * total number of transactions between genesis and that timestamp
+            1557012318, // * UNIX timestamp of last known number of transactions
+            1011,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
-            0.000285853589354 // * estimated number of transactions per second after that timestamp
+            0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
         };
     }

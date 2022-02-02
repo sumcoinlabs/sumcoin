@@ -50,7 +50,7 @@ const unsigned int nProtocolV10TestSwitchTime = 1654579300; // Thu  1 Jul 12:00:
 // Hard checkpoints of stake modifiers to ensure they are deterministic
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of
-    // ( 0, 0x0e00670bu )
+    ( 1001, 0x59342909 )
     // ( 19080, 0xad4e4d29u )
     // ( 30583, 0xdc7bf136u )
     // ( 99999, 0xf555cfd2u )
@@ -62,11 +62,11 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     // (455470, 0x9b7af181u )
     // (479189, 0xe04fb8e0u )
     // (504051, 0x459f5a16u )
-    (589659, 0xbd02492au )
+    // (589659, 0xbd02492au )
     ;
 
 static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
-    boost::assign::map_list_of
+    boost::assign::map_list_of(0,0)
     // ( 0, 0x0e00670bu )
     // ( 19080, 0x3711dc3au )
     // ( 30583, 0xb480fadeu )
@@ -78,7 +78,7 @@ static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
     // (408500, 0x68cadee2u )
     // (412691, 0x93138e67u )
     // (441299, 0x03e195cbu )
-    (442735, 0xe42d94feu )
+    // (442735, 0xe42d94feu )
     ;
 
 // Whether the given coinstake is subject to new v0.3 protocol
@@ -638,8 +638,8 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
     if (fTestNet && mapStakeModifierTestnetCheckpoints.count(nHeight))
         return nStakeModifierChecksum == mapStakeModifierTestnetCheckpoints[nHeight];
 
-    if (!fTestNet && mapStakeModifierCheckpoints.count(nHeight))
-        return nStakeModifierChecksum == mapStakeModifierCheckpoints[nHeight];
+    // if (!fTestNet && mapStakeModifierCheckpoints.count(nHeight))
+    //     return nStakeModifierChecksum == mapStakeModifierCheckpoints[nHeight];
 
     return true;
 }
