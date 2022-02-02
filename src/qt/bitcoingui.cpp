@@ -185,7 +185,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     progressBar = new GUIUtil::ProgressBar();
     progressBar->setAlignment(Qt::AlignCenter);
     progressBar->setVisible(false);
-    progressBar->setStyleSheet("QProgressBar { background-color: #8C8C8C; text-align: center; color: white; border: 1px solid #4b4b4b; } QProgressBar::chunk { background: #3cb054; margin: 0px; }");
+    progressBar->setStyleSheet("QProgressBar { background-color: #8C8C8C; text-align: center; color: white; border: 1px solid #4b4b4b; } QProgressBar::chunk { background: #276BCF; margin: 0px; }");
 
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
