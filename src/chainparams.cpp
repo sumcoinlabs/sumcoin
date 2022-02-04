@@ -98,10 +98,10 @@ public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
         consensus.BIP34Height = 1001;
-        consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
-        consensus.bnInitialHashTarget = uint256S("0000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 40;
+        consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24 ~arith_uint256(0) >> 32;
+        consensus.bnInitialHashTarget = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32 ~arith_uint256(0) >> 40;
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
-        consensus.nStakeTargetSpacing = 10 * 60; // 10-minute block spacing
+        consensus.nStakeTargetSpacing = 1 * 60; // 1-minute block spacing
         consensus.nTargetSpacingWorkMax = 12 * consensus.nStakeTargetSpacing; // 2-hour
         consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
         consensus.nStakeMinAge = 60 * 60 * 24 * 1; // minimum age for coin age
@@ -134,9 +134,9 @@ public:
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579300, 464441699, 0x1d00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1554579000, 1554579300, 4097542u, 0x1d00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5"));
         assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -165,10 +165,10 @@ public:
 
         checkpointData = {
             {
-                {0,         uint256S("0x000000009e42d72910839035870b79578f9b53941d742fa0f93b55a1c1b83c56")},
-                {100,       uint256S("0x0000000000478c57c5b8d62ab73353f6f5c9d538808912e7111ce90f20460d6b")},
-                {500,       uint256S("0x00000000001104d16645f5f56f352b92ba6addce22f410ee759403f7a5f4036e")},
-                {1000,      uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210")} // Last PoW
+                {0,         uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5")},
+                {100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
+                {500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
+                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")} // Last PoW
                 // {1005,      uint256S("0x14cc1d196eab184326176891c275cbe699185d91a52234c9422f42599e05b8bf")}, // PoS
                 // {1016,      uint256S("0x91afaf0d08d45776e67fddeb82631acd1a351b760d5a1ee8f7b05493b1883b06")}
                 // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
@@ -177,8 +177,8 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1554580504, // * UNIX timestamp of last known number of transactions
-            1000,    // * total number of transactions between genesis and that timestamp
+            1561324261, // * UNIX timestamp of last known number of transactions
+            1001,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
@@ -196,8 +196,8 @@ public:
         // consensus.BIP16Height = 0;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0x00");
-        consensus.powLimit =            uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 20;
-        consensus.bnInitialHashTarget = uint256S("0x00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
+        consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24 ~arith_uint256(0) >> 32;
+        consensus.bnInitialHashTarget = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32 ~arith_uint256(0) >> 40;
 
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
         consensus.nStakeTargetSpacing = 10 * 60;  // 10-minute block spacing
@@ -228,9 +228,9 @@ public:
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579200, 864939, 0x1e0fffff, 1, 0);
+        genesis = CreateGenesisBlock(1554579000, 1554579200, 37295525u, 0x1e0fffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000001fe5c0c1a4b765cd0e6c10e56ebaa024d69b0e0ddc52992117e1767bc"));
         assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
 
         vFixedSeeds.clear();
@@ -327,7 +327,7 @@ public:
         genesis = CreateGenesisBlock(1554579000, 1554579200, 864939, 0x1e0fffff, 1, 0);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000001fe5c0c1a4b765cd0e6c10e56ebaa024d69b0e0ddc52992117e1767bc"));
         assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.

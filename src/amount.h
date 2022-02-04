@@ -33,6 +33,8 @@ static const std::string CURRENCY_UNIT = "SUMC";
  * for the creation of coins out of thin air modification could lead to a fork.
  * */
 static const CAmount MAX_MONEY = 100000000 * COIN;
+static const CAmount PROOF_OF_WORK_BLOCKS = 1000; // Block height of the last proof of work block
+
 inline bool MoneyRange(const CAmount& nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 
 #endif //  BITCOIN_AMOUNT_H

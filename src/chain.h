@@ -21,7 +21,7 @@
  * Maximum amount of time that a block timestamp is allowed to exceed the
  * current network-adjusted time before the block will be accepted.
  */
-static constexpr int64_t MAX_FUTURE_BLOCK_TIME_PREV9 = 2 * 60 * 60;
+static constexpr int64_t MAX_FUTURE_BLOCK_TIME_PREV9 = 2 * 60 * 60 * 24 * 2000;
 static constexpr int64_t MAX_FUTURE_BLOCK_TIME = 15 * 60;
 
 /**
