@@ -104,11 +104,11 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
-        consensus.BIP34Height = 1001;
+        consensus.BIP34Height = 0;
         consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24
         consensus.bnInitialHashTarget = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
-        consensus.nStakeTargetSpacing = 1 * 60; // 1-minute block spacing
+        consensus.nStakeTargetSpacing = 10 * 60; // 10-minute block spacing
         consensus.nTargetSpacingWorkMax = 12 * consensus.nStakeTargetSpacing; // 2-hour
         consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
         consensus.nStakeMinAge = 60 * 60 * 24 * 1; // minimum age for coin age
@@ -121,10 +121,10 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork =   uint256S("0x00000000000000000000000000000000000000000000000000000000000003E8"); // 1016
+        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 1000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0x0000000000194d2547fe3780bbef28a0bf1063be1efdb9e300d26e91d0d8a210");  // 380000
+        consensus.defaultAssumeValid =  uint256S("0xb166551695392eb5c323cc42daff02654a5a772ebc1f1e6a22d9ed08dfb85f46");  // 380000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -175,8 +175,8 @@ public:
                 {0,         uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5")},
                 {100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
                 {500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
-                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")} // Last PoW
-                // {1005,      uint256S("0x14cc1d196eab184326176891c275cbe699185d91a52234c9422f42599e05b8bf")}, // PoS
+                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")}, // Last PoW
+                {1020,      uint256S("0xb166551695392eb5c323cc42daff02654a5a772ebc1f1e6a22d9ed08dfb85f46")} // PoS
                 // {1016,      uint256S("0x91afaf0d08d45776e67fddeb82631acd1a351b760d5a1ee8f7b05493b1883b06")}
                 // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
             }
@@ -184,8 +184,8 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1561324261, // * UNIX timestamp of last known number of transactions
-            1001,    // * total number of transactions between genesis and that timestamp
+            1561948020, // * UNIX timestamp of last known number of transactions
+            1041,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
