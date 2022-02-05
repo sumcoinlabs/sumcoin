@@ -1288,10 +1288,10 @@ EOF
 		echo mips-unknown-sysv"$UNAME_RELEASE"
 	fi
 	exit ;;
-    BeBox:BeOS:*:*)	# BeOS running on hardware made by Be, PPC only.
+    BeBox:BeOS:*:*)	# BeOS running on hardware made by Be, SUMC only.
 	echo powerpc-be-beos
 	exit ;;
-    BeMac:BeOS:*:*)	# BeOS running on Mac or Mac clone, PPC only.
+    BeMac:BeOS:*:*)	# BeOS running on Mac or Mac clone, SUMC only.
 	echo powerpc-apple-beos
 	exit ;;
     BePC:BeOS:*:*)	# BeOS running on Intel PC compatible.
@@ -1357,7 +1357,7 @@ EOF
 	    # On 10.4-10.6 one might compile for PowerPC via gcc -arch ppc
 	    if (echo '#ifdef __POWERPC__'; echo IS_PPC; echo '#endif') | \
 		   (CCOPTS="" $CC_FOR_BUILD -E - 2>/dev/null) | \
-		   grep IS_PPC >/dev/null
+		   grep IS_SUMC >/dev/null
 	    then
 		UNAME_PROCESSOR=powerpc
 	    fi

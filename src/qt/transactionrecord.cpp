@@ -35,7 +35,7 @@ QList<TransactionRecord> TransactionRecord::decomposeTransaction(const interface
     uint256 hash = wtx.tx->GetHash();
     std::map<std::string, std::string> mapValue = wtx.value_map;
 
-    if (wtx.is_coinstake) // peercoin: coinstake transaction
+    if (wtx.is_coinstake) // sumcash: coinstake transaction
     {
         TransactionRecord sub(hash, nTime, TransactionRecord::StakeMint, "", -nDebit, wtx.tx->GetValueOut());
         CTxDestination address;

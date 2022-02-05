@@ -402,7 +402,7 @@ public:
     uint256 hash;
 };
 
-/** peercoin: How much temperature a PoW header will remove */
+/** sumcash: How much temperature a PoW header will remove */
 extern const unsigned int POW_HEADER_COOLING;
 
 #endif // BITCOIN_PROTOCOL_H

@@ -165,7 +165,7 @@ static const CRPCConvertParam vRPCConvertParams[] =
     { "createwallet", 4, "avoid_reuse"},
     { "getnodeaddresses", 0, "count"},
     { "stop", 0, "wait" },
-    // peercoin:
+    // sumcash:
     { "reservebalance", 0, "reserve" },
     { "reservebalance", 1, "amount" },
     { "sendalert", 2, "minver"},

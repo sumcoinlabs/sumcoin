@@ -155,8 +155,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Peercoin</source>
-        <translation>Peercoin</translation>
+        <source>Sumcash</source>
+        <translation>Sumcash</translation>
     </message>
     </context>
 <context>
@@ -187,8 +187,8 @@
         <translation>Marii</translation>
     </message>
     <message>
-        <source>Enter a Peercoin address (e.g. %1)</source>
-        <translation>Nyora kero ye Peercoin (sekuti %1)</translation>
+        <source>Enter a Sumcash address (e.g. %1)</source>
+        <translation>Nyora kero ye Sumcash (sekuti %1)</translation>
     </message>
     <message>
         <source>%1 d</source>

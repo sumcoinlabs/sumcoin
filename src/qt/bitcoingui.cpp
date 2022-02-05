@@ -218,7 +218,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     if(settings.value("bCheckGithub").toBool()) {
         QNetworkAccessManager* nam = new QNetworkAccessManager(this);
         connect(nam, &QNetworkAccessManager::finished, this, &BitcoinGUI::onResult);
-        QUrl url("https://api.github.com/repos/peercoin/peercoin/releases/latest");
+        QUrl url("https://api.github.com/repos/sumcash/sumcash/releases/latest");
         nam->get(QNetworkRequest(url));
     }
 #endif
@@ -239,7 +239,7 @@ void BitcoinGUI::onResult(QNetworkReply *reply) {
         std::string tag_name = obj["tag_name"].toString().toStdString();
         if(std::regex_search(tag_name, matches, versionRgx) && matches.size()==4) {
             newVersion = std::stoi(matches[1].str()) * 1000000 + std::stoi(matches[2]) * 10000 + std::stoi(matches[3]) * 100;
-            if (newVersion > PEERCOIN_VERSION) {
+            if (newVersion > SUMCASH_VERSION) {
                 char versionInfo[200];
                 snprintf(versionInfo, 200, "This client is not the most recent version available, please update to release %s from github or disable this check in settings.", obj["tag_name"].toString().toUtf8().constData());
                 std::string strVersionInfo = versionInfo;
@@ -280,7 +280,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Peercoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a Sumcash address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -291,7 +291,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(QIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and peercoin: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and sumcash: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
@@ -374,9 +374,9 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase..."), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(tr("Sign &Message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Peercoin addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your Sumcash addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify Message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Peercoin addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Sumcash addresses"));
 
     openRPCConsoleAction = new QAction(tr("Node window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open node debugging and diagnostic console"));
@@ -390,7 +390,7 @@ void BitcoinGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a peercoin: URI"));
+    openAction->setStatusTip(tr("Open a sumcash: URI"));
 
     showHelpMessageAction = new QAction(tr("&Command-line Options"), this);
 
@@ -408,19 +408,19 @@ void BitcoinGUI::createActions()
 
     showHelpMessageAction = new QAction(tr("&Command-line Options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Peercoin command-line options").arg(PACKAGE_NAME));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Sumcash command-line options").arg(PACKAGE_NAME));
 
     openWebAction = new QAction(tr("&Website"), this);
-    openWebAction->setStatusTip(tr("Open the Peercoin website in a web browser."));
+    openWebAction->setStatusTip(tr("Open the Sumcash website in a web browser."));
 
     openDonateAction = new QAction(tr("&Donate"), this);
-    openDonateAction->setStatusTip(tr("Finacially support development of the Peercoin project."));
+    openDonateAction->setStatusTip(tr("Finacially support development of the Sumcash project."));
 
     openChatroomAction = new QAction(tr("&Chatroom"), this);
-    openChatroomAction->setStatusTip(tr("Open the Peercoin Discord chat in a web browser."));
+    openChatroomAction->setStatusTip(tr("Open the Sumcash Discord chat in a web browser."));
 
     openForumAction = new QAction(tr("&Forum"), this);
-    openForumAction->setStatusTip(tr("Open talk.peercoin.net in a web browser."));
+    openForumAction->setStatusTip(tr("Open talk.sumcash.net in a web browser."));
 
     connect(quitAction, &QAction::triggered, qApp, QApplication::quit);
     connect(aboutAction, &QAction::triggered, this, &BitcoinGUI::aboutClicked);
@@ -954,11 +954,11 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
 }
 
 void BitcoinGUI::openWeb() {
-    QDesktopServices::openUrl(QUrl("https://peercoin.net"));
+    QDesktopServices::openUrl(QUrl("https://sumcash.net"));
 }
 
 void BitcoinGUI::openDonate() {
-    QDesktopServices::openUrl(QUrl("https://www.peercoin.net/foundation"));
+    QDesktopServices::openUrl(QUrl("https://www.sumcash.net/foundation"));
 }
 
 void BitcoinGUI::openChatroom() {
@@ -966,7 +966,7 @@ void BitcoinGUI::openChatroom() {
 }
 
 void BitcoinGUI::openForum() {
-    QDesktopServices::openUrl(QUrl("https://talk.peercoin.net"));
+    QDesktopServices::openUrl(QUrl("https://talk.sumcash.net"));
 }
 
 #endif // ENABLE_WALLET
@@ -987,7 +987,7 @@ void BitcoinGUI::updateNetworkState()
     QString tooltip;
 
     if (m_node.getNetworkActive()) {
-        tooltip = tr("%n active connection(s) to Peercoin network", "", count) + QString(".<br>") + tr("Click to disable network activity.");
+        tooltip = tr("%n active connection(s) to Sumcash network", "", count) + QString(".<br>") + tr("Click to disable network activity.");
     } else {
         tooltip = tr("Network activity disabled.") + QString("<br>") + tr("Click to enable network activity again.");
         icon = ":/icons/network_disabled";

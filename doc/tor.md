@@ -1,14 +1,14 @@
-# TOR SUPPORT IN PEERCOIN
+# TOR SUPPORT IN SUMCASH
 
-It is possible to run Peercoin as a Tor hidden service, and connect to such services.
+It is possible to run Sumcash as a Tor hidden service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#TBBSocksPort) for how to properly
 configure Tor.
 
 
-## 1. Run peercoin behind a Tor proxy
+## 1. Run sumcash behind a Tor proxy
 
-The first step is running Peercoin behind a Tor proxy. This will already anonymize all
+The first step is running Sumcash behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
 
 	-proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -34,17 +34,17 @@ outgoing connections, but more is possible.
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-	./peercoind -proxy=127.0.0.1:9050
+	./sumcashd -proxy=127.0.0.1:9050
 
 
-## 2. Run a peercoin hidden server
+## 2. Run a sumcash hidden server
 
 If you configure your Tor system accordingly, it is possible to make your node also
 reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equivalent
 config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. For newer
 versions of Tor see [Section 3](#3-automatically-listen-on-tor).*
 
-	HiddenServiceDir /var/lib/tor/peercoin-service/
+	HiddenServiceDir /var/lib/tor/sumcash-service/
 	HiddenServicePort 8333 127.0.0.1:8333
 	HiddenServicePort 18333 127.0.0.1:18333
 
@@ -71,37 +71,37 @@ your bitcoind's P2P listen port (8333 by default).
 
 In a typical situation, where you're only reachable via Tor, this should suffice:
 
-	./peercoind -proxy=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -listen
+	./sumcashd -proxy=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -listen
 
 (obviously, replace the .onion address with your own). It should be noted that you still
 listen on all devices and another node could establish a clearnet connection, when knowing
 your address. To mitigate this, additionally bind the address of your Tor proxy:
 
-	./peercoind ... -bind=127.0.0.1
+	./sumcashd ... -bind=127.0.0.1
 
 If you don't care too much about hiding your node, and want to be reachable on IPv4
 as well, use `discover` instead:
 
-	./peercoind ... -discover
+	./sumcashd ... -discover
 
 and open port 8333 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-	./peercoind -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
+	./sumcashd -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
 
 ## 3. Automatically listen on Tor
 
 Starting with Tor version 0.2.7.1 it is possible, through Tor's control socket
 API, to create and destroy 'ephemeral' hidden services programmatically.
-Peercoin has been updated to make use of this.
+Sumcash has been updated to make use of this.
 
 This means that if Tor is running (and proper authentication has been configured),
-Peercoin automatically creates a hidden service to listen on. This will positively
+Sumcash automatically creates a hidden service to listen on. This will positively
 affect the number of available .onion nodes.
 
-This new feature is enabled by default if Peercoin is listening (`-listen`), and
+This new feature is enabled by default if Sumcash is listening (`-listen`), and
 requires a Tor connection to work. It can be explicitly disabled with `-listenonion=0`
 and, if not disabled, configured using the `-torcontrol` and `-torpassword` settings.
 To show verbose debugging information, pass `-debug=tor`.
@@ -112,8 +112,8 @@ in `torrc` config file. For cookie authentication the user running bitcoind must
 access to the `CookieAuthFile` specified in Tor configuration. In some cases this is
 preconfigured and the creation of a hidden service is automatic. If permission problems
 are seen with `-debug=tor` they can be resolved by adding both the user running Tor and
-the user running peercoind to the same group and setting permissions appropriately. On 
-Debian-based systems the user running peercoind can be added to the debian-tor group, 
+the user running sumcashd to the same group and setting permissions appropriately. On 
+Debian-based systems the user running sumcashd can be added to the debian-tor group, 
 which has the appropriate permissions. Before starting bitcoind you will need to re-login
 to allow debian-tor group to be applied. Otherwise you will see the following notice: "tor:
 Authentication cookie /run/tor/control.authcookie could not be opened (check permissions)"
@@ -127,7 +127,7 @@ in the tor configuration file. The hashed password can be obtained with the comm
 
 ## 4. Privacy recommendations
 
-- Do not add anything but peercoin ports to the hidden service created in section 2.
+- Do not add anything but sumcash ports to the hidden service created in section 2.
   If you run a web service too, create a new hidden service for that.
   Otherwise it is trivial to link them, which may reduce privacy. Hidden
   services created automatically (as in section 3) always have only one port

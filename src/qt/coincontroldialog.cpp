@@ -505,7 +505,7 @@ void CoinControlDialog::updateLabels(CCoinControl& m_coin_control, WalletModel *
             if (!CoinControlDialog::fSubtractFeeFromAmount)
                 nChange -= nPayFee;
 
-            // ppcoin: sub-cent change is moved to fee
+            // sumcash: sub-cent change is moved to fee
             if (nChange > 0 && nChange < MIN_CHANGE)
             {
                 nPayFee += nChange;

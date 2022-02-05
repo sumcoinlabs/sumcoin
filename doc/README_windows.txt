@@ -1,6 +1,6 @@
-Peercoin 0.11.4 BETA
+Sumcash 0.11.4 BETA
 
-Copyright (c) 2011-2022 Peercoin Developers
+Copyright (c) 2011-2022 Sumcash Developers
 Distributed under the MIT software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in
@@ -10,7 +10,7 @@ cryptographic software written by Eric Young (eay@cryptsoft.com).
 
 Intro
 -----
-Peercoin is a free open source project derived from Bitcoin, with
+Sumcash is a free open source project derived from Bitcoin, with
 the goal of providing a long-term energy-efficient crypto-currency.
 Built on the foundation of Bitcoin, innovations such as proof-of-stake
 help further advance the field of crypto-currency.
@@ -18,13 +18,13 @@ help further advance the field of crypto-currency.
 
 Setup
 -----
-Unpack the files into a directory and run peercoin-qt.exe.
+Unpack the files into a directory and run sumcash-qt.exe.
 
-Peercoin Core is the original Peercoin client and it builds the backbone of the network.
-However, it downloads and stores the entire history of Peercoin transactions;
+Sumcash Core is the original Sumcash client and it builds the backbone of the network.
+However, it downloads and stores the entire history of Sumcash transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
-See the peercoin documentation at:
-  https://docs.peercoin.net/
+See the sumcash documentation at:
+  https://docs.sumcash.net/
 for more help and information.

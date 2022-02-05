@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Sumcash
+Comment=Desktop allet for Sumcash Cryptocurrency
+Comment[de]=Offizieller Client für die Kryptowährung Sumcash
+Exec=sumcash-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/sumcash128.png
+MimeType=x-scheme-handler/sumcash;
+Categories=Office;Finance;P2P;Network;Qt;

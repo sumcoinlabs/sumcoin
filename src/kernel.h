@@ -1,8 +1,8 @@
-// Copyright (c) 2012-2022 The Peercoin developers
+// Copyright (c) 2012-2022 The Sumcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef PEERCOIN_KERNEL_H
-#define PEERCOIN_KERNEL_H
+#ifndef SUMCASH_KERNEL_H
+#define SUMCASH_KERNEL_H
 
 #include <primitives/transaction.h> // CTransaction(Ref)
 
@@ -60,7 +60,7 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
 
 bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired, unsigned int nToCheck);
 
-// peercoin: entropy bit for stake modifier if chosen by modifier
+// sumcash: entropy bit for stake modifier if chosen by modifier
 unsigned int GetStakeEntropyBit(const CBlock& block);
 
-#endif // PEERCOIN_KERNEL_H
+#endif // SUMCASH_KERNEL_H

@@ -38,7 +38,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.nVersion = nVersion;
     genesis.vtx.push_back(MakeTransactionRef(std::move(txNew)));
     genesis.hashPrevBlock.SetNull();
-    genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
+    genesis.hashMerkleRoot = BlockMerkleRoot(genesis); //
 
     // CBigNum bnTarget;
     // bnTarget.SetCompact(genesis.nBits);
@@ -48,10 +48,10 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     // (ie)
     // genesis.nNonce = 0;
     // make
-    // ./peercoind
+    // ./sumcashd
     // genesis.nNonce = 1000000000;
     // make
-    // ./peercoind
+    // ./sumcashd
     // .......
 
     // while (genesis.GetHash() > bnTarget.getuint256())
@@ -153,8 +153,8 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.empty();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // peercoin: addresses begin with 'P'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125); // peercoin: addresses begin with 'p'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcash: addresses begin with 'P'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125); // sumcash: addresses begin with 'p'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,187);
         base58Prefixes[EXT_PUBLIC_KEY] = {0xF5, 0x88, 0xB2, 0x1F};
         base58Prefixes[EXT_SECRET_KEY] = {0xF5, 0x88, 0xAD, 0xE5};
@@ -253,10 +253,10 @@ public:
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         vSeeds.empty();
-        // vSeeds.emplace_back("tseed.peercoin.net");
-        // vSeeds.emplace_back("tseed2.peercoin.net");
-        // vSeeds.emplace_back("tseed.peercoin-library.org");
-        // vSeeds.emplace_back("testseed.ppcoin.info");
+        // vSeeds.emplace_back("tseed.sumcash.net");
+        // vSeeds.emplace_back("tseed2.sumcash.net");
+        // vSeeds.emplace_back("tseed.sumcash-library.org");
+        // vSeeds.emplace_back("testseed.sumcash.info");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,64);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,126);

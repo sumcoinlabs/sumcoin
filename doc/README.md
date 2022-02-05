@@ -1,40 +1,40 @@
-Peercoin 0.11.4 BETA
+Sumcash 0.11.4 BETA
 
 Setup
 ---------------------
-Peercoin is the original Peercoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Peercoin transactions (which is currently less than one gigabyte); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Sumcash is the original Sumcash client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sumcash transactions (which is currently less than one gigabyte); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Peercoin, visit [peercoin.net](https://peercoin.net/download).
+To download Sumcash, visit [sumcash.net](https://sumcash.net/download).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Peercoin on your native platform.
+The following are some helpful notes on how to run Sumcash on your native platform.
 
 ### Unix
 
 Unpack the files into a directory and run:
 
-- `bin/peercoin-qt` (GUI) or
-- `bin/peercoind` (headless)
+- `bin/sumcash-qt` (GUI) or
+- `bin/sumcashd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run peercoin-qt.exe.
+Unpack the files into a directory, and then run sumcash-qt.exe.
 
 ### macOS
 
-Drag Peercoin to your applications folder, and then run Peercoin.
+Drag Sumcash to your applications folder, and then run Sumcash.
 
 ### Need Help?
 
-* See the documentation at the [Peercoin Wiki](https://docs.peercoin.net/)
+* See the documentation at the [Sumcash Wiki](https://docs.sumcash.net/)
 for help and more information.
-* Peercoin is very similar to bitcoin, so you can use their wiki [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page).
-* Ask for help on [#general](https://peercoin.chat/) on peercoin.chat.
+* Sumcash is very similar to bitcoin, so you can use their wiki [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page).
+* Ask for help on [#general](https://sumcash.chat/) on sumcash.chat.
 
 Building
 ---------------------
-The following are developer notes on how to build Peercoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Sumcash on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -47,7 +47,7 @@ The following are developer notes on how to build Peercoin on your native platfo
 
 Development
 ---------------------
-The Peercoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Sumcash repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Productivity Notes](productivity.md)
@@ -64,7 +64,7 @@ The Peercoin repo's [root README](/README.md) contains relevant information on t
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Peercoin](https://talk.peercoin.net/) forums.
+* Discuss on the [Sumcash](https://talk.sumcash.net/) forums.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

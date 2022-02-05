@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2020 The Bitcoin Core developers
-// Copyright (c) 2017-2022 The Peercoin developers
+// Copyright (c) 2017-2022 The Sumcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -124,7 +124,7 @@ Intro::Intro(QWidget *parent, int64_t blockchain_size_gb, int64_t chain_state_si
         .arg(PACKAGE_NAME)
         .arg(m_blockchain_size_gb)
         .arg(2012)
-        .arg(tr("Peercoin"))
+        .arg(tr("Sumcash"))
     );
     ui->lblExplanation2->setText(ui->lblExplanation2->text().arg(PACKAGE_NAME));
 

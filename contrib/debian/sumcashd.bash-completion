@@ -1,0 +1,3 @@
+contrib/sumcashd.bash-completion	sumcashd
+contrib/sumcash-cli.bash-completion	sumcash-cli
+contrib/sumcash-tx.bash-completion	sumcash-tx

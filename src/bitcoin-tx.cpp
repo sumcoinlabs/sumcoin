@@ -98,9 +98,9 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs)) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " peercoin-tx utility version " + FormatFullVersion() + "\n\n" +
-            "Usage:  peercoin-tx [options] <hex-tx> [commands]  Update hex-encoded peercoin transaction\n" +
-            "or:     peercoin-tx [options] -create [commands]   Create hex-encoded peercoin transaction\n" +
+        std::string strUsage = PACKAGE_NAME " sumcash-tx utility version " + FormatFullVersion() + "\n\n" +
+            "Usage:  sumcash-tx [options] <hex-tx> [commands]  Update hex-encoded sumcash transaction\n" +
+            "or:     sumcash-tx [options] -create [commands]   Create hex-encoded sumcash transaction\n" +
             "\n";
         strUsage += gArgs.GetHelpMessage();
 
