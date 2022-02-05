@@ -46,11 +46,11 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Peercoin"
-#define QAPP_ORG_DOMAIN "peercoin.net"
-#define QAPP_APP_NAME_DEFAULT "Peercoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Peercoin-Qt-testnet"
-#define QAPP_APP_NAME_REGTEST "Peercoin-Qt-regtest"
+#define QAPP_ORG_NAME "Sumcash"
+#define QAPP_ORG_DOMAIN "sumcash.net"
+#define QAPP_APP_NAME_DEFAULT "Sumcash-Qt"
+#define QAPP_APP_NAME_TESTNET "Sumcash-Qt-testnet"
+#define QAPP_APP_NAME_REGTEST "Sumcash-Qt-regtest"
 
 /* Colors for minting tab for each coin age group */
 #define COLOR_MINT_YOUNG QColor(255, 224, 226)

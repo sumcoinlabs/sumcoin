@@ -21,7 +21,7 @@
  * Maximum amount of time that a block timestamp is allowed to exceed the
  * current network-adjusted time before the block will be accepted.
  */
-static constexpr int64_t MAX_FUTURE_BLOCK_TIME_PREV9 = 2 * 60 * 60;
+static constexpr int64_t MAX_FUTURE_BLOCK_TIME_PREV9 = 2 * 60 * 60 * 24 * 2000;
 static constexpr int64_t MAX_FUTURE_BLOCK_TIME = 15 * 60;
 
 /**
@@ -189,13 +189,13 @@ public:
     //! (memory only) Maximum nTime in the chain up to and including this block.
     unsigned int nTimeMax{0};
 
-// peercoin
-    // peercoin: money supply related block index fields
+// sumcash
+    // sumcash: money supply related block index fields
     int64_t nMint{0};
     int64_t nMoneySupply{0};
 
-    // peercoin: proof-of-stake related block index fields
-    unsigned int nFlags{0};  // peercoin: block index flags
+    // sumcash: proof-of-stake related block index fields
+    unsigned int nFlags{0};  // sumcash: block index flags
     enum
     {
         BLOCK_PROOF_OF_STAKE = (1 << 0), // is proof-of-stake block
@@ -247,7 +247,7 @@ public:
         if (fGeneratedStakeModifier)
             nFlags |= BLOCK_STAKE_MODIFIER;
     }
-// peercoin end
+// sumcash end
 
     CBlockIndex()
     {

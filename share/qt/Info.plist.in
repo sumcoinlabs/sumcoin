@@ -11,34 +11,34 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>peercoin.icns</string>
+  <string>sumcash.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
 
   <key>NSHumanReadableCopyright</key>
-  <string>@PEERCOIN_VERSION_MAJOR@.@PEERCOIN_VERSION_MINOR@.@PEERCOIN_VERSION_REVISION@.@PEERCOIN_VERSION_BUILD@, Copyright © 2011-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@</string>
+  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@.@SUMCASH_VERSION_BUILD@, Copyright © 2011-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@</string>
 
   <key>CFBundleShortVersionString</key>
-  <string>@PEERCOIN_VERSION_MAJOR@.@PEERCOIN_VERSION_MINOR@.@PEERCOIN_VERSION_REVISION@</string>
+  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@</string>
 
   <key>CFBundleVersion</key>
-  <string>@PEERCOIN_VERSION_MAJOR@.@PEERCOIN_VERSION_MINOR@.@PEERCOIN_VERSION_REVISION@</string>
+  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Peercoin-Qt</string>
+  <string>Sumcash-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Peercoin-Qt</string>
+  <string>Sumcash-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.peercoin.Peercoin-Qt</string>
+  <string>org.sumcash.Sumcash-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.peercoin.PeercoinPayment</string>
+      <string>org.sumcash.SumcashPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>peercoin</string>
+        <string>sumcash</string>
       </array>
     </dict>
   </array>

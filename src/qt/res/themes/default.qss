@@ -1,5 +1,5 @@
 /* Custom Colors */
-/* Green: #3cb054 1*/
+/* Blue: #276BCF 1*/
 /* Dark Grey: #8C8C8C 2*/
 /* Light Grey: #E3E3E3 3*/
 /* New Dark Grey: #666666 2*/
@@ -19,7 +19,7 @@ QMainWindow {
 
 /* Global Styles - Buttons */
 QToolButton {
-    background: #3cb054;
+    background: #276BCF;
     color: #ffffff;
     border-radius: 20px;
     margin: 5px;
@@ -30,7 +30,7 @@ QToolButton {
 }
 
 QPushButton {
-    background: #3cb054;
+    background: #276BCF;
     color: #ffffff;
     border-radius: 20px;
     margin: 5px;
@@ -41,11 +41,11 @@ QPushButton {
 }
 
 QToolButton:checked, QPushButton:checked {
-    background: #339648;
+    background: #0164f5;
 }
 
 QToolButton:hover, QPushButton:hover {
-    background: #339648;
+    background: #0164f5;
 }
 
 QToolButton:!enabled, QPushButton:!enabled {
@@ -66,7 +66,7 @@ AmountSpinBox, QDoubleSpinBox   {
     padding: 0px;
 }
 
-/* Up and down values eg. PPC units on send */
+/* Up and down values eg. SUMC units on send */
 AmountSpinBox::up-button, QDoubleSpinBox::up-button   {
     subcontrol-origin: border;
     subcontrol-position: top right;
@@ -133,12 +133,12 @@ QTableView {
     alternate-background-color: #E3E3E3;
     color: #666666;
     gridline-color: #8C8C8C;
-    selection-background-color: #3cb054;
+    selection-background-color: #276BCF;
     border: 1px solid #8C8C8C;
  }
 
 QHeaderView::section {
-    background-color: #3cb054;
+    background-color: #276BCF;
     color: #ffffff;
     border-left: 0px;
     padding: 4px;
@@ -160,8 +160,8 @@ QToolTip {
 
 /* Toolbar */
 QToolBar {
-    border: 1px solid #3cb054;
-    background-color: #3cb054;
+    border: 1px solid #276BCF;
+    background-color: #276BCF;
 }
 
 QToolBar > QLabel {
@@ -205,7 +205,7 @@ QFrame {
 }
 
 #labelSendBalanceText {
-  color: #3cb054;
+  color: #276BCF;
   font-size: 20px;
   margin-right: 3px;
 }
@@ -233,7 +233,7 @@ QFrame QLabel#labelImmatureText,
 QFrame QLabel#labelUnconfirmedText,
 QFrame QLabel#labelPendingText,
 QFrame QLabel#labelTotalText {
-    color: #3cb054;
+    color: #276BCF;
     font-size: 20px;
 }
 
@@ -293,14 +293,14 @@ QLabel#logo {
 
 /* I think this is the top menu */
 QTabBar::tab {
-    background: #3cb054;
+    background: #276BCF;
     padding: 4px 20px;
     color: #ffffff;
     margin: 4px 1px 4px;
 }
 
 QTabBar::tab:selected {
-    background: #339648;
+    background: #0164f5;
     color: #ffffff;
 }
 

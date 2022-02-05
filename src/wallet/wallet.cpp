@@ -266,7 +266,7 @@ WalletCreationStatus CreateWallet(interfaces::Chain& chain, const SecureString& 
 
 const uint256 CWalletTx::ABANDON_HASH(UINT256_ONE());
 
-// peercoin: optional setting to unlock wallet for block minting only;
+// sumcash: optional setting to unlock wallet for block minting only;
 //         serves to disable the trivial sendmoney when OS account compromised
 bool fWalletUnlockMintOnly = false;
 
@@ -730,7 +730,7 @@ void CWallet::WalletUpdateSpent(const CTransactionRef &tx)
                     LogPrintf("WalletUpdateSpent: bad wtx %s\n", wtx.GetHash().ToString().c_str());
                 else if (IsMine(wtx.tx->vout[txin.prevout.n]))
                 {
-                    LogPrintf("WalletUpdateSpent found spent coin %sppc %s\n", FormatMoney(wtx.GetCredit(ISMINE_SPENDABLE)).c_str(), wtx.GetHash().ToString().c_str());
+                    LogPrintf("WalletUpdateSpent found spent coin %ssumc %s\n", FormatMoney(wtx.GetCredit(ISMINE_SPENDABLE)).c_str(), wtx.GetHash().ToString().c_str());
                     wtx.BindWallet(this);
                     NotifyTransactionChanged(this, txin.prevout.hash, CT_UPDATED);
                 }
@@ -945,7 +945,7 @@ bool CWallet::AddToWalletIfInvolvingMe(const CTransactionRef& ptx, CWalletTx::Co
                 while (range.first != range.second) {
                     if (range.first->second != tx.GetHash()) {
                         WalletLogPrintf("Transaction %s (in block %s) conflicts with wallet transaction %s (both spend %s:%i)\n", tx.GetHash().ToString(), confirm.hashBlock.ToString(), range.first->second.ToString(), range.first->first.hash.ToString(), range.first->first.n);
-                        MarkConflicted(confirm.hashBlock, confirm.block_height, range.first->second);
+                        // MarkConflicted(confirm.hashBlock, confirm.block_height, range.first->second);
                     }
                     range.first++;
                 }
@@ -1448,7 +1448,7 @@ bool CWallet::SetWalletFlags(uint64_t overwriteFlags, bool memonly)
 
 int64_t CWalletTx::GetTxTime() const
 {
-    // peercoin: we still have the timestamp, so use it to avoid confusion
+    // sumcash: we still have the timestamp, so use it to avoid confusion
     if (tx->nTime)
         return tx->nTime;
 
@@ -2188,7 +2188,7 @@ void CWallet::AvailableCoins(interfaces::Chain::Lock& locked_chain, std::vector<
         }
 
         if (nSpendTime > 0 && wtx.tx->nTime > nSpendTime)
-            continue;  // peercoin: timestamp must not exceed spend time
+            continue;  // sumcash: timestamp must not exceed spend time
 
         if (wtx.IsImmatureCoinBase())
             continue;
@@ -2975,7 +2975,7 @@ bool CWallet::CreateTransaction(interfaces::Chain::Lock& locked_chain, const std
 //                    nFeeRet += nMoveToFee;
 //                }
 
-                // peercoin: sub-cent change is moved to fee
+                // sumcash: sub-cent change is moved to fee
                 if (nChange > 0 && nChange < MIN_TXOUT_AMOUNT)
                 {
                     nFeeRet += nChange;
@@ -4355,7 +4355,7 @@ void CWallet::ConnectScriptPubKeyManNotifiers()
     }
 }
 
-// peercoin: create coin stake transaction
+// sumcash: create coin stake transaction
 typedef std::vector<unsigned char> valtype;
 bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew)
 {
@@ -4539,10 +4539,12 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         CAmount nReward = GetProofOfStakeReward(nCoinAge, txNew.nTime, ::ChainActive().Tip()->nMoneySupply);
         // Refuse to create mint that has zero or negative reward
         if(nReward <= 0) {
-          return false;
+            LogPrintf("nCredit=%d, nReward=%d\n", nCredit, nReward);
+        //   return false;
         }
         nCredit += nReward;
     }
+    LogPrintf("calculated nCredit=%d\n", nCredit);
 
     CAmount nMinFee = 0;
     CAmount nMinFeeBase = (IsProtocolV07(txNew.nTime) ? MIN_TX_FEE : MIN_TX_FEE_PREV7);
@@ -4556,6 +4558,8 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         }
         else
             txNew.vout[1].nValue = nCredit - nMinFee;
+
+        LogPrintf("txNew.vout[1].nValue=%d, txNew.vout[2].nValue=%d\n", txNew.vout[1].nValue, txNew.vout[2].nValue);
 
         // Sign
         int nIn = 0;

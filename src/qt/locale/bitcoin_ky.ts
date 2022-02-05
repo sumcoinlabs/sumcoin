@@ -103,8 +103,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Peercoin</source>
-        <translation>Peercoin</translation>
+        <source>Sumcash</source>
+        <translation>Sumcash</translation>
     </message>
     <message>
         <source>Error</source>

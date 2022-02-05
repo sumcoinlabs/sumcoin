@@ -1,0 +1,11 @@
+usr/local/bin/sumcash-qt usr/bin
+share/pixmaps/sumcash16.png usr/share/pixmaps
+share/pixmaps/sumcash32.png usr/share/pixmaps
+share/pixmaps/sumcash128.png usr/share/pixmaps
+share/pixmaps/sumcash256.png usr/share/pixmaps
+share/pixmaps/sumcash-testnet32.png usr/share/pixmaps
+share/pixmaps/sumcash-testnet128.png usr/share/pixmaps
+share/pixmaps/sumcash-testnet256.png usr/share/pixmaps
+debian/sumcash-qt.desktop usr/share/applications
+debian/sumcash-testnet-qt.desktop usr/share/applications
+debian/sumcash-qt.protocol usr/share/kde4/services/

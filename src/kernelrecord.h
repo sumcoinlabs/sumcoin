@@ -1,8 +1,8 @@
-// Copyright (c) 2012-2022 The Peercoin developers
+// Copyright (c) 2012-2022 The Sumcash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef PEERCOIN_KERNELRECORD_H
-#define PEERCOIN_KERNELRECORD_H
+#ifndef SUMCASH_KERNELRECORD_H
+#define SUMCASH_KERNELRECORD_H
 
 #include <uint256.h>
 #include <interfaces/wallet.h>
@@ -53,4 +53,4 @@ protected:
     double prevProbability;
 };
 
-#endif // PEERCOIN_KERNELRECORD_H
+#endif // SUMCASH_KERNELRECORD_H

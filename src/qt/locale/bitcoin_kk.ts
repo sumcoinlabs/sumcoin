@@ -167,7 +167,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Peercoin</source>
+        <source>Sumcash</source>
         <translation>Пиркойн</translation>
     </message>
     <message>

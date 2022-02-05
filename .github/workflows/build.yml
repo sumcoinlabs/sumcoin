@@ -129,7 +129,7 @@ jobs:
         run: |
           cd ${GITIAN_DIR}
           sed -i "s/^\ \ \(HOSTS=\"\).*/\ \ \1${{ matrix.host }}\"/g" ${{ steps.detect.outputs.descriptor }}
-          ./bin/gbuild -j $MAKEJOBS --commit peercoin=$(git -C ${{ steps.detect.outputs.build-dir }} log --format="%H" -n 1) --url peercoin=${{ steps.detect.outputs.build-dir }} ${{ steps.detect.outputs.descriptor }}
+          ./bin/gbuild -j $MAKEJOBS --commit sumcash=$(git -C ${{ steps.detect.outputs.build-dir }} log --format="%H" -n 1) --url sumcash=${{ steps.detect.outputs.build-dir }} ${{ steps.detect.outputs.descriptor }}
           cp -r ${GITIAN_DIR}/build/out/* ${{ steps.detect.outputs.build-dir }}/
           cd -
 
@@ -139,7 +139,7 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: peercoin-${{ steps.slug.outputs.sha8 }}-${{ matrix.name }}
+          name: sumcash-${{ steps.slug.outputs.sha8 }}-${{ matrix.name }}
           path: |
             *.tar.gz
             *.zip
@@ -154,7 +154,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: peercoin/packaging
+          repository: sumcash/packaging
 
       - uses: actions/download-artifact@v2
         with:
@@ -164,9 +164,9 @@ jobs:
         working-directory: docker
         run: |
           mkdir -p linux/amd64 linux/arm64 linux/arm/v7
-          mv peercoin-*-armhf-linux/peercoin-*-arm-linux-gnueabihf.tar.gz linux/arm/v7/
-          mv peercoin-*-aarch64-linux/peercoin-*-aarch64-linux-gnu.tar.gz linux/arm64/
-          mv peercoin-*-x86_64-linux/peercoin-*-x86_64-linux-gnu.tar.gz linux/amd64/
+          mv sumcash-*-armhf-linux/sumcash-*-arm-linux-gnueabihf.tar.gz linux/arm/v7/
+          mv sumcash-*-aarch64-linux/sumcash-*-aarch64-linux-gnu.tar.gz linux/arm64/
+          mv sumcash-*-x86_64-linux/sumcash-*-x86_64-linux-gnu.tar.gz linux/amd64/
 
       - uses: crazy-max/ghaction-docker-buildx@v1
 
@@ -210,7 +210,7 @@ jobs:
           docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 \
             --output "type=image,push=${{ steps.detect.outputs.push }}" \
             --progress=plain \
-            --tag ghcr.io/${{ github.repository }}/peercoind:${{ steps.detect.outputs.tag-name }} \
+            --tag ghcr.io/${{ github.repository }}/sumcashd:${{ steps.detect.outputs.tag-name }} \
           .
   appimage:
     runs-on: ubuntu-latest
@@ -238,7 +238,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: peercoin/packaging
+          repository: sumcash/packaging
 
       - uses: actions/download-artifact@v2
         with:
@@ -270,14 +270,14 @@ jobs:
       - name: Build AppImage
         working-directory: appimage
         run: |
-          tar xzf peercoin-${{ steps.detect.outputs.sha8 }}-${{ matrix.name }}-linux/peercoin-*-${{ matrix.host }}.tar.gz -C AppDir --strip-components=1
-          rm AppDir/bin/peercoin-cli AppDir/bin/peercoin-tx AppDir/bin/peercoin-wallet AppDir/bin/peercoind
+          tar xzf sumcash-${{ steps.detect.outputs.sha8 }}-${{ matrix.name }}-linux/sumcash-*-${{ matrix.host }}.tar.gz -C AppDir --strip-components=1
+          rm AppDir/bin/sumcash-cli AppDir/bin/sumcash-tx AppDir/bin/sumcash-wallet AppDir/bin/sumcashd
           VERSION=${{ steps.detect.outputs.tag-name }} SOURCES_REPO=${{ matrix.sources_repo }} APT_ARCH=${{ matrix.apt_arch }} BUILD_ARCH=${{ matrix.name }} appimage-builder --skip-tests
           mv *.AppImage* ${{ steps.detect.outputs.build-dir }}/
 
       - uses: actions/upload-artifact@v2
         with:
-          name: peercoin-appimage-${{ steps.detect.outputs.tag-name }}-${{ matrix.name }}
+          name: sumcash-appimage-${{ steps.detect.outputs.tag-name }}-${{ matrix.name }}
           path: |
             *.AppImage*
           retention-days: 5
@@ -336,11 +336,11 @@ jobs:
         if: ${{ steps.detect.outputs.tag-name != 'noop' }}
         run: |
           mkdir -p ${{ steps.detect.outputs.tag-name }}
-          mv peercoin-*-**/peercoin-*.tar.gz \
-            peercoin-*-**/peercoin-*.zip \
-            peercoin-*-**/peercoin-*.exe \
-            peercoin-*-**/peercoin-*.dmg \
-            peercoin-*-**/*.AppImage* \
+          mv sumcash-*-**/sumcash-*.tar.gz \
+            sumcash-*-**/sumcash-*.zip \
+            sumcash-*-**/sumcash-*.exe \
+            sumcash-*-**/sumcash-*.dmg \
+            sumcash-*-**/*.AppImage* \
           ${{ steps.detect.outputs.tag-name }}/
           cd ${{ steps.detect.outputs.tag-name }}
           sha256sum * > SHA256SUMS
@@ -348,7 +348,7 @@ jobs:
           rm SHA256SUMS
           cd -
           mktorrent -w ${{ github.server_url }}/${{ github.repository }}/releases/download \
-            -o ${{ steps.detect.outputs.tag-name }}/peercoin-${{ steps.detect.outputs.tag-name }}.torrent \
+            -o ${{ steps.detect.outputs.tag-name }}/sumcash-${{ steps.detect.outputs.tag-name }}.torrent \
             -a udp://tracker.opentrackr.org:1337/announce \
             -a udp://tracker.openbittorrent.com:6969/announce \
             -a udp://exodus.desync.com:6969/announce \
