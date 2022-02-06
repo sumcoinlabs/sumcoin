@@ -1357,7 +1357,7 @@ EOF
 	    # On 10.4-10.6 one might compile for PowerPC via gcc -arch ppc
 	    if (echo '#ifdef __POWERPC__'; echo IS_PPC; echo '#endif') | \
 		   (CCOPTS="" $CC_FOR_BUILD -E - 2>/dev/null) | \
-		   grep IS_SUMC >/dev/null
+		   grep IS_PPC >/dev/null
 	    then
 		UNAME_PROCESSOR=powerpc
 	    fi
