@@ -92,13 +92,13 @@ static CBlock CreateGenesisBlock(uint32_t nTimeTx, uint32_t nTimeBlock, uint32_t
 
 /**
  * Main network
- * 2022-02-01 16:27:26 CBlock(hash=000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
+ * 2022-02-01 16:27:26 CBlock(hash=000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000,
  * hashMerkleRoot=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579300, nBits=1e00ffff, nNonce=4097542, vtx=1, vchBlockSig=)
 2022-02-01 16:27:26   Coinbase(hash=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579000, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295), 
+    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295),
     coinbase 04ffff001d020f27274669676874696e6720666c61726573206f6e206f7574736b69727473206f6620547269706f6c69)
     CTxOut(empty)
-  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4 
+  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4
  */
 class CMainParams : public CChainParams {
 public:
@@ -161,7 +161,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0xF5, 0x88, 0xAD, 0xE5};
 
         // human readable prefix to bench32 address
-        bech32_hrp = "sc";
+        bech32_hrp = "sumc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -196,13 +196,13 @@ public:
 
 /**
 Testnet (v3)
-2022-02-04 17:44:50 CBlock(hash=0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
+2022-02-04 17:44:50 CBlock(hash=0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000,
 hashMerkleRoot=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579200, nBits=1e00ffff, nNonce=22166755, vtx=1, vchBlockSig=)
 2022-02-04 17:44:50   Coinbase(hash=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579000, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295), 
+    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295),
     coinbase 04ffff001d020f27274669676874696e6720666c61726573206f6e206f7574736b69727473206f6620547269706f6c69)
     CTxOut(empty)
-  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4 
+  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4
     */
 class CTestNetParams : public CChainParams {
 public:
@@ -266,7 +266,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0xF4, 0x88, 0xAD, 0xE5};
 
         // human readable prefix to bench32 address
-        bech32_hrp = "tpc";
+        bech32_hrp = "tsumc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -298,16 +298,16 @@ public:
 
 /**
  * Regression test
- * 
-2022-02-04 17:44:50 CBlock(hash=0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000, 
+ *
+2022-02-04 17:44:50 CBlock(hash=0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000,
 hashMerkleRoot=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579200, nBits=1e00ffff, nNonce=22166755, vtx=1, vchBlockSig=)
 2022-02-04 17:44:50   Coinbase(hash=d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4, nTime=1554579000, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295), 
+    CTxIn(COutPoint(0000000000000000000000000000000000000000000000000000000000000000, 4294967295),
     coinbase 04ffff001d020f27274669676874696e6720666c61726573206f6e206f7574736b69727473206f6620547269706f6c69)
     CTxOut(empty)
-  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4 
+  vMerkleTree: d87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4
     */
- 
+
 
 class CRegTestParams : public CChainParams {
 public:
@@ -379,7 +379,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0xF4, 0x88, 0xB2, 0x1F};
         base58Prefixes[EXT_SECRET_KEY] = {0xF4, 0x88, 0xAD, 0xE5};
 
-        bech32_hrp = "scr";
+        bech32_hrp = "sumcr";
         fMiningRequiresPeers = false;
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
