@@ -104,8 +104,8 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = CBaseChainParams::MAIN;
-        consensus.BIP34Height = 1001;
-        consensus.BIP34Hash = uint256S("a0c14380e22e64468f69bf8973ddfcdc7fb0ec6ac3f0d065f4c56aef379600c0");
+        consensus.BIP34Height = 1;
+        consensus.BIP34Hash = uint256S("000000003bbdcbb48d17fbf9e0f7418a78b73791311ba455ab1dbc5ffa373b1f");
         consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24
         consensus.bnInitialHashTarget = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32
         consensus.nTargetTimespan = 7 * 24 * 60 * 60;  // one week
