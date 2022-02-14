@@ -1,8 +1,8 @@
 /* Custom Colors */
 /* Blue: #276BCF 1*/
-/* Dark Grey: #8C8C8C 2*/
+/* Dark Grey: #000 2*/
 /* Light Grey: #E3E3E3 3*/
-/* New Dark Grey: #666666 2*/
+/* New Dark Grey: #000 2*/
 /* New Light Grey: #8c8c8c 3*
 
 /* Global Styles */
@@ -131,7 +131,7 @@ QTableView {
     show-decoration-selected: 1;
     background: #ffffff;
     alternate-background-color: #E3E3E3;
-    color: #666666;
+    color: #333;
     gridline-color: #8C8C8C;
     selection-background-color: #276BCF;
     border: 1px solid #8C8C8C;
@@ -160,8 +160,8 @@ QToolTip {
 
 /* Toolbar */
 QToolBar {
-    border: 1px solid #276BCF;
-    background-color: #276BCF;
+    border: 1px solid #333;
+    background-color: #000;
 }
 
 QToolBar > QLabel {
