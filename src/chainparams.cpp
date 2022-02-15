@@ -126,7 +126,7 @@ public:
         consensus.nMinimumChainWork =   uint256S("0x00000000000000000000000000000000000000000000000000000000000003e9"); // 1000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0xb166551695392eb5c323cc42daff02654a5a772ebc1f1e6a22d9ed08dfb85f46");  // 380000
+        consensus.defaultAssumeValid =  uint256S("0xd867d95af28e1baa8e1b2b6a2db9c9491825e8067c46e9ca6fef8841746dc752");  // 380000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -178,7 +178,7 @@ public:
                 {100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
                 {500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
                 {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")} // Last PoW
-                // {1020,      uint256S("0xb166551695392eb5c323cc42daff02654a5a772ebc1f1e6a22d9ed08dfb85f46")} // PoS
+                {1001,      uint256S("0xd867d95af28e1baa8e1b2b6a2db9c9491825e8067c46e9ca6fef8841746dc752")} // PoS
                 // {1016,      uint256S("0x91afaf0d08d45776e67fddeb82631acd1a351b760d5a1ee8f7b05493b1883b06")}
                 // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
             }
@@ -186,8 +186,8 @@ public:
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1561324261, // * UNIX timestamp of last known number of transactions
-            1000,    // * total number of transactions between genesis and that timestamp
+            1561324280, // * UNIX timestamp of last known number of transactions
+            1002,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
