@@ -116,17 +116,17 @@ public:
         consensus.nStakeMaxAge = 60 * 60 * 24 * 90; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
         consensus.nModifierInterval = 6 * 60; // Modifier interval: time to elapse before new modifier is computed
         consensus.nCoinbaseMaturity = 500;
-        consensus.SegwitHeight = 1001;
+        // consensus.SegwitHeight = 1001;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000000000003B30"); // 1000
+        consensus.nMinimumChainWork =   uint256(); // 3B30 15152
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0x77310780dba526e6d1a8baf09e554033f101411b13df523d5b00ae7bc1b9b733");  // 380000
+        consensus.defaultAssumeValid =  uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5");  // 380000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -162,7 +162,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0xF5, 0x88, 0xAD, 0xE5};
 
         // human readable prefix to bench32 address
-        bech32_hrp = "sumc";
+        bech32_hrp = "sc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -177,17 +177,17 @@ public:
                 {0,         uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5")},
                 {100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
                 {500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
-                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")}, // Last PoW
-                {1001,      uint256S("0xd867d95af28e1baa8e1b2b6a2db9c9491825e8067c46e9ca6fef8841746dc752")}, // PoS
-                {15152,     uint256S("0x77310780dba526e6d1a8baf09e554033f101411b13df523d5b00ae7bc1b9b733")}
+                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")} // Last PoW
+                // {1001,      uint256S("0xd867d95af28e1baa8e1b2b6a2db9c9491825e8067c46e9ca6fef8841746dc752")}, // PoS
+                // {15152,     uint256S("0x77310780dba526e6d1a8baf09e554033f101411b13df523d5b00ae7bc1b9b733")}
                 // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
-            1644961840, // * UNIX timestamp of last known number of transactions
-            29333,    // * total number of transactions between genesis and that timestamp
+            1561324261, // * UNIX timestamp of last known number of transactions
+            1000,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
