@@ -111,10 +111,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // September 5, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000002f1242c3c5f261b2"); // to block 2368300
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000184673a2683da253"); // to block 1134720
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x79c6f56bff70c17a2ea17b926f0abb3af1f017348ab796cd29be7fb00327bf1d"); //2368300
+        consensus.defaultAssumeValid = uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9"); //1134720
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -158,13 +158,13 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-            vSeeds.emplace_back("dnsseed.sumcoinpool.org");
-	    vSeeds.emplace_back("dnsseed.minesum.com");
-            vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
-	    vSeeds.emplace_back("dnsseed.sumnode.io");
-	    vSeeds.emplace_back("dnsseed.sumcoinmining.org");
-	    vSeeds.emplace_back("sumdnsseed.moonypool.com");
-	    vSeeds.emplace_back("dnsseed.sumcoin.space");
+      //vSeeds.emplace_back("dnsseed.sumcoinpool.org");
+	    //vSeeds.emplace_back("dnsseed.minesum.com");
+      //vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
+	    //vSeeds.emplace_back("dnsseed.sumnode.io");
+	    //vSeeds.emplace_back("dnsseed.sumcoinmining.org");
+	    //vSeeds.emplace_back("sumdnsseed.moonypool.com");
+	    //vSeeds.emplace_back("dnsseed.sumcoin.space");
 
 
 
@@ -240,15 +240,8 @@ public:
 	       {1048320, uint256S("0xc12e7cae889b0dd49f6d3d39fc40ff7ec5aadbfffb20d6ac4cb461c05f88e638")},
 	       {1077120, uint256S("0x259ec9e319169f587e3f9f8e38a0bfd5ca0cbc33a1e7c05c51b9b93fd1d17458")},
 	       {1134720, uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9")},
-	       {1221120, uint256S("0x2471f5f64406e4af10752ae690df1243bbaa27a17e8c30c1c85f7216bbec58ec")},
-	       {1307520, uint256S("0xb48ffde81935649c3a9d8ba691f784436fe05dd802a72afbeea9923d417f774e")},
-	       {1330560, uint256S("0xbe3a8b802886b0ae2f36e7bf225c11ae908b9e22756d6d981bc8e77a115d611a")},
-	       {1589760, uint256S("0x7a6a309be61a45470a168f9b5ba3ce09525b404e23f1729d5740458b4bd0a5a2")},
-	       {1618560, uint256S("0xf8b54d3d99bae69dd65740e2e8a1bb265dac0b7de46c393a7930af187cfea19e")},
-	       {1647360, uint256S("0xbffe5af1ccc7831490d5d265116d92b30ab805dcd44d273e942e495b6bb3acd2")},
-	       {1704960, uint256S("0xf260df4815a191212962ffe2e9d730c2365beb6a1b16515a7553d80987e2a8c9")},
-	       {1820160, uint256S("0x67c14f74e3b52c7744786d014e25c27270203d8b6f4ec5081f5deb371262e635")},
-	       {2368300, uint256S("0x79c6f56bff70c17a2ea17b926f0abb3af1f017348ab796cd29be7fb00327bf1d")},
+
+
 
 
 		    //{1704960, uint256S("0x")},
@@ -259,9 +252,9 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 2368300.
-            1637955350, // * UNIX timestamp of last known number of transactions
-            29474397,  // * total number of transactions between genesis and that timestamp
+            // Data as of block 1134720.
+            1589229688, // * UNIX timestamp of last known number of transactions
+            15000000,  // * total number of transactions between genesis and that timestamp
                     //   (the tx=... number in the SetBestChain debug.log lines)
             0.4     // * estimated number of transactions per second after that timestamp
         };
