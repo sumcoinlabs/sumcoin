@@ -138,7 +138,7 @@ public:
         consensus.DiffModeV2 = 1323870; //set to hieght for the new diffmode
         consensus.SubnHeight = 1323975;
         consensus.SubV = 16903350;
-        consensus.SubBlks = 10;
+        consensus.SubBlks = 1;
         consensus.nHeightEffective = 0;
         consensus.nCoinbaseMaturity = 10;
 
