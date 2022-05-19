@@ -79,7 +79,7 @@ void CChainParams::UpdateVersionBitsParameters(Consensus::DeploymentPos d, int64
 
 class CMainParams : public CChainParams {
 private:
-    Consensus::Params tuneupconsensus;    
+    Consensus::Params tuneupconsensus;
 public:
     CMainParams() {
         strNetworkID = "main";
@@ -111,10 +111,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // September 5, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000001cc22d7210a97cd3"); // to block 1221120
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000184673a2683da253"); // to block 1134720
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x2471f5f64406e4af10752ae690df1243bbaa27a17e8c30c1c85f7216bbec58ec"); //1221120
+        consensus.defaultAssumeValid = uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9"); //1134720
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -130,16 +130,16 @@ public:
 
         // new parameters
         consensus.DiffMode = 1;  //always 1
-        consensus.DiffModeV2 = 1324010; //set to hieght for the new diffmode
-        consensus.SubnHeight = 1324015;
-        consensus.SubV = 1689970;
-        consensus.SubBlks = 10;
+        consensus.DiffModeV2 = 1323870; //set to hieght for the new diffmode
+        consensus.SubnHeight = 1323975;
+        consensus.SubV = 16900700;
+        consensus.SubBlks = 1;
         consensus.nHeightEffective = 0;
         consensus.nCoinbaseMaturity = 10;
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 1323910;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 1323871;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -158,23 +158,14 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("dnsseed.sumcoinpool.org");
-	    vSeeds.emplace_back("dnsseed.jandsmining.com");
-	    vSeeds.emplace_back("dnsseed.coinstop.org");
-        vSeeds.emplace_back("dnsseed.sumcoinwallet.org");
-	    vSeeds.emplace_back("dnsseed.sumnode.io");
-	    vSeeds.emplace_back("dnsseed.sumcoinmining.org");
-	    vSeeds.emplace_back("sumdnsseed.moonypool.com");
-	    vSeeds.emplace_back("dnsseed.sumfaucet.co");
-	    vSeeds.emplace_back("dnsseed.sumcoin.space");
-	    vSeeds.emplace_back("dnsseed.sumcamper.com");
-	    vSeeds.emplace_back("dnsseed.sum-husker.com");
-	    vSeeds.emplace_back("dnsseed.sumexplorer.com");
+//        vSeeds.emplace_back("dnsseed.sumcoinpool.org");
+//	      vSeeds.emplace_back("dnsseed.sumnode.io");
+//	      vSeeds.emplace_back("dnsseed.sumexplorer.com");
 
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //  
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);  //  hexid = "BF"
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
@@ -244,11 +235,10 @@ public:
 	       {1048320, uint256S("0xc12e7cae889b0dd49f6d3d39fc40ff7ec5aadbfffb20d6ac4cb461c05f88e638")},
 	       {1077120, uint256S("0x259ec9e319169f587e3f9f8e38a0bfd5ca0cbc33a1e7c05c51b9b93fd1d17458")},
 	       {1134720, uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9")},
-	       {1221120, uint256S("0x2471f5f64406e4af10752ae690df1243bbaa27a17e8c30c1c85f7216bbec58ec")},
-		    		    
-		    //{1307520, uint256S("0x")},
-		    //{1393920,
-		    
+
+         //{1323885, uint256S("0x")},
+    		    //{soon after,
+
 
             }
         };
@@ -268,7 +258,7 @@ public:
  */
 class CTestNetParams : public CChainParams {
 private:
-    Consensus::Params tuneupconsensus;    
+    Consensus::Params tuneupconsensus;
 public:
     CTestNetParams() {
         strNetworkID = "test";
@@ -283,8 +273,8 @@ public:
         consensus.nPowTargetSpacing = 30;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
-        consensus.nRuleChangeActivationThreshold = 5; // 
-        consensus.nMinerConfirmationWindow = 10; // 
+        consensus.nRuleChangeActivationThreshold = 5; //
+        consensus.nMinerConfirmationWindow = 10; //
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
@@ -323,7 +313,7 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 200;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 200;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -343,10 +333,10 @@ public:
         //bool fOverflow;
         //arith_uint256 bnTarget;
         //bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
-        
+
         //if (UintToArith256(consensus.hashGenesisBlock) > bnTarget)
         //    genesis = FindNewGenesisBlock(genesis);
-        
+
         //printf("Testnet Genesis:\n %s \n\n",genesis.ToString().c_str());
         // end of one use code
    // Testnet Genesis:
@@ -449,7 +439,7 @@ public:
 
         // new tuneupconsensus parameters
         tuneupconsensus = consensus;
-        tuneupconsensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity 
+        tuneupconsensus.nHeightEffective = 12205;  //fork height after this block for coinbase maturity
         tuneupconsensus.nCoinbaseMaturity = 100;
 
         // Assemble the binary search tree of parameters
@@ -506,7 +496,7 @@ const CChainParams &Params() {
 const Consensus::Params *Consensus::Params::GetMaturity(uint32_t nTargetHeight) const {
     if (nTargetHeight < this -> nHeightEffective && this -> pLeft != NULL) {
         return this -> pLeft -> GetMaturity(nTargetHeight);
-    } 
+    }
     // Dogecoin logic include a pRight fork with additional options that we are currently
     // not using.
     //else if (nTargetHeight > this -> nHeightEffective && this -> pRight != NULL) {
@@ -548,13 +538,13 @@ CBlock CChainParams::FindNewGenesisBlock(CBlock block){
     // if this gets called, it means the genesis block has failed the nBits POW test
     // we need to mine a new one that works. Just like mining, we loop through changing
     // nonces until we get a hash low enough to satisfy the nBits
-   
+
     bool fNegative;
     bool fOverflow;
-    arith_uint256 hashTarget; 
+    arith_uint256 hashTarget;
     arith_uint256 thash;
     char scratchpad[SCRYPT_SCRATCHPAD_SIZE];
-    
+
     hashTarget.SetCompact(block.nBits, &fNegative, &fOverflow);
     printf("Finding new Genesis Block...\n");
     while(true)
@@ -591,6 +581,6 @@ CBlock CChainParams::FindNewGenesisBlock(CBlock block){
     printf("block.nNonce = %u \n", block.nNonce);
     printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
     printf("block = %s\n",block.ToString().c_str());
-    
+
     return(block);
 }
