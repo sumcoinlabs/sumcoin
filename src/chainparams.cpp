@@ -1,7 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2016 Sumtoshi
-// Copyright (c) 2009-2019 The Bitcoin Core developers
-// Copyright (c) 2016-2020 The Sumcoin Core developers
+// Copyright (C) 2009-2022 The Bitcoin Core developers
+// Copyright (c) 2016-2022 The Sumcoin Core developers / Sumcoinlabs / Squawk LLC
 
 
 // Distributed under the MIT software license, see the accompanying
@@ -111,10 +111,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1555788600; // September 5, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000184673a2683da253"); // to block 1134720
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000002dae974e709ea10a"); // to block 1323885
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9"); //1134720
+        consensus.defaultAssumeValid = uint256S("0xd9c68a56059ff348228621ae88e28c6173e8de9ae0457b07d9fe79fd8e28b756"); //1323885
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -158,7 +158,7 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-//        vSeeds.emplace_back("dnsseed.sumcoinpool.org");
+        vSeeds.emplace_back("dnsseed.sumcoinpool.org");
 //	      vSeeds.emplace_back("dnsseed.sumnode.io");
 //	      vSeeds.emplace_back("dnsseed.sumexplorer.com");
 
@@ -235,6 +235,7 @@ public:
 	       {1048320, uint256S("0xc12e7cae889b0dd49f6d3d39fc40ff7ec5aadbfffb20d6ac4cb461c05f88e638")},
 	       {1077120, uint256S("0x259ec9e319169f587e3f9f8e38a0bfd5ca0cbc33a1e7c05c51b9b93fd1d17458")},
 	       {1134720, uint256S("0x84d59c3b22dc90f04e5b9b6049431a8049af875287b7df1df8f5ecd8566124e9")},
+         {1323885, uint256S("0xd9c68a56059ff348228621ae88e28c6173e8de9ae0457b07d9fe79fd8e28b756")},
 
          //{1323885, uint256S("0x")},
     		    //{soon after,

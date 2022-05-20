@@ -1,8 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2009-2019 The Bitcoin Core developers
-Copyright (c) 2009-2019 Bitcoin Developers
-Copyright (c) 2016-2020 The Sumcoin Core developers
+Copyright (C) 2009-2022 The Bitcoin Core developers
+Copyright (c) 2009-2022 Bitcoin Developers
+Copyright (c) 2016-2022 The Sumcoin Core developers / Sumcoinlabs / Squawk LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -13,6 +13,11 @@ furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
+
+Any Copies of this source code does not constitute being the authority of the
+Source code for Sumcoin,  and,  you may not use the name Sumcoin in anyway
+copies for reasons other than actual pull requests to
+https://github.com/sumcoinlabs/sumcoin
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
