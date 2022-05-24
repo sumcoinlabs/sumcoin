@@ -122,9 +122,9 @@ public:
          * a large 32-bit integer with any alignment.
          */
         pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xc0;
+        pchMessageStart[1] = 0xc1;
         pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xd0;
+        pchMessageStart[3] = 0xd1;
         nDefaultPort = 3333;
         nPruneAfterHeight = 100000;
 
@@ -159,8 +159,8 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumcoinpool.org");
-//	      vSeeds.emplace_back("dnsseed.sumnode.io");
-//	      vSeeds.emplace_back("dnsseed.sumexplorer.com");
+	vSeeds.emplace_back("dnsseed.sumnode.io");
+	vSeeds.emplace_back("dnsseed.sumexplorer.com");
 
 
 
