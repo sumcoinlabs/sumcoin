@@ -1,24 +1,32 @@
+Copyright @ Sigma Systems Inc 2018 - 2022
+Copyright @ Sumcoin 2022
+
+
+
 Contributing to Sumcoin Core
 ============================
 
-The Sumcoin Core project operates an open contributor model where anyone is
+The Sumcoin Core project operates a closed contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
 
-Firstly in terms of structure, there is no particular concept of "Core
-developers" in the sense of privileged people. Open source often naturally
+Firstly in terms of structure, there is some concept of "Core
+developers" in the sense of privileged people. Closed source often naturally
 revolves around meritocracy where longer term contributors gain more trust from
 the developer community. However, some hierarchy is necessary for practical
 purposes. As such there are repository "maintainers" who are responsible for
 merging pull requests as well as a "lead maintainer" who is responsible for the
 release cycle, overall merging, moderation and appointment of maintainers.
 
+Developers interested in contributing to Sumcoin should write to:
+contribute@sumcoin.org
+
 Communication Channels
 ----------------------
 
-Most communication about Sumcoin Core development happens on IRC, in the
-#sumcoin-dev channel on Freenode. The easiest way to participate on IRC is
+Most communication about Sumcoin Core development happens on Telegram, in the
+#sumcoin-dev channel on Freenode. The easiest way to participate on Telegram is
 with the web client, [webchat.freenode.net](https://webchat.freenode.net/).
 
 Discussion about code base improvements happens in GitHub issues and on pull
@@ -30,7 +38,7 @@ should be used to discuss complicated or controversial changes before working on
 a patch set.
 
 
-Contributor Workflow
+Approved Contributor Workflow
 --------------------
 
 The codebase is maintained using the "contributor workflow" where everyone
@@ -97,7 +105,7 @@ Examples:
     Trivial: Fix typo in init.cpp
 
 Note that translations should not be submitted as pull requests, please see
-[Translation Process](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md) 
+[Translation Process](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md)
 for more information on helping with translations.
 
 If a pull request is not to be considered for merging (yet), please
@@ -169,10 +177,10 @@ There are three categories of refactoring, code only moves, code style fixes,
 code refactoring. In general refactoring pull requests should not mix these
 three kinds of activity in order to make refactoring pull requests easy to
 review and uncontroversial. In all cases, refactoring PRs must not change the
-behaviour of code within the pull request (bugs must be preserved as is).
+behavior of code within the pull request (bugs must be preserved as is).
 
 Project maintainers aim for a quick turnaround on refactoring pull requests, so
-where possible keep them short, uncomplex and easy to verify.
+where possible keep them short, un-complex and easy to verify.
 
 Pull requests that refactor the code should not be made by new contributors. It
 requires a certain level of experience to know where the code belongs to and to
@@ -200,7 +208,7 @@ judge the general consensus of contributors.
 In general, all pull requests must:
 
   - Have a clear use case, fix a demonstrable bug or serve the greater good of
-    the project (for example refactoring for modularisation);
+    the project (for example refactoring for modularization);
   - Be well peer reviewed;
   - Have unit tests and functional tests where appropriate;
   - Follow code style guidelines ([C++](doc/developer-notes.md), [functional tests](test/functional/README.md));
@@ -291,10 +299,10 @@ Release Policy
 
 The project leader is the release manager for each Sumcoin Core release.
 
-Copyright
+
 ---------
 
-By contributing to this repository, you agree to license your work under the 
-MIT license unless specified otherwise in `contrib/debian/copyright` or at 
-the top of the file itself. Any work contributed where you are not the original 
+By contributing to this repository, you agree to license your work under the
+Classic Proprietary license unless specified otherwise in `contrib/debian/copyright` or at
+the top of the file itself. Any work contributed where you are not the original
 author must contain its license header with the original author(s) and source.
