@@ -164,10 +164,10 @@ public:
 
 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  hexid = "3F"
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  //
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63); //  Pubkeyhash hexid = "3F"
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);  // ScriptkeyHash = "05"
         base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,200); //
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);  //  hexid = "BF"
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,191);  //  WIF hexid = "BF"
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB4, 0x1C};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAB, 0xE6};
 
