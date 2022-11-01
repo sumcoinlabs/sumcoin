@@ -288,7 +288,7 @@ Next choose configuration option
 
 * Build without tests or GUI
 ```
-./configure --disable-tests --without-gui
+./configure --disable-tests --disable-bench --without-gui
 ```
 
 # Make
