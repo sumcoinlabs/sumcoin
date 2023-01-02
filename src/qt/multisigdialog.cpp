@@ -502,13 +502,13 @@ void MultisigDialog::on_sendTransactionButton_clicked()
     int64_t minFee = (int64_t)(transactionSize * (PERKB_TX_FEE / 1000));
     if(fee < minFee)
     {
-        QMessageBox::StandardButton ret = QMessageBox::question(this, tr("Confirm sending transaction"), tr("The fee of the transaction (%1 SUMC) is smaller than the expected fee (%2 SUMC). Do you want to send the transaction anyway?").arg((double) fee / COIN).arg((double) minFee / COIN), QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+        QMessageBox::StandardButton ret = QMessageBox::question(this, tr("Confirm sending transaction"), tr("The fee of the transaction (%1 SUM) is smaller than the expected fee (%2 SUM). Do you want to send the transaction anyway?").arg((double) fee / COIN).arg((double) minFee / COIN), QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
         if(ret != QMessageBox::Yes)
             return;
     }
     else if(fee > minFee)
     {
-        QMessageBox::StandardButton ret = QMessageBox::question(this, tr("Confirm sending transaction"), tr("The fee of the transaction (%1 SUMC) is bigger than the expected fee (%2 SUMC). Do you want to send the transaction anyway?").arg((double) fee / COIN).arg((double) minFee / COIN), QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
+        QMessageBox::StandardButton ret = QMessageBox::question(this, tr("Confirm sending transaction"), tr("The fee of the transaction (%1 SUM) is bigger than the expected fee (%2 SUM). Do you want to send the transaction anyway?").arg((double) fee / COIN).arg((double) minFee / COIN), QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
         if(ret != QMessageBox::Yes)
             return;
     }

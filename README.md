@@ -4,7 +4,7 @@
 [![Continuous Integration](https://github.com/sumcoin/sumcoin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/sumcoin/sumcoin/actions/workflows/build.yml)
 
 ### What is Sumcoin?
-[Sumcoin](https://sumcoin.net) (abbreviated SUMC), is a [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design introducing [proof-of-stake consensus](https://sumcoin.net/resources#whitepaper) as a security model, with a combined [proof-of-stake](https://sumcoin.net/resources#whitepaper)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
+[Sumcoin](https://sumcoin.net) (abbreviated SUM), is a [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design introducing [proof-of-stake consensus](https://sumcoin.net/resources#whitepaper) as a security model, with a combined [proof-of-stake](https://sumcoin.net/resources#whitepaper)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
 ### Sumcoin Resources
 * Client and Source:
 [Client Binaries](https://github.com/sumcoin/sumcoin/releases),
