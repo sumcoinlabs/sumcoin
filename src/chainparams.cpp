@@ -126,7 +126,7 @@ public:
         consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 1000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5");  // 380000
+        consensus.defaultAssumeValid =  uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5");  // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -175,11 +175,13 @@ public:
         checkpointData = {
             {
                 {0,         uint256S("0x000000d384b2c2ee13d10c0dc983052635e304ea8631136c81de0b76181891f5")},
-                {100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
-                {500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
-                {1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")}, // Last PoW
-                {1500,      uint256S("0x4de04c7b961c483b5e6221d0bb63a446c8a1092ffc6d9ea71b2db720d7b2f778")}, // PoS
-                {13339,     uint256S("0xd7bb74bad5c4f343f81a3b03b21e06e9a477cad68376335ffefd7e5cf34e8139")}
+
+
+                //{100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
+                //{500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
+                //{1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")}, // Last PoW
+                //{1500,      uint256S("0x4de04c7b961c483b5e6221d0bb63a446c8a1092ffc6d9ea71b2db720d7b2f778")}, // PoS
+                //{13339,     uint256S("0xd7bb74bad5c4f343f81a3b03b21e06e9a477cad68376335ffefd7e5cf34e8139")}
                 // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
             }
         };
@@ -187,9 +189,9 @@ public:
         chainTxData = ChainTxData{
             // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
 
-            //1554679000
-            1645016727, // * UNIX timestamp of last known number of transactions
-            25698,    // * total number of transactions between genesis and that timestamp
+            //1554579000
+            1554579000, // * UNIX timestamp of last known number of transactions
+            1,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
             0.01666 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
