@@ -310,7 +310,7 @@ Network
   (#14897, #15834)
 
 - If a Tor hidden service is being used, Bitcoin Core will be bound to
-  the standard port 9999 even if a different port is configured for
+  the standard port 3333 even if a different port is configured for
   clearnet connections.  This prevents leaking node identity through use
   of identical non-default port numbers. (#15651)
 
