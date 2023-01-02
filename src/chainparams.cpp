@@ -138,7 +138,7 @@ public:
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xa2;
         vAlertPubKey = ParseHex("04c7f7f456da3181ee07967bce94b39b88fb313eedc3934579ef8365e3dec30618818af9331417af8d26d8a8f24bb1613a84516385d24846ec2a23479da4d9ea53");
-        nDefaultPort = 9999;
+        nDefaultPort = 3333;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 1;
         m_assumed_chain_state_size = 0;
@@ -243,7 +243,7 @@ public:
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xa1;
         vAlertPubKey = ParseHex("04e3cb47cc1fcf4826fa60007ccde6de75eb3e49d452c24a0cfad958a8b215f62925a4d418ffc0ca2ddcaa1f150e49440084ad475e5d48f12b08ebda76f00d341b");
-        nDefaultPort = 19999;
+        nDefaultPort = 13333;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 0;
@@ -348,7 +348,7 @@ public:
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xa0;
         vAlertPubKey = ParseHex("04383862439513e940f6fcbf62d365c162a5256920c2c25b0b4266fdee4a443d71cfe224dbccff6fdb2ea57a37eb0cbec5637ebea06f63c70ca093672fbdc27643");
-        nDefaultPort = 999;
+        nDefaultPort = 23333;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 0;
