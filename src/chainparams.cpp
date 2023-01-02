@@ -242,7 +242,7 @@ public:
         pchMessageStart[1] = 0xe6;
         pchMessageStart[2] = 0xf9;
         pchMessageStart[3] = 0xa1;
-        vAlertPubKey = ParseHex("04e7cf35e1cdf80e8930abd12a54bbfc7f11967357798197184d93b5aceff942221d22c1c885a556ff27a13c9172fdd22f4e392a6f3f02f04149142b0220b7191f");
+        vAlertPubKey = ParseHex("04e3cb47cc1fcf4826fa60007ccde6de75eb3e49d452c24a0cfad958a8b215f62925a4d418ffc0ca2ddcaa1f150e49440084ad475e5d48f12b08ebda76f00d341b");
         nDefaultPort = 19999;
         nPruneAfterHeight = 100000;
         m_assumed_blockchain_size = 2;
