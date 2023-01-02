@@ -1,8 +1,8 @@
 // Copyright (c) 2012-2022 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef SUMCASH_QT_MINTINGTABLEMODEL_H
-#define SUMCASH_QT_MINTINGTABLEMODEL_H
+#ifndef SUMCOIN_QT_MINTINGTABLEMODEL_H
+#define SUMCOIN_QT_MINTINGTABLEMODEL_H
 
 #include <QAbstractTableModel>
 #include <QStringList>
@@ -71,4 +71,4 @@ public Q_SLOTS:
     friend class MintingTablePriv;
 };
 
-#endif // SUMCASH_QT_MINTINGTABLEMODEL_H
+#endif // SUMCOIN_QT_MINTINGTABLEMODEL_H

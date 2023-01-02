@@ -239,7 +239,7 @@ void BitcoinGUI::onResult(QNetworkReply *reply) {
         std::string tag_name = obj["tag_name"].toString().toStdString();
         if(std::regex_search(tag_name, matches, versionRgx) && matches.size()==4) {
             newVersion = std::stoi(matches[1].str()) * 1000000 + std::stoi(matches[2]) * 10000 + std::stoi(matches[3]) * 100;
-            if (newVersion > SUMCASH_VERSION) {
+            if (newVersion > SUMCOIN_VERSION) {
                 char versionInfo[200];
                 snprintf(versionInfo, 200, "This client is not the most recent version available, please update to release %s from github or disable this check in settings.", obj["tag_name"].toString().toUtf8().constData());
                 std::string strVersionInfo = versionInfo;

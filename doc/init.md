@@ -135,7 +135,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy sumcoind.init to /etc/init.d/sumcoind. Test by running `service sumcoind start`.
 
 Using this script, you can adjust the path and flags to the sumcoind program by
-setting the SUMCASHD and FLAGS environment variables in the file
+setting the SUMCOIND and FLAGS environment variables in the file
 /etc/sysconfig/sumcoind. You can also use the DAEMONOPTS environment variable here.
 
 ### macOS

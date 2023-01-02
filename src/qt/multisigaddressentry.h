@@ -1,8 +1,8 @@
 // Copyright (c) 2012-2022 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef SUMCASH_QT_MULTISIGADDRESSENTRY_H
-#define SUMCASH_QT_MULTISIGADDRESSENTRY_H
+#ifndef SUMCOIN_QT_MULTISIGADDRESSENTRY_H
+#define SUMCOIN_QT_MULTISIGADDRESSENTRY_H
 
 #include <QFrame>
 
@@ -45,4 +45,4 @@ class MultisigAddressEntry : public QFrame
     void on_addressBookButton_clicked();
 };
 
-#endif // SUMCASH_QT_MULTISIGADDRESSENTRY_H
+#endif // SUMCOIN_QT_MULTISIGADDRESSENTRY_H

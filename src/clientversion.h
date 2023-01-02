@@ -14,7 +14,7 @@
 #error Client version information missing: version is not defined by bitcoin-config.h or in any other way
 #endif
 
-#if !defined(SUMCASH_VERSION_MAJOR) || !defined(SUMCASH_VERSION_MINOR) || !defined(SUMCASH_VERSION_REVISION) || !defined(SUMCASH_VERSION_BUILD)
+#if !defined(SUMCOIN_VERSION_MAJOR) || !defined(SUMCOIN_VERSION_MINOR) || !defined(SUMCOIN_VERSION_REVISION) || !defined(SUMCOIN_VERSION_BUILD)
 #error Client version information missing: version is not defined by bitcoin-config.h or in any other way
 #endif
 
@@ -46,11 +46,11 @@ static const int CLIENT_VERSION =
                          +       1 * CLIENT_VERSION_BUILD;
 
 // note: sumcoin version is used for display purpose AND to accept alerts
-static const int SUMCASH_VERSION =
-                           1000000 * SUMCASH_VERSION_MAJOR
-                         +   10000 * SUMCASH_VERSION_MINOR
-                         +     100 * SUMCASH_VERSION_REVISION
-                         +       1 * SUMCASH_VERSION_BUILD;
+static const int SUMCOIN_VERSION =
+                           1000000 * SUMCOIN_VERSION_MAJOR
+                         +   10000 * SUMCOIN_VERSION_MINOR
+                         +     100 * SUMCOIN_VERSION_REVISION
+                         +       1 * SUMCOIN_VERSION_BUILD;
 
 extern const std::string CLIENT_NAME;
 extern const std::string CLIENT_BUILD;

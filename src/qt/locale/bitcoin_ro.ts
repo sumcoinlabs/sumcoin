@@ -165,7 +165,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BITCOINS&lt;/b&gt;!</source>
-        <translation>Atenție: Dacă criptezi portofelul și ulterior pierzi parola, &lt;b&gt;VEI PIERDE TOȚI SUMCASHII&lt;/b&gt;!</translation>
+        <translation>Atenție: Dacă criptezi portofelul și ulterior pierzi parola, &lt;b&gt;VEI PIERDE TOȚI SUMCOINII&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
