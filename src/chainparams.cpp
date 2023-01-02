@@ -269,7 +269,7 @@ public:
         base58Prefixes[EXT_SECRET_KEY] = {0xF4, 0x88, 0xAD, 0xE5};
 
         // human readable prefix to bench32 address
-        bech32_hrp = "tsumc";
+        bech32_hrp = "tsum";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
