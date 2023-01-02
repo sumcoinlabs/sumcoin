@@ -83,12 +83,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Это ваши Пиркойн-адреса для отправки платежей. Всегда проверяйте количество и адрес получателя перед отправкой перевода.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Sumcash addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
+        <source>These are your Sumcoin addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
         <translation>Это ваши Пиркойн-адреса для приёма платежей. Используйте кнопку «Создать новый адрес для получения» на вкладке Получить, чтобы создать новые адреса.</translation>
     </message>
     <message>
@@ -344,7 +344,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Send coins to a Sumcash address</source>
+        <source>Send coins to a Sumcoin address</source>
         <translation>Послать средства на Пиркойн-адрес</translation>
     </message>
     <message>
@@ -439,12 +439,12 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
         <translation>Подписывайте сообщения Пиркойн-адресами чтобы подтвердить что это написали именно Вы</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
         <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Пиркойн-адресами</translation>
     </message>
     <message>
@@ -469,7 +469,7 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
         <translation>Показать помощь по %1, чтобы получить список доступных параметров командной строки</translation>
     </message>
     <message>
@@ -479,7 +479,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open the Sumcash Discord in a web browser.</source>
+        <source>Open the Sumcoin Discord in a web browser.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -504,8 +504,8 @@
     </message>
     <message numerus="yes">
         <location line="+0"/>
-        <source>%n active connection(s) to Sumcash network</source>
-        <translation><numerusform>%n активное подключение к сети Sumcash</numerusform><numerusform>%n активных подключения к сети Sumcash</numerusform><numerusform>%n активных подключений к сети Sumcash</numerusform><numerusform>%n активных подключений к сети Пиркойн</numerusform></translation>
+        <source>%n active connection(s) to Sumcoin network</source>
+        <translation><numerusform>%n активное подключение к сети Sumcoin</numerusform><numerusform>%n активных подключения к сети Sumcoin</numerusform><numerusform>%n активных подключений к сети Sumcoin</numerusform><numerusform>%n активных подключений к сети Пиркойн</numerusform></translation>
     </message>
     <message>
         <location line="+2"/>
@@ -1154,7 +1154,7 @@
     </message>
     <message>
         <location line="-10"/>
-        <source>The entered address &quot;%1&quot; is not a valid Sumcash address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Sumcoin address.</source>
         <translation>Введенный адрес &quot;%1&quot; не является действительным Пиркойн-адресом.</translation>
     </message>
     <message>
@@ -1263,8 +1263,8 @@
     </message>
     <message>
         <location line="-79"/>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <location line="+108"/>
@@ -1482,7 +1482,7 @@
     </message>
     <message>
         <location line="+119"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Sumcash network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Sumcoin network, as detailed below.</source>
         <translation>Последние транзакции пока могут быть не видны, поэтому вы можете видеть некорректный баланс ваших кошельков. Отображаемая информация будет верна после завершения синхронизации. Прогресс синхронизации вы можете видеть ниже.</translation>
     </message>
     <message>
@@ -1619,12 +1619,12 @@
     </message>
     <message>
         <location line="+104"/>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Автоматически открыть порт для Пиркойн-клиента на маршрутизаторе. Работает только если Ваш маршрутизатор поддерживает UPnP, и данная функция включена.</translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
         <translation>Подключится к сети Пиркойн через прокси SOCKS5.</translation>
     </message>
     <message>
@@ -1642,7 +1642,7 @@
     </message>
     <message>
         <location line="+35"/>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation>Подключатся к Пиркойн-сети через отдельный прокси SOCKS5 для скрытых сервисов Tor.</translation>
     </message>
     <message>
@@ -1966,7 +1966,7 @@
     <message>
         <location line="+16"/>
         <location line="+443"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
         <translation>Отображаемая информация может быть устаревшей. Ваш кошелёк автоматически синхронизируется с сетью Пиркойн после подключения, но этот процесс пока не завершён.</translation>
     </message>
     <message>
@@ -2075,7 +2075,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</source>
         <translation>Не удалось обработать идентификатор! Это может быть связано с неверным Пиркойн-адресом или неправильными параметрами идентификатора.</translation>
     </message>
     <message>
@@ -2126,7 +2126,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+111"/>
-        <source>Enter a Sumcash address (e.g. %1)</source>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
         <translation>Введите пиркойн-адрес (напр. %1)</translation>
     </message>
     <message>
@@ -2769,7 +2769,7 @@
     </message>
     <message>
         <location line="-137"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
         <translation>Необязательное сообщение для запроса платежа, которое будет показано при открытии запроса. Заметьте: сообщение не будет отправлено вместе с платежом через сеть Пиркойн.</translation>
     </message>
     <message>
@@ -3219,7 +3219,7 @@
     </message>
     <message>
         <location line="+213"/>
-        <source>Warning: Invalid Sumcash address</source>
+        <source>Warning: Invalid Sumcoin address</source>
         <translation>Предупреждение: Неверный Пиркойн-адрес</translation>
     </message>
     <message>
@@ -3259,7 +3259,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Sumcash address to send the payment to</source>
+        <source>The Sumcoin address to send the payment to</source>
         <translation>Пиркойн-адрес, на который отправить платёж</translation>
     </message>
     <message>
@@ -3321,7 +3321,7 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the Sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</source>
+        <source>A message that was attached to the Sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
         <translation>Сообщение прикрепленное к пиркойн идентификатору будет сохранено вместе с транзакцией для вашего сведения. Заметьте: Сообщение не будет отправлено через сеть Пиркойн.</translation>
     </message>
     <message>
@@ -3385,7 +3385,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Sumcash address to sign the message with</source>
+        <source>The Sumcoin address to sign the message with</source>
         <translation>Пиркойн-адрес, которым подписать сообщение</translation>
     </message>
     <message>
@@ -3428,17 +3428,17 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Sumcash address</source>
+        <source>Sign the message to prove you own this Sumcoin address</source>
         <translation>Подписать сообщение, чтобы доказать владение Пиркойн-адресом</translation>
     </message>
     <message>
         <location line="+106"/>
-        <source>The Sumcash address the message was signed with</source>
+        <source>The Sumcoin address the message was signed with</source>
         <translation>Пиркойн-адрес, которым было подписано сообщение</translation>
     </message>
     <message>
         <location line="+51"/>
-        <source>Verify the message to ensure it was signed with the specified Sumcash address</source>
+        <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>
         <translation>Проверить сообщение, чтобы убедиться, что оно было подписано указанным Пиркойн-адресом</translation>
     </message>
     <message>

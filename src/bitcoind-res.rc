@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Sumcash"
-            VALUE "FileDescription",    "sumcashd (Sumcash node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Sumcoin"
+            VALUE "FileDescription",    "sumcashd (Sumcoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "sumcashd"
             VALUE "LegalCopyright",     COPYRIGHT_STR

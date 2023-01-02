@@ -10,12 +10,12 @@ conf() {
 		USER=$( basename ${_HOME} )
 
 		if [ ! -d "$_HOME/.sumcash" ]; then
-			echo "Sumcash directory not found for user $USER! Creating one now."
+			echo "Sumcoin directory not found for user $USER! Creating one now."
 			mkdir $_HOME/.sumcash
 		fi
 
 		if [ ! -f $_HOME/.sumcash/sumcash.conf ]; then
-			echo "Sumcash configuration file not found for user $USER! Creating one now."
+			echo "Sumcoin configuration file not found for user $USER! Creating one now."
 			echo -e "rpcuser=rpcuser\nrpcpassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c10)" > $_HOME/.sumcash/sumcash.conf
 		fi
 		chown -R $USER: $_HOME/.sumcash

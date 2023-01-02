@@ -66,8 +66,8 @@
         <translation>Mottager adresser</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dette er dine Sumcash adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dette er dine Sumcoin adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -326,8 +326,8 @@
         <translation>Proxy er &lt;b&gt;slått på&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Send mynter til en Sumcash adresse</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Send mynter til en Sumcoin adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,12 +362,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Signer meldingene med Sumcash adresse for å bevise at diu eier dem</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Signer meldingene med Sumcoin adresse for å bevise at diu eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt Sumcash adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt Sumcoin adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -402,8 +402,8 @@
         <translation>&amp;Kommandolinjealternativer</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Sumcash network</source>
-        <translation><numerusform>%n aktiv tilkobling til Sumcash nettverket</numerusform><numerusform>%n aktive tilkoblinger til Sumcash nettverket</numerusform></translation>
+        <source>%n active connection(s) to Sumcoin network</source>
+        <translation><numerusform>%n aktiv tilkobling til Sumcoin nettverket</numerusform><numerusform>%n aktive tilkoblinger til Sumcoin nettverket</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -470,8 +470,8 @@
         <translation>Lukk lommebok</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
-        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige Sumcash-kommandolinjealternativer</translation>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
+        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige Sumcoin-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -578,8 +578,8 @@
         <translation>Lommeboken er &lt;b&gt;kryptert&lt;/b&gt; og for tiden &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Sumcash can no longer continue safely and will quit.</source>
-        <translation>En fatal feil har inntruffet. Sumcash kan ikke lenger trygt fortsette, og må derfor avslutte.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>En fatal feil har inntruffet. Sumcoin kan ikke lenger trygt fortsette, og må derfor avslutte.</translation>
     </message>
 </context>
 <context>
@@ -774,8 +774,8 @@
         <translation>Rediger utsendingsadresse</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Sumcash address.</source>
-        <translation>Den angitte adressen "%1" er ikke en gyldig Sumcash-adresse.</translation>
+        <source>The entered address "%1" is not a valid Sumcoin address.</source>
+        <translation>Den angitte adressen "%1" er ikke en gyldig Sumcoin-adresse.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -863,8 +863,8 @@
         <translation>Bruk en egendefinert datamappe:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -875,8 +875,8 @@
         <translation>Omtrent %1GB data vil bli lagret i denne mappen.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Sumcash block chain.</source>
-        <translation>%1 vil laste ned og lagre en kopi av Sumcash blokkjeden.</translation>
+        <source>%1 will download and store a copy of the Sumcoin block chain.</source>
+        <translation>%1 vil laste ned og lagre en kopi av Sumcoin blokkjeden.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1071,8 +1071,8 @@
         <translation>&amp;Bruk ubekreftet veksel</translation>
     </message>
     <message>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Åpne automatisk Sumcash klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Åpne automatisk Sumcoin klientporten på ruteren. Dette virker kun om din ruter støtter UPnP og dette er påslått.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1087,8 +1087,8 @@
         <translation>Tillatt innkommend&amp;e tilkoblinger</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
-        <translation>Koble til Sumcash-nettverket gjennom en SOCKS5 proxy.</translation>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
+        <translation>Koble til Sumcoin-nettverket gjennom en SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1123,8 +1123,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Koble til Sumcash-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Koble til Sumcoin-nettverket gjennom en separat SOCKS5 mellomtjener for Tor skjulte tjenester.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1230,8 +1230,8 @@
         <translation>Skjema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Sumcash-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informasjonen som vises kan være foreldet. Din lommebok synkroniseres automatisk med Sumcoin-nettverket etter at tilkobling er opprettet, men denne prosessen er ikke ferdig enda.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1317,7 +1317,7 @@
         <translation>Ugyldig betalingsadresse %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</source>
         <translation>URI kan ikke fortolkes! Dette kan være forårsaket av en ugyldig sumcash-adresse eller feilformede URI-parametre.</translation>
     </message>
     <message>
@@ -1359,8 +1359,8 @@
         <translation>Beløp</translation>
     </message>
     <message>
-        <source>Enter a Sumcash address (e.g. %1)</source>
-        <translation>Oppgi en Sumcash-adresse (f.eks. %1)</translation>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
+        <translation>Oppgi en Sumcoin-adresse (f.eks. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1788,8 +1788,8 @@
         <translation>&amp;Melding:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
-        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Sumcash-nettverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
+        <translation>En valgfri melding å tilknytte betalingsetterspørringen, som vil bli vist når forespørselen er åpnet. Meldingen vil ikke bli sendt med betalingen over Sumcoin-nettverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -1934,7 +1934,7 @@
     <name>SendCoinsDialog</name>
     <message>
         <source>Send Coins</source>
-        <translation>Send Sumcashs</translation>
+        <translation>Send Sumcoins</translation>
     </message>
     <message>
         <source>Coin Control Features</source>
@@ -2153,7 +2153,7 @@
         <translation><numerusform>Antatt bekreftelsesbegynnelse innen %n blokk.</numerusform><numerusform>Antatt bekreftelsesbegynnelse innen %n blokker.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Sumcash address</source>
+        <source>Warning: Invalid Sumcoin address</source>
         <translation>Advarsel Ugyldig sumcash-adresse</translation>
     </message>
     <message>
@@ -2192,8 +2192,8 @@
         <translation>Velg tidligere brukt adresse</translation>
     </message>
     <message>
-        <source>The Sumcash address to send the payment to</source>
-        <translation>Sumcash-adressen betalingen skal sendes til</translation>
+        <source>The Sumcoin address to send the payment to</source>
+        <translation>Sumcoin-adressen betalingen skal sendes til</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2240,8 +2240,8 @@
         <translation>Skriv inn en merkelapp for denne adressen for å legge den til listen av brukte adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</source>
-        <translation>En melding som var tilknyttet sumcashen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Sumcash-nettverket.</translation>
+        <source>A message that was attached to the sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <translation>En melding som var tilknyttet sumcashen: URI vil bli lagret med transaksjonen for din oversikt. Denne meldingen vil ikke bli sendt over Sumcoin-nettverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2278,8 +2278,8 @@
         <translation>Du kan signere meldinger/avtaler med adresser for å bevise at du kan motta sumcashs sendt til dem. Vær forsiktig med å signere noe vagt eller tilfeldig, siden phishing-angrep kan prøve å lure deg til å signere din identitet over til dem. Bare signer fullt detaljerte utsagn som du er enig i.</translation>
     </message>
     <message>
-        <source>The Sumcash address to sign the message with</source>
-        <translation>Sumcash-adressen meldingen skal signeres med</translation>
+        <source>The Sumcoin address to sign the message with</source>
+        <translation>Sumcoin-adressen meldingen skal signeres med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2310,8 +2310,8 @@
         <translation>Kopier valgt signatur til utklippstavle</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Sumcash address</source>
-        <translation>Signer meldingen for å bevise at du eier denne Sumcash-adressen</translation>
+        <source>Sign the message to prove you own this Sumcoin address</source>
+        <translation>Signer meldingen for å bevise at du eier denne Sumcoin-adressen</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2334,12 +2334,12 @@
         <translation>Skriv inn mottakerens adresse, melding (forsikre deg om at du kopier linjeskift, mellomrom, faner osv. nøyaktig) og underskrift nedenfor for å bekrefte meldingen. Vær forsiktig så du ikke leser mer ut av signaturen enn hva som er i den signerte meldingen i seg selv, for å unngå å bli lurt av et man-in-the-middle-angrep. Merk at dette bare beviser at den som signerer kan motta med adressen, dette beviser ikke hvem som har sendt transaksjoner!</translation>
     </message>
     <message>
-        <source>The Sumcash address the message was signed with</source>
-        <translation>Sumcash-adressen meldingen ble signert med</translation>
+        <source>The Sumcoin address the message was signed with</source>
+        <translation>Sumcoin-adressen meldingen ble signert med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Sumcash address</source>
-        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Sumcash-adressen</translation>
+        <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>
+        <translation>Verifiser meldingen for å være sikker på at den ble signert av den angitte Sumcoin-adressen</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

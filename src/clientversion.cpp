@@ -98,7 +98,7 @@ std::string FormatSubVersion(const std::string& name, int nClientVersion, const 
         ss << ")";
     }
     ss << "/";
-    ss << "Sumcash:" << FormatVersion(SUMCASH_VERSION);
+    ss << "Sumcoin:" << FormatVersion(SUMCASH_VERSION);
     ss << "(" << CLIENT_BUILD << ")/";
     return ss.str();
 }

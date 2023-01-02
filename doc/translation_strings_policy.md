@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Sumcash software.
+This document provides guidelines for internationalization of the Sumcoin software.
 
 How to translate?
 ------------------

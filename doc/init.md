@@ -95,9 +95,9 @@ OpenRC).
 ### macOS
 
 Binary:              `/usr/local/bin/sumcashd`
-Configuration file:  `~/Library/Application Support/Sumcash/sumcash.conf`
-Data directory:      `~/Library/Application Support/Sumcash`
-Lock file:           `~/Library/Application Support/Sumcash/.lock`
+Configuration file:  `~/Library/Application Support/Sumcoin/sumcash.conf`
+Data directory:      `~/Library/Application Support/Sumcoin`
+Lock file:           `~/Library/Application Support/Sumcoin/.lock`
 
 Installing Service Configuration
 -----------------------------------

@@ -326,8 +326,8 @@
         <translation>Tarpinis serveris yra &lt;b&gt;įgalintas&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Siųsti monetas Sumcash adresui</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Siųsti monetas Sumcoin adresui</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -2394,7 +2394,7 @@ Pastaba: Kadangi mokestis apskaičiuojamas pagal baitą, mokestis už „100 sat
     </message>
     <message>
         <source>The Bitcoin address the message was signed with</source>
-        <translation>Sumcash adresas, kuriuo buvo pasirašytas pranešimas</translation>
+        <translation>Sumcoin adresas, kuriuo buvo pasirašytas pranešimas</translation>
     </message>
     <message>
     </message>

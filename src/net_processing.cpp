@@ -33,7 +33,7 @@
 #include <kernel.h>
 
 #if defined(NDEBUG)
-# error "Sumcash cannot be compiled without assertions."
+# error "Sumcoin cannot be compiled without assertions."
 #endif
 
 /** Expiration time for orphan transactions in seconds */

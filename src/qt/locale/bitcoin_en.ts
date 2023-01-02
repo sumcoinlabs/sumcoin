@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Sumcash addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
+        <source>These are your Sumcoin addresses for receiving payments. Use the &apos;Create new receiving address&apos; button in the receive tab to create new addresses.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -346,7 +346,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Send coins to a Sumcash address</source>
+        <source>Send coins to a Sumcoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -441,12 +441,12 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -471,7 +471,7 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -481,7 +481,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open the Sumcash Discord in a web browser.</source>
+        <source>Open the Sumcoin Discord in a web browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -506,7 +506,7 @@
     </message>
     <message numerus="yes">
         <location line="+0"/>
-        <source>%n active connection(s) to Sumcash network</source>
+        <source>%n active connection(s) to Sumcoin network</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>
@@ -1156,7 +1156,7 @@
     </message>
     <message>
         <location line="-10"/>
-        <source>The entered address &quot;%1&quot; is not a valid Sumcash address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Sumcoin address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1265,7 +1265,7 @@
     </message>
     <message>
         <location line="-79"/>
-        <source>Sumcash</source>
+        <source>Sumcoin</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1493,7 +1493,7 @@
     </message>
     <message>
         <location line="+119"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Sumcash network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Sumcoin network, as detailed below.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1630,12 +1630,12 @@
     </message>
     <message>
         <location line="+104"/>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1653,7 +1653,7 @@
     </message>
     <message>
         <location line="+35"/>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1977,7 +1977,7 @@
     <message>
         <location line="+16"/>
         <location line="+443"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2086,7 +2086,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2137,7 +2137,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+111"/>
-        <source>Enter a Sumcash address (e.g. %1)</source>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2798,7 +2798,7 @@
     </message>
     <message>
         <location line="-137"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3248,7 +3248,7 @@
     </message>
     <message>
         <location line="+213"/>
-        <source>Warning: Invalid Sumcash address</source>
+        <source>Warning: Invalid Sumcoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3288,7 +3288,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Sumcash address to send the payment to</source>
+        <source>The Sumcoin address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3350,7 +3350,7 @@
     </message>
     <message>
         <location line="+10"/>
-        <source>A message that was attached to the Sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</source>
+        <source>A message that was attached to the Sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3414,7 +3414,7 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>The Sumcash address to sign the message with</source>
+        <source>The Sumcoin address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3457,17 +3457,17 @@
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Sumcash address</source>
+        <source>Sign the message to prove you own this Sumcoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+106"/>
-        <source>The Sumcash address the message was signed with</source>
+        <source>The Sumcoin address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+51"/>
-        <source>Verify the message to ensure it was signed with the specified Sumcash address</source>
+        <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

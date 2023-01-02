@@ -66,8 +66,8 @@
         <translation>Adresa de primire</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Acestea sunt adresele tale Sumcash pentru efectuarea plăților. Întotdeauna verifică atent suma de plată și adresa beneficiarului înainte de a trimite monedele.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Acestea sunt adresele tale Sumcoin pentru efectuarea plăților. Întotdeauna verifică atent suma de plată și adresa beneficiarului înainte de a trimite monedele.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -346,8 +346,8 @@
         <translation>Proxy este&lt;b&gt;activat&lt;/b&gt;:%1</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Trimite monede către o adresă Sumcash</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Trimite monede către o adresă Sumcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -382,12 +382,12 @@
         <translation>Criptează cheile private ale portofelului</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Semneză mesaje cu adresa ta Sumcash pentru a dovedi că îți aparțin</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Semneză mesaje cu adresa ta Sumcoin pentru a dovedi că îți aparțin</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Verifică mesajele pentru a te asigura că au fost semnate cu adresa Sumcash specificată</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verifică mesajele pentru a te asigura că au fost semnate cu adresa Sumcoin specificată</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -423,7 +423,7 @@
     </message>
     <message numerus="yes">
         <source>%n active connection(s) to Bitcoin network</source>
-        <translation><numerusform>%n conexiune activă la rețeaua Sumcash</numerusform><numerusform>%n conexiuni active către reţeaua Sumcash</numerusform><numerusform>%n de conexiuni active către rețeaua Sumcash</numerusform></translation>
+        <translation><numerusform>%n conexiune activă la rețeaua Sumcoin</numerusform><numerusform>%n conexiuni active către reţeaua Sumcoin</numerusform><numerusform>%n de conexiuni active către rețeaua Sumcoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -499,7 +499,7 @@
     </message>
     <message>
         <source>Show the %1 help message to get a list with possible Bitcoin command-line options</source>
-        <translation>Arată mesajul de ajutor %1 pentru a obține o listă cu opțiunile posibile de linii de comandă Sumcash</translation>
+        <translation>Arată mesajul de ajutor %1 pentru a obține o listă cu opțiunile posibile de linii de comandă Sumcoin</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -611,7 +611,7 @@
     </message>
     <message>
         <source>A fatal error occurred. Bitcoin can no longer continue safely and will quit.</source>
-        <translation>A survenit o eroare fatală. Portmoneul Sumcash nu mai poate continua în siguranță și se va opri.</translation>
+        <translation>A survenit o eroare fatală. Portmoneul Sumcoin nu mai poate continua în siguranță și se va opri.</translation>
     </message>
 </context>
 <context>
@@ -931,8 +931,8 @@
         <translation>Folosește un dosar de date personalizat:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -975,7 +975,7 @@
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
-        <translation>Tranzacțiile recente pot să nu fie încă vizibile, de aceea balanța portofelului poate fi incorectă. Această informație va fi corectă îndată ce portofelul va fi complet sincronizat cu rețeaua Sumcash, așa cum este detaliat mai jos.</translation>
+        <translation>Tranzacțiile recente pot să nu fie încă vizibile, de aceea balanța portofelului poate fi incorectă. Această informație va fi corectă îndată ce portofelul va fi complet sincronizat cu rețeaua Sumcoin, așa cum este detaliat mai jos.</translation>
     </message>
     <message>
         <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1144,7 +1144,7 @@
     </message>
     <message>
         <source>Automatically open the Bitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Deschide automat în router portul aferent clientului Sumcash. Funcționează doar dacă routerul suportă UPnP și e activat.</translation>
+        <translation>Deschide automat în router portul aferent clientului Sumcoin. Funcționează doar dacă routerul suportă UPnP și e activat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1160,7 +1160,7 @@
     </message>
     <message>
         <source>Connect to the Bitcoin network through a SOCKS5 proxy.</source>
-        <translation>Conectare la rețeaua Sumcash printr-un proxy SOCKS5.</translation>
+        <translation>Conectare la rețeaua Sumcoin printr-un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1196,7 +1196,7 @@
     </message>
     <message>
         <source>Connect to the Bitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectare la reteaua Sumcash printr-un proxy SOCKS5 separat, pentru serviciile TOR ascunse.</translation>
+        <translation>Conectare la reteaua Sumcoin printr-un proxy SOCKS5 separat, pentru serviciile TOR ascunse.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1303,7 +1303,7 @@
     </message>
     <message>
         <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Bitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informațiile afișate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Sumcash după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
+        <translation>Informațiile afișate pot fi neactualizate. Portofelul dvs. se sincronizează automat cu reţeaua Sumcoin după ce o conexiune este stabilită, dar acest proces nu a fost finalizat încă.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1378,7 +1378,7 @@
     </message>
     <message>
         <source>Cannot start bitcoin: click-to-pay handler</source>
-        <translation>Sumcash nu poate fi pornit: click-to-pay handler</translation>
+        <translation>Sumcoin nu poate fi pornit: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1394,7 +1394,7 @@
     </message>
     <message>
         <source>URI cannot be parsed! This can be caused by an invalid Bitcoin address or malformed URI parameters.</source>
-        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă Sumcash invalidă sau parametri URI greșiți.</translation>
+        <translation>URI nu poate fi analizat! Acest lucru poate fi cauzat de o adresă Sumcoin invalidă sau parametri URI greșiți.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1436,7 +1436,7 @@
     </message>
     <message>
         <source>Enter a Bitcoin address (e.g. %1)</source>
-        <translation>Introduceţi o adresă Sumcash (de exemplu %1)</translation>
+        <translation>Introduceţi o adresă Sumcoin (de exemplu %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1881,7 +1881,7 @@
     </message>
     <message>
         <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Bitcoin network.</source>
-        <translation>Un mesaj opțional de atașat la cererea de plată, care va fi afișat când cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către rețeaua Sumcash.</translation>
+        <translation>Un mesaj opțional de atașat la cererea de plată, care va fi afișat când cererea este deschisă. Notă: Acest mesaj nu va fi trimis cu plata către rețeaua Sumcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2262,7 +2262,7 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>Warning: Invalid Bitcoin address</source>
-        <translation>Atenție: Adresă Sumcash nevalidă!</translation>
+        <translation>Atenție: Adresă Sumcoin nevalidă!</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2419,7 +2419,7 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>Sign the message to prove you own this Bitcoin address</source>
-        <translation>Semnează mesajul pentru a dovedi ca deții acestă adresă Sumcash</translation>
+        <translation>Semnează mesajul pentru a dovedi ca deții acestă adresă Sumcoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2443,11 +2443,11 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>The Bitcoin address the message was signed with</source>
-        <translation>Introdu o adresă Sumcash</translation>
+        <translation>Introdu o adresă Sumcoin</translation>
     </message>
     <message>
         <source>Verify the message to ensure it was signed with the specified Bitcoin address</source>
-        <translation>Verifică mesajul pentru a te asigura că a fost semnat cu adresa Sumcash specificată</translation>
+        <translation>Verifică mesajul pentru a te asigura că a fost semnat cu adresa Sumcoin specificată</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

@@ -54,7 +54,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Sumcash cannot be compiled without assertions."
+# error "Sumcoin cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -1688,7 +1688,7 @@ static int64_t nTimeTotal = 0;
 static int64_t nBlocksTotal = 0;
 
 // These checks can only be done when all previous block have been added.
-bool SumcashContextualBlockChecks(const CBlock& block, BlockValidationState& state, CBlockIndex* pindex, bool fJustCheck)
+bool SumcoinContextualBlockChecks(const CBlock& block, BlockValidationState& state, CBlockIndex* pindex, bool fJustCheck)
 {
     uint256 hashProofOfStake = uint256();
     // sumcash: verify hash target and signature of coinstake tx
@@ -1759,7 +1759,7 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     assert(*pindex->phashBlock == block.GetHash());
     int64_t nTimeStart = GetTimeMicros();
 
-    if (pindex->nStakeModifier == 0 && pindex->nStakeModifierChecksum == 0 && !SumcashContextualBlockChecks(block, state, pindex, fJustCheck))
+    if (pindex->nStakeModifier == 0 && pindex->nStakeModifierChecksum == 0 && !SumcoinContextualBlockChecks(block, state, pindex, fJustCheck))
         return error("%s: failed PoS check %s", __func__, state.ToString());
 
     // Check it again in case a previous version let a bad block in
@@ -3619,7 +3619,7 @@ bool CChainState::AcceptBlock(const std::shared_ptr<const CBlock>& pblock, Block
     }
 
     // sumcash: check PoS
-    if (fCheckPoS && !SumcashContextualBlockChecks(block, state, pindex, false)) {
+    if (fCheckPoS && !SumcoinContextualBlockChecks(block, state, pindex, false)) {
         pindex->nStatus |= BLOCK_FAILED_VALID;
         setDirtyBlockIndex.insert(pindex);
         return state.Invalid(BlockValidationResult::BLOCK_CONSENSUS, "bad-pos", "proof of stake is incorrect");

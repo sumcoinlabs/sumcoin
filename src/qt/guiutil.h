@@ -36,7 +36,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Sumcash Qt UI.
+/** Utility functions used by the Sumcoin Qt UI.
  */
 namespace GUIUtil
 {

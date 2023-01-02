@@ -280,7 +280,7 @@ void BitcoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(QIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Sumcash address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a Sumcoin address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -374,9 +374,9 @@ void BitcoinGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase..."), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(tr("Sign &Message..."), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Sumcash addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your Sumcoin addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify Message..."), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Sumcash addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Sumcoin addresses"));
 
     openRPCConsoleAction = new QAction(tr("Node window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open node debugging and diagnostic console"));
@@ -408,16 +408,16 @@ void BitcoinGUI::createActions()
 
     showHelpMessageAction = new QAction(tr("&Command-line Options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Sumcash command-line options").arg(PACKAGE_NAME));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Sumcoin command-line options").arg(PACKAGE_NAME));
 
     openWebAction = new QAction(tr("&Website"), this);
-    openWebAction->setStatusTip(tr("Open the Sumcash website in a web browser."));
+    openWebAction->setStatusTip(tr("Open the Sumcoin website in a web browser."));
 
     openDonateAction = new QAction(tr("&Donate"), this);
-    openDonateAction->setStatusTip(tr("Finacially support development of the Sumcash project."));
+    openDonateAction->setStatusTip(tr("Finacially support development of the Sumcoin project."));
 
     openChatroomAction = new QAction(tr("&Chatroom"), this);
-    openChatroomAction->setStatusTip(tr("Open the Sumcash Discord chat in a web browser."));
+    openChatroomAction->setStatusTip(tr("Open the Sumcoin Discord chat in a web browser."));
 
     openForumAction = new QAction(tr("&Forum"), this);
     openForumAction->setStatusTip(tr("Open talk.sumcash.net in a web browser."));
@@ -987,7 +987,7 @@ void BitcoinGUI::updateNetworkState()
     QString tooltip;
 
     if (m_node.getNetworkActive()) {
-        tooltip = tr("%n active connection(s) to Sumcash network", "", count) + QString(".<br>") + tr("Click to disable network activity.");
+        tooltip = tr("%n active connection(s) to Sumcoin network", "", count) + QString(".<br>") + tr("Click to disable network activity.");
     } else {
         tooltip = tr("Network activity disabled.") + QString("<br>") + tr("Click to enable network activity again.");
         icon = ":/icons/network_disabled";

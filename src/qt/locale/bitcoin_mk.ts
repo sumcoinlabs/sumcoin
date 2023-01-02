@@ -126,7 +126,7 @@
         <translation>Повторно индексирање на блокови од дискот...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
+        <source>Send coins to a Sumcoin address</source>
         <translation>Испрати пиркойни на Пиркойн адреса</translation>
     </message>
     <message>
@@ -285,7 +285,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Sumcash</source>
+        <source>Sumcoin</source>
         <translation>Пиркойн</translation>
     </message>
     <message>

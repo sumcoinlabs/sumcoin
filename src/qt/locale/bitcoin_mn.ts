@@ -379,7 +379,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Sumcash</source>
+        <source>Sumcoin</source>
         <translation>Пиркойн</translation>
     </message>
     <message>

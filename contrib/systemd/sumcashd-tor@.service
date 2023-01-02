@@ -1,5 +1,5 @@
 [Unit]
-Description=Sumcash daemon - tor
+Description=Sumcoin daemon - tor
 After=network.target
 Wants=tor.service
 Conflicts=sumcashd@%i.service

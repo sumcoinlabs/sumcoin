@@ -486,7 +486,7 @@ static bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainpar
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != ::ChainActive().Tip()->GetBlockHash())
-            return error("SumcashMiner: generated block is stale");
+            return error("SumcoinMiner: generated block is stale");
     }
 
     // Process this block the same as if we had received it from another node
@@ -598,7 +598,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
                 }
                 strMintWarning = strMintBlockMessage;
                 uiInterface.NotifyAlertChanged(uint256(), CT_UPDATED);
-                LogPrintf("Error in SumcashMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
+                LogPrintf("Error in SumcoinMiner: Keypool ran out, please call keypoolrefill before restarting the mining thread\n");
                 if (!connman->interruptNet.sleep_for(std::chrono::seconds(10)))
                    return;
 
@@ -633,13 +633,13 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
     }
     catch (boost::thread_interrupted)
     {
-        LogPrintf("SumcashMiner terminated\n");
+        LogPrintf("SumcoinMiner terminated\n");
     return;
         // throw;
     }
     catch (const std::runtime_error &e)
     {
-        LogPrintf("SumcashMiner runtime error: %s\n", e.what());
+        LogPrintf("SumcoinMiner runtime error: %s\n", e.what());
         return;
     }
 }

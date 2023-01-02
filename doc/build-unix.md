@@ -1,12 +1,12 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build Sumcash in Unix.
+Some notes on how to build Sumcoin in Unix.
 
 (For BSD specific instructions, see `build-*bsd.md` in this directory.)
 
 Note
 ---------------------
-Always use absolute paths to configure and compile Sumcash and the dependencies,
+Always use absolute paths to configure and compile Sumcoin and the dependencies,
 For example, when specifying the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
@@ -54,7 +54,7 @@ Memory Requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
-memory available when compiling Sumcash. On systems with less, gcc can be
+memory available when compiling Sumcoin. On systems with less, gcc can be
 tuned to conserve memory with additional CXXFLAGS:
 
 
@@ -84,7 +84,7 @@ Now, you can either build from self-compiled [depends](/depends/README.md) or in
     sudo apt-get install libevent-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libboost-thread-dev libssl-dev
 
 BerkeleyDB is required for the wallet functionality.
-Historically Sumcash was first deployed with now deprecated BerkeleyDB-4.8, which has resulted in the need to upkeep the compatibility with those ancient deployments to this day. BerkeleyDB-4.8 is not compatible with more modern BerkeleyDB-5.1 and BerkeleyDB-5.3. Sumcash has inherited this in the first versions and this is why Sumcash is still officially shipped out with BerkeleyDB-4.8.
+Historically Sumcoin was first deployed with now deprecated BerkeleyDB-4.8, which has resulted in the need to upkeep the compatibility with those ancient deployments to this day. BerkeleyDB-4.8 is not compatible with more modern BerkeleyDB-5.1 and BerkeleyDB-5.3. Sumcoin has inherited this in the first versions and this is why Sumcoin is still officially shipped out with BerkeleyDB-4.8.
 However if you running a new wallet on a new installation there is absolutely no need to run old and deprecated BerkeleyDB-4.8. Just use the one avaliable in the repository of your distribution.
 
 Ubuntu and Debian have their own `libdb-dev` and `libdb++-dev` packages, but these will install
@@ -94,7 +94,7 @@ pass `--with-incompatible-bdb` to configure.
 
 Otherwise, you can build from self-compiled `depends` (see above).
 
-To build Sumcash without wallet, see [*Disable-wallet mode*](/doc/build-unix.md#disable-wallet-mode)
+To build Sumcoin without wallet, see [*Disable-wallet mode*](/doc/build-unix.md#disable-wallet-mode)
 
 
 Optional (see `--with-miniupnpc` and `--enable-upnp-default`):
@@ -107,7 +107,7 @@ ZMQ dependencies (provides ZMQ API):
 
 GUI dependencies:
 
-If you want to build Sumcash-Qt, make sure that the required packages for Qt development
+If you want to build Sumcoin-Qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -267,7 +267,7 @@ This example lists the steps necessary to setup and build a command line only, n
 Note:
 Enabling wallet support requires either compiling against a Berkeley DB newer than 4.8 (package `db`) using `--with-incompatible-bdb`,
 or building and depending on a local version of Berkeley DB 4.8.
-As mentioned above, when maintaining portability of the wallet between the standard Sumcash Core distributions and independently built
+As mentioned above, when maintaining portability of the wallet between the standard Sumcoin Core distributions and independently built
 node software is desired, Berkeley DB 4.8 must be used.
 
 

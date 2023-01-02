@@ -98,8 +98,8 @@ src/qt/bitcoin-qt.includes
 Makefile
 !depends/Makefile
 src/qt/sumcash-qt
-Sumcash-Qt.app
-Sumcash-Qt.app
+Sumcoin-Qt.app
+Sumcoin-Qt.app
 background.tiff*
 
 # Qt Creator

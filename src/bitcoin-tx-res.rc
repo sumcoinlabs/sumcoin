@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Sumcash"
-            VALUE "FileDescription",    "sumcash-tx (CLI Sumcash transaction editor utility)"
+            VALUE "CompanyName",        "Sumcoin"
+            VALUE "FileDescription",    "sumcash-tx (CLI Sumcoin transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "sumcash-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

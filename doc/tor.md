@@ -1,6 +1,6 @@
 # TOR SUPPORT IN SUMCASH
 
-It is possible to run Sumcash as a Tor hidden service, and connect to such services.
+It is possible to run Sumcoin as a Tor hidden service, and connect to such services.
 
 The following directions assume you have a Tor proxy running on port 9050. Many distributions default to having a SOCKS proxy listening on port 9050, but others may not. In particular, the Tor Browser Bundle defaults to listening on port 9150. See [Tor Project FAQ:TBBSocksPort](https://www.torproject.org/docs/faq.html.en#TBBSocksPort) for how to properly
 configure Tor.
@@ -8,7 +8,7 @@ configure Tor.
 
 ## 1. Run sumcash behind a Tor proxy
 
-The first step is running Sumcash behind a Tor proxy. This will already anonymize all
+The first step is running Sumcoin behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
 
 	-proxy=ip:port  Set the proxy server. If SOCKS5 is selected (default), this proxy
@@ -95,13 +95,13 @@ for normal IPv4/IPv6 communication, use:
 
 Starting with Tor version 0.2.7.1 it is possible, through Tor's control socket
 API, to create and destroy 'ephemeral' hidden services programmatically.
-Sumcash has been updated to make use of this.
+Sumcoin has been updated to make use of this.
 
 This means that if Tor is running (and proper authentication has been configured),
-Sumcash automatically creates a hidden service to listen on. This will positively
+Sumcoin automatically creates a hidden service to listen on. This will positively
 affect the number of available .onion nodes.
 
-This new feature is enabled by default if Sumcash is listening (`-listen`), and
+This new feature is enabled by default if Sumcoin is listening (`-listen`), and
 requires a Tor connection to work. It can be explicitly disabled with `-listenonion=0`
 and, if not disabled, configured using the `-torcontrol` and `-torpassword` settings.
 To show verbose debugging information, pass `-debug=tor`.

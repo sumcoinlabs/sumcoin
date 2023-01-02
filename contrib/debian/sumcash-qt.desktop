@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Sumcash
-Comment=Desktop allet for Sumcash Cryptocurrency
-Comment[de]=Offizieller Client für die Kryptowährung Sumcash
+Name=Sumcoin
+Comment=Desktop allet for Sumcoin Cryptocurrency
+Comment[de]=Offizieller Client für die Kryptowährung Sumcoin
 Exec=sumcash-qt %u
 Terminal=false
 Type=Application

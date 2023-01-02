@@ -42,7 +42,7 @@ script: |
   cd ..
 
   UNSIGNED_TARBALL=sumcash-osx-unsigned.tar.gz
-  UNSIGNED_APP=dist/Sumcash-Qt.app
+  UNSIGNED_APP=dist/Sumcoin-Qt.app
   SIGNED=sumcash-osx-signed.dmg
 
   tar -xf ${UNSIGNED_TARBALL}

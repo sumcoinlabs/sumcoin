@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Sumcash-Qt</string>
+  <string>Sumcoin-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Sumcash-Qt</string>
+  <string>Sumcoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.sumcash.Sumcash-Qt</string>
+  <string>org.sumcash.Sumcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.sumcash.SumcashPayment</string>
+      <string>org.sumcash.SumcoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>sumcash</string>
