@@ -82,7 +82,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += sumcashd
+  bin_PROGRAMS += sumcoind
 endif
 
 if BUILD_BITCOIN_CLI
@@ -329,7 +329,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between sumcashd and sumcash-qt, but only linked
+# wallet: shared between sumcoind and sumcash-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -445,7 +445,7 @@ libbitcoin_consensus_a_SOURCES = \
   util/strencodings.h \
   version.h
 
-# common: shared between sumcashd, and sumcash-qt and non-server tools
+# common: shared between sumcoind, and sumcash-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -533,17 +533,17 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# sumcashd binary #
-sumcashd_SOURCES = bitcoind.cpp
-sumcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sumcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sumcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# sumcoind binary #
+sumcoind_SOURCES = bitcoind.cpp
+sumcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sumcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sumcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sumcashd_SOURCES += bitcoind-res.rc
+sumcoind_SOURCES += bitcoind-res.rc
 endif
 
-sumcashd_LDADD = \
+sumcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -557,7 +557,7 @@ sumcashd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-sumcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+sumcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # sumcash-cli binary #
 sumcash_cli_SOURCES = bitcoin-cli.cpp

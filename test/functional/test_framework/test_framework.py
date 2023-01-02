@@ -138,9 +138,9 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
     def parse_args(self):
         parser = argparse.ArgumentParser(usage="%(prog)s [options]")
         parser.add_argument("--nocleanup", dest="nocleanup", default=False, action="store_true",
-                            help="Leave sumcashds and test.* datadir on exit or error")
+                            help="Leave sumcoinds and test.* datadir on exit or error")
         parser.add_argument("--noshutdown", dest="noshutdown", default=False, action="store_true",
-                            help="Don't stop sumcashds after the test execution")
+                            help="Don't stop sumcoinds after the test execution")
         parser.add_argument("--cachedir", dest="cachedir", default=os.path.abspath(os.path.dirname(os.path.realpath(__file__)) + "/../../cache"),
                             help="Directory for caching pregenerated datadirs (default: %(default)s)")
         parser.add_argument("--tmpdir", dest="tmpdir", help="Root directory for datadirs")
@@ -243,7 +243,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         else:
             for node in self.nodes:
                 node.cleanup_on_exit = False
-            self.log.info("Note: sumcashds were not stopped and may still be running")
+            self.log.info("Note: sumcoinds were not stopped and may still be running")
 
         should_clean_up = (
             not self.options.nocleanup and
@@ -411,7 +411,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             ))
 
     def start_node(self, i, *args, **kwargs):
-        """Start a sumcashd"""
+        """Start a sumcoind"""
 
         node = self.nodes[i]
 
@@ -422,7 +422,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
             coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def start_nodes(self, extra_args=None, *args, **kwargs):
-        """Start multiple sumcashds"""
+        """Start multiple sumcoinds"""
 
         if extra_args is None:
             extra_args = [None] * self.num_nodes
@@ -442,12 +442,12 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
                 coverage.write_all_rpc_commands(self.options.coveragedir, node.rpc)
 
     def stop_node(self, i, expected_stderr='', wait=0):
-        """Stop a sumcashd test node"""
+        """Stop a sumcoind test node"""
         self.nodes[i].stop_node(expected_stderr, wait=wait)
         self.nodes[i].wait_until_stopped()
 
     def stop_nodes(self, wait=0):
-        """Stop multiple sumcashd test nodes"""
+        """Stop multiple sumcoind test nodes"""
         for node in self.nodes:
             # Issue RPC to stop nodes
             node.stop_node(wait=wait)
@@ -504,7 +504,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         # User can provide log level as a number or string (eg DEBUG). loglevel was caught as a string, so try to convert it to an int
         ll = int(self.options.loglevel) if self.options.loglevel.isdigit() else self.options.loglevel.upper()
         ch.setLevel(ll)
-        # Format logs the same as sumcashd's debug.log with microprecision (so log files can be concatenated and sorted)
+        # Format logs the same as sumcoind's debug.log with microprecision (so log files can be concatenated and sorted)
         formatter = logging.Formatter(fmt='%(asctime)s.%(msecs)03d000Z %(name)s (%(levelname)s): %(message)s', datefmt='%Y-%m-%dT%H:%M:%S')
         formatter.converter = time.gmtime
         fh.setFormatter(formatter)

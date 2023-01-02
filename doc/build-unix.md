@@ -149,7 +149,7 @@ libqrencode (optional) can be installed with:
 
 Notes
 -----
-The release is built with GCC and then "strip sumcashd" to strip the debug
+The release is built with GCC and then "strip sumcoind" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 

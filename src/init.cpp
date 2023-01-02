@@ -99,7 +99,7 @@ static const char* DEFAULT_ASMAP_FILENAME="ip_asn.map";
 /**
  * The PID file facilities.
  */
-static const char* BITCOIN_PID_FILENAME = "sumcashd.pid";
+static const char* BITCOIN_PID_FILENAME = "sumcoind.pid";
 
 static fs::path GetPidFile()
 {

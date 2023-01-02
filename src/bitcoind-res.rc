@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Sumcoin"
-            VALUE "FileDescription",    "sumcashd (Sumcoin node with a JSON-RPC server)"
+            VALUE "FileDescription",    "sumcoind (Sumcoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "sumcashd"
+            VALUE "InternalName",       "sumcoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "sumcashd.exe"
-            VALUE "ProductName",        "sumcashd"
+            VALUE "OriginalFilename",   "sumcoind.exe"
+            VALUE "ProductName",        "sumcoind"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

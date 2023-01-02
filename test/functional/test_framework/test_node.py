@@ -2,7 +2,7 @@
 # Copyright (c) 2017-2019 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Class for sumcashd node under test"""
+"""Class for sumcoind node under test"""
 
 import contextlib
 import decimal
@@ -47,7 +47,7 @@ class ErrorMatch(Enum):
 
 
 class TestNode():
-    """A class for representing a sumcashd node under test.
+    """A class for representing a sumcoind node under test.
 
     This class contains:
 
@@ -75,7 +75,7 @@ class TestNode():
         self.chain = chain
         self.rpchost = rpchost
         self.rpc_timeout = timewait
-        self.binary = sumcashd
+        self.binary = sumcoind
         self.coverage_dir = coverage_dir
         self.cwd = cwd
         if extra_conf is not None:
@@ -157,7 +157,7 @@ class TestNode():
         raise AssertionError(self._node_msg(msg))
 
     def __del__(self):
-        # Ensure that we don't leave any sumcashd processes lying around after
+        # Ensure that we don't leave any sumcoind processes lying around after
         # the test ends
         if self.process and self.cleanup_on_exit:
             # Should only happen on test failure
@@ -191,7 +191,7 @@ class TestNode():
             cwd = self.cwd
 
         # Delete any existing cookie file -- if such a file exists (eg due to
-        # unclean shutdown), it will get overwritten anyway by sumcashd, and
+        # unclean shutdown), it will get overwritten anyway by sumcoind, and
         # potentially interfere with our attempt to authenticate
         delete_cookie_file(self.datadir, self.chain)
 
@@ -201,7 +201,7 @@ class TestNode():
         self.process = subprocess.Popen(self.args + extra_args, env=subp_env, stdout=stdout, stderr=stderr, cwd=cwd, **kwargs)
 
         self.running = True
-        self.log.debug("sumcashd started, waiting for RPC to come up")
+        self.log.debug("sumcoind started, waiting for RPC to come up")
 
         if self.start_perf:
             self._start_perf()
@@ -210,13 +210,13 @@ class TestNode():
             self._start_perf()
 
     def wait_for_rpc_connection(self):
-        """Sets up an RPC connection to the sumcashd process. Returns False if unable to connect."""
+        """Sets up an RPC connection to the sumcoind process. Returns False if unable to connect."""
         # Poll at a rate of four times per second
         poll_per_s = 4
         for _ in range(poll_per_s * self.rpc_timeout):
             if self.process.poll() is not None:
                 raise FailedToStartError(self._node_msg(
-                    'sumcashd exited with status {} during initialization'.format(self.process.returncode)))
+                    'sumcoind exited with status {} during initialization'.format(self.process.returncode)))
             try:
                 rpc = get_rpc_proxy(rpc_url(self.datadir, self.index, self.chain, self.rpchost), self.index, timeout=self.rpc_timeout, coveragedir=self.coverage_dir)
                 rpc.getblockcount()
@@ -244,7 +244,7 @@ class TestNode():
                 if "No RPC credentials" not in str(e):
                     raise
             time.sleep(1.0 / poll_per_s)
-        self._raise_assertion_error("Unable to connect to sumcashd")
+        self._raise_assertion_error("Unable to connect to sumcoind")
 
     def generate(self, nblocks, maxtries=1000000):
         self.log.debug("TestNode.generate() dispatches `generate` call to `generatetoaddress`")

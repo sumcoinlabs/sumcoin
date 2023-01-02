@@ -1,7 +1,7 @@
 dist_man1_MANS=
 
 if BUILD_BITCOIND
-  dist_man1_MANS+=sumcashd.1
+  dist_man1_MANS+=sumcoind.1
 endif
 
 if ENABLE_QT

@@ -48,10 +48,10 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     // (ie)
     // genesis.nNonce = 0;
     // make
-    // ./sumcashd
+    // ./sumcoind
     // genesis.nNonce = 1000000000;
     // make
-    // ./sumcashd
+    // ./sumcoind
     // .......
 
     // while (genesis.GetHash() > bnTarget.getuint256())

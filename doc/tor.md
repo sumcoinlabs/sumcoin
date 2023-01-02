@@ -34,7 +34,7 @@ outgoing connections, but more is possible.
 
 In a typical situation, this suffices to run behind a Tor proxy:
 
-	./sumcashd -proxy=127.0.0.1:9050
+	./sumcoind -proxy=127.0.0.1:9050
 
 
 ## 2. Run a sumcash hidden server
@@ -71,25 +71,25 @@ your bitcoind's P2P listen port (8333 by default).
 
 In a typical situation, where you're only reachable via Tor, this should suffice:
 
-	./sumcashd -proxy=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -listen
+	./sumcoind -proxy=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -listen
 
 (obviously, replace the .onion address with your own). It should be noted that you still
 listen on all devices and another node could establish a clearnet connection, when knowing
 your address. To mitigate this, additionally bind the address of your Tor proxy:
 
-	./sumcashd ... -bind=127.0.0.1
+	./sumcoind ... -bind=127.0.0.1
 
 If you don't care too much about hiding your node, and want to be reachable on IPv4
 as well, use `discover` instead:
 
-	./sumcashd ... -discover
+	./sumcoind ... -discover
 
 and open port 8333 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach .onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
 
-	./sumcashd -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
+	./sumcoind -onion=127.0.0.1:9050 -externalip=57qr3yd1nyntf5k.onion -discover
 
 ## 3. Automatically listen on Tor
 
@@ -112,8 +112,8 @@ in `torrc` config file. For cookie authentication the user running bitcoind must
 access to the `CookieAuthFile` specified in Tor configuration. In some cases this is
 preconfigured and the creation of a hidden service is automatic. If permission problems
 are seen with `-debug=tor` they can be resolved by adding both the user running Tor and
-the user running sumcashd to the same group and setting permissions appropriately. On 
-Debian-based systems the user running sumcashd can be added to the debian-tor group, 
+the user running sumcoind to the same group and setting permissions appropriately. On 
+Debian-based systems the user running sumcoind can be added to the debian-tor group, 
 which has the appropriate permissions. Before starting bitcoind you will need to re-login
 to allow debian-tor group to be applied. Otherwise you will see the following notice: "tor:
 Authentication cookie /run/tor/control.authcookie could not be opened (check permissions)"
