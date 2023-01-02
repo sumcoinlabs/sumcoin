@@ -13,17 +13,17 @@ define(_SUMCASH_VERSION_BUILD, 0)
 define(_SUMCASH_VERSION_RC, 0)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Sumcoin]])
-AC_INIT([Sumcoin],m4_join([.], _SUMCASH_VERSION_MAJOR._SUMCASH_VERSION_MINOR._SUMCASH_VERSION_REVISION, m4_if(_SUMCASH_VERSION_BUILD, [0], [], _SUMCASH_VERSION_BUILD))m4_if(_SUMCASH_VERSION_RC, [0], [], [rc]_SUMCASH_VERSION_RC),[https://github.com/sumcash/sumcash/issues],[sumcash],[https://sumcash.net/])
+AC_INIT([Sumcoin],m4_join([.], _SUMCASH_VERSION_MAJOR._SUMCASH_VERSION_MINOR._SUMCASH_VERSION_REVISION, m4_if(_SUMCASH_VERSION_BUILD, [0], [], _SUMCASH_VERSION_BUILD))m4_if(_SUMCASH_VERSION_RC, [0], [], [rc]_SUMCASH_VERSION_RC),[https://github.com/sumcoin/sumcoin/issues],[sumcoin],[https://sumcoin.net/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 BITCOIN_DAEMON_NAME=sumcoind
-BITCOIN_GUI_NAME=sumcash-qt
-BITCOIN_CLI_NAME=sumcash-cli
-BITCOIN_TX_NAME=sumcash-tx
-BITCOIN_WALLET_TOOL_NAME=sumcash-wallet
+BITCOIN_GUI_NAME=sumcoin-qt
+BITCOIN_CLI_NAME=sumcoin-cli
+BITCOIN_TX_NAME=sumcoin-tx
+BITCOIN_WALLET_TOOL_NAME=sumcoin-wallet
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])

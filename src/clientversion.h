@@ -45,7 +45,7 @@ static const int CLIENT_VERSION =
                          +     100 * CLIENT_VERSION_REVISION
                          +       1 * CLIENT_VERSION_BUILD;
 
-// note: sumcash version is used for display purpose AND to accept alerts
+// note: sumcoin version is used for display purpose AND to accept alerts
 static const int SUMCASH_VERSION =
                            1000000 * SUMCASH_VERSION_MAJOR
                          +   10000 * SUMCASH_VERSION_MINOR

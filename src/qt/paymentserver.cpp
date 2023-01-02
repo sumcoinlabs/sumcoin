@@ -38,7 +38,7 @@
 #include <QUrlQuery>
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("sumcash:");
+const QString BITCOIN_IPC_PREFIX("sumcoin:");
 
 //
 // Create a name that is unique for:
@@ -82,11 +82,11 @@ void PaymentServer::ipcParseCommandLine(interfaces::Node& node, int argc, char* 
         if (arg.startsWith("-"))
             continue;
 
-        // If the sumcash: URI contains a payment request, we are not able to detect the
+        // If the sumcoin: URI contains a payment request, we are not able to detect the
         // network as that would require fetching and parsing the payment request.
         // That means clicking such an URI which contains a testnet payment request
         // will start a mainnet instance and throw a "wrong network" error.
-        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // sumcash: URI
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // sumcoin: URI
         {
             if (savedPaymentRequests.contains(arg)) continue;
             savedPaymentRequests.insert(arg);
@@ -155,7 +155,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
     optionsModel(nullptr)
 {
     // Install global event filter to catch QFileOpenEvents
-    // on Mac: sent when you click sumcash: links
+    // on Mac: sent when you click sumcoin: links
     // other OSes: helpful when dealing with payment request files
     if (parent)
         parent->installEventFilter(this);
@@ -172,7 +172,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "Q_EMIT message()" here
             QMessageBox::critical(nullptr, tr("Payment request error"),
-                tr("Cannot start sumcash: click-to-pay handler"));
+                tr("Cannot start sumcoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, &QLocalServer::newConnection, this, &PaymentServer::handleURIConnection);
@@ -185,7 +185,7 @@ PaymentServer::~PaymentServer()
 }
 
 //
-// OSX-specific way of handling sumcash: URIs
+// OSX-specific way of handling sumcoin: URIs
 //
 bool PaymentServer::eventFilter(QObject *object, QEvent *event)
 {
@@ -220,12 +220,12 @@ void PaymentServer::handleURIOrFile(const QString& s)
         return;
     }
 
-    if (s.startsWith("sumcash://", Qt::CaseInsensitive))
+    if (s.startsWith("sumcoin://", Qt::CaseInsensitive))
     {
-        Q_EMIT message(tr("URI handling"), tr("'sumcash://' is not a valid URI. Use 'sumcash:' instead."),
+        Q_EMIT message(tr("URI handling"), tr("'sumcoin://' is not a valid URI. Use 'sumcoin:' instead."),
             CClientUIInterface::MSG_ERROR);
     }
-    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // sumcash: URI
+    else if (s.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // sumcoin: URI
     {
         QUrlQuery uri((QUrl(s)));
         // normal URI

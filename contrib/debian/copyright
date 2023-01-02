@@ -1,12 +1,12 @@
 Upstream-Name: Sumcoin
-Upstream-Contact: Stichting Sumcoin Foundation <foundation@sumcash.net>
-Source: https://github.com/sumcash/sumcash
+Upstream-Contact: Stichting Sumcoin Foundation <foundation@sumcoin.net>
+Source: https://github.com/sumcoin/sumcoin
 
 Files: *
 Copyright: 2011-2022 Sumcoin Developers
 Copyright: 2009-2020, Bitcoin Core Developers
 License: Expat
-Comment: The Sumcoin Developers encompasses the current developers listed on https://github.com/sumcash/sumcash,
+Comment: The Sumcoin Developers encompasses the current developers listed on https://github.com/sumcoin/sumcoin,
          as well as the numerous contributors to the project.
 
 Files: debian/*

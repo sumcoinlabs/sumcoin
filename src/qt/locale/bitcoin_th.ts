@@ -255,11 +255,11 @@
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะส่ง sumcash</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะส่ง sumcoin</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะรับ sumcash</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะรับ sumcoin</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
@@ -319,7 +319,7 @@
     </message>
     <message>
         <source>Sign messages with your Sumcoin addresses to prove you own them</source>
-        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Sumcoin เพื่อแสดงว่าท่านเป็นเจ้าของ sumcash นี้จริง</translation>
+        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Sumcoin เพื่อแสดงว่าท่านเป็นเจ้าของ sumcoin นี้จริง</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
@@ -342,16 +342,16 @@
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ sumcash: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ sumcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง sumcash ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง sumcoin ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ sumcash เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ sumcoin เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

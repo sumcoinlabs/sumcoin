@@ -548,7 +548,7 @@ void MultisigDialog::on_sendTransactionButton_clicked()
         pnode->PushInventory(inv);
     });
 
-    ui->statusLabel->setText(tr("The transaction is sent to sumcash network."));
+    ui->statusLabel->setText(tr("The transaction is sent to sumcoin network."));
 }
 
 MultisigInputEntry * MultisigDialog::addInput()

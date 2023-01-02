@@ -1,5 +1,5 @@
 /* XPM */
-static char *sumcash32[] = {
+static char *sumcoin32[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 110 2 ",
 "   c #37AE50",

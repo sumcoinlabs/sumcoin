@@ -340,7 +340,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
         <translation>Solicitar pagos (genera codigo QR y URL's de Sumcoin)</translation>
     </message>
     <message>

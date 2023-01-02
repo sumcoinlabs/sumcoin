@@ -10,7 +10,7 @@
  */
 
 static const int PROTOCOL_VERSION = 70016;
-static const int OLD_VERSION = 70014; // sumcash: used to communicate with clients that don't know how to send PoS information in headers
+static const int OLD_VERSION = 70014; // sumcoin: used to communicate with clients that don't know how to send PoS information in headers
 
 //! initial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;

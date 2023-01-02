@@ -547,7 +547,7 @@ void SetupServerArgs()
     hidden_args.emplace_back("-daemon");
 #endif
 
-    // sumcash parameters
+    // sumcoin parameters
     gArgs.AddArg("-printstakemodifier", "Print stakemodifier selection parameters if debug is enabled", ArgsManager::ALLOW_BOOL, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-printcoinstake", "Print coinstake if debug is enabled", ArgsManager::ALLOW_BOOL, OptionsCategory::DEBUG_TEST);
     gArgs.AddArg("-printcoinage", "Print coinage if debug is enabled", ArgsManager::ALLOW_BOOL, OptionsCategory::DEBUG_TEST);
@@ -562,7 +562,7 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/sumcash/sumcash>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/sumcoin/sumcoin>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i").translated, 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -1059,8 +1059,8 @@ bool AppInitSanityChecks()
     ECC_Start();
     globalVerifyHandle.reset(new ECCVerifyHandle());
 
-    // sumcash: init hash seed
-    sumcashRandseed = GetRand(1 << 30);
+    // sumcoin: init hash seed
+    sumcoinRandseed = GetRand(1 << 30);
 
     // Sanity check
     if (!InitSanityCheck())
@@ -1129,9 +1129,9 @@ bool AppInitMain(NodeContext& node)
     // Warn about relative -datadir path.
     if (gArgs.IsArgSet("-datadir") && !fs::path(gArgs.GetArg("-datadir", "")).is_absolute()) {
         LogPrintf("Warning: relative datadir option '%s' specified, which will be interpreted relative to the " /* Continued */
-                  "current working directory '%s'. This is fragile, because if sumcash is started in the future "
+                  "current working directory '%s'. This is fragile, because if sumcoin is started in the future "
                   "from a different location, it will be unable to locate the current data files. There could "
-                  "also be data loss if sumcash is started while in a temporary directory.\n",
+                  "also be data loss if sumcoin is started while in a temporary directory.\n",
             gArgs.GetArg("-datadir", ""), fs::current_path().string());
     }
 

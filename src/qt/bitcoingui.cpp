@@ -218,7 +218,7 @@ BitcoinGUI::BitcoinGUI(interfaces::Node& node, const PlatformStyle *_platformSty
     if(settings.value("bCheckGithub").toBool()) {
         QNetworkAccessManager* nam = new QNetworkAccessManager(this);
         connect(nam, &QNetworkAccessManager::finished, this, &BitcoinGUI::onResult);
-        QUrl url("https://api.github.com/repos/sumcash/sumcash/releases/latest");
+        QUrl url("https://api.github.com/repos/sumcoin/sumcoin/releases/latest");
         nam->get(QNetworkRequest(url));
     }
 #endif
@@ -291,7 +291,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(QIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and sumcash: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and sumcoin: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
@@ -390,7 +390,7 @@ void BitcoinGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a sumcash: URI"));
+    openAction->setStatusTip(tr("Open a sumcoin: URI"));
 
     showHelpMessageAction = new QAction(tr("&Command-line Options"), this);
 
@@ -420,7 +420,7 @@ void BitcoinGUI::createActions()
     openChatroomAction->setStatusTip(tr("Open the Sumcoin Discord chat in a web browser."));
 
     openForumAction = new QAction(tr("&Forum"), this);
-    openForumAction->setStatusTip(tr("Open talk.sumcash.net in a web browser."));
+    openForumAction->setStatusTip(tr("Open talk.sumcoin.net in a web browser."));
 
     connect(quitAction, &QAction::triggered, qApp, QApplication::quit);
     connect(aboutAction, &QAction::triggered, this, &BitcoinGUI::aboutClicked);
@@ -954,11 +954,11 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
 }
 
 void BitcoinGUI::openWeb() {
-    QDesktopServices::openUrl(QUrl("https://sumcash.net"));
+    QDesktopServices::openUrl(QUrl("https://sumcoin.net"));
 }
 
 void BitcoinGUI::openDonate() {
-    QDesktopServices::openUrl(QUrl("https://www.sumcash.net/foundation"));
+    QDesktopServices::openUrl(QUrl("https://www.sumcoin.net/foundation"));
 }
 
 void BitcoinGUI::openChatroom() {
@@ -966,7 +966,7 @@ void BitcoinGUI::openChatroom() {
 }
 
 void BitcoinGUI::openForum() {
-    QDesktopServices::openUrl(QUrl("https://talk.sumcash.net"));
+    QDesktopServices::openUrl(QUrl("https://talk.sumcoin.net"));
 }
 
 #endif // ENABLE_WALLET

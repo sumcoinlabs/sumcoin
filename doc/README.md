@@ -4,7 +4,7 @@ Setup
 ---------------------
 Sumcoin is the original Sumcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sumcoin transactions (which is currently less than one gigabyte); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Sumcoin, visit [sumcash.net](https://sumcash.net/download).
+To download Sumcoin, visit [sumcoin.net](https://sumcoin.net/download).
 
 Running
 ---------------------
@@ -14,12 +14,12 @@ The following are some helpful notes on how to run Sumcoin on your native platfo
 
 Unpack the files into a directory and run:
 
-- `bin/sumcash-qt` (GUI) or
+- `bin/sumcoin-qt` (GUI) or
 - `bin/sumcoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run sumcash-qt.exe.
+Unpack the files into a directory, and then run sumcoin-qt.exe.
 
 ### macOS
 
@@ -27,10 +27,10 @@ Drag Sumcoin to your applications folder, and then run Sumcoin.
 
 ### Need Help?
 
-* See the documentation at the [Sumcoin Wiki](https://docs.sumcash.net/)
+* See the documentation at the [Sumcoin Wiki](https://docs.sumcoin.net/)
 for help and more information.
 * Sumcoin is very similar to bitcoin, so you can use their wiki [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page).
-* Ask for help on [#general](https://sumcash.chat/) on sumcash.chat.
+* Ask for help on [#general](https://sumcoin.chat/) on sumcoin.chat.
 
 Building
 ---------------------
@@ -64,7 +64,7 @@ The Sumcoin repo's [root README](/README.md) contains relevant information on th
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Sumcoin](https://talk.sumcash.net/) forums.
+* Discuss on the [Sumcoin](https://talk.sumcoin.net/) forums.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

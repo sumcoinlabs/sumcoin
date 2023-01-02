@@ -110,7 +110,7 @@ class TestNode():
         if self.version is None or self.version >= 190000:
             self.args.append("-logthreadnames")
 
-        self.cli = TestNodeCLI(sumcash_cli, self.datadir)
+        self.cli = TestNodeCLI(sumcoin_cli, self.datadir)
         self.use_cli = use_cli
         self.start_perf = start_perf
 
@@ -529,17 +529,17 @@ def arg_to_cli(arg):
 
 
 class TestNodeCLI():
-    """Interface to sumcash-cli for an individual node"""
+    """Interface to sumcoin-cli for an individual node"""
 
     def __init__(self, binary, datadir):
         self.options = []
         self.binary = binary
         self.datadir = datadir
         self.input = None
-        self.log = logging.getLogger('TestFramework.sumcashcli')
+        self.log = logging.getLogger('TestFramework.sumcoincli')
 
     def __call__(self, *options, input=None):
-        # TestNodeCLI is callable with sumcash-cli command-line options
+        # TestNodeCLI is callable with sumcoin-cli command-line options
         cli = TestNodeCLI(self.binary, self.datadir)
         cli.options = [str(o) for o in options]
         cli.input = input
@@ -558,17 +558,17 @@ class TestNodeCLI():
         return results
 
     def send_cli(self, command=None, *args, **kwargs):
-        """Run sumcash-cli command. Deserializes returned string as python object."""
+        """Run sumcoin-cli command. Deserializes returned string as python object."""
         pos_args = [arg_to_cli(arg) for arg in args]
         named_args = [str(key) + "=" + arg_to_cli(value) for (key, value) in kwargs.items()]
-        assert not (pos_args and named_args), "Cannot use positional arguments and named arguments in the same sumcash-cli call"
+        assert not (pos_args and named_args), "Cannot use positional arguments and named arguments in the same sumcoin-cli call"
         p_args = [self.binary, "-datadir=" + self.datadir] + self.options
         if named_args:
             p_args += ["-named"]
         if command is not None:
             p_args += [command]
         p_args += pos_args + named_args
-        self.log.debug("Running sumcash-cli command: %s" % command)
+        self.log.debug("Running sumcoin-cli command: %s" % command)
         process = subprocess.Popen(p_args, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
         cli_stdout, cli_stderr = process.communicate(input=self.input)
         returncode = process.poll()

@@ -155,7 +155,7 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.empty();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcash: addresses begin with 'P' : Hex 3F
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcoin: addresses begin with 'P' : Hex 3F
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125); // hex 7D
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,187); // Hex bb
         base58Prefixes[EXT_PUBLIC_KEY] = {0xF5, 0x88, 0xB2, 0x1F};
@@ -257,10 +257,10 @@ public:
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         vSeeds.empty();
-        // vSeeds.emplace_back("tseed.sumcash.net");
-        // vSeeds.emplace_back("tseed2.sumcash.net");
-        // vSeeds.emplace_back("tseed.sumcash-library.org");
-        // vSeeds.emplace_back("testseed.sumcash.info");
+        // vSeeds.emplace_back("tseed.sumcoin.net");
+        // vSeeds.emplace_back("tseed2.sumcoin.net");
+        // vSeeds.emplace_back("tseed.sumcoin-library.org");
+        // vSeeds.emplace_back("testseed.sumcoin.info");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,64);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,126);

@@ -79,11 +79,11 @@ void BIP32Hash(const ChainCode &chainCode, unsigned int nChild, unsigned char he
 }
 
 
-int32_t sumcashRandseed;
+int32_t sumcoinRandseed;
 int univHash(const uint256 &x) {
-  int h = sumcashRandseed >> 20;
+  int h = sumcoinRandseed >> 20;
   const uint32_t *p = x.GetDataPtr();
   for(int i = 0; i < 8; i++)
-    h ^=  (p[i] >> (h & 0xf)) + (sumcashRandseed >> i);
+    h ^=  (p[i] >> (h & 0xf)) + (sumcoinRandseed >> i);
   return (h + (h >> 16))  & 1023; // 2^n - 1
 }

@@ -1,3 +1,3 @@
 contrib/sumcoind.bash-completion	sumcoind
-contrib/sumcash-cli.bash-completion	sumcash-cli
-contrib/sumcash-tx.bash-completion	sumcash-tx
+contrib/sumcoin-cli.bash-completion	sumcoin-cli
+contrib/sumcoin-tx.bash-completion	sumcoin-tx

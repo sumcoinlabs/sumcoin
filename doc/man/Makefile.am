@@ -5,19 +5,19 @@ if BUILD_BITCOIND
 endif
 
 if ENABLE_QT
-  dist_man1_MANS+=sumcash-qt.1
+  dist_man1_MANS+=sumcoin-qt.1
 endif
 
 if BUILD_BITCOIN_CLI
-  dist_man1_MANS+=sumcash-cli.1
+  dist_man1_MANS+=sumcoin-cli.1
 endif
 
 if BUILD_BITCOIN_TX
-  dist_man1_MANS+=sumcash-tx.1
+  dist_man1_MANS+=sumcoin-tx.1
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  dist_man1_MANS+=sumcash-wallet.1
+  dist_man1_MANS+=sumcoin-wallet.1
 endif
 endif

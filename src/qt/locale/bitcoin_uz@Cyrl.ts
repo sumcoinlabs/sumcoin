@@ -338,8 +338,8 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва sumcash ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва sumcoin ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>

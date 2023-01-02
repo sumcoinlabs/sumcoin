@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build sumcash-qt as well, if the dependencies are met.
+This will build sumcoin-qt as well, if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -119,7 +119,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a sumcash-qt executable will be
+Once these are installed, they will be found by configure and a sumcoin-qt executable will be
 built by default.
 
 
@@ -190,7 +190,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your sumcash installation more secure by making certain attacks impossible to
+To help make your sumcoin installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
@@ -212,7 +212,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./sumcash
+    	scanelf -e ./sumcoin
 
     The output should contain:
 
@@ -220,13 +220,13 @@ Hardening enables the following features:
     ET_DYN
 
 * _Non-executable Stack_: If the stack is executable then trivial stack-based buffer overflow exploits are possible if
-    vulnerable buffers are found. By default, sumcash should be built with a non-executable stack
+    vulnerable buffers are found. By default, sumcoin should be built with a non-executable stack
     but if one of the libraries it uses asks for an executable stack or someone makes a mistake
     and uses a compiler extension which requires an executable stack, it will silently build an
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./sumcash`
+    `scanelf -e ./sumcoin`
 
     The output should contain:
 	STK/REL/PTL
@@ -236,7 +236,7 @@ Hardening enables the following features:
 
 Disable-wallet mode
 --------------------
-When the intention is to run only a P2P node without a wallet, sumcash may be compiled in
+When the intention is to run only a P2P node without a wallet, sumcoin may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet
@@ -258,8 +258,8 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
 
     pacman -S git base-devel boost libevent python
-    git clone https://github.com/sumcash/sumcash.git
-    cd sumcash/
+    git clone https://github.com/sumcoin/sumcoin.git
+    cd sumcoin/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc
     make check

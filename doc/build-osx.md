@@ -45,10 +45,10 @@ from the root of the repository.
 
 Build Sumcoin
 
-1. Clone the Sumcoin source code and cd into `sumcash`
+1. Clone the Sumcoin source code and cd into `sumcoin`
     ```shell
-    git clone https://github.com/sumcash/sumcash
-    cd sumcash
+    git clone https://github.com/sumcoin/sumcoin
+    cd sumcoin
     ```
 
 2.  Build Sumcoin:
@@ -90,9 +90,9 @@ Before running, you may create an empty configuration file:
 ```shell
 mkdir -p "/Users/${USER}/Library/Application Support/Sumcoin"
 
-touch "/Users/${USER}/Library/Application Support/Sumcoin/sumcash.conf"
+touch "/Users/${USER}/Library/Application Support/Sumcoin/sumcoin.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Sumcoin/sumcash.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/Sumcoin/sumcoin.conf"
 ```
 
 The first time you run sumcoind, it will start downloading the blockchain. This process could
@@ -105,9 +105,9 @@ tail -f $HOME/Library/Application\ Support/Sumcoin/debug.log
 
 ## Other commands:
 ```shell
-./src/sumcoind -daemon      # Starts the sumcash daemon.
-./src/sumcash-cli --help    # Outputs a list of command-line options.
-./src/sumcash-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/sumcoind -daemon      # Starts the sumcoin daemon.
+./src/sumcoin-cli --help    # Outputs a list of command-line options.
+./src/sumcoin-cli help      # Outputs a list of RPC commands when the daemon is running.
 ```
 
 ## Notes

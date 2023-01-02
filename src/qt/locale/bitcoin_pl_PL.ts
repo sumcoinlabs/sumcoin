@@ -180,8 +180,8 @@
         <translation>Portfel zaszyfrowany</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your sumcashs from being stolen by malware infecting your computer.</source>
-        <translation>%1 zamknie się teraz aby zakończyć proces szyfrowania. Pamiętaj że zaszyfrowanie portfela nie może w pełni zabezpieczyć Twoich sumcashów od próby kradzieży lub poprzez zainfekowanie Twojego komputera.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your sumcoins from being stolen by malware infecting your computer.</source>
+        <translation>%1 zamknie się teraz aby zakończyć proces szyfrowania. Pamiętaj że zaszyfrowanie portfela nie może w pełni zabezpieczyć Twoich sumcoinów od próby kradzieży lub poprzez zainfekowanie Twojego komputera.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -414,8 +414,8 @@
         <translation>Pasek zakładek</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Zażądaj płatności (generuje kod QR oraz sumcash: URls)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Zażądaj płatności (generuje kod QR oraz sumcoin: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>Pokaż liste użytych adresów do odbioru oraz ich etykiety</translation>
     </message>
     <message>
-        <source>Open a sumcash: URI or payment request</source>
-        <translation>Otwórz sumcash: URl lub żądanie płatności</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Otwórz sumcoin: URl lub żądanie płatności</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -688,11 +688,11 @@
         <translation>Formularz</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
         <translation>Niedawne transakcje mogą być jeszcze nie widoczne i z tego powodu saldo Twojego portfela może być nieprawidłowe. Te informacje zostaną poprawione kiedy Twój portfel skończy się synchronizować z siecią Sumcoin, w sposób opisany poniżej. </translation>
     </message>
     <message>
-        <source>Attempting to spend sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Próby przesłania Sumcoinów które nie zostały jeszcze wyświetlone w transakcjach nie zostaną zaakceptowane przez sieć.</translation>
     </message>
     <message>

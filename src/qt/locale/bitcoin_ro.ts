@@ -406,8 +406,8 @@
         <translation>Bara de unelte</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Cere plăți (generează coduri QR și URI sumcash)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Cere plăți (generează coduri QR și URI sumcoin)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -974,12 +974,12 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
         <translation>Tranzacțiile recente pot să nu fie încă vizibile, de aceea balanța portofelului poate fi incorectă. Această informație va fi corectă îndată ce portofelul va fi complet sincronizat cu rețeaua Sumcoin, așa cum este detaliat mai jos.</translation>
     </message>
     <message>
         <source>Attempting to spend bitcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Încercarea de a cheltui sumcashi care sunt afectați de tranzacții ce încă nu sunt afișate nu va fi acceptată de rețea.</translation>
+        <translation>Încercarea de a cheltui sumcoini care sunt afectați de tranzacții ce încă nu sunt afișate nu va fi acceptată de rețea.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1292,7 +1292,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa sumcash pe care ați specificat-o nu este validă.</translation>
+        <translation>Adresa sumcoin pe care ați specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -1386,7 +1386,7 @@
     </message>
     <message>
         <source>'bitcoin://' is not a valid URI. Use 'bitcoin:' instead.</source>
-        <translation>'sumcash://' nu este un URI valid. Folositi 'sumcash:' în loc.</translation>
+        <translation>'sumcoin://' nu este un URI valid. Folositi 'sumcoin:' în loc.</translation>
     </message>
     <message>
         <source>Invalid payment address %1</source>
@@ -2321,7 +2321,7 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less bitcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Taxa va fi scoasă din suma trimisă. Destinatarul va primi mai puțini sumcashi decât ați specificat în câmpul sumei trimise. Dacă au fost selectați mai mulți destinatari, taxa se va împărți în mod egal.</translation>
+        <translation>Taxa va fi scoasă din suma trimisă. Destinatarul va primi mai puțini sumcoini decât ați specificat în câmpul sumei trimise. Dacă au fost selectați mai mulți destinatari, taxa se va împărți în mod egal.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2349,7 +2349,7 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>A message that was attached to the bitcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Bitcoin network.</source>
-        <translation>un mesaj a fost atașat la sumcash: URI care va fi stocat cu tranzacția pentru referința dvs. Notă: Acest mesaj nu va fi trimis către rețeaua bitcoin.</translation>
+        <translation>un mesaj a fost atașat la sumcoin: URI care va fi stocat cu tranzacția pentru referința dvs. Notă: Acest mesaj nu va fi trimis către rețeaua bitcoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2383,7 +2383,7 @@ Nota: Cum taxa este calculată per byte, o taxă de "100 satoshi per kB" pentru 
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive bitcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Poți semna mesaje/contracte cu adresele ta pentru a demostra ca poți primi sumcashi trimiși la ele. Ai grijă să nu semnezi nimic vag sau aleator, deoarece atacurile de tip phishing te pot păcăli să le transferi identitatea. Semnează numai declarațiile detaliate cu care ești de acord.</translation>
+        <translation>Poți semna mesaje/contracte cu adresele ta pentru a demostra ca poți primi sumcoini trimiși la ele. Ai grijă să nu semnezi nimic vag sau aleator, deoarece atacurile de tip phishing te pot păcăli să le transferi identitatea. Semnează numai declarațiile detaliate cu care ești de acord.</translation>
     </message>
     <message>
         <source>The Bitcoin address to sign the message with</source>

@@ -370,8 +370,8 @@
         <translation>Tólaborð flipa</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Óska eftir greiðslum (býr til QR kóða og sumcash: URI)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Óska eftir greiðslum (býr til QR kóða og sumcoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>

@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "sumcash" user
+All three Linux startup configurations assume the existence of a "sumcoin" user
 and group.  They must be created before attempting to use these scripts.
 The macOS configuration assumes sumcoind will be set up for the current user.
 
@@ -44,7 +44,7 @@ This allows for running sumcoind without having to do any manual configuration.
 relative to the data directory. `wallet` *only* supports relative paths.
 
 For an example configuration file that describes the configuration settings,
-see `share/examples/sumcash.conf`.
+see `share/examples/sumcoin.conf`.
 
 Paths
 ---------------------------------
@@ -54,15 +54,15 @@ Paths
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/sumcoind`
-Configuration file:  `/etc/sumcash/sumcash.conf`
+Configuration file:  `/etc/sumcoin/sumcoin.conf`
 Data directory:      `/var/lib/sumcoind`
 PID file:            `/var/run/sumcoind/sumcoind.pid` (OpenRC and Upstart) or `/run/sumcoind/sumcoind.pid` (systemd)  
 Lock file:           `/var/lock/subsys/sumcoind` (CentOS)
 
 The PID directory (if applicable) and data directory should both be owned by the
-sumcash user and group. It is advised for security reasons to make the
-configuration file and data directory only readable by the sumcash user and
-group. Access to sumcash-cli and other sumcoind rpc clients can then be
+sumcoin user and group. It is advised for security reasons to make the
+configuration file and data directory only readable by the sumcoin user and
+group. Access to sumcoin-cli and other sumcoind rpc clients can then be
 controlled by group membership.
 
 NOTE: When using the systemd .service file, the creation of the aforementioned
@@ -84,10 +84,10 @@ OpenRC).
 ### macOS
 
 NOTE: It is not currently possible to override `datadir` in
-`/etc/sumcash/sumcash.conf` with the current systemd, OpenRC, and Upstart init
+`/etc/sumcoin/sumcoin.conf` with the current systemd, OpenRC, and Upstart init
 files out-of-the-box. This is because the command line options specified in the
 init files take precedence over the configurations in
-`/etc/sumcash/sumcash.conf`. However, some init systems have their own
+`/etc/sumcoin/sumcoin.conf`. However, some init systems have their own
 configuration mechanisms that would allow for overriding the command line
 options specified in the init files (e.g. setting `BITCOIND_DATADIR` for
 OpenRC).
@@ -95,7 +95,7 @@ OpenRC).
 ### macOS
 
 Binary:              `/usr/local/bin/sumcoind`
-Configuration file:  `~/Library/Application Support/Sumcoin/sumcash.conf`
+Configuration file:  `~/Library/Application Support/Sumcoin/sumcoin.conf`
 Data directory:      `~/Library/Application Support/Sumcoin`
 Lock file:           `~/Library/Application Support/Sumcoin/.lock`
 
@@ -140,14 +140,14 @@ setting the SUMCASHD and FLAGS environment variables in the file
 
 ### macOS
 
-Copy org.sumcash.sumcoind.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.sumcash.sumcoind.plist`.
+Copy org.sumcoin.sumcoind.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.sumcoin.sumcoind.plist`.
 
 This Launch Agent will cause sumcoind to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run sumcoind as the current user.
-You will need to modify org.sumcash.sumcoind.plist if you intend to use it as a
-Launch Daemon with a dedicated sumcash user.
+You will need to modify org.sumcoin.sumcoind.plist if you intend to use it as a
+Launch Daemon with a dedicated sumcoin user.
 
 Auto-respawn
 -----------------------------------

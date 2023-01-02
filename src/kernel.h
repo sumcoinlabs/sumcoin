@@ -60,7 +60,7 @@ bool CheckStakeModifierCheckpoints(int nHeight, unsigned int nStakeModifierCheck
 
 bool IsSuperMajority(int minVersion, const CBlockIndex* pstart, unsigned int nRequired, unsigned int nToCheck);
 
-// sumcash: entropy bit for stake modifier if chosen by modifier
+// sumcoin: entropy bit for stake modifier if chosen by modifier
 unsigned int GetStakeEntropyBit(const CBlock& block);
 
 #endif // SUMCASH_KERNEL_H

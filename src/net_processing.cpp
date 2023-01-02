@@ -166,7 +166,7 @@ namespace {
     };
     std::map<uint256, std::pair<NodeId, std::list<QueuedBlock>::iterator> > mapBlocksInFlight GUARDED_BY(cs_main);
 
-    /** sumcash: blocks that are waiting to be processed, the key points to previous CBlockIndex entry */
+    /** sumcoin: blocks that are waiting to be processed, the key points to previous CBlockIndex entry */
     struct WaitElement {
         std::shared_ptr<CBlock> pblock;
             int64_t time;
@@ -1559,7 +1559,7 @@ void static ProcessGetBlockData(CNode* pfrom, const CChainParams& chainparams, c
             // Bypass PushInventory, this must send even if redundant,
             // and we want it right after the last block so they don't
             // wait for other stuff first.
-            // sumcash: send latest proof-of-work block to allow the
+            // sumcoin: send latest proof-of-work block to allow the
             // download node to accept as orphan (proof-of-stake
             // block might be rejected by stake connection check)
             std::vector<CInv> vInv;
@@ -2132,7 +2132,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
         return false;
     }
 
-    // sumcash: set/unset network serialization mode for new clients
+    // sumcoin: set/unset network serialization mode for new clients
     if (pfrom->nVersion <= OLD_VERSION)
         vRecv.SetType(vRecv.GetType() & ~SER_POSMARKER);
     else
@@ -2404,7 +2404,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
             if (pindex->GetBlockHash() == hashStop)
             {
                 LogPrint(BCLog::NET, "  getblocks stopping at %d %s\n", pindex->nHeight, pindex->GetBlockHash().ToString());
-                // sumcash: tell downloading node about the latest block if it's
+                // sumcoin: tell downloading node about the latest block if it's
                 // without risk being rejected due to stake connection check
                 if (hashStop != ::ChainActive().Tip()->GetBlockHash() && pindex->GetBlockTime() + Params().GetConsensus().nStakeMinAge > ::ChainActive().Tip()->GetBlockTime())
                     pfrom->PushInventory(CInv(MSG_BLOCK, ::ChainActive().Tip()->GetBlockHash()));
@@ -3027,7 +3027,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
             ReadCompactSize(vRecv); // ignore tx count; assume it is 0.
             ReadCompactSize(vRecv); // needed for vchBlockSig.
 
-            // sumcash: quick check to see if we should ban peers for PoS spam
+            // sumcoin: quick check to see if we should ban peers for PoS spam
             // note: at this point we don't know if PoW headers are valid - we just assume they are
             // so we need to update pfrom->nPoSTemperature once we actualy check them
             bool fPoS = headers[n].nFlags & CBlockIndex::BLOCK_PROOF_OF_STAKE;
@@ -3092,7 +3092,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
                     return error("this block does not connect to any valid known blocks");
                 }
             }
-            // sumcash: store in memory until we can connect it to some chain
+            // sumcoin: store in memory until we can connect it to some chain
             WaitElement we; we.pblock = pblock2; we.time = nTimeNow;
             mapBlocksWait[headerPrev] = we;
         }
@@ -3102,7 +3102,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
             pindexLastAccepted = ::ChainActive().Tip();
         bool fContinue = true;
 
-        // sumcash: accept as many blocks as we possibly can from mapBlocksWait
+        // sumcoin: accept as many blocks as we possibly can from mapBlocksWait
         while (fContinue) {
             fContinue = false;
             bool fSelected = false;
@@ -3112,7 +3112,7 @@ bool ProcessMessage(CNode* pfrom, const std::string& msg_type, CDataStream& vRec
 
             {
             LOCK(cs_main);
-            // sumcash: try to select next block in a constant time
+            // sumcoin: try to select next block in a constant time
             std::map<CBlockIndex*, WaitElement>::iterator it = mapBlocksWait.find(pindexLastAccepted);
             if (it != mapBlocksWait.end() && pindexLastAccepted != nullptr) {
                 pindexPrev = it->first;

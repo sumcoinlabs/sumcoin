@@ -261,7 +261,7 @@ to see it.
 
 ### Testnet and Regtest modes
 
-Run with the `-testnet` option to run with "play sumcashs" on the test network, if you
+Run with the `-testnet` option to run with "play sumcoins" on the test network, if you
 are testing multi-machine code that needs to operate across the internet.
 
 If you are testing something that can run on one machine, run with the `-regtest` option.
@@ -1051,7 +1051,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 
 - Add every non-string RPC argument `(method, idx, name)` to the table `vRPCConvertParams` in `rpc/client.cpp`.
 
-  - *Rationale*: `sumcash-cli` and the GUI debug console use this table to determine how to
+  - *Rationale*: `sumcoin-cli` and the GUI debug console use this table to determine how to
     convert a plaintext command line to JSON. If the types don't match, the method can be unusable
     from there.
 

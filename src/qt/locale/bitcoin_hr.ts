@@ -219,8 +219,8 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Remember that encrypting your wallet cannot fully protect your sumcashs from being stolen by malware infecting your computer.</source>
-        <translation>Zapamtite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše sumcashove od zloćudnog softvera kojim se zarazi vaše računalo.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your sumcoins from being stolen by malware infecting your computer.</source>
+        <translation>Zapamtite da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše sumcoinove od zloćudnog softvera kojim se zarazi vaše računalo.</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -349,8 +349,8 @@
     </message>
     <message>
         <location line="+11"/>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Zatražite uplatu (stvara QR kod i sumcash: URI adresu)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Zatražite uplatu (stvara QR kod i sumcoin: URI adresu)</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -454,7 +454,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open a sumcash: URI</source>
+        <source>Open a sumcoin: URI</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -489,7 +489,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open https://talk.sumcash.net in a web browser.</source>
+        <source>Open https://talk.sumcoin.net in a web browser.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1481,7 +1481,7 @@
     </message>
     <message>
         <location line="+19"/>
-        <source>Attempting to spend sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1547,7 +1547,7 @@
     <name>OpenURIDialog</name>
     <message>
         <location filename="../forms/openuridialog.ui" line="+14"/>
-        <source>Open sumcash URI</source>
+        <source>Open sumcoin URI</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1826,7 +1826,7 @@
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Izaberite željeni najmanji dio sumcasha koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
+        <translation>Izaberite željeni najmanji dio sumcoina koji će biti prikazan u sučelju i koji će se koristiti za plaćanje.</translation>
     </message>
     <message>
         <location line="-450"/>
@@ -2036,13 +2036,13 @@
     </message>
     <message>
         <location line="-76"/>
-        <source>Cannot start sumcash: click-to-pay handler</source>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
         <translation>Ne može se pokrenuti klijent: rukovatelj &quot;kliknite da platite&quot;</translation>
     </message>
     <message>
         <location line="+50"/>
-        <source>&apos;sumcash://&apos; is not a valid URI. Use &apos;sumcash:&apos; instead.</source>
-        <translation>&apos;sumcash://&apos; nije ispravan URI. Koristite &apos;sumcash:&apos; umjesto toga.</translation>
+        <source>&apos;sumcoin://&apos; is not a valid URI. Use &apos;sumcoin:&apos; instead.</source>
+        <translation>&apos;sumcoin://&apos; nije ispravan URI. Koristite &apos;sumcoin:&apos; umjesto toga.</translation>
     </message>
     <message>
         <location line="+14"/>
@@ -3295,7 +3295,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less sumcashs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less sumcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>Naknada će biti oduzeta od poslanog iznosa. Primatelj će primiti manji iznos od onoga koji unesete u polje iznosa. Ako je odabrano više primatelja, onda će naknada biti podjednako raspodijeljena.</translation>
     </message>
     <message>
@@ -3374,7 +3374,7 @@
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sumcashs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive sumcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Možete potpisati poruke/dogovore svojim adresama kako biste dokazali da možete pristupiti bitcoinima poslanim na te adrese. Budite oprezni da ne potpisujte ništa nejasno ili nasumično, jer napadi phishingom vas mogu prevariti da prepišite svoj identitet njima. Potpisujte samo detaljno objašnjene izjave s kojima se slažete.</translation>
     </message>
     <message>

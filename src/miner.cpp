@@ -84,7 +84,7 @@ void BlockAssembler::resetBlock()
 Optional<int64_t> BlockAssembler::m_last_block_num_txs{nullopt};
 Optional<int64_t> BlockAssembler::m_last_block_weight{nullopt};
 
-// sumcash: if pwallet != NULL it will attempt to create coinstake
+// sumcoin: if pwallet != NULL it will attempt to create coinstake
 std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& scriptPubKeyIn, CWallet* pwallet, bool* pfPoSCancel)
 {
     int64_t nTimeStart = GetTimeMicros();
@@ -120,7 +120,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     pblocktemplate->vTxFees.push_back(-1); // updated at end
     pblocktemplate->vTxSigOpsCost.push_back(-1); // updated at end
 
-    // sumcash: if coinstake available add coinstake tx
+    // sumcoin: if coinstake available add coinstake tx
     static int64_t nLastCoinStakeSearchTime = GetAdjustedTime();  // only initialized at startup
 
     if (pwallet)  // attemp to find a coinstake
@@ -146,7 +146,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
             nLastCoinStakeSearchTime = nSearchTime;
         }
         if (*pfPoSCancel)
-            return nullptr; // sumcash: there is no point to continue if we failed to create coinstake
+            return nullptr; // sumcoin: there is no point to continue if we failed to create coinstake
         pblock->nFlags = CBlockIndex::BLOCK_PROOF_OF_STAKE;
     }
 
@@ -246,7 +246,7 @@ bool BlockAssembler::TestPackageTransactions(const CTxMemPool::setEntries& packa
         if (!fIncludeWitness && it->GetTx().HasWitness())
             return false;
 
-        // sumcash: timestamp limit
+        // sumcoin: timestamp limit
         if (it->GetTx().nTime > GetAdjustedTime() || (pblock->IsProofOfStake() && it->GetTx().nTime > pblock->vtx[1]->nTime))
             return false;
     }
@@ -500,7 +500,7 @@ static bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainpar
 void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* mempool)
 {
     LogPrintf("CPUMiner started for proof-of-stake\n");
-    util::ThreadRename("sumcash-stake-minter");
+    util::ThreadRename("sumcoin-stake-minter");
 
     unsigned int nExtraNonce = 0;
 
@@ -607,7 +607,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
             pblock = &pblocktemplate->block;
             IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
-            // sumcash: if proof-of-stake block found then process block
+            // sumcoin: if proof-of-stake block found then process block
             if (pblock->IsProofOfStake())
             {
                 {
@@ -644,7 +644,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
     }
 }
 
-// sumcash: stake minter thread
+// sumcoin: stake minter thread
 void static ThreadStakeMinter(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* mempool)
 {
     LogPrintf("ThreadStakeMinter started\n");
@@ -660,9 +660,9 @@ void static ThreadStakeMinter(std::shared_ptr<CWallet> pwallet, CConnman* connma
     LogPrintf("ThreadStakeMinter exiting\n");
 }
 
-// sumcash: stake minter
+// sumcoin: stake minter
 void MintStake(boost::thread_group& threadGroup, std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* mempool)
 {
-    // sumcash: mint proof-of-stake blocks in the background
+    // sumcoin: mint proof-of-stake blocks in the background
     threadGroup.create_thread(boost::bind(&ThreadStakeMinter, pwallet, connman, mempool));
 }

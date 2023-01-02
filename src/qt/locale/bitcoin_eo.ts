@@ -342,8 +342,8 @@
         <translation>Langeto-breto</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Peti pagon (kreas QR-kodojn kaj URI-ojn kun prefikso sumcash:)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Peti pagon (kreas QR-kodojn kaj URI-ojn kun prefikso sumcoin:)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>

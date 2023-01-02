@@ -16,7 +16,7 @@ Sumcoins can be sent easily through the Internet, without having to trust middle
 .SH OPTIONS
 .TP
 \fB\-conf=\fR<file>
-Specify configuration file (default: sumcash.conf)
+Specify configuration file (default: sumcoin.conf)
 .TP
 \fB\-pid=\fR<file>
 Specify pid file (default: sumcoind.pid)
@@ -34,7 +34,7 @@ Start minimized - only applicable to the GUI version
 Show splash screen on startup - only applicable to the GUI version
 .TP
 \fB\-datadir=\fR<dir>
-Specify data directory (default: $HOME/.sumcash)
+Specify data directory (default: $HOME/.sumcoin)
 .TP
 \fB\-dbcache=\fR<n>
 Set database cache size in megabytes (default: 25)
@@ -154,7 +154,7 @@ This help message
 .TP
 \fBaddmultisigaddress 'nrequired' '["key","key",...]' ['account']\fR
 Add a nrequired-to-sign multisignature address to the wallet.
-Each key is a sumcash address or hex-encoded public key.
+Each key is a sumcoin address or hex-encoded public key.
 If ['account'] is specified, assign address to ['account'].
 .TP
 \fBbackupwallet 'destination'\fR
@@ -163,20 +163,20 @@ Safely copies *wallet.dat* to 'destination', which can be a directory or a path 
 \fBcheckwallet\FR
 Check wallet for integrity.
 .TP
-\fBdumpprivkey 'sumcashaddress'\fR
-Reveals the private key corresponding to 'sumcashaddress'.
+\fBdumpprivkey 'sumcoinaddress'\fR
+Reveals the private key corresponding to 'sumcoinaddress'.
 .TP
 \fBencryptwallet 'passphrase'\fR
 Encrypts the wallet with 'passphrase'.
 .TP
-\fBgetaccount 'sumcashaddress'\fR
+\fBgetaccount 'sumcoinaddress'\fR
 Returns the account associated with the given address.
 .TP
-\fBsetaccount 'sumcashaddress' ['account']\fR
+\fBsetaccount 'sumcoinaddress' ['account']\fR
 Sets the ['account'] associated with the given address. ['account'] may be omitted to remove an address from ['account'].
 .TP
 \fBgetaccountaddress 'account'\fR
-Returns a new sumcash address for 'account'.
+Returns a new sumcoin address for 'account'.
 .TP
 \fBgetaddressesbyaccount 'account'\fR
 Returns the list of addresses associated with the given 'account'.
@@ -224,7 +224,7 @@ Returns the number of connections to other nodes.
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty.
 .TP
 \fBgetgenerate\fR
-Returns boolean true if server is trying to generate sumcashs, false otherwise.
+Returns boolean true if server is trying to generate sumcoins, false otherwise.
 .TP
 \fBsetgenerate 'generate' ['genproclimit']\fR
 Generation is limited to ['genproclimit'] processors, -1 is unlimited.
@@ -242,13 +242,13 @@ Returns an object containing mining-related information.
 Returns a recent Ghash/second network mining estimate.
 .TP
 \fBgetnewaddress 'account'\fR
-Returns a new sumcash address for receiving payments. If 'account' is specified (recommended), it is added to the address book so payments received with the address will be credited to 'account'.
+Returns a new sumcoin address for receiving payments. If 'account' is specified (recommended), it is added to the address book so payments received with the address will be credited to 'account'.
 .TP
 \fBgetreceivedbyaccount 'account' ['minconf=1']\fR
 Returns the total amount received by addresses associated with 'account' in transactions with at least ['minconf'] confirmations.
 .TP
-\fBgetreceivedbyaddress 'sumcashaddress' ['minconf=1']\fR
-Returns the total amount received by 'sumcashaddress' in transactions with at least ['minconf'] confirmations.
+\fBgetreceivedbyaddress 'sumcoinaddress' ['minconf=1']\fR
+Returns the total amount received by 'sumcoinaddress' in transactions with at least ['minconf'] confirmations.
 .TP
 \fBgettransaction 'txid'\fR
 Returns information about a specific transaction, given hexadecimal transaction ID.
@@ -264,7 +264,7 @@ If 'data' is specified, tries to solve the block and returns true if it was succ
 \fBhelp ['command']\fR
 List commands, or get help for a command.
 .TP
-\fBimportprivkey 'sumcashprivkey' ['label']\fR
+\fBimportprivkey 'sumcoinprivkey' ['label']\fR
 Adds a private key (as returned by dumpprivkey) to your wallet.
 .TP
 \fBkeypoolrefill\fR
@@ -328,45 +328,45 @@ If no parameters provided current setting is printed.
   ['cancelupto'] cancels all alert id's up to this number
 Returns true or false.
 .TP
-\fBsendfrom <'account'> <'tosumcashaddress'> <'amount'> ['minconf=1'] ['comment'] ['comment-to']\fR
-Sends amount from account's balance to 'tosumcashaddress'. This method will fail if there is less than amount sumcashs with ['minconf'] confirmations in the account's balance (unless account is the empty-string-named default account; it behaves like the *sendtoaddress* method). Returns transaction ID on success.
+\fBsendfrom <'account'> <'tosumcoinaddress'> <'amount'> ['minconf=1'] ['comment'] ['comment-to']\fR
+Sends amount from account's balance to 'tosumcoinaddress'. This method will fail if there is less than amount sumcoins with ['minconf'] confirmations in the account's balance (unless account is the empty-string-named default account; it behaves like the *sendtoaddress* method). Returns transaction ID on success.
 .TP
 \fBsendmany 'fromaccount' {'address':'amount',...} ['minconf=1'] ['comment']\fR
 amounts are double-precision floating point numbers
 .TP
-\fBsendtoaddress 'sumcashaddress' 'amount' ['comment'] ['comment-to']\fR
-Sends amount from the server's available balance to 'sumcashaddress'. amount is a real and is rounded to the nearest 0.01. Returns transaction id on success.
+\fBsendtoaddress 'sumcoinaddress' 'amount' ['comment'] ['comment-to']\fR
+Sends amount from the server's available balance to 'sumcoinaddress'. amount is a real and is rounded to the nearest 0.01. Returns transaction id on success.
 .TP
 \fBsettxfee 'amount'\fR
 'amount' is a real and is rounded to 0.01 (cent)
 Minimum and default transaction fee per KB is 1 cent
 .TP
-\fBsignmessage 'sumcashaddress' 'message'\fR
+\fBsignmessage 'sumcoinaddress' 'message'\fR
 Sign a message with the private key of an address
 .TP
 \fBstop\fR
-Stops the sumcash server.
+Stops the sumcoin server.
 .TP
 \fBsubmitblock 'hex data' [optional-params-obj]\fR
 [optional-params-obj] parameter is currently ignored.
 Attempts to submit new block to network.
 See https://en.bitcoin.it/wiki/BIP_0022 for full specification.
 .TP
-\fBvalidateaddress 'sumcashaddress'\fR
-Checks that 'sumcashaddress' looks like a proper sumcash address. Returns an object containing:
+\fBvalidateaddress 'sumcoinaddress'\fR
+Checks that 'sumcoinaddress' looks like a proper sumcoin address. Returns an object containing:
 
     "isvalid" : true or false.
     "ismine"  : true if the address is in the server's wallet.
-    "address" : sumcashaddress.
+    "address" : sumcoinaddress.
 
     *note: ismine and address are only returned if the address is valid.
 .TP
-\fBverifymessage 'sumcashaddress' 'signature' 'message'
+\fBverifymessage 'sumcoinaddress' 'signature' 'message'
 Verify a signed message
 .TP
 
 .SH "SEE ALSO"
-sumcash.conf(5)
+sumcoin.conf(5)
 .SH AUTHOR
 This manual page was written by Zvonimir Mostarac <peerchemist@protonmail.ch> based on work by Micah Anderson <micah@debian.org> for the Debian system (but may be used by others). Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 3 or any later version published by the Free Software Foundation.
 

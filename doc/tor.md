@@ -6,7 +6,7 @@ The following directions assume you have a Tor proxy running on port 9050. Many 
 configure Tor.
 
 
-## 1. Run sumcash behind a Tor proxy
+## 1. Run sumcoin behind a Tor proxy
 
 The first step is running Sumcoin behind a Tor proxy. This will already anonymize all
 outgoing connections, but more is possible.
@@ -37,14 +37,14 @@ In a typical situation, this suffices to run behind a Tor proxy:
 	./sumcoind -proxy=127.0.0.1:9050
 
 
-## 2. Run a sumcash hidden server
+## 2. Run a sumcoin hidden server
 
 If you configure your Tor system accordingly, it is possible to make your node also
 reachable from the Tor network. Add these lines to your /etc/tor/torrc (or equivalent
 config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. For newer
 versions of Tor see [Section 3](#3-automatically-listen-on-tor).*
 
-	HiddenServiceDir /var/lib/tor/sumcash-service/
+	HiddenServiceDir /var/lib/tor/sumcoin-service/
 	HiddenServicePort 8333 127.0.0.1:8333
 	HiddenServicePort 18333 127.0.0.1:18333
 
@@ -127,7 +127,7 @@ in the tor configuration file. The hashed password can be obtained with the comm
 
 ## 4. Privacy recommendations
 
-- Do not add anything but sumcash ports to the hidden service created in section 2.
+- Do not add anything but sumcoin ports to the hidden service created in section 2.
   If you run a web service too, create a new hidden service for that.
   Otherwise it is trivial to link them, which may reduce privacy. Hidden
   services created automatically (as in section 3) always have only one port

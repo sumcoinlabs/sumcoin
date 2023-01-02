@@ -50,7 +50,7 @@ static bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/sumcash.conf are parsed in qt/bitcoin.cpp's main()
+    // If Qt is used, parameters/sumcoin.conf are parsed in qt/bitcoin.cpp's main()
     SetupServerArgs();
     std::string error;
     if (!gArgs.ParseParameters(argc, argv, error)) {
