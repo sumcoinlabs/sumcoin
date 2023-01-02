@@ -62,8 +62,8 @@
         <translation>Færslugildi sem þiggja til sín</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Þetta eru Sumcash færslugildin sem senda greiðslur. Skoðið ævinlega vel upphæðina og færslugildin sem þiggja greiðslur áður en mynt er send.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Þetta eru Sumcoin færslugildin sem senda greiðslur. Skoðið ævinlega vel upphæðina og færslugildin sem þiggja greiðslur áður en mynt er send.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -310,8 +310,8 @@
         <translation>Endurraða blokkum á drifi...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Senda mynt í Sumcash færslugildi</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Senda mynt í Sumcoin færslugildi</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,12 +346,12 @@
         <translation>Dulkóða einkalyklana sem tilheyra veskinu þínu</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Kvitta undir skilaboð með Sumcash færslugildunum þínum til að sanna að þú eigir þau</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Kvitta undir skilaboð með Sumcoin færslugildunum þínum til að sanna að þú eigir þau</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Yfirfara skilaboð til að tryggja að kvittað hafi verið fyrir þau með tilteknum Sumcash færslugildum</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Yfirfara skilaboð til að tryggja að kvittað hafi verið fyrir þau með tilteknum Sumcoin færslugildum</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -370,8 +370,8 @@
         <translation>Tólaborð flipa</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Óska eftir greiðslum (býr til QR kóða og sumcash: URI)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Óska eftir greiðslum (býr til QR kóða og sumcoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -422,8 +422,8 @@
         <translation>Uppfært</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
-        <translation>Sýna %1 hjálparskilaboðin til að fá lista yfir valkosti Sumcash aðgerðir í skipanalínu</translation>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
+        <translation>Sýna %1 hjálparskilaboðin til að fá lista yfir valkosti Sumcoin aðgerðir í skipanalínu</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -492,8 +492,8 @@
         <translation>Veskið er &lt;b&gt;dulkóðað&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Sumcash can no longer continue safely and will quit.</source>
-        <translation>Alvarleg villa átti sér stað. Sumcash getur ekki haldið áfram með öruggum hætti og stoppar hér.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>Alvarleg villa átti sér stað. Sumcoin getur ekki haldið áfram með öruggum hætti og stoppar hér.</translation>
     </message>
 </context>
 <context>
@@ -612,8 +612,8 @@
         <translation>Breyta sendingarfærslugildi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Sumcash address.</source>
-        <translation>Færslugildið sem slegið var inn "%1" er ekki leyfilegt Sumcash færslugildi.</translation>
+        <source>The entered address "%1" is not a valid Sumcoin address.</source>
+        <translation>Færslugildið sem slegið var inn "%1" er ekki leyfilegt Sumcoin færslugildi.</translation>
     </message>
     </context>
 <context>
@@ -625,8 +625,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Error</source>

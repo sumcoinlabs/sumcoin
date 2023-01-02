@@ -66,7 +66,7 @@
         <translation>адрасы Прымання</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Тут знаходзяцца Біткойн-адрасы для высылання плацяжоў. Заўсёды спраўджвайце колькасць і адрас прызначэння перад здзяйсненнем транзакцыі.</translation>
     </message>
     <message>
@@ -278,7 +278,7 @@
         <translation>Пераіндэксацыя блокаў на дыску...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
+        <source>Send coins to a Sumcoin address</source>
         <translation>Даслаць манеты на Біткойн-адрас</translation>
     </message>
     <message>
@@ -314,11 +314,11 @@
         <translation>Зашыфраваць прыватныя ключы, якия належаць вашаму гаманцу</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
         <translation>Падпісаць паведамленне з дапамогай Біткойн-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
         <translation>Спраўдзіць паведамленне з дапамогай Біткойн-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
@@ -334,7 +334,7 @@
         <translation>Дапамога</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
         <translation>Запатрабаваць плацёж (генеруецца QR-код для біткойн URI)</translation>
     </message>
     <message>
@@ -617,7 +617,7 @@
         <translation>Вітаем</translation>
     </message>
     <message>
-        <source>Sumcash</source>
+        <source>Sumcoin</source>
         <translation>Біткойн</translation>
     </message>
     <message>

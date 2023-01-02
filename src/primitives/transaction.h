@@ -366,7 +366,7 @@ public:
 
     bool IsCoinStake() const
     {
-        // sumcash: the coin stake transaction is marked with the first output empty
+        // sumcoin: the coin stake transaction is marked with the first output empty
         return (vin.size() > 0 && (!vin[0].prevout.IsNull()) && vout.size() >= 2 && vout[0].IsEmpty());
     }
 

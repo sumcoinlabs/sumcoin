@@ -1,8 +1,8 @@
-// Copyright (c) 2012-2022 The Sumcash developers
+// Copyright (c) 2012-2022 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef SUMCASH_QT_MULTISIGINPUTENTRY_H
-#define SUMCASH_QT_MULTISIGINPUTENTRY_H
+#ifndef SUMCOIN_QT_MULTISIGINPUTENTRY_H
+#define SUMCOIN_QT_MULTISIGINPUTENTRY_H
 
 #include <uint256.h>
 
@@ -52,4 +52,4 @@ class MultisigInputEntry : public QFrame
     void on_pasteRedeemScriptButton_clicked();
 };
 
-#endif // SUMCASH_QT_MULTISIGINPUTENTRY_H
+#endif // SUMCOIN_QT_MULTISIGINPUTENTRY_H

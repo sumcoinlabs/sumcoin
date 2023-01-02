@@ -66,8 +66,8 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones de Sumcash para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones de Sumcoin para recibir pagos. Siempre revise el monto y la dirección de envío antes de enviar criptomonedas.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -322,8 +322,8 @@
         <translation>Proxy &lt;b&gt;habilitado&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Enviar monedas a una dirección Sumcash</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Enviar monedas a una dirección Sumcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -358,12 +358,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Sumcash concretas</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones Sumcoin concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -382,8 +382,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Pide pagos (genera codigos QR and sumcash: URls)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Pide pagos (genera codigos QR and sumcoin: URls)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -538,8 +538,8 @@
         <translation>La billetera esta &lt;b&gt;codificada&lt;/b&gt; y actualmente &lt;b&gt;bloqueda&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Sumcash can no longer continue safely and will quit.</source>
-        <translation>Ha ocurrido un error fatal. Sumcash no puede seguir seguro y se cerrará.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>Ha ocurrido un error fatal. Sumcoin no puede seguir seguro y se cerrará.</translation>
     </message>
 </context>
 <context>
@@ -820,8 +820,8 @@
         <translation>usar un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -863,12 +863,12 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
-        <translation>Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de sumcash, como se detalla abajo.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
+        <translation>Las transacciones recientes aún no pueden ser visibles, y por lo tanto el saldo de su monedero podría ser incorrecto. Esta información será correcta cuando su monedero haya terminado de sincronizarse con la red de sumcoin, como se detalla abajo.</translation>
     </message>
     <message>
-        <source>Attempting to spend sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>La red no aceptará el intentar gastar sumcashs que están afectados por transacciones aún no mostradas.</translation>
+        <source>Attempting to spend sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>La red no aceptará el intentar gastar sumcoins que están afectados por transacciones aún no mostradas.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1016,8 +1016,8 @@
         <translation>Gastar cambio sin confirmar</translation>
     </message>
     <message>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Sumcash en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente Sumcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1032,8 +1032,8 @@
         <translation>Permitir conexiones entrantes</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
-        <translation>Conectar a la red de Sumcash a través de un proxy SOCKS5</translation>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
+        <translation>Conectar a la red de Sumcoin a través de un proxy SOCKS5</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1068,8 +1068,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red de Sumcash a través de un proxy SOCKS5 diferente para los servicios anónimos de Tor.</translation>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red de Sumcoin a través de un proxy SOCKS5 diferente para los servicios anónimos de Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1176,8 +1176,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Sumcash después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información entregada puede estar desactualizada. Tu billetera se sincroniza automáticamente con la red de Sumcoin después de establecer una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1251,8 +1251,8 @@
         <translation>Error en la solicitud de pago</translation>
     </message>
     <message>
-        <source>Cannot start sumcash: click-to-pay handler</source>
-        <translation>No se puede iniciar Sumcash: controlador de clic para pagar</translation>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
+        <translation>No se puede iniciar Sumcoin: controlador de clic para pagar</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1717,8 +1717,8 @@
         <translation>&amp;mensaje</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
-        <translation>Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Sumcash.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
+        <translation>Mensaje opcional adjunto a la solicitud de pago, que será mostrado cuando la solicitud sea abierta. Nota: Este mensaje no será enviado con el pago a través de la red Sumcoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>

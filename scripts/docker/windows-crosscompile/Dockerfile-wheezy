@@ -3,7 +3,7 @@ FROM debian:wheezy
 #Default branch name develop
 ARG BRANCH_NAME=develop
 #Default
-ARG REPO_SLUG=sumcash/sumcash
+ARG REPO_SLUG=sumcoin/sumcoin
 ENV REPO_SLUG=${REPO_SLUG}
 ENV REPO_URL=https://github.com/${REPO_SLUG}
 
@@ -14,9 +14,9 @@ RUN apt-get -qq update && \
 
 #RUN git clone ${REPO_URL} --branch $BRANCH_NAME --single-branch --depth 1
 
-COPY sumcash.tar.gz /sumcash.tar.gz
-RUN tar -xvf /sumcash.tar.gz
+COPY sumcoin.tar.gz /sumcoin.tar.gz
+RUN tar -xvf /sumcoin.tar.gz
 
-#ADD . /sumcash
-RUN cd /sumcash/scripts/windows-crosscompile && ./dependencies.sh
-RUN cd /sumcash && scripts/windows-crosscompile/compile-sumcash.sh
+#ADD . /sumcoin
+RUN cd /sumcoin/scripts/windows-crosscompile && ./dependencies.sh
+RUN cd /sumcoin && scripts/windows-crosscompile/compile-sumcoin.sh

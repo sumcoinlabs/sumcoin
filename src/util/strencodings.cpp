@@ -488,15 +488,15 @@ bool ParseFixedPoint(const std::string &val, int decimals, int64_t *amount_out)
     if (ptr < end && val[ptr] == '.')
     {
         ++ptr;
-        int sumcash_digits = 6;
+        int sumcoin_digits = 6;
         if (ptr < end && IsDigit(val[ptr]))
         {
             while (ptr < end && IsDigit(val[ptr])) {
-                if (sumcash_digits) {
+                if (sumcoin_digits) {
                     if (!ProcessMantissaDigit(val[ptr], mantissa, mantissa_tzeros))
                         return false; /* overflow */
                     ++point_ofs;
-                    --sumcash_digits;
+                    --sumcoin_digits;
                     }
                 ++ptr;
             }

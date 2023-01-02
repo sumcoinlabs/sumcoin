@@ -7,15 +7,15 @@ configure~
 *.exe
 *.pdb
 src/*/*.exe
-src/sumcash
-src/sumcashd
-src/sumcash-cli
-src/sumcash-tx
-src/sumcash-wallet
+src/sumcoin
+src/sumcoind
+src/sumcoin-cli
+src/sumcoin-tx
+src/sumcoin-wallet
 src/test/fuzz
 !src/test/fuzz/*.*
-src/test/test_sumcash
-src/qt/test/test_sumcash-qt
+src/test/test_sumcoin
+src/qt/test/test_sumcoin-qt
 
 # autoreconf
 Makefile.in
@@ -71,8 +71,8 @@ src/qt/bitcoin-qt.includes
 *.pyc
 *.o
 *.o-*
-.sumcash
-.sumcash
+.sumcoin
+.sumcoin
 *.a
 *.pb.cc
 *.pb.h
@@ -97,9 +97,9 @@ src/qt/bitcoin-qt.includes
 *.qm
 Makefile
 !depends/Makefile
-src/qt/sumcash-qt
-Sumcash-Qt.app
-Sumcash-Qt.app
+src/qt/sumcoin-qt
+Sumcoin-Qt.app
+Sumcoin-Qt.app
 background.tiff*
 
 # Qt Creator
@@ -107,8 +107,8 @@ Makefile.am.user
 
 # Unit-tests
 Makefile.test
-sumcash-qt_test
-sumcash-qt_test
+sumcoin-qt_test
+sumcoin-qt_test
 
 # Resources cpp
 qrc_*.cpp

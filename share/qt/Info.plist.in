@@ -11,34 +11,34 @@
   </array>
 
   <key>CFBundleIconFile</key>
-  <string>sumcash.icns</string>
+  <string>sumcoin.icns</string>
 
   <key>CFBundlePackageType</key>
   <string>APPL</string>
 
   <key>NSHumanReadableCopyright</key>
-  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@.@SUMCASH_VERSION_BUILD@, Copyright © 2011-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@</string>
+  <string>@SUMCOIN_VERSION_MAJOR@.@SUMCOIN_VERSION_MINOR@.@SUMCOIN_VERSION_REVISION@.@SUMCOIN_VERSION_BUILD@, Copyright © 2011-@COPYRIGHT_YEAR@ @COPYRIGHT_HOLDERS_FINAL@</string>
 
   <key>CFBundleShortVersionString</key>
-  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@</string>
+  <string>@SUMCOIN_VERSION_MAJOR@.@SUMCOIN_VERSION_MINOR@.@SUMCOIN_VERSION_REVISION@</string>
 
   <key>CFBundleVersion</key>
-  <string>@SUMCASH_VERSION_MAJOR@.@SUMCASH_VERSION_MINOR@.@SUMCASH_VERSION_REVISION@</string>
+  <string>@SUMCOIN_VERSION_MAJOR@.@SUMCOIN_VERSION_MINOR@.@SUMCOIN_VERSION_REVISION@</string>
 
   <key>CFBundleSignature</key>
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Sumcash-Qt</string>
+  <string>Sumcoin-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Sumcash-Qt</string>
+  <string>Sumcoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.sumcash.Sumcash-Qt</string>
+  <string>org.sumcoin.Sumcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.sumcash.SumcashPayment</string>
+      <string>org.sumcoin.SumcoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>sumcash</string>
+        <string>sumcoin</string>
       </array>
     </dict>
   </array>

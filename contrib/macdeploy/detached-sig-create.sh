@@ -7,7 +7,7 @@ export LC_ALL=C
 set -e
 
 ROOTDIR=dist
-BUNDLE="${ROOTDIR}/Sumcash-Qt.app"
+BUNDLE="${ROOTDIR}/Sumcoin-Qt.app"
 SIGNAPPLE=signapple
 TEMPDIR=sign.temp
 OUT=signature-osx.tar.gz

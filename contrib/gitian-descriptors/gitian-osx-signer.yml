@@ -1,5 +1,5 @@
 ---
-name: "sumcash-dmg-signer"
+name: "sumcoin-dmg-signer"
 distro: "ubuntu"
 suites:
 - "bionic"
@@ -9,13 +9,13 @@ packages:
 - "faketime"
 - "python3-pip"
 remotes:
-- "url": "https://github.com/sumcash/sumcash-detached-sigs.git"
+- "url": "https://github.com/sumcoin/sumcoin-detached-sigs.git"
   "dir": "signature"
 - "url": "https://github.com/achow101/signapple.git"
   "dir": "signapple"
   "commit": "b084cbbf44d5330448ffce0c7d118f75781b64bd"
 files:
-- "sumcash-osx-unsigned.tar.gz"
+- "sumcoin-osx-unsigned.tar.gz"
 script: |
   set -e -o pipefail
 
@@ -41,9 +41,9 @@ script: |
   export PATH="$HOME/.local/bin":$PATH
   cd ..
 
-  UNSIGNED_TARBALL=sumcash-osx-unsigned.tar.gz
-  UNSIGNED_APP=dist/Sumcash-Qt.app
-  SIGNED=sumcash-osx-signed.dmg
+  UNSIGNED_TARBALL=sumcoin-osx-unsigned.tar.gz
+  UNSIGNED_APP=dist/Sumcoin-Qt.app
+  SIGNED=sumcoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED_TARBALL}
   OSX_VOLNAME="$(cat osx_volname)"

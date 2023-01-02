@@ -4,21 +4,21 @@
 # see: dh_installdeb(1)
 
 conf() {
-	echo "Configuring .sumcash directory for each user..."
+	echo "Configuring .sumcoin directory for each user..."
 	for _HOME in /home/*?; do
 		# Obtain the username
 		USER=$( basename ${_HOME} )
 
-		if [ ! -d "$_HOME/.sumcash" ]; then
-			echo "Sumcash directory not found for user $USER! Creating one now."
-			mkdir $_HOME/.sumcash
+		if [ ! -d "$_HOME/.sumcoin" ]; then
+			echo "Sumcoin directory not found for user $USER! Creating one now."
+			mkdir $_HOME/.sumcoin
 		fi
 
-		if [ ! -f $_HOME/.sumcash/sumcash.conf ]; then
-			echo "Sumcash configuration file not found for user $USER! Creating one now."
-			echo -e "rpcuser=rpcuser\nrpcpassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c10)" > $_HOME/.sumcash/sumcash.conf
+		if [ ! -f $_HOME/.sumcoin/sumcoin.conf ]; then
+			echo "Sumcoin configuration file not found for user $USER! Creating one now."
+			echo -e "rpcuser=rpcuser\nrpcpassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c10)" > $_HOME/.sumcoin/sumcoin.conf
 		fi
-		chown -R $USER: $_HOME/.sumcash
+		chown -R $USER: $_HOME/.sumcoin
 	done
 }
 

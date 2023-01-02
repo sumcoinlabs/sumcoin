@@ -40,9 +40,9 @@ QString BitcoinUnits::longName(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("SUMC");
+    case BTC: return QString("SUM");
     case mBTC: return QString("mSUMC");
-    case uBTC: return QString::fromUtf8("μSUMC");
+    case uBTC: return QString::fromUtf8("μSUM");
     case SAT: return QString("Satoshi (sat)");
     default: return QString("???");
     }
@@ -62,9 +62,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Sumcashs");
-    case mBTC: return QString("Milli-Sumcashs (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Sumcashs (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("Sumcoins");
+    case mBTC: return QString("Milli-Sumcoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Sumcoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     case SAT: return QString("Satoshi (sat) (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }

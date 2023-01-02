@@ -37,7 +37,7 @@ if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libbitcoin_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBBITCOINCONSENSUS=libsumcashconsensus.la
+LIBBITCOINCONSENSUS=libsumcoinconsensus.la
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libbitcoin_wallet.a
@@ -82,18 +82,18 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += sumcashd
+  bin_PROGRAMS += sumcoind
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += sumcash-cli
+  bin_PROGRAMS += sumcoin-cli
 endif
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += sumcash-tx
+  bin_PROGRAMS += sumcoin-tx
 endif
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += sumcash-wallet
+  bin_PROGRAMS += sumcoin-wallet
 endif
 endif
 
@@ -247,7 +247,7 @@ BITCOIN_CORE_H = \
   zmq/zmqnotificationinterface.h \
   zmq/zmqpublishnotifier.h \
   zmq/zmqrpc.h \
-## --- sumcash headers start from this line --- ##
+## --- sumcoin headers start from this line --- ##
   kernel.h \
   kernelrecord.h
 
@@ -329,7 +329,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between sumcashd and sumcash-qt, but only linked
+# wallet: shared between sumcoind and sumcoin-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -445,7 +445,7 @@ libbitcoin_consensus_a_SOURCES = \
   util/strencodings.h \
   version.h
 
-# common: shared between sumcashd, and sumcash-qt and non-server tools
+# common: shared between sumcoind, and sumcoin-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -521,7 +521,7 @@ libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between sumcash-cli and sumcash-qt
+# cli: shared between sumcoin-cli and sumcoin-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -533,17 +533,17 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# sumcashd binary #
-sumcashd_SOURCES = bitcoind.cpp
-sumcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sumcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sumcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# sumcoind binary #
+sumcoind_SOURCES = bitcoind.cpp
+sumcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sumcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sumcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sumcashd_SOURCES += bitcoind-res.rc
+sumcoind_SOURCES += bitcoind-res.rc
 endif
 
-sumcashd_LDADD = \
+sumcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -557,40 +557,40 @@ sumcashd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-sumcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+sumcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# sumcash-cli binary #
-sumcash_cli_SOURCES = bitcoin-cli.cpp
-sumcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-sumcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sumcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# sumcoin-cli binary #
+sumcoin_cli_SOURCES = bitcoin-cli.cpp
+sumcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+sumcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sumcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sumcash_cli_SOURCES += bitcoin-cli-res.rc
+sumcoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-sumcash_cli_LDADD = \
+sumcoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-sumcash_cli_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+sumcoin_cli_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# sumcash-tx binary #
-sumcash_tx_SOURCES = \
+# sumcoin-tx binary #
+sumcoin_tx_SOURCES = \
   bitcoin-tx.cpp \
   timedatadummy.cpp
-sumcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sumcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sumcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+sumcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sumcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sumcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sumcash_tx_SOURCES += bitcoin-tx-res.rc
+sumcoin_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-sumcash_tx_LDADD = \
+sumcoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -598,20 +598,20 @@ sumcash_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-sumcash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+sumcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoin-wallet binary #
-sumcash_wallet_SOURCES = bitcoin-wallet.cpp
-sumcash_wallet_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-sumcash_wallet_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-sumcash_wallet_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+sumcoin_wallet_SOURCES = bitcoin-wallet.cpp
+sumcoin_wallet_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sumcoin_wallet_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sumcoin_wallet_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sumcash_wallet_SOURCES += bitcoin-wallet-res.rc
+sumcoin_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 
-sumcash_wallet_LDADD = \
+sumcoin_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_SERVER) \
@@ -627,22 +627,22 @@ sumcash_wallet_LDADD = \
   $(LIBSECP256K1) \
   $(LIBUNIVALUE)
 
-sumcash_wallet_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(MINIUPNPC_LIBS) $(ZMQ_LIBS)
+sumcoin_wallet_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(CRYPTO_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(MINIUPNPC_LIBS) $(ZMQ_LIBS)
 #
 
-# sumcashconsensus library #
+# sumcoinconsensus library #
 if BUILD_BITCOIN_LIBS
 include_HEADERS = script/bitcoinconsensus.h
-libsumcashconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_a_SOURCES) $(libbitcoin_consensus_a_SOURCES)
+libsumcoinconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbitcoin_crypto_base_a_SOURCES) $(libbitcoin_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libsumcashconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libsumcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libsumcashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libsumcashconsensus_la_LIBADD = $(LIBSECP256K1)
-libsumcashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libsumcashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libsumcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libsumcoinconsensus_la_LIBADD = $(LIBSECP256K1)
+libsumcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libsumcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

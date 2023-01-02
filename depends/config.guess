@@ -1288,10 +1288,10 @@ EOF
 		echo mips-unknown-sysv"$UNAME_RELEASE"
 	fi
 	exit ;;
-    BeBox:BeOS:*:*)	# BeOS running on hardware made by Be, SUMC only.
+    BeBox:BeOS:*:*)	# BeOS running on hardware made by Be, SUM only.
 	echo powerpc-be-beos
 	exit ;;
-    BeMac:BeOS:*:*)	# BeOS running on Mac or Mac clone, SUMC only.
+    BeMac:BeOS:*:*)	# BeOS running on Mac or Mac clone, SUM only.
 	echo powerpc-apple-beos
 	exit ;;
     BePC:BeOS:*:*)	# BeOS running on Intel PC compatible.

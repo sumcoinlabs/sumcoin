@@ -62,12 +62,12 @@
         <translation>Mottager adresser</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dette er dine Sumcash adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dette er dine Sumcoin adresser for å sende  å sende betalinger. Husk å sjekke beløp og mottager adresser før du sender mynter.</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dette er dine Sumcash adresse for å motta betalinger. Det er anbefalt å bruke en ny mottager adresse for hver transaksjon.</translation>
+        <source>These are your Sumcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dette er dine Sumcoin adresse for å motta betalinger. Det er anbefalt å bruke en ny mottager adresse for hver transaksjon.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -180,8 +180,8 @@
         <translation>Lommeboken er kryptert</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your sumcashs from being stolen by malware infecting your computer.</source>
-        <translation>%1 vil nå lukkes for å fullføre krypteringsprosessen. Husk at å kryptere lommeboken ikke kan beskytte dine sumcash fullstendig fra å bli stjålet av skadelig programvare som har infisert datamaskinen din.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your sumcoins from being stolen by malware infecting your computer.</source>
+        <translation>%1 vil nå lukkes for å fullføre krypteringsprosessen. Husk at å kryptere lommeboken ikke kan beskytte dine sumcoin fullstendig fra å bli stjålet av skadelig programvare som har infisert datamaskinen din.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -338,8 +338,8 @@
         <translation>Reindekserer blokker på disken</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Send mynter til en Sumcash adresse</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Send mynter til en Sumcoin adresse</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,8 +362,8 @@
         <translation>&amp;Verifiser meldingen...</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -390,12 +390,12 @@
         <translation>Krypter de private nøklene som tilhører lommeboken din</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Signer meldingene med Sumcash adresse for å bevise at diu eier dem</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Signer meldingene med Sumcoin adresse for å bevise at diu eier dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt Sumcash adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verifiser meldinger for å sikre at de ble signert med en angitt Sumcoin adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -414,8 +414,8 @@
         <translation>Hjelpelinje for fliker</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Be om betalinger (genererer QR-koder og sumcash-URIer)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Be om betalinger (genererer QR-koder og sumcoin-URIer)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>Vis lista over brukte mottakeradresser og merkelapper</translation>
     </message>
     <message>
-        <source>Open a sumcash: URI or payment request</source>
-        <translation>Åpne en sumcash: URI eller betalingsforespørsel</translation>
+        <source>Open a sumcoin: URI or payment request</source>
+        <translation>Åpne en sumcoin: URI eller betalingsforespørsel</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -466,8 +466,8 @@
         <translation>Oppdatert</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
-        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige Sumcash-kommandolinjealternativer</translation>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
+        <translation>Vis %1-hjelpemeldingen for å få en liste over mulige Sumcoin-kommandolinjealternativer</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -535,8 +535,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Error</source>

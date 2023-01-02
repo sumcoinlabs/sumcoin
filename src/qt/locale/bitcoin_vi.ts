@@ -66,12 +66,12 @@
         <translation>Địa chỉ đang nhận</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Đây là những địa chỉ đang thực hiện thanh toán. Luôn kiểm tra số lượng và địa chỉ nhận trước khi gửi coins.</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
-        <translation>Những địa chỉ Sumcash này để bạn nhận thanh toán. Sử dụng  'Tạo địa chỉ nhận mới'</translation>
+        <source>These are your Sumcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
+        <translation>Những địa chỉ Sumcoin này để bạn nhận thanh toán. Sử dụng  'Tạo địa chỉ nhận mới'</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -360,12 +360,12 @@
         <translation>Mã hóa private key thuộc về ví của bạn</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Đăng ký lời nhắn với địa chỉ Sumcash của bạn để chứng minh quyền sở hữu chúng</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Đăng ký lời nhắn với địa chỉ Sumcoin của bạn để chứng minh quyền sở hữu chúng</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Xác minh lời nhắn để chắc chắn đã được đăng ký với địa chỉ Sumcash xác định</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Xác minh lời nhắn để chắc chắn đã được đăng ký với địa chỉ Sumcoin xác định</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -384,8 +384,8 @@
         <translation>Các thanh công cụ</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Yêu cầu thanh toán (tạo QR code và sumcash: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Yêu cầu thanh toán (tạo QR code và sumcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -400,8 +400,8 @@
         <translation>&amp;Tùy chỉnh Command-line</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Sumcash network</source>
-        <translation><numerusform>%n kết nối đến Sumcash network</numerusform></translation>
+        <source>%n active connection(s) to Sumcoin network</source>
+        <translation><numerusform>%n kết nối đến Sumcoin network</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -578,8 +578,8 @@
         <translation>Ví thì &lt;b&gt;encrypted&lt;/b&gt; và hiện tại &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Sumcash can no longer continue safely and will quit.</source>
-        <translation>Một lỗi nghiêm trọng vừa xảy ra. Sumcash có thể không còn tiếp tục an toàn và sẽ bị bỏ.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>Một lỗi nghiêm trọng vừa xảy ra. Sumcoin có thể không còn tiếp tục an toàn và sẽ bị bỏ.</translation>
     </message>
 </context>
 <context>
@@ -774,8 +774,8 @@
         <translation>Edit address đang gửi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Sumcash address.</source>
-        <translation>Address đã nhập "%1" không valid Sumcash address.</translation>
+        <source>The entered address "%1" is not a valid Sumcoin address.</source>
+        <translation>Address đã nhập "%1" không valid Sumcoin address.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -867,8 +867,8 @@
         <translation>Sử dụng custom danh mục data:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -879,8 +879,8 @@
         <translation>Gần đúng %1 GB of data sẽ được lưu giữ trong danh mục này.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Sumcash block chain.</source>
-        <translation>%1 sẽ download và lưu trữ một bản copy của Sumcash block chain.</translation>
+        <source>%1 will download and store a copy of the Sumcoin block chain.</source>
+        <translation>%1 sẽ download và lưu trữ một bản copy của Sumcoin block chain.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -910,12 +910,12 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
-        <translation>Giao dịch gần đây có thể chưa được hiển thị, và vì vậy số dư wallet của bạn có thể không dúng. Thông tin này sẽ được làm đúng khi wallet hoàn thành đồng bộ với sumcash network, như chi tiết bên dưới.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
+        <translation>Giao dịch gần đây có thể chưa được hiển thị, và vì vậy số dư wallet của bạn có thể không dúng. Thông tin này sẽ được làm đúng khi wallet hoàn thành đồng bộ với sumcoin network, như chi tiết bên dưới.</translation>
     </message>
     <message>
-        <source>Attempting to spend sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Cố gắng spend các sumcashs bị ảnh hưởng bởi các giao dịch chưa được hiển thị sẽ không được chấp nhận bởi mạng.</translation>
+        <source>Attempting to spend sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Cố gắng spend các sumcoins bị ảnh hưởng bởi các giao dịch chưa được hiển thị sẽ không được chấp nhận bởi mạng.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1091,8 +1091,8 @@
         <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1141,8 +1141,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Kết nối đến Sumcash network qua một nhánh rời SOCKS5 proxy của Tor hidden services.</translation>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Kết nối đến Sumcoin network qua một nhánh rời SOCKS5 proxy của Tor hidden services.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1252,8 +1252,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
-        <translation>Thông tin được hiển thị có thể đã lỗi thời. Cái wallet tự động đồng bộ với Sumcash network sau một connection được thiết lập, nhưng quá trình này vẫn chưa completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Thông tin được hiển thị có thể đã lỗi thời. Cái wallet tự động đồng bộ với Sumcoin network sau một connection được thiết lập, nhưng quá trình này vẫn chưa completed yet.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1327,8 +1327,8 @@
         <translation>Payment request error</translation>
     </message>
     <message>
-        <source>Cannot start sumcash: click-to-pay handler</source>
-        <translation>Không thể khởi tạo sumcash: click-to-pay handler</translation>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
+        <translation>Không thể khởi tạo sumcoin: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1343,8 +1343,8 @@
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</source>
-        <translation>URI không thể phân tích cú pháp! Đây có thể gây nên bởi invalid Sumcash address hoặc URI không đúng định dạng tham số.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</source>
+        <translation>URI không thể phân tích cú pháp! Đây có thể gây nên bởi invalid Sumcoin address hoặc URI không đúng định dạng tham số.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1385,8 +1385,8 @@
         <translation>Số lượng</translation>
     </message>
     <message>
-        <source>Enter a Sumcash address (e.g. %1)</source>
-        <translation>Nhập một Sumcash address (e.g. %1)</translation>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
+        <translation>Nhập một Sumcoin address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1842,8 +1842,8 @@
         <translation>&amp;Message:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
-        <translation>Một optional lời nhắn để đính kèm đến payment request, cái mà sẽ được hiển thị khi mà request đang mở. Lưu ý: Tin nhắn này sẽ không được gửi với payment over the Sumcash network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
+        <translation>Một optional lời nhắn để đính kèm đến payment request, cái mà sẽ được hiển thị khi mà request đang mở. Lưu ý: Tin nhắn này sẽ không được gửi với payment over the Sumcoin network.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2239,8 +2239,8 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation><numerusform>Dự kiến bắt đầu xác nhận trong vòng %n blocks.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Sumcash address</source>
-        <translation>Warning: Invalid Sumcash address</translation>
+        <source>Warning: Invalid Sumcoin address</source>
+        <translation>Warning: Invalid Sumcoin address</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2278,8 +2278,8 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>Chọn mới thì address</translation>
     </message>
     <message>
-        <source>The Sumcash address to send the payment to</source>
-        <translation>The Sumcash address để gửi the payment đến</translation>
+        <source>The Sumcoin address to send the payment to</source>
+        <translation>The Sumcoin address để gửi the payment đến</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2298,8 +2298,8 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>Xóa bỏ entry này</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less sumcashs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>The fee sẽ được khấu trừ từ số tiền đang gửi. Người nhận sẽ receive ít sumcashs hơn bạn gõ vào khoảng trống. Nếu nhiều người gửi được chọn, fee sẽ được chia đều.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less sumcoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>The fee sẽ được khấu trừ từ số tiền đang gửi. Người nhận sẽ receive ít sumcoins hơn bạn gõ vào khoảng trống. Nếu nhiều người gửi được chọn, fee sẽ được chia đều.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2326,8 +2326,8 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>Nhập một label cho cái address này để thêm vào danh sách địa chỉ đã sử dụng</translation>
     </message>
     <message>
-        <source>A message that was attached to the sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</source>
-        <translation>Một tin nhắn được đính kèm với số sumcash: URI mà sẽ được lưu giữ với transaction dành cho tài liệu tham khảo. Lưu ý: Tin nhắn này sẽ không được gửi thông qua Sumcash network.</translation>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <translation>Một tin nhắn được đính kèm với số sumcoin: URI mà sẽ được lưu giữ với transaction dành cho tài liệu tham khảo. Lưu ý: Tin nhắn này sẽ không được gửi thông qua Sumcoin network.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2360,12 +2360,12 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>&amp;Sign Tin nhắn</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sumcashs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>Bạn có thể ký/đồng ý với địa chỉ chứng minh bạn có thể receive sumcashs đã gửi đến chúng. Cẩn thận không ký bất cứ không rõ hay random, như các cuộc tấn công lừa đảo có thể cố lừa bạn ký tên vào danh tính của bạn.. Chỉ ký các bản tuyên bố hoàn chỉnh mà bạn đồng ý.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive sumcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>Bạn có thể ký/đồng ý với địa chỉ chứng minh bạn có thể receive sumcoins đã gửi đến chúng. Cẩn thận không ký bất cứ không rõ hay random, như các cuộc tấn công lừa đảo có thể cố lừa bạn ký tên vào danh tính của bạn.. Chỉ ký các bản tuyên bố hoàn chỉnh mà bạn đồng ý.</translation>
     </message>
     <message>
-        <source>The Sumcash address to sign the message with</source>
-        <translation>The Sumcash address để ký với tin nhắn</translation>
+        <source>The Sumcoin address to sign the message with</source>
+        <translation>The Sumcoin address để ký với tin nhắn</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2396,8 +2396,8 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>Copy hiện tại signature tới system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Sumcash address</source>
-        <translation>Ký tin nhắn để chứng minh bạn sở hữu Sumcash address này</translation>
+        <source>Sign the message to prove you own this Sumcoin address</source>
+        <translation>Ký tin nhắn để chứng minh bạn sở hữu Sumcoin address này</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2420,12 +2420,12 @@ Lưu ý: Vì phí được tính trên cơ sở mỗi byte, nên phí "100 satos
         <translation>Nhập vào address người nhận, tin nhắn (chắc rằng bạn copy line breaks, khoảng trống, tabs, etc. chính xác) và signature bên dưới verify tin nhắn. Cẩn thận không đọc nhiều hơn từ signature so với cái được ký trong bản thân tin nhắn, để tránh bị lừa bới man-in-the-middle tấn công. Lưu ý rằng điều này chỉ chứng nhận nhóm những người nhân với address, nó không thể chứng minh bên gửi có bất kỳ transaction!</translation>
     </message>
     <message>
-        <source>The Sumcash address the message was signed with</source>
-        <translation>The Sumcash address tin nhắn đã ký với</translation>
+        <source>The Sumcoin address the message was signed with</source>
+        <translation>The Sumcoin address tin nhắn đã ký với</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Sumcash address</source>
-        <translation>Verify tin nhắn để chắc rằng nó đã được ký với xác định Sumcash address</translation>
+        <source>Verify the message to ensure it was signed with the specified Sumcoin address</source>
+        <translation>Verify tin nhắn để chắc rằng nó đã được ký với xác định Sumcoin address</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>

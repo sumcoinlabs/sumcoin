@@ -36,7 +36,7 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Sumcash Qt UI.
+/** Utility functions used by the Sumcoin Qt UI.
  */
 namespace GUIUtil
 {
@@ -50,7 +50,7 @@ namespace GUIUtil
     // Set up widget for address
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
 
-    // Parse "sumcash:" URI into recipient object, return true on successful parsing
+    // Parse "sumcoin:" URI into recipient object, return true on successful parsing
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);
     QString formatBitcoinURI(const SendCoinsRecipient &info);

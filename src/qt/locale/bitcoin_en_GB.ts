@@ -66,8 +66,8 @@
         <translation>Receiving addresses</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
@@ -358,8 +358,8 @@
         <translation>Reindexing blocks on disk ...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Send coins to a Sumcash address</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Send coins to a Sumcoin address</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -394,12 +394,12 @@
         <translation>Encrypt the private keys that belong to your wallet</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Sign messages with your Sumcash addresses to prove you own them</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Sign messages with your Sumcoin addresses to prove you own them</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Sumcash addresses</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Verify messages to ensure they were signed with specified Sumcoin addresses</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -418,8 +418,8 @@
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Request payments (generates QR codes and sumcash: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Request payments (generates QR codes and sumcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -434,8 +434,8 @@
         <translation>&amp;Command-line options</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Sumcash network</source>
-        <translation><numerusform>%n active connection to Sumcash network</numerusform><numerusform>%n active connections to Sumcash network</numerusform></translation>
+        <source>%n active connection(s) to Sumcoin network</source>
+        <translation><numerusform>%n active connection to Sumcoin network</numerusform><numerusform>%n active connections to Sumcoin network</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -624,8 +624,8 @@
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Sumcash can no longer continue safely and will quit.</source>
-        <translation>A fatal error occurred. Sumcash can no longer continue safely and will quit.</translation>
+        <source>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</source>
+        <translation>A fatal error occurred. Sumcoin can no longer continue safely and will quit.</translation>
     </message>
 </context>
 <context>
@@ -868,8 +868,8 @@
         <translation>Edit sending address</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Sumcash address.</source>
-        <translation>The entered address "%1" is not a valid Sumcash address.</translation>
+        <source>The entered address "%1" is not a valid Sumcoin address.</source>
+        <translation>The entered address "%1" is not a valid Sumcoin address.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -965,8 +965,8 @@
         <translation>Use a custom data directory:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Discard blocks after verification, except most recent %1 GB (prune)</source>
@@ -981,8 +981,8 @@
         <translation>Approximately %1 GB of data will be stored in this directory.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Sumcash block chain.</source>
-        <translation>%1 will download and store a copy of the Sumcash block chain.</translation>
+        <source>%1 will download and store a copy of the Sumcoin block chain.</source>
+        <translation>%1 will download and store a copy of the Sumcoin block chain.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1016,12 +1016,12 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcash network, as detailed below.</source>
-        <translation>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronising with the Sumcash network, as detailed below.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the sumcoin network, as detailed below.</source>
+        <translation>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronising with the Sumcoin network, as detailed below.</translation>
     </message>
     <message>
-        <source>Attempting to spend sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Attempting to spend Sumcashs that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
+        <source>Attempting to spend sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Attempting to spend Sumcoins that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1217,8 +1217,8 @@
         <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1233,8 +1233,8 @@
         <translation>Allow incomin&amp;g connections</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
-        <translation>Connect to the Sumcash network through a SOCKS5 proxy.</translation>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
+        <translation>Connect to the Sumcoin network through a SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1269,8 +1269,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</translation>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1380,8 +1380,8 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcash network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your Wallet automatically synchronises with the Sumcash Network after a connection is established, but this process has not been completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Sumcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your Wallet automatically synchronises with the Sumcoin Network after a connection is established, but this process has not been completed yet.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1455,8 +1455,8 @@
         <translation>Payment request error</translation>
     </message>
     <message>
-        <source>Cannot start sumcash: click-to-pay handler</source>
-        <translation>Cannot start Sumcash: click-to-pay handler</translation>
+        <source>Cannot start sumcoin: click-to-pay handler</source>
+        <translation>Cannot start Sumcoin: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1483,8 +1483,8 @@
         <translation>Invalid payment address %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</source>
-        <translation>URI cannot be parsed! This can be caused by an invalid Sumcash address or malformed URI parameters.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</source>
+        <translation>URI cannot be parsed! This can be caused by an invalid Sumcoin address or malformed URI parameters.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1525,8 +1525,8 @@
         <translation>Amount</translation>
     </message>
     <message>
-        <source>Enter a Sumcash address (e.g. %1)</source>
-        <translation>Enter a Sumcash address (e.g. %1)</translation>
+        <source>Enter a Sumcoin address (e.g. %1)</source>
+        <translation>Enter a Sumcoin address (e.g. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1986,8 +1986,8 @@
         <translation>&amp;Message:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</source>
-        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcash network.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</source>
+        <translation>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sumcoin network.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2439,8 +2439,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation><numerusform>Estimated to begin confirmation within %n block.</numerusform><numerusform>Estimated to begin confirmation within %n blocks.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Sumcash address</source>
-        <translation>Warning: Invalid Sumcash address</translation>
+        <source>Warning: Invalid Sumcoin address</source>
+        <translation>Warning: Invalid Sumcoin address</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2478,8 +2478,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Choose previously used address</translation>
     </message>
     <message>
-        <source>The Sumcash address to send the payment to</source>
-        <translation>The Sumcash address to send the payment to</translation>
+        <source>The Sumcoin address to send the payment to</source>
+        <translation>The Sumcoin address to send the payment to</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2528,8 +2528,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Enter a label for this address to add it to the list of used addresses</translation>
     </message>
     <message>
-        <source>A message that was attached to the sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</source>
-        <translation>A message that was attached to the sumcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcash network.</translation>
+        <source>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</source>
+        <translation>A message that was attached to the sumcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sumcoin network.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2562,12 +2562,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>&amp;Sign Message</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive sumcashs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>You can sign messages/agreements with your addresses to prove you can receive sumcashs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive sumcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>You can sign messages/agreements with your addresses to prove you can receive sumcoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
     </message>
     <message>
-        <source>The Sumcash address to sign the message with</source>
-        <translation>The Sumcash address to sign the message with</translation>
+        <source>The Sumcoin address to sign the message with</source>
+        <translation>The Sumcoin address to sign the message with</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2598,8 +2598,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Copy the current signature to the system clipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Sumcash address</source>
-        <translation>Sign the message to prove you own this Sumcash address</translation>
+        <source>Sign the message to prove you own this Sumcoin address</source>
+        <translation>Sign the message to prove you own this Sumcoin address</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2622,8 +2622,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</translation>
     </message>
     <message>
-        <source>The Sumcash address the message was signed with</source>
-        <translation>The Sumcash address the message was signed with</translation>
+        <source>The Sumcoin address the message was signed with</source>
+        <translation>The Sumcoin address the message was signed with</translation>
     </message>
     <message>
         <source>The signed message to verify</source>

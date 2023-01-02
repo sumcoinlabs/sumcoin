@@ -266,7 +266,7 @@ WalletCreationStatus CreateWallet(interfaces::Chain& chain, const SecureString& 
 
 const uint256 CWalletTx::ABANDON_HASH(UINT256_ONE());
 
-// sumcash: optional setting to unlock wallet for block minting only;
+// sumcoin: optional setting to unlock wallet for block minting only;
 //         serves to disable the trivial sendmoney when OS account compromised
 bool fWalletUnlockMintOnly = false;
 
@@ -1448,7 +1448,7 @@ bool CWallet::SetWalletFlags(uint64_t overwriteFlags, bool memonly)
 
 int64_t CWalletTx::GetTxTime() const
 {
-    // sumcash: we still have the timestamp, so use it to avoid confusion
+    // sumcoin: we still have the timestamp, so use it to avoid confusion
     if (tx->nTime)
         return tx->nTime;
 
@@ -2188,7 +2188,7 @@ void CWallet::AvailableCoins(interfaces::Chain::Lock& locked_chain, std::vector<
         }
 
         if (nSpendTime > 0 && wtx.tx->nTime > nSpendTime)
-            continue;  // sumcash: timestamp must not exceed spend time
+            continue;  // sumcoin: timestamp must not exceed spend time
 
         if (wtx.IsImmatureCoinBase())
             continue;
@@ -2975,7 +2975,7 @@ bool CWallet::CreateTransaction(interfaces::Chain::Lock& locked_chain, const std
 //                    nFeeRet += nMoveToFee;
 //                }
 
-                // sumcash: sub-cent change is moved to fee
+                // sumcoin: sub-cent change is moved to fee
                 if (nChange > 0 && nChange < MIN_TXOUT_AMOUNT)
                 {
                     nFeeRet += nChange;
@@ -4355,7 +4355,7 @@ void CWallet::ConnectScriptPubKeyManNotifiers()
     }
 }
 
-// sumcash: create coin stake transaction
+// sumcoin: create coin stake transaction
 typedef std::vector<unsigned char> valtype;
 bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew)
 {

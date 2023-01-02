@@ -1,11 +1,11 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=Sumcash (testnet)
-Comment=Desktop allet for Sumcash Cryptocurrency (testnet)
-Comment[de]=Offizieller Client für die Kryptowährung Sumcash (testnet)
-Exec=sumcash-qt -testnet %u
+Name=Sumcoin (testnet)
+Comment=Desktop allet for Sumcoin Cryptocurrency (testnet)
+Comment[de]=Offizieller Client für die Kryptowährung Sumcoin (testnet)
+Exec=sumcoin-qt -testnet %u
 Terminal=false
 Type=Application
-Icon=/usr/share/pixmaps/sumcash-testnet128.png
-MimeType=x-scheme-handler/sumcash;
+Icon=/usr/share/pixmaps/sumcoin-testnet128.png
+MimeType=x-scheme-handler/sumcoin;
 Categories=Application;Network;

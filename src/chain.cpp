@@ -170,7 +170,7 @@ const CBlockIndex* LastCommonAncestor(const CBlockIndex* pa, const CBlockIndex* 
     return pa;
 }
 
-// sumcash: find last block index up to pindex
+// sumcoin: find last block index up to pindex
 const CBlockIndex* GetLastBlockIndex(const CBlockIndex* pindex, bool fProofOfStake)
 {
     while (pindex && pindex->pprev && (pindex->IsProofOfStake() != fProofOfStake))

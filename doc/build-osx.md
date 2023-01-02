@@ -43,17 +43,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see [*Disable-wallet mode*](/doc/build-osx.md#disable-wallet-mode)).
 
-Build Sumcash
+Build Sumcoin
 
-1. Clone the Sumcash source code and cd into `sumcash`
+1. Clone the Sumcoin source code and cd into `sumcoin`
     ```shell
-    git clone https://github.com/sumcash/sumcash
-    cd sumcash
+    git clone https://github.com/sumcoin/sumcoin
+    cd sumcoin
     ```
 
-2.  Build Sumcash:
+2.  Build Sumcoin:
 
-    Configure and build the headless Sumcash binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Sumcoin binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
     ```shell
@@ -84,30 +84,30 @@ In this case there is no dependency on Berkeley DB 4.8.
 Mining is also possible in disable-wallet mode using the `getblocktemplate` RPC call.
 
 ## Running
-Sumcash is now available at `./src/sumcashd`
+Sumcoin is now available at `./src/sumcoind`
 
 Before running, you may create an empty configuration file:
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/Sumcash"
+mkdir -p "/Users/${USER}/Library/Application Support/Sumcoin"
 
-touch "/Users/${USER}/Library/Application Support/Sumcash/sumcash.conf"
+touch "/Users/${USER}/Library/Application Support/Sumcoin/sumcoin.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Sumcash/sumcash.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/Sumcoin/sumcoin.conf"
 ```
 
-The first time you run sumcashd, it will start downloading the blockchain. This process could
+The first time you run sumcoind, it will start downloading the blockchain. This process could
 take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 ```shell
-tail -f $HOME/Library/Application\ Support/Sumcash/debug.log
+tail -f $HOME/Library/Application\ Support/Sumcoin/debug.log
 ```
 
 ## Other commands:
 ```shell
-./src/sumcashd -daemon      # Starts the sumcash daemon.
-./src/sumcash-cli --help    # Outputs a list of command-line options.
-./src/sumcash-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/sumcoind -daemon      # Starts the sumcoin daemon.
+./src/sumcoin-cli --help    # Outputs a list of command-line options.
+./src/sumcoin-cli help      # Outputs a list of RPC commands when the daemon is running.
 ```
 
 ## Notes

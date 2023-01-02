@@ -90,7 +90,7 @@ std::map<CNetAddr, LocalServiceInfo> mapLocalHost GUARDED_BY(cs_mapLocalHost);
 static bool vfLimited[NET_MAX] GUARDED_BY(cs_mapLocalHost) = {};
 std::string strSubVersion;
 
-// sumcash: temperature to measure how many PoS headers have been sent by this client
+// sumcoin: temperature to measure how many PoS headers have been sent by this client
 std::map<CNetAddr, int32_t> mapPoSTemperature;
 void CConnman::AddOneShot(const std::string& strDest)
 {

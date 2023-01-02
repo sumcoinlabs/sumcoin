@@ -1,8 +1,8 @@
 [Unit]
-Description=Sumcash daemon - tor
+Description=Sumcoin daemon - tor
 After=network.target
 Wants=tor.service
-Conflicts=sumcashd@%i.service
+Conflicts=sumcoind@%i.service
 
 [Service]
 User=%i
@@ -11,7 +11,7 @@ PermissionsStartOnly=true
 Type=forking
 Restart=always
 RestartSec=15
-ExecStart=/usr/bin/sumcashd -daemon -proxy=127.0.0.1:9050
+ExecStart=/usr/bin/sumcoind -daemon -proxy=127.0.0.1:9050
 TimeoutStopSec=60s
 TimeoutStartSec=2s
 

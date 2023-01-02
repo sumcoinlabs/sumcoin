@@ -1,8 +1,8 @@
 #include <windows.h>             // needed for VERSIONINFO
 #include "clientversion.h"       // holds the needed client version information
 
-#define VER_PRODUCTVERSION     SUMCASH_VERSION_MAJOR,SUMCASH_VERSION_MINOR,SUMCASH_VERSION_REVISION,SUMCASH_VERSION_BUILD
-#define VER_PRODUCTVERSION_STR STRINGIZE(SUMCASH_VERSION_MAJOR) "." STRINGIZE(SUMCASH_VERSION_MINOR) "." STRINGIZE(SUMCASH_VERSION_REVISION) "." STRINGIZE(SUMCASH_VERSION_BUILD)
+#define VER_PRODUCTVERSION     SUMCOIN_VERSION_MAJOR,SUMCOIN_VERSION_MINOR,SUMCOIN_VERSION_REVISION,SUMCOIN_VERSION_BUILD
+#define VER_PRODUCTVERSION_STR STRINGIZE(SUMCOIN_VERSION_MAJOR) "." STRINGIZE(SUMCOIN_VERSION_MINOR) "." STRINGIZE(SUMCOIN_VERSION_REVISION) "." STRINGIZE(SUMCOIN_VERSION_BUILD)
 #define VER_FILEVERSION        VER_PRODUCTVERSION
 #define VER_FILEVERSION_STR    VER_PRODUCTVERSION_STR
 
@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Sumcash"
-            VALUE "FileDescription",    "sumcashd (Sumcash node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Sumcoin"
+            VALUE "FileDescription",    "sumcoind (Sumcoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "sumcashd"
+            VALUE "InternalName",       "sumcoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "sumcashd.exe"
-            VALUE "ProductName",        "sumcashd"
+            VALUE "OriginalFilename",   "sumcoind.exe"
+            VALUE "ProductName",        "sumcoind"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

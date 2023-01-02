@@ -1,9 +1,9 @@
 Shared Libraries
 ================
 
-## sumcashconsensus
+## sumcoinconsensus
 
-The purpose of this library is to make the verification functionality that is critical to Sumcash's consensus available to other applications, e.g. to language bindings.
+The purpose of this library is to make the verification functionality that is critical to Sumcoin's consensus available to other applications, e.g. to language bindings.
 
 ### API
 

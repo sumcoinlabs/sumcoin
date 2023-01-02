@@ -66,12 +66,12 @@
         <translation>ที่อยู่ในการรับ</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>ที่อยู่ Sumcash ของคุณสำหรับการส่งการชำระเงิน โปรดตรวจสอบจำนวนเงินและที่อยู่รับก่อนที่จะส่งเหรียญ</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>ที่อยู่ Sumcoin ของคุณสำหรับการส่งการชำระเงิน โปรดตรวจสอบจำนวนเงินและที่อยู่รับก่อนที่จะส่งเหรียญ</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>ที่อยู่ Sumcash ของคุณสำหรับการรับเงิน แนะนำให้ใช้ที่อยู่รับใหม่สำหรับแต่ละธุรกรรม</translation>
+        <source>These are your Sumcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>ที่อยู่ Sumcoin ของคุณสำหรับการรับเงิน แนะนำให้ใช้ที่อยู่รับใหม่สำหรับแต่ละธุรกรรม</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -255,11 +255,11 @@
     </message>
     <message>
         <source>&amp;Sending addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะส่ง sumcash</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะส่ง sumcoin</translation>
     </message>
     <message>
         <source>&amp;Receiving addresses...</source>
-        <translation>&amp;ที่เก็บเงิน ที่จะรับ sumcash</translation>
+        <translation>&amp;ที่เก็บเงิน ที่จะรับ sumcoin</translation>
     </message>
     <message>
         <source>Open &amp;URI...</source>
@@ -274,8 +274,8 @@
         <translation>กำลังทำดัชนี ที่เก็บบล็อก ใหม่ ในดิสก์...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>ส่ง coins ไปยัง ที่เก็บ Sumcash</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>ส่ง coins ไปยัง ที่เก็บ Sumcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -290,8 +290,8 @@
         <translation>&amp;ยืนยันข้อความ...</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -318,12 +318,12 @@
         <translation>เข้ารหัส private keys/ รหัสส่วนตัว สำหรับกระเป๋าเงินของท่าน</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Sumcash เพื่อแสดงว่าท่านเป็นเจ้าของ sumcash นี้จริง</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>เซ็นชื่อด้วยข้อความ ที่เก็บ Sumcoin เพื่อแสดงว่าท่านเป็นเจ้าของ sumcoin นี้จริง</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>ตรวจสอบ ข้อความ เพื่อให้แน่ใจว่า การเซ็นต์ชื่อ ด้วยที่เก็บ Sumcash แล้ว</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>ตรวจสอบ ข้อความ เพื่อให้แน่ใจว่า การเซ็นต์ชื่อ ด้วยที่เก็บ Sumcoin แล้ว</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -342,24 +342,24 @@
         <translation>แถบเครื่องมือ</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ sumcash: URIs)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>เรียกเก็บ การชำระเงิน (สร้าง QR codes และ sumcoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง sumcash ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะส่ง sumcoin ออก และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
-        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ sumcash เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
+        <translation>แสดงรายการ ที่เก็บเงินที่จะรับ sumcoin เข้า และป้ายชื่อ ที่ใช้ไปแล้ว</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;ตัวเลือก Command-line</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Sumcash network</source>
-        <translation><numerusform>%n ช่องการเชื่อมต่อที่ใช้งานได้ เพื่อเชื่อมกับเครือข่าย Sumcash</numerusform></translation>
+        <source>%n active connection(s) to Sumcoin network</source>
+        <translation><numerusform>%n ช่องการเชื่อมต่อที่ใช้งานได้ เพื่อเชื่อมกับเครือข่าย Sumcoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -402,8 +402,8 @@
         <translation>ทันสมัย</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Sumcash command-line options</source>
-        <translation>แสดง %1 ข้อความช่วยเหลือ เพื่อแสดงรายการ ตัวเลือกที่เป็นไปได้สำหรับ Sumcash command-line</translation>
+        <source>Show the %1 help message to get a list with possible Sumcoin command-line options</source>
+        <translation>แสดง %1 ข้อความช่วยเหลือ เพื่อแสดงรายการ ตัวเลือกที่เป็นไปได้สำหรับ Sumcoin command-line</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -661,8 +661,8 @@
         <translation>ใช้ไดเร็กทอรี่ข้อมูลที่ตั้งค่าเอง:</translation>
     </message>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Approximately %1 GB of data will be stored in this directory.</source>
@@ -781,16 +781,16 @@
         <translation>&amp;ใช้เงินทอนที่ยังไม่ยืนยัน</translation>
     </message>
     <message>
-        <source>Automatically open the Sumcash client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>เปิด Sumcash ไคล์เอ็นท์พอร์ต/client port บน router โดยอัตโนมัติ วิธีนี้ใช้ได้เมื่อ router สนับสนุน UPnP และสถานะเปิดใช้งาน</translation>
+        <source>Automatically open the Sumcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>เปิด Sumcoin ไคล์เอ็นท์พอร์ต/client port บน router โดยอัตโนมัติ วิธีนี้ใช้ได้เมื่อ router สนับสนุน UPnP และสถานะเปิดใช้งาน</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>จองพอร์ต โดยใช้ &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a SOCKS5 proxy.</source>
-        <translation>เชื่อมต่อกับ Sumcash เน็ตเวิร์ก ผ่านพร็อกซี่แบบ SOCKS5</translation>
+        <source>Connect to the Sumcoin network through a SOCKS5 proxy.</source>
+        <translation>เชื่อมต่อกับ Sumcoin เน็ตเวิร์ก ผ่านพร็อกซี่แบบ SOCKS5</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -825,8 +825,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Sumcash network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>เชื่อมต่อกับ เครือข่าย Sumcash ผ่านทาง พร้อกซี่ SOCKS5 แยกต่างหาก สำหรับ Tor เซอร์วิส</translation>
+        <source>Connect to the Sumcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>เชื่อมต่อกับ เครือข่าย Sumcoin ผ่านทาง พร้อกซี่ SOCKS5 แยกต่างหาก สำหรับ Tor เซอร์วิส</translation>
     </message>
     <message>
         <source>&amp;Window</source>

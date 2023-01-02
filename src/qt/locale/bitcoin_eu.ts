@@ -66,8 +66,8 @@
         <translation>Helbideak jasotzen</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hauek dira zuk dirua jaso dezaketen Sumcash helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hauek dira zuk dirua jaso dezaketen Sumcoin helbideak. Egiaztatu beti diru-kopurua eta dirua jasoko duen helbidea zuzen egon daitezen, txanponak bidali baino lehen.</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>

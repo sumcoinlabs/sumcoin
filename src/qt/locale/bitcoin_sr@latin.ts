@@ -66,8 +66,8 @@
         <translation>Adresa na koju se prima</translation>
     </message>
     <message>
-        <source>These are your Sumcash addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su Vaše Sumcash adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
+        <source>These are your Sumcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su Vaše Sumcoin adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
     </message>
     <message>
         <source>These are your Bitcoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.</source>
@@ -342,8 +342,8 @@
         <translation>Ponovo obeležavam blokove na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Sumcash address</source>
-        <translation>Pošalji novčiće na Sumcash adresu</translation>
+        <source>Send coins to a Sumcoin address</source>
+        <translation>Pošalji novčiće na Sumcoin adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -378,12 +378,12 @@
         <translation>Enkriptuj privatne ključeve novčanika</translation>
     </message>
     <message>
-        <source>Sign messages with your Sumcash addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim Sumcash adresama da biste dokazali njihovo vlasništvo</translation>
+        <source>Sign messages with your Sumcoin addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim Sumcoin adresama da biste dokazali njihovo vlasništvo</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Sumcash addresses</source>
-        <translation>Proverite poruke da biste utvrdili sa kojim Sumcash adresama su potpisane</translation>
+        <source>Verify messages to ensure they were signed with specified Sumcoin addresses</source>
+        <translation>Proverite poruke da biste utvrdili sa kojim Sumcoin adresama su potpisane</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -402,8 +402,8 @@
         <translation>Alatke za tabove</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and sumcash: URIs)</source>
-        <translation>Zatražite plaćanje (generiše QR kodove i sumcash: URI-e)</translation>
+        <source>Request payments (generates QR codes and sumcoin: URIs)</source>
+        <translation>Zatražite plaćanje (generiše QR kodove i sumcoin: URI-e)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -521,8 +521,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Sumcash</source>
-        <translation>Sumcash</translation>
+        <source>Sumcoin</source>
+        <translation>Sumcoin</translation>
     </message>
     <message>
         <source>Error</source>

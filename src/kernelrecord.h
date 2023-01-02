@@ -1,8 +1,8 @@
-// Copyright (c) 2012-2022 The Sumcash developers
+// Copyright (c) 2012-2022 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef SUMCASH_KERNELRECORD_H
-#define SUMCASH_KERNELRECORD_H
+#ifndef SUMCOIN_KERNELRECORD_H
+#define SUMCOIN_KERNELRECORD_H
 
 #include <uint256.h>
 #include <interfaces/wallet.h>
@@ -53,4 +53,4 @@ protected:
     double prevProbability;
 };
 
-#endif // SUMCASH_KERNELRECORD_H
+#endif // SUMCOIN_KERNELRECORD_H

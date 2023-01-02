@@ -2,7 +2,7 @@ OpenBSD build guide
 ======================
 (updated for OpenBSD 6.4)
 
-This guide describes how to build sumcashd and command-line utilities on OpenBSD.
+This guide describes how to build sumcoind and command-line utilities on OpenBSD.
 
 OpenBSD is most commonly used as a server OS, so this guide does not contain instructions for building the GUI.
 
@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.16)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/sumcash/sumcash.git
+git clone https://github.com/sumcoin/sumcoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
@@ -48,7 +48,7 @@ from the root of the repository. Then set `BDB_PREFIX` for the next section:
 export BDB_PREFIX="$PWD/db4"
 ```
 
-### Building Sumcash
+### Building Sumcoin
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 
