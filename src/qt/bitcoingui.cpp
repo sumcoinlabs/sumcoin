@@ -420,7 +420,7 @@ void BitcoinGUI::createActions()
     openChatroomAction->setStatusTip(tr("Open the Sumcoin Discord chat in a web browser."));
 
     openForumAction = new QAction(tr("&Forum"), this);
-    openForumAction->setStatusTip(tr("Open talk.sumcoin.net in a web browser."));
+    openForumAction->setStatusTip(tr("Open talk.sumcoin.org in a web browser."));
 
     connect(quitAction, &QAction::triggered, qApp, QApplication::quit);
     connect(aboutAction, &QAction::triggered, this, &BitcoinGUI::aboutClicked);
@@ -954,11 +954,11 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
 }
 
 void BitcoinGUI::openWeb() {
-    QDesktopServices::openUrl(QUrl("https://sumcoin.net"));
+    QDesktopServices::openUrl(QUrl("https://sumcoin.org"));
 }
 
 void BitcoinGUI::openDonate() {
-    QDesktopServices::openUrl(QUrl("https://www.sumcoin.net/foundation"));
+    QDesktopServices::openUrl(QUrl("https://www.sumcoin.org/foundation"));
 }
 
 void BitcoinGUI::openChatroom() {
@@ -966,7 +966,7 @@ void BitcoinGUI::openChatroom() {
 }
 
 void BitcoinGUI::openForum() {
-    QDesktopServices::openUrl(QUrl("https://talk.sumcoin.net"));
+    QDesktopServices::openUrl(QUrl("https://talk.sumcoin.org"));
 }
 
 #endif // ENABLE_WALLET

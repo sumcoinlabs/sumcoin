@@ -4,7 +4,7 @@ Setup
 ---------------------
 Sumcoin is the original Sumcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Sumcoin transactions (which is currently less than one gigabyte); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Sumcoin, visit [sumcoin.net](https://sumcoin.net/download).
+To download Sumcoin, visit [sumcoin.org](https://sumcoin.org/download).
 
 Running
 ---------------------
@@ -27,7 +27,7 @@ Drag Sumcoin to your applications folder, and then run Sumcoin.
 
 ### Need Help?
 
-* See the documentation at the [Sumcoin Wiki](https://docs.sumcoin.net/)
+* See the documentation at the [Sumcoin Wiki](https://docs.sumcoin.org/)
 for help and more information.
 * Sumcoin is very similar to bitcoin, so you can use their wiki [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page).
 * Ask for help on [#general](https://sumcoin.chat/) on sumcoin.chat.
@@ -64,7 +64,7 @@ The Sumcoin repo's [root README](/README.md) contains relevant information on th
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Sumcoin](https://talk.sumcoin.net/) forums.
+* Discuss on the [Sumcoin](https://talk.sumcoin.org/) forums.
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

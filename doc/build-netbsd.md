@@ -22,7 +22,7 @@ libtool
 pkg-config
 python37
 
-git clone https://github.com/sumcoin/sumcoin.git
+git clone https://github.com/sumcoinlabs/sumcoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.

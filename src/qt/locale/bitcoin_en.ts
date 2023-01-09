@@ -491,7 +491,7 @@
     </message>
     <message>
         <location line="+1"/>
-        <source>Open https://talk.sumcoin.net in a web browser.</source>
+        <source>Open https://talk.sumcoin.org in a web browser.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
