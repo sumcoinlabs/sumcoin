@@ -259,8 +259,8 @@ public:
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         vSeeds.empty();
-        // vSeeds.emplace_back("tseed.sumcoin.net");
-        // vSeeds.emplace_back("tseed2.sumcoin.net");
+        // vSeeds.emplace_back("tseed.sumcoin.org");
+        // vSeeds.emplace_back("tseed2.sumcoin.org");
         // vSeeds.emplace_back("tseed.sumcoin-library.org");
         // vSeeds.emplace_back("testseed.sumcoin.info");
 

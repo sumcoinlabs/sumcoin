@@ -33,7 +33,7 @@ packages:
 - "ca-certificates"
 - "python3"
 remotes:
-- "url": "https://github.com/sumcoin/sumcoin.git"
+- "url": "https://github.com/sumcoinlabs/sumcoin.git"
   "dir": "sumcoin"
 files: []
 script: |

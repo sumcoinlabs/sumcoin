@@ -1,6 +1,6 @@
 <!-- This issue tracker is only for technical issues related to reference implementation of the Sumcoin.
 
-General Sumcoin questions and/or support requests are best directed to the Sumcoin Forum: https://talk.sumcoin.net/.
+General Sumcoin questions and/or support requests are best directed to the Sumcoin Forum: https://talk.sumcoin.org/.
 
 <!-- Describe the issue -->
 <!--- What behavior did you expect? -->

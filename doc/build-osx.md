@@ -47,7 +47,7 @@ Build Sumcoin
 
 1. Clone the Sumcoin source code and cd into `sumcoin`
     ```shell
-    git clone https://github.com/sumcoin/sumcoin
+    git clone https://github.com/sumcoinlabs/sumcoin
     cd sumcoin
     ```
 
