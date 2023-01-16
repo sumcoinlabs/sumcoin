@@ -322,7 +322,7 @@ public:
         consensus.BIP34Height = 500; // BIP34 activated on regtest (Used in functional tests)
         consensus.BIP34Hash = uint256();
         consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24
-        consensus.bnInitialHashTarget = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32
+        consensus.bnInitialHashTarget = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //28
 
         consensus.nTargetTimespan = 7 * 24 * 60 * 60; // two weeks
         consensus.nStakeTargetSpacing = 1 * 60; // 10-minute block spacing
@@ -340,10 +340,10 @@ public:
         consensus.nMinerConfirmationWindow = 144; // Faster than normal for regtest (144 instead of 2016)
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a");
+        consensus.defaultAssumeValid = uint256S("0x0000001bd1c72d5de6244be7b0e27115f513ee37db56f44724761d99fd29dd5b");
 
         pchMessageStart[0] = 0xf1;
         pchMessageStart[1] = 0xe6;
@@ -355,11 +355,11 @@ public:
         m_assumed_blockchain_size = 0;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579200, 22166755, 0x1e00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1522621200, 1522621200, 186231177u, 0x1e00ffff, 1, 0);
 
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a"));
-        assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000001bd1c72d5de6244be7b0e27115f513ee37db56f44724761d99fd29dd5b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x2e655a309a2a8c29a2a13e1ea9f0706a3ac7ef20116b588aa316b4cb270a25d6"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -368,7 +368,7 @@ public:
         m_is_mockable_chain = true;
         checkpointData = {
             {
-                {0, uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f")},
+                {0, uint256S("0x0000001bd1c72d5de6244be7b0e27115f513ee37db56f44724761d99fd29dd5b")},
             }
         };
 
