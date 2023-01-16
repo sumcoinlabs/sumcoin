@@ -215,7 +215,7 @@ public:
         strNetworkID = CBaseChainParams::TESTNET;
         // consensus.BIP16Height = 0;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0x00");
+        consensus.BIP34Hash = uint256S("0x000000081ff5ec210223022a751165f1b32d61c9e1cb83dfc927c2bc56ae8fb9");
         consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24
         consensus.bnInitialHashTarget = uint256S("0000000fffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //28
         // consensus.powLimit =            uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~arith_uint256(0) >> 32;
@@ -235,10 +235,10 @@ public:
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000000");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000002e5eb15d16e78e1d75faca882e7eff7552cc762e1dac2f669d4b72338a"); //0
+        consensus.defaultAssumeValid = uint256S("0x000000081ff5ec210223022a751165f1b32d61c9e1cb83dfc927c2bc56ae8fb9"); //0
 
         pchMessageStart[0] = 0xf1;
         pchMessageStart[1] = 0xe6;
@@ -250,7 +250,7 @@ public:
         m_assumed_blockchain_size = 2;
         m_assumed_chain_state_size = 0;
 
-        genesis = CreateGenesisBlock(1554579000, 1554579200, 22166755u, 0x1e00ffff, 1, 0);
+        genesis = CreateGenesisBlock(1522621200, 1522621200, 22166755u, 0x1e00ffff, 1, 0);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000000081ff5ec210223022a751165f1b32d61c9e1cb83dfc927c2bc56ae8fb9"));
         assert(genesis.hashMerkleRoot == uint256S("0xd87e2823fecc64d04b2475a48d8ae4dba9d0e46addaaaa9150b6a666e555f3b4"));
@@ -283,7 +283,7 @@ public:
 
         checkpointData = {
             {
-                {     0, uint256S("0x000002cea8efe2ac2fb8092e60c40e43d96c196852e84794a2ec505612836f8f")},
+                {     0, uint256S("0x000000081ff5ec210223022a751165f1b32d61c9e1cb83dfc927c2bc56ae8fb9")},
             }
         };
 
