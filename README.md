@@ -236,6 +236,12 @@ sudo chmod 600 /swapfile;
 sudo mkswap /swapfile;
 sudo swapon /swapfile;
 ```
+### Make it persistent 
+```
+sudo nano /etc/fstab
+```
+### add line:
+/swapfile  swap  swap  defaults  0  0
 
 
 ### Dependencies (paste all 3 seperately):
