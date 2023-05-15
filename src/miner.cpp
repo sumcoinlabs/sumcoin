@@ -556,7 +556,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
                     }
             }
 
-            while (GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()) < 0.596)
+            while (GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()) < 0.996)
             {
                 LogPrintf("Minter thread sleeps while sync at %f\n", GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()));
                 if (strMintWarning != strMintSyncMessage) {

@@ -115,7 +115,7 @@ public:
         consensus.nStakeMinAge = 60 * 60 * 24 * 1; // 1 day minimum age for coin age
         consensus.nStakeMaxAge = 60 * 60 * 24 * 90; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
         consensus.nModifierInterval = 6 * 60; // Modifier interval: time to elapse before new modifier is computed
-        consensus.nCoinbaseMaturity = 0;
+        consensus.nCoinbaseMaturity = 100;
         // consensus.SegwitHeight = 1001;
 
         consensus.fPowAllowMinDifficultyBlocks = false;
