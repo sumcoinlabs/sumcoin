@@ -20,31 +20,31 @@
 using namespace std;
 
 // Protocol switch time of v0.3 kernel protocol
-unsigned int nProtocolV03SwitchTime     = 1685593200;  //1680334356; // block 1013 = 1561324541 + 1000; // 1557013395 (when switch occurs but is breaking for now)
-unsigned int nProtocolV03TestSwitchTime = 1685593200; //1680334356;  // 1561324541 + 1000;
+unsigned int nProtocolV03SwitchTime     = 1684132800;  //1680334356; // block 1013 = 1561324541 + 1000; // 1557013395 (when switch occurs but is breaking for now)
+unsigned int nProtocolV03TestSwitchTime = 1684132800; //1680334356;  // 1561324541 + 1000; 53244
 // Protocol switch time of v0.4 kernel protocol
-unsigned int nProtocolV04SwitchTime     = 1685646444 + 1000;
-unsigned int nProtocolV04TestSwitchTime = 1685646444 + 1000;
+unsigned int nProtocolV04SwitchTime     = 1684186044 + 1000;
+unsigned int nProtocolV04TestSwitchTime = 1684186044 + 1000;
 // Protocol switch time of v0.5 kernel protocol
-unsigned int nProtocolV05SwitchTime     = 1685646444 + 2000;
-unsigned int nProtocolV05TestSwitchTime = 1685646444 + 2000;
+unsigned int nProtocolV05SwitchTime     = 1684186044 + 2000;
+unsigned int nProtocolV05TestSwitchTime = 1684186044 + 2000;
 // Protocol switch time of v0.6 kernel protocol
 // supermajority hardfork: actual fork will happen later than switch time
-const unsigned int nProtocolV06SwitchTime     = 1685646444 + 3000; // Tue 12 Dec 03:40:00 UTC 2017
-const unsigned int nProtocolV06TestSwitchTime = 1685646444 + 3000; // Tue 17 Oct 00:00:00 UTC 2017
+const unsigned int nProtocolV06SwitchTime     = 1684186044 + 3000; // Tue 12 Dec 03:40:00 UTC 2017
+const unsigned int nProtocolV06TestSwitchTime = 1684186044 + 3000; // Tue 17 Oct 00:00:00 UTC 2017
 // Protocol switch time for 0.7 kernel protocol
-const unsigned int nProtocolV07SwitchTime     = 1685646444 + 4000; // Tue 12 Mar 12:00:00 UTC 2019
-const unsigned int nProtocolV07TestSwitchTime = 1685646444 + 4000; // Tue 06 Nov 12:00:00 UTC 2018
+const unsigned int nProtocolV07SwitchTime     = 1684186044 + 4000; // Tue 12 Mar 12:00:00 UTC 2019
+const unsigned int nProtocolV07TestSwitchTime = 1684186044 + 4000; // Tue 06 Nov 12:00:00 UTC 2018
 // Switch time for new BIPs from bitcoin 0.16.x
-const uint32_t nBTC16BIPsSwitchTime           = 1685646444 + 5000; // Tue 01 Oct 12:00:00 UTC 2019
-const uint32_t nBTC16BIPsTestSwitchTime       = 1685646444 + 5000; // Tue 09 Apr 12:00:00 UTC 2019
+const uint32_t nBTC16BIPsSwitchTime           = 1684186044 + 5000; // Tue 01 Oct 12:00:00 UTC 2019
+const uint32_t nBTC16BIPsTestSwitchTime       = 1684186044 + 5000; // Tue 09 Apr 12:00:00 UTC 2019
 // Protocol switch time for v0.9 kernel protocol
-const unsigned int nProtocolV09SwitchTime     = 1685646444 + 6000; // Mon  8 Jun 12:00:00 UTC 2020
-const unsigned int nProtocolV09TestSwitchTime = 1685646444 + 6000; // Mon 17 Feb 12:00:00 UTC 2020
+const unsigned int nProtocolV09SwitchTime     = 1684186044 + 6000; // Mon  8 Jun 12:00:00 UTC 2020
+const unsigned int nProtocolV09TestSwitchTime = 1684186044 + 6000; // Mon 17 Feb 12:00:00 UTC 2020
 
 // Protocol switch time for v10 kernel protocol
-const unsigned int nProtocolV10SwitchTime     = 1685646444 + 7000; // Mon  1 Nov 12:00:00 UTC 2021
-const unsigned int nProtocolV10TestSwitchTime = 1685646444 + 7000; //1680387600 + 7000; // Thu  1 Jul 12:00:00 UTC 2021
+const unsigned int nProtocolV10SwitchTime     = 1684186044 + 7000; // Mon  1 Nov 12:00:00 UTC 2021
+const unsigned int nProtocolV10TestSwitchTime = 1684186044 + 7000; //1680387600 + 7000; // Thu  1 Jul 12:00:00 UTC 2021
 
 
 // Hard checkpoints of stake modifiers to ensure they are deterministic
