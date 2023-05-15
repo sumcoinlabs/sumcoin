@@ -556,7 +556,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
                     }
             }
 
-            while (GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()) < 0.996)
+            while (GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()) < 0.596)
             {
                 LogPrintf("Minter thread sleeps while sync at %f\n", GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()));
                 if (strMintWarning != strMintSyncMessage) {
@@ -582,7 +582,7 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
             CBlock *pblock;
             std::unique_ptr<CBlockTemplate> pblocktemplate;
 
-            { 
+            {
                 LOCK2(cs_main, pwallet->cs_wallet);
 
                 pblocktemplate = BlockAssembler(*mempool, Params()).CreateNewBlock(scriptPubKey, pwallet.get(), &fPoSCancel);
