@@ -997,7 +997,11 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 
 int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 {
-    return MAX_MINT_PROOF_OF_WORK;
+    // Since no additional coins are desired as Proof-of-Work (PoW) rewards,
+    // return 0 to indicate that there is no PoW reward.
+    return 0;
+}
+
     // CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
     // CBigNum bnTarget;
     // bnTarget.SetCompact(nBits);
@@ -1032,10 +1036,44 @@ int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 }
 
 // sumcoin: miner's coin stake is rewarded based on coin age spent (coin-days)
+
 int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
 {
-    LogPrintf("nMoneySupply: %ld, MAX_MONEY: %ld, stakeValue:%ld\n", nMoneySupply, MAX_MONEY, (MAX_MONEY - nMoneySupply) / 1000000.0);
-    return MAX_MONEY - nMoneySupply;
+    // Calculate the annual reward rate as 3%
+    static constexpr double ANNUAL_POS_REWARD_RATE = 0.03;
+
+    // Calculate the target annual PoS reward based on the total supply
+    uint64_t targetReward = static_cast<uint64_t>(nMoneySupply * ANNUAL_POS_REWARD_RATE);
+
+    // Calculate the PoS reward based on the coin age and target annual reward
+    int64_t nSubsidy = static_cast<int64_t>((nCoinAge * targetReward) / (365 * 24 * 60 * 60));
+
+    // Apply the 3% inflation adjustment for Protocol v0.9
+    if (IsProtocolV09(nTime)) {
+        // Calculate the inflation adjustment
+        uint64_t inflationAdjustment = static_cast<uint64_t>(nMoneySupply * ANNUAL_POS_REWARD_RATE);
+
+        // Calculate the new subsidy with the inflation adjustment
+        nSubsidy += static_cast<int64_t>(inflationAdjustment);
+
+        // Log the details of the inflation adjustment
+        LogPrintf("%s: Inflation adjustment applied for Protocol v0.9\n", __func__);
+        LogPrintf("Money supply: %ld, Inflation adjustment: %ld\n", nMoneySupply, inflationAdjustment);
+    }
+
+    // Print the PoS reward if the -printcreation argument is enabled
+    if (gArgs.GetBoolArg("-printcreation", false))
+        LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
+
+    return nSubsidy;
+}
+
+// MODIFIED CODE for 0 Reward
+//int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
+//{
+//    LogPrintf("nMoneySupply: %ld, MAX_MONEY: %ld, stakeValue:%ld\n", nMoneySupply, MAX_MONEY, (MAX_MONEY - nMoneySupply) / 1000000.0);
+/    return MAX_MONEY - nMoneySupply;
+// ORIGINAL CODE
     // static int64_t nRewardCoinYear = CENT;  // creation amount per coin-year
     // int64_t nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
 
