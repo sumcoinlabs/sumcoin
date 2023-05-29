@@ -1033,7 +1033,7 @@ int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
     //     LogPrintf("%s: create=%s nBits=0x%08x nSubsidy=%lld\n", __func__, FormatMoney(nSubsidy), nBits, nSubsidy);
 
     // return nSubsidy;
-}
+//}
 
 // sumcoin: miner's coin stake is rewarded based on coin age spent (coin-days)
 
