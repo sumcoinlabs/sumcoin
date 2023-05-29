@@ -1072,7 +1072,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneyS
 //int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
 //{
 //    LogPrintf("nMoneySupply: %ld, MAX_MONEY: %ld, stakeValue:%ld\n", nMoneySupply, MAX_MONEY, (MAX_MONEY - nMoneySupply) / 1000000.0);
-/    return MAX_MONEY - nMoneySupply;
+//    return MAX_MONEY - nMoneySupply;
 // ORIGINAL CODE
     // static int64_t nRewardCoinYear = CENT;  // creation amount per coin-year
     // int64_t nSubsidy = nCoinAge * 33 / (365 * 33 + 8) * nRewardCoinYear;
@@ -1098,7 +1098,7 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneyS
     // if (gArgs.GetBoolArg("-printcreation", false))
     //     LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
     // return nSubsidy;
-}
+//}
 
 CoinsViews::CoinsViews(
     std::string ldb_name,
