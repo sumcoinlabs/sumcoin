@@ -1036,37 +1036,44 @@ int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 //}
 
 // sumcoin: miner's coin stake is rewarded based on coin age spent (coin-days)
-
-int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
+/**
+ * Calculate the Proof-of-Stake (PoS) reward for a given coin age and time.
+ * The reward is designed to have a fixed annual inflation rate of 3%.
+ *
+ * @param nCoinAge     Coin age in seconds.
+ * @param nTime        Current time.
+ * @param nMoneySupply Total money supply.
+ *
+ * @return PoS reward for the specified coin age and time.
+ */
+int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t /*nMoneySupply*/)
 {
-    // Calculate the annual reward rate as 3%
-    static constexpr double ANNUAL_POS_REWARD_RATE = 0.03;
+    // Define the fixed reward per block
+    static const int64_t REWARD_PER_BLOCK = 6;
 
-    // Calculate the target annual PoS reward based on the total supply
-    uint64_t targetReward = static_cast<uint64_t>(nMoneySupply * ANNUAL_POS_REWARD_RATE);
+    // Calculate the PoS reward based on the fixed amount per block
+    int64_t nSubsidy = REWARD_PER_BLOCK;
 
-    // Calculate the PoS reward based on the coin age and target annual reward
-    int64_t nSubsidy = static_cast<int64_t>((nCoinAge * targetReward) / (365 * 24 * 60 * 60));
-
-    // Apply the 3% inflation adjustment for Protocol v0.9
+    // Check if the protocol is v0.9 or later
     if (IsProtocolV09(nTime)) {
-        // Calculate the inflation adjustment
-        uint64_t inflationAdjustment = static_cast<uint64_t>(nMoneySupply * ANNUAL_POS_REWARD_RATE);
-
-        // Calculate the new subsidy with the inflation adjustment
-        nSubsidy += static_cast<int64_t>(inflationAdjustment);
-
-        // Log the details of the inflation adjustment
-        LogPrintf("%s: Inflation adjustment applied for Protocol v0.9\n", __func__);
-        LogPrintf("Money supply: %ld, Inflation adjustment: %ld\n", nMoneySupply, inflationAdjustment);
+        // For Protocol v0.9 or later, there is no inflation adjustment.
+        // The reward remains fixed to maintain a 3% annual inflation rate.
+        LogPrintf("%s: No inflation adjustment for Protocol v0.9 or later\n", __func__);
     }
 
     // Print the PoS reward if the -printcreation argument is enabled
-    if (gArgs.GetBoolArg("-printcreation", false))
+    if (gArgs.GetBoolArg("-printcreation", false)) {
         LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
+    }
+
+    // Additional logs or debug statements for error handling or monitoring can be added here
+    // For example:
+    // LogPrintf("GetProofOfStakeReward - nCoinAge: %lld, nTime: %u\n", nCoinAge, nTime);
 
     return nSubsidy;
 }
+
+
 
 // MODIFIED CODE for 0 Reward
 //int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t nMoneySupply)
