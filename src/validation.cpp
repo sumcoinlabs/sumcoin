@@ -1049,7 +1049,7 @@ int64_t GetProofOfWorkReward(unsigned int nBits, uint32_t nTime)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t /*nMoneySupply*/)
 {
     // Define the fixed reward per block
-    static const int64_t REWARD_PER_BLOCK = 6;
+    static const int64_t REWARD_PER_BLOCK = 6000000;  // 6 SUM represented in the smallest unit
 
     // Calculate the PoS reward based on the fixed amount per block
     int64_t nSubsidy = REWARD_PER_BLOCK;
@@ -1063,15 +1063,12 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, uint32_t nTime, uint64_t /*nMone
 
     // Print the PoS reward if the -printcreation argument is enabled
     if (gArgs.GetBoolArg("-printcreation", false)) {
-        LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy), nCoinAge);
+        LogPrintf("%s: create=%s nCoinAge=%lld\n", __func__, FormatMoney(nSubsidy * CENT), nCoinAge);
     }
-
-    // Additional logs or debug statements for error handling or monitoring can be added here
-    // For example:
-    // LogPrintf("GetProofOfStakeReward - nCoinAge: %lld, nTime: %u\n", nCoinAge, nTime);
 
     return nSubsidy;
 }
+
 
 
 
