@@ -108,9 +108,9 @@ public:
         consensus.BIP34Hash = uint256S("000000f40beaad5804ce621cca107c37dccd119e887625fe79fe0f4e161f6219");
         consensus.powLimit =            uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //24
         consensus.bnInitialHashTarget = uint256S("00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); //32
-        consensus.nTargetTimespan = 30; // 30 seconds - 1 block
-        consensus.nStakeTargetSpacing = 30; // 30 second block spacing
-        consensus.nTargetSpacingWorkMax = 12 * consensus.nStakeTargetSpacing; // 6 mins
+        consensus.nTargetTimespan = 2 * 60 * 60;  // 2 hours
+        consensus.nStakeTargetSpacing = 1 * 60; // 60 second block spacing
+        consensus.nTargetSpacingWorkMax = 90 * consensus.nStakeTargetSpacing; // 90 mins
         consensus.nPowTargetSpacing = consensus.nStakeTargetSpacing;
         consensus.nStakeMinAge = 60 * 60 * 24 * 1; // 1 day minimum age for coin age
         consensus.nStakeMaxAge = 60 * 60 * 24 * 90; // 30 days      //60 * 60 * 24 * 90; // minimum age for coin age
