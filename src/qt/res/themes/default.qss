@@ -1,8 +1,8 @@
 /* Custom Colors */
 /* Blue: #276BCF 1*/
-/* Dark Grey: #000 2*/
+/* Dark Grey: #276BCF 2*/
 /* Light Grey: #E3E3E3 3*/
-/* New Dark Grey: #000 2*/
+/* New Dark Grey: #276BCF 2*/
 /* New Light Grey: #8c8c8c 3*
 
 /* Global Styles */
@@ -161,7 +161,7 @@ QToolTip {
 /* Toolbar */
 QToolBar {
     border: 1px solid #276BCF;
-    background-color: #000;
+    background-color: #276BCF;
 }
 
 QToolBar > QLabel {
