@@ -19,7 +19,7 @@ QMainWindow {
 
 /* Global Styles - Buttons */
 QToolButton {
-    background: #276BCF;
+    background: #0164f5;
     color: #ffffff;
     border-radius: 20px;
     margin: 5px;
@@ -30,7 +30,7 @@ QToolButton {
 }
 
 QPushButton {
-    background: #276BCF;
+    background: #0164f5;
     color: #ffffff;
     border-radius: 20px;
     margin: 5px;
@@ -131,7 +131,7 @@ QTableView {
     show-decoration-selected: 1;
     background: #ffffff;
     alternate-background-color: #E3E3E3;
-    color: #333;
+    color: #276BCF;
     gridline-color: #8C8C8C;
     selection-background-color: #276BCF;
     border: 1px solid #8C8C8C;
@@ -160,7 +160,7 @@ QToolTip {
 
 /* Toolbar */
 QToolBar {
-    border: 1px solid #333;
+    border: 1px solid #276BCF;
     background-color: #000;
 }
 
