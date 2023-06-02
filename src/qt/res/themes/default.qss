@@ -131,7 +131,7 @@ QTableView {
     show-decoration-selected: 1;
     background: #ffffff;
     alternate-background-color: #E3E3E3;
-    color: #276BCF;
+    color: #000;
     gridline-color: #8C8C8C;
     selection-background-color: #276BCF;
     border: 1px solid #8C8C8C;
