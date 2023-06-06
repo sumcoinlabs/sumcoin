@@ -123,10 +123,10 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000000000000000"); // 1000
+        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000a84e04c73cb2"); // 5000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0x000000f40beaad5804ce621cca107c37dccd119e887625fe79fe0f4e161f6219");  // 0
+        consensus.defaultAssumeValid =  uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37");  // 5000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -175,25 +175,28 @@ public:
         checkpointData = {
             {
                 {0,         uint256S("0x000000f40beaad5804ce621cca107c37dccd119e887625fe79fe0f4e161f6219")},
-
-
-                //{100,       uint256S("0x00000099242f8494ab53d675e5332a62bbd07c409ad0eb949142dd1c735552f3")},
-                //{500,       uint256S("0x000000ae32bee2e5c9171a7cbc764546618529e26f7ce06fc2c5c3dcf1c9c939")},
-                //{1000,      uint256S("0x0000009080a06d924ff436a891df8f83e538330073dee6cce7679cc0e7d6feb5")}, // Last PoW
-                //{1500,      uint256S("0x4de04c7b961c483b5e6221d0bb63a446c8a1092ffc6d9ea71b2db720d7b2f778")}, // PoS
-                //{13339,     uint256S("0xd7bb74bad5c4f343f81a3b03b21e06e9a477cad68376335ffefd7e5cf34e8139")}
-                // {1284,      uint256S("0xbfd2f5e71d080d021e34334827b27f4236bcfb4b71a18aee328a14165068d817")}
+                {1,         uint256S("0x000000002ad7a706fac8eedc222745b191ab97713027ef2d1fe80027fb8eb61f")},
+                {10,        uint256S("0x0000000036d1d1cfdc4b65aad81e58c1ba2c12077d3f2e0d7356bb2006cc0c89")},
+                {100,       uint256S("0x000000f3edbd544605bfa03dbcc2f3f1c6aa3aeebb47419630468192bd48c9fe")},
+                {1000,      uint256S("0x00000077707fec1497a24ec59539f35606868deb92c1b22304155263c8c2a155")},
+                {2000,      uint256S("0x000000439447fd424b6b699670086320474205bb17f68bfb1664bc4b3e731160")},
+                {3000,      uint256S("0x00000014737d0e30699fd111a2342bc7eed832e6823a81ae85097c35cf315077")},
+                {4099,      uint256S("0x000000123e76b6d922f35745f1c6ed7c94b893b5bd91809b15b3c964f94623fa")}, // Last PoW
+                {4100,      uint256S("0xc3909a7db81f1f266a41f7682d11ab28cd0c9b13b02613f024dc6fe6e842fed2")}  // PoS
+                {4101,      uint256S("0x22590dcc8bdc4c8dbdcc45e0e4490667837a88ae4819e05ea32c9f6db293267b")}
+                {4110,      uint256S("0x4f510e77a0f55bf48772c6a1ec41596969ba4028e399f596c9a939e829097549")}
+                {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")}                
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 967c14abf21214639aeff0a270c4543cd3b80fe53178384ac5aa3c277662f1d0 (height 589659).
+            // Data as of block b53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37 (height 5000).
 
             //1554579000
-            1522621200, // * UNIX timestamp of last known number of transactions
-            1,    // * total number of transactions between genesis and that timestamp
+            1685467894, // * UNIX timestamp of last known number of transactions
+            5000,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
-            0 // * estimated number of transactions per second after that timestamp
+            0.001 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
         };
     }
