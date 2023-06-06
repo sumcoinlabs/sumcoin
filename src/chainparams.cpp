@@ -182,9 +182,9 @@ public:
                 {2000,      uint256S("0x000000439447fd424b6b699670086320474205bb17f68bfb1664bc4b3e731160")},
                 {3000,      uint256S("0x00000014737d0e30699fd111a2342bc7eed832e6823a81ae85097c35cf315077")},
                 {4099,      uint256S("0x000000123e76b6d922f35745f1c6ed7c94b893b5bd91809b15b3c964f94623fa")}, // Last PoW
-                {4100,      uint256S("0xc3909a7db81f1f266a41f7682d11ab28cd0c9b13b02613f024dc6fe6e842fed2")}  // PoS
-                {4101,      uint256S("0x22590dcc8bdc4c8dbdcc45e0e4490667837a88ae4819e05ea32c9f6db293267b")}
-                {4110,      uint256S("0x4f510e77a0f55bf48772c6a1ec41596969ba4028e399f596c9a939e829097549")}
+                {4100,      uint256S("0xc3909a7db81f1f266a41f7682d11ab28cd0c9b13b02613f024dc6fe6e842fed2")},  // PoS
+                {4101,      uint256S("0x22590dcc8bdc4c8dbdcc45e0e4490667837a88ae4819e05ea32c9f6db293267b")},
+                {4110,      uint256S("0x4f510e77a0f55bf48772c6a1ec41596969ba4028e399f596c9a939e829097549")},
                 {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")}                
             }
         };
