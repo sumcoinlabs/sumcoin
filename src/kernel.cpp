@@ -51,18 +51,17 @@ const unsigned int nProtocolV10TestSwitchTime = 1701307000 + 7000; //1680387600 
 static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     boost::assign::map_list_of(0,0)
     ( 0, 0x0e00670bu )
-    //( 14369, 0x763088f2u)
-    // ( 1013, 0x681f974fu ) // "681f974f"
-    // ( 13339, 0x2a26e1b9u )
-    // (219999, 0x91b7444du )
-    // (336000, 0x6c3c8048u )
-    // (371850, 0x9b850bdfu )
-    // (407813, 0x46fe50b5u )
-    // (443561, 0x114a6e38u )
-    // (455470, 0x9b7af181u )
-    // (479189, 0xe04fb8e0u )
-    // (504051, 0x459f5a16u )
-    // (589659, 0xbd02492au )
+    ( 1, 0xbc4b99b6u )
+    ( 10, 0x87970425u )
+    ( 1000, 0x589d5c5bu ) 
+    ( 2000, 0x44336a68u ) 
+    ( 3000, 0x9fd6067eu ) 
+    ( 4099, 0xe2c66d5du ) 
+    ( 4100, 0x64bea0ddu ) 
+    ( 4101, 0xcf516809u ) 
+    ( 4110, 0xdb7718d8u ) 
+    ( 5000, 0x558c9003u ) 
+    
     ;
 
 static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
