@@ -4,16 +4,16 @@
 [![Continuous Integration](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml)
 
 ### What is Sumcoin?
-[Sumcoin](https://sumcoin.org) (abbreviated SUM), is a [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design introducing [proof-of-stake consensus](https://sumcoin.org/resources#whitepaper) as a security model, with a combined [proof-of-stake](https://sumcoin.org/resources#whitepaper)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
+[Sumcoin](https://sumcoin.org) (abbreviated SUM), is a [cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency) design of [proof-of-stake consensus](https://sumcoin.org/resources#whitepaper) as a security model, with a combined [proof-of-stake](https://sumcoin.org/resources#whitepaper)/[proof-of-work](https://en.wikipedia.org/wiki/Proof-of-work_system) minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
 ### Sumcoin Resources
 * Client and Source:
 [Client Binaries](https://github.com/sumcoinlabs/sumcoin/releases),
 [Source Code](https://github.com/sumcoinlabs/sumcoin)
-* Documentation: [Sumcoin Docs](https://docs.sumcoin.org)
+* Documentation: [Sumcoin Docs](https://sumcoin.org)
 * Help:
-[Forum](https://talk.sumcoin.org),
+[Forum](https://sumcoin.org),
 [Intro & Important Links](https://talk.sumcoin.org/t/what-is-sumcoin-intro-important-links/2889)
-[Telegram Chat](https://t.me/sumcoin)
+[Telegram Chat](https://t.me/sumcoins)
 
 Testing
 -------
