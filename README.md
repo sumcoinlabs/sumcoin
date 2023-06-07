@@ -1,6 +1,6 @@
 # Sumcoin Official Development Repo
 
-[![Sumcoin Donate](https://badgen.net/badge/sumcoin/Donate/green?icon=https://raw.githubusercontent.com/sumcoin/media/84710cca6c3c8d2d79676e5260cc8d1cd729a427/Sumcoin%202020%20Logo%20Files/01.%20Icon%20Only/Inside%20Circle/Transparent/Green%20Icon/sumcoin-icon-green-transparent.svg)](https://chainz.cryptoid.info/ppc/address.dws?p92W3t7YkKfQEPDb7cG9jQ6iMh7cpKLvwK)
+
 [![Continuous Integration](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml)
 
 ### What is Sumcoin?
