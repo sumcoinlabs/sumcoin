@@ -99,9 +99,17 @@ void TxToJSONExpanded(const CTransaction& tx, const uint256 hashBlock, UniValue&
                 in.pushKV("value", ValueFromAmount(spentInfo.satoshis));
                 in.pushKV("valueSat", spentInfo.satoshis);
                 if (spentInfo.addressType == 1) {
-                    in.pushKV("address", EncodeDestination(PKHash(CKeyID(spentInfo.addressHash))));
+                    std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
+                    in.pushKV("address", EncodeDestination(CTxDestination(PKHash(uint160(addressBytes)))));
                 } else if (spentInfo.addressType == 2) {
-                    in.pushKV("address", EncodeDestination(ScriptHash(CScriptID(spentInfo.addressHash))));
+                    std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
+                    in.pushKV("address", EncodeDestination(CTxDestination(ScriptHash(uint160(addressBytes)))));
+                } else if (spentInfo.addressType == 3) {
+                    CScript witnessscript = GetScriptForDestination(ScriptHash(spentInfo.addressHash));
+                    in.pushKV("address", EncodeDestination(CTxDestination(WitnessV0ScriptHash(witnessscript))));
+                } else if (spentInfo.addressType == 4) {
+                    std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
+                    in.pushKV("address", EncodeDestination(CTxDestination(WitnessV0KeyHash(uint160(addressBytes)))));
                 }
             }
         }
@@ -129,7 +137,7 @@ void TxToJSONExpanded(const CTransaction& tx, const uint256 hashBlock, UniValue&
         out.pushKV("valueSat", txout.nValue);
         out.pushKV("n", (int64_t)i);
         UniValue o(UniValue::VOBJ);
-        ScriptPubKeyToJSON(txout.scriptPubKey, o, true);
+        ScriptPubKeyToUniv(txout.scriptPubKey, o, true);
         out.pushKV("scriptPubKey", o);
 
         // Add spent information if spentindex is enabled
