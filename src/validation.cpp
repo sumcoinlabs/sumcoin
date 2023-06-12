@@ -1605,6 +1605,15 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                     // undo unspent index
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(1, uint160(hashBytes), hash, k), CAddressUnspentValue()));
 
+                } else if (out.scriptPubKey.IsPayToWitnessScriptHash()) {
+                    std::vector<unsigned char> hashBytes(out.scriptPubKey.begin() + 2, out.scriptPubKey.begin() + 33);
+
+                    // undo receiving activity
+                    addressIndex.push_back(std::make_pair(CAddressIndexKey(3, uint160(hashBytes), pindex->nHeight, i, hash, k, false), out.nValue));
+
+                    // undo unspent index
+                    addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(3, uint160(hashBytes), hash, k), CAddressUnspentValue()));
+
                 } else {
                     continue;
                 }
@@ -1665,6 +1674,15 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
 
                         // undo spending activity
                         addressIndex.push_back(std::make_pair(CAddressIndexKey(1, uint160(hashBytes), pindex->nHeight, i, hash, j, true), prevout.nValue * -1));
+
+                        // restore unspent index
+                        addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(1, uint160(hashBytes), input.prevout.hash, input.prevout.n), CAddressUnspentValue(prevout.nValue, prevout.scriptPubKey, pindex->nHeight)));
+
+                    } else if (prevout.scriptPubKey.IsPayToWitnessScriptHash()) {
+                        std::vector<unsigned char> hashBytes(prevout.scriptPubKey.begin() + 2, prevout.scriptPubKey.begin() + 33);
+
+                        // undo spending activity
+                        addressIndex.push_back(std::make_pair(CAddressIndexKey(3, uint160(hashBytes), pindex->nHeight, i, hash, j, true), prevout.nValue * -1));
 
                         // restore unspent index
                         addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(1, uint160(hashBytes), input.prevout.hash, input.prevout.n), CAddressUnspentValue(prevout.nValue, prevout.scriptPubKey, pindex->nHeight)));
@@ -2133,6 +2151,9 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                     } else if (prevout.scriptPubKey.IsPayToPublicKeyHash()) {
                         hashBytes = uint160(std::vector<unsigned char>(prevout.scriptPubKey.begin() + 3, prevout.scriptPubKey.begin() + 23));
                         addressType = 1;
+                    } else if (prevout.scriptPubKey.IsPayToWitnessScriptHash()) {
+                        hashBytes = uint160(std::vector<unsigned char>(prevout.scriptPubKey.begin() + 2, prevout.scriptPubKey.begin() + 33));
+                        addressType = 3;
                     } else {
                         hashBytes.SetNull();
                         addressType = 0;
@@ -2203,6 +2224,14 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                     // record unspent output
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(1, uint160(hashBytes), txhash, k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight)));
 
+                } else if (out.scriptPubKey.IsPayToWitnessScriptHash()) {
+                    std::vector<unsigned char> hashBytes(out.scriptPubKey.begin() + 2, out.scriptPubKey.begin() + 33);
+
+                    // record receiving activity
+                    addressIndex.push_back(std::make_pair(CAddressIndexKey(3, uint160(hashBytes), pindex->nHeight, i, txhash, k, false), out.nValue));
+
+                    // record unspent output
+                    addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(3, uint160(hashBytes), txhash, k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight)));
                 } else {
                     continue;
                 }
@@ -2269,8 +2298,10 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
     }
 
     if (fSpentIndex)
-        if (!pblocktree->UpdateSpentIndex(spentIndex))
+        if (!pblocktree->UpdateSpentIndex(spentIndex)) {
+            LogPrintf("write spent index failed");
             return AbortNode(state, "Failed to write transaction index");
+        }
 
     if (fTimestampIndex) {
         unsigned int logicalTS = pindex->nTime;
@@ -4562,14 +4593,18 @@ bool GetTimestampIndex(const unsigned int& high, const unsigned int& low, const 
 
 bool GetSpentIndex(CSpentIndexKey& key, CSpentIndexValue& value)
 {
-    if (!fSpentIndex)
+    if (!fSpentIndex) {
+        LogPrintf("not spent index\n");
         return false;
+    }
 
     if (mempool.getSpentIndex(key, value))
         return true;
 
-    if (!pblocktree->ReadSpentIndex(key, value))
+    if (!pblocktree->ReadSpentIndex(key, value)) {
+        LogPrintf("get spent index failed\n");
         return false;
+    }
 
     return true;
 }
@@ -5203,8 +5238,6 @@ bool GetCoinAge(const CTransaction& tx, const CCoinsViewCache& view, uint64_t& n
     return true;
 }
 
-// sumcoin: sign block
-typedef std::vector<unsigned char> valtype;
 bool SignBlock(CBlock& block, const CWallet& keystore)
 {
     std::vector<valtype> vSolutions;

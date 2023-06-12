@@ -138,6 +138,7 @@ struct WitnessUnknown {
  *  A CTxDestination is the internal data type encoded in a bitcoin address
  */
 typedef boost::variant<CNoDestination, PKHash, ScriptHash, WitnessV0ScriptHash, WitnessV0KeyHash, WitnessUnknown> CTxDestination;
+inline bool operator!=(const CTxDestination& lhs, const CTxDestination& rhs) { return !(lhs == rhs); }
 
 /** Check whether a CTxDestination is a CNoDestination. */
 bool IsValidDestination(const CTxDestination& dest);
@@ -201,4 +202,14 @@ CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys);
  */
 CScript GetScriptForWitness(const CScript& redeemscript);
 
+struct DataVisitor {
+    valtype operator()(const CNoDestination& noDest) const;
+    valtype operator()(const PKHash& keyID) const;
+    valtype operator()(const ScriptHash& scriptID) const;
+    valtype operator()(const WitnessV0ScriptHash& witnessScriptHash) const;
+    valtype operator()(const WitnessV0KeyHash& witnessKeyHash) const;
+    valtype operator()(const WitnessUnknown& witnessUnknown) const;
+};
+
+bool ExtractDestination(const COutPoint& prevout, const CScript& scriptPubKey, CTxDestination& addressRet, txnouttype* typeRet = NULL);
 #endif // BITCOIN_SCRIPT_STANDARD_H

@@ -9,8 +9,8 @@
 #include <fs.h>
 #include <serialize.h>
 #include <streams.h>
-#include <util/system.h>
 #include <util/strencodings.h>
+#include <util/system.h>
 
 #include <leveldb/db.h>
 #include <leveldb/write_batch.h>
@@ -38,9 +38,9 @@ void HandleError(const leveldb::Status& status);
  * Database obfuscation should be considered an implementation detail of the
  * specific database.
  */
-const std::vector<unsigned char>& GetObfuscateKey(const CDBWrapper &w);
+const std::vector<unsigned char>& GetObfuscateKey(const CDBWrapper& w);
 
-};
+}; // namespace dbwrapper_private
 
 /** Batch of changes queued to be written to a CDBWrapper */
 class CDBBatch
@@ -48,7 +48,7 @@ class CDBBatch
     friend class CDBWrapper;
 
 private:
-    const CDBWrapper &parent;
+    const CDBWrapper& parent;
     leveldb::WriteBatch batch;
 
     CDataStream ssKey;
@@ -60,7 +60,7 @@ public:
     /**
      * @param[in] _parent   CDBWrapper that this batch is to be submitted to
      */
-    explicit CDBBatch(const CDBWrapper &_parent) : parent(_parent), ssKey(SER_DISK, CLIENT_VERSION), ssValue(SER_DISK, CLIENT_VERSION), size_estimate(0) { };
+    explicit CDBBatch(const CDBWrapper& _parent) : parent(_parent), ssKey(SER_DISK, CLIENT_VERSION), ssValue(SER_DISK, CLIENT_VERSION), size_estimate(0){};
 
     void Clear()
     {
@@ -116,24 +116,24 @@ public:
 class CDBIterator
 {
 private:
-    const CDBWrapper &parent;
-    leveldb::Iterator *piter;
+    const CDBWrapper& parent;
+    leveldb::Iterator* piter;
 
 public:
-
     /**
      * @param[in] _parent          Parent CDBWrapper instance.
      * @param[in] _piter           The original leveldb iterator.
      */
-    CDBIterator(const CDBWrapper &_parent, leveldb::Iterator *_piter) :
-        parent(_parent), piter(_piter) { };
+    CDBIterator(const CDBWrapper& _parent, leveldb::Iterator* _piter) : parent(_parent), piter(_piter){};
     ~CDBIterator();
 
     bool Valid() const;
 
     void SeekToFirst();
 
-    template<typename K> void Seek(const K& key) {
+    template <typename K>
+    void Seek(const K& key)
+    {
         CDataStream ssKey(SER_DISK, CLIENT_VERSION);
         ssKey.reserve(DBWRAPPER_PREALLOC_KEY_SIZE);
         ssKey << key;
@@ -143,7 +143,9 @@ public:
 
     void Next();
 
-    template<typename K> bool GetKey(K& key) {
+    template <typename K>
+    bool GetKey(K& key)
+    {
         leveldb::Slice slKey = piter->key();
         try {
             CDataStream ssKey(slKey.data(), slKey.data() + slKey.size(), SER_DISK, CLIENT_VERSION);
@@ -154,7 +156,9 @@ public:
         return true;
     }
 
-    template<typename V> bool GetValue(V& value) {
+    template <typename V>
+    bool GetValue(V& value)
+    {
         leveldb::Slice slValue = piter->value();
         try {
             CDataStream ssValue(slValue.data(), slValue.data() + slValue.size(), SER_DISK, CLIENT_VERSION);
@@ -166,15 +170,16 @@ public:
         return true;
     }
 
-    unsigned int GetValueSize() {
+    unsigned int GetValueSize()
+    {
         return piter->value().size();
     }
-
 };
 
 class CDBWrapper
 {
-    friend const std::vector<unsigned char>& dbwrapper_private::GetObfuscateKey(const CDBWrapper &w);
+    friend const std::vector<unsigned char>& dbwrapper_private::GetObfuscateKey(const CDBWrapper& w);
+
 private:
     //! custom environment this database is using (may be nullptr in case of default environment)
     leveldb::Env* penv;
@@ -237,8 +242,10 @@ public:
         std::string strValue;
         leveldb::Status status = pdb->Get(readoptions, slKey, &strValue);
         if (!status.ok()) {
-            if (status.IsNotFound())
+            if (status.IsNotFound()) {
+                LogPrintf("LevelDB read not found");
                 return false;
+            }
             LogPrintf("LevelDB read failure: %s\n", status.ToString());
             dbwrapper_private::HandleError(status);
         }
@@ -247,6 +254,7 @@ public:
             ssValue.Xor(obfuscate_key);
             ssValue >> value;
         } catch (const std::exception&) {
+            LogPrintf("LevelDB read exception");
             return false;
         }
         return true;
@@ -304,7 +312,7 @@ public:
         return WriteBatch(batch, true);
     }
 
-    CDBIterator *NewIterator()
+    CDBIterator* NewIterator()
     {
         return new CDBIterator(*this, pdb->NewIterator(iteroptions));
     }
@@ -314,7 +322,7 @@ public:
      */
     bool IsEmpty();
 
-    template<typename K>
+    template <typename K>
     size_t EstimateSize(const K& key_begin, const K& key_end) const
     {
         CDataStream ssKey1(SER_DISK, CLIENT_VERSION), ssKey2(SER_DISK, CLIENT_VERSION);
@@ -333,7 +341,7 @@ public:
     /**
      * Compact a certain range of keys in the database.
      */
-    template<typename K>
+    template <typename K>
     void CompactRange(const K& key_begin, const K& key_end) const
     {
         CDataStream ssKey1(SER_DISK, CLIENT_VERSION), ssKey2(SER_DISK, CLIENT_VERSION);
@@ -345,7 +353,6 @@ public:
         leveldb::Slice slKey2(ssKey2.data(), ssKey2.size());
         pdb->CompactRange(&slKey1, &slKey2);
     }
-
 };
 
 #endif // BITCOIN_DBWRAPPER_H

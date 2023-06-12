@@ -98,6 +98,7 @@ void TxToJSONExpanded(const CTransaction& tx, const uint256 hashBlock, UniValue&
             if (GetSpentIndex(spentKey, spentInfo)) {
                 in.pushKV("value", ValueFromAmount(spentInfo.satoshis));
                 in.pushKV("valueSat", spentInfo.satoshis);
+                LogPrintf("addressType %d\n", spentInfo.addressType);
                 if (spentInfo.addressType == 1) {
                     std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
                     in.pushKV("address", EncodeDestination(CTxDestination(PKHash(uint160(addressBytes)))));
@@ -137,7 +138,7 @@ void TxToJSONExpanded(const CTransaction& tx, const uint256 hashBlock, UniValue&
         out.pushKV("valueSat", txout.nValue);
         out.pushKV("n", (int64_t)i);
         UniValue o(UniValue::VOBJ);
-        ScriptPubKeyToUniv(txout.scriptPubKey, o, true);
+        ScriptPubKeyToJSON(txout.scriptPubKey, o, true);
         out.pushKV("scriptPubKey", o);
 
         // Add spent information if spentindex is enabled

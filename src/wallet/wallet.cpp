@@ -4265,7 +4265,6 @@ void CWallet::ConnectScriptPubKeyManNotifiers()
 }
 
 // sumcoin: create coin stake transaction
-typedef std::vector<unsigned char> valtype;
 bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew)
 {
     // The following split & combine thresholds are important to security
