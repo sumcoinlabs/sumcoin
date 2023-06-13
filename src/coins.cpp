@@ -43,11 +43,15 @@ size_t CCoinsViewCache::DynamicMemoryUsage() const
 CCoinsMap::iterator CCoinsViewCache::FetchCoin(const COutPoint& outpoint) const
 {
     CCoinsMap::iterator it = cacheCoins.find(outpoint);
-    if (it != cacheCoins.end())
+    if (it != cacheCoins.end()) {
+        LogPrintf("ittttttttttt\n");
         return it;
+    }
     Coin tmp;
-    if (!base->GetCoin(outpoint, tmp))
+    if (!base->GetCoin(outpoint, tmp)) {
+        LogPrintf("endddddddddddd\n");
         return cacheCoins.end();
+    }
     CCoinsMap::iterator ret = cacheCoins.emplace(std::piecewise_construct, std::forward_as_tuple(outpoint), std::forward_as_tuple(std::move(tmp))).first;
     if (ret->second.coin.IsSpent()) {
         // The parent only has an empty entry for this outpoint; we can consider our
@@ -55,6 +59,7 @@ CCoinsMap::iterator CCoinsViewCache::FetchCoin(const COutPoint& outpoint) const
         ret->second.flags = CCoinsCacheEntry::FRESH;
     }
     cachedCoinsUsage += ret->second.coin.DynamicMemoryUsage();
+    LogPrintf("rettttttttttt\n");
     return ret;
 }
 

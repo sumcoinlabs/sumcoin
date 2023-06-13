@@ -591,12 +591,19 @@ static UniValue echo(const JSONRPCRequest& request)
 }
 
 
-bool getAddressFromIndex(const int& type, const uint160& hash, std::string& address)
+bool getAddressFromIndex(const int& type, const uint256& hash, std::string& address)
 {
     if (type == 2) {
-        address = EncodeDestination(ScriptHash(CScriptID(hash)));
+        std::vector<unsigned char> addressBytes(hash.begin(), hash.begin() + 20);
+        address = EncodeDestination(ScriptHash(uint160(addressBytes)));
     } else if (type == 1) {
-        address = EncodeDestination(PKHash(CKeyID(hash)));
+        std::vector<unsigned char> addressBytes(hash.begin(), hash.begin() + 20);
+        address = EncodeDestination(PKHash(uint160(addressBytes)));
+    } else if (type == 3) {
+        address = EncodeDestination(WitnessV0ScriptHash(hash));
+    } else if (type == 4) {
+        std::vector<unsigned char> addressBytes(hash.begin(), hash.begin() + 20);
+        address = EncodeDestination(WitnessV0KeyHash(uint160(addressBytes)));
     } else {
         return false;
     }
@@ -605,7 +612,7 @@ bool getAddressFromIndex(const int& type, const uint160& hash, std::string& addr
 
 // This function accepts an address and returns in the output parameters
 // the version and raw bytes for the RIPEMD-160 hash.
-bool getIndexKey(const CTxDestination& dest, uint160& hashBytes, int& type)
+bool getIndexKey(const CTxDestination& dest, uint256& hashBytes, int& type)
 {
     if (!IsValidDestination(dest)) {
         return false;
@@ -619,11 +626,23 @@ bool getIndexKey(const CTxDestination& dest, uint160& hashBytes, int& type)
         memcpy(&hashBytes, x->begin(), 20);
         type = 2;
         return true;
+    } else if (dest.type() == typeid(WitnessV0ScriptHash)) {
+        auto x = boost::get<WitnessV0ScriptHash>(&dest);
+        memcpy(&hashBytes, x->begin(), 32);
+        type = 3;
+        return true;
+    } else if (dest.type() == typeid(WitnessV0KeyHash)) {
+        auto x = boost::get<WitnessV0KeyHash>(&dest);
+        memcpy(&hashBytes, x->begin(), 20);
+        type = 4;
+        return true;
     }
+
     return false;
 }
 
-bool getAddressesFromParams(const UniValue& params, std::vector<std::pair<uint160, int>>& addresses)
+
+bool getAddressesFromParams(const UniValue& params, std::vector<std::pair<uint256, int>>& addresses)
 {
     if (params[0].isStr()) {
         CTxDestination dest = DecodeDestination(params[0].get_str());
@@ -632,7 +651,7 @@ bool getAddressesFromParams(const UniValue& params, std::vector<std::pair<uint16
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
         }
         CTxDestination address = DecodeDestination(params[0].get_str());
-        uint160 hashBytes;
+        uint256 hashBytes;
         int type = 0;
         if (!getIndexKey(address, hashBytes, type)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -653,7 +672,7 @@ bool getAddressesFromParams(const UniValue& params, std::vector<std::pair<uint16
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
             }
             CTxDestination address = DecodeDestination(it->get_str());
-            uint160 hashBytes;
+            uint256 hashBytes;
             int type = 0;
             if (!getIndexKey(address, hashBytes, type)) {
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -708,7 +727,7 @@ UniValue getaddressmempool(const JSONRPCRequest& request)
             "\nExamples:\n" +
             HelpExampleCli("getaddressmempool", "'{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}'") + HelpExampleRpc("getaddressmempool", "{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}"));
 
-    std::vector<std::pair<uint160, int>> addresses;
+    std::vector<std::pair<uint256, int>> addresses;
 
     if (!getAddressesFromParams(request.params, addresses)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -784,7 +803,7 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
         }
     }
 
-    std::vector<std::pair<uint160, int>> addresses;
+    std::vector<std::pair<uint256, int>> addresses;
 
     if (!getAddressesFromParams(request.params, addresses)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -792,7 +811,7 @@ UniValue getaddressutxos(const JSONRPCRequest& request)
 
     std::vector<std::pair<CAddressUnspentKey, CAddressUnspentValue>> unspentOutputs;
 
-    for (std::vector<std::pair<uint160, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
+    for (std::vector<std::pair<uint256, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
         if (!GetAddressUnspent((*it).first, (*it).second, unspentOutputs)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "No information available for address");
         }
@@ -885,7 +904,7 @@ UniValue getaddressdeltas(const JSONRPCRequest& request)
         }
     }
 
-    std::vector<std::pair<uint160, int>> addresses;
+    std::vector<std::pair<uint256, int>> addresses;
 
     if (!getAddressesFromParams(request.params, addresses)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -893,7 +912,7 @@ UniValue getaddressdeltas(const JSONRPCRequest& request)
 
     std::vector<std::pair<CAddressIndexKey, CAmount>> addressIndex;
 
-    for (std::vector<std::pair<uint160, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
+    for (std::vector<std::pair<uint256, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
         if (start > 0 && end > 0) {
             if (!GetAddressIndex((*it).first, (*it).second, addressIndex, start, end)) {
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "No information available for address");
@@ -976,7 +995,7 @@ UniValue getaddressbalance(const JSONRPCRequest& request)
             "\nExamples:\n" +
             HelpExampleCli("getaddressbalance", "'{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}'") + HelpExampleRpc("getaddressbalance", "{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}"));
 
-    std::vector<std::pair<uint160, int>> addresses;
+    std::vector<std::pair<uint256, int>> addresses;
 
     if (!getAddressesFromParams(request.params, addresses)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -984,7 +1003,7 @@ UniValue getaddressbalance(const JSONRPCRequest& request)
 
     std::vector<std::pair<CAddressIndexKey, CAmount>> addressIndex;
 
-    for (std::vector<std::pair<uint160, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
+    for (std::vector<std::pair<uint256, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
         if (!GetAddressIndex((*it).first, (*it).second, addressIndex)) {
             throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "No information available for address");
         }
@@ -1031,7 +1050,7 @@ UniValue getaddresstxids(const JSONRPCRequest& request)
             "\nExamples:\n" +
             HelpExampleCli("getaddresstxids", "'{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}'") + HelpExampleRpc("getaddresstxids", "{\"addresses\": [\"12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX\"]}"));
 
-    std::vector<std::pair<uint160, int>> addresses;
+    std::vector<std::pair<uint256, int>> addresses;
 
     if (!getAddressesFromParams(request.params, addresses)) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
@@ -1050,7 +1069,7 @@ UniValue getaddresstxids(const JSONRPCRequest& request)
 
     std::vector<std::pair<CAddressIndexKey, CAmount>> addressIndex;
 
-    for (std::vector<std::pair<uint160, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
+    for (std::vector<std::pair<uint256, int>>::iterator it = addresses.begin(); it != addresses.end(); it++) {
         if (start > 0 && end > 0) {
             if (!GetAddressIndex((*it).first, (*it).second, addressIndex, start, end)) {
                 throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "No information available for address");

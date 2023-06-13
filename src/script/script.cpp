@@ -338,3 +338,22 @@ bool GetScriptOp(CScriptBase::const_iterator& pc, CScriptBase::const_iterator en
     opcodeRet = static_cast<opcodetype>(opcode);
     return true;
 }
+
+bool CScript::IsPayToWitnessPubkeyHash() const
+{
+    // Extra-fast test for pay-to-witness-pubkey-hash CScripts:
+    return (this->size() == 22 &&
+            (*this)[0] == OP_0 &&
+            (*this)[1] == 0x14);
+}
+
+bool CScript::IsPayToPubkey() const
+{
+    if (this->size() == 35 && (*this)[0] == 33 && (*this)[34] == OP_CHECKSIG && ((*this)[1] == 0x02 || (*this)[1] == 0x03)) {
+        return true;
+    }
+    if (this->size() == 67 && (*this)[0] == 65 && (*this)[66] == OP_CHECKSIG && (*this)[1] == 0x04) {
+        return true;
+    }
+    return false;
+}

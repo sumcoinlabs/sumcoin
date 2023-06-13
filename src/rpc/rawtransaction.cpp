@@ -106,8 +106,7 @@ void TxToJSONExpanded(const CTransaction& tx, const uint256 hashBlock, UniValue&
                     std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
                     in.pushKV("address", EncodeDestination(CTxDestination(ScriptHash(uint160(addressBytes)))));
                 } else if (spentInfo.addressType == 3) {
-                    CScript witnessscript = GetScriptForDestination(ScriptHash(spentInfo.addressHash));
-                    in.pushKV("address", EncodeDestination(CTxDestination(WitnessV0ScriptHash(witnessscript))));
+                    in.pushKV("address", EncodeDestination(CTxDestination(WitnessV0ScriptHash(spentInfo.addressHash))));
                 } else if (spentInfo.addressType == 4) {
                     std::vector<unsigned char> addressBytes(spentInfo.addressHash.begin(), spentInfo.addressHash.begin() + 20);
                     in.pushKV("address", EncodeDestination(CTxDestination(WitnessV0KeyHash(uint160(addressBytes)))));
