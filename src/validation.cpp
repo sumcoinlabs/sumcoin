@@ -1588,7 +1588,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                 const CTxOut& out = tx.vout[k];
 
                 if (out.scriptPubKey.IsPayToScriptHash()) {
-                    LogPrintf("addressUnspentIndex 1111111");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 2, out.scriptPubKey.begin() + 22, addressBytes.begin());
@@ -1601,7 +1600,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(2, addressHash, hash, k), CAddressUnspentValue()));
 
                 } else if (out.scriptPubKey.IsPayToPublicKeyHash()) {
-                    LogPrintf("addressUnspentIndex 1111112");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 3, out.scriptPubKey.begin() + 23, addressBytes.begin());
@@ -1639,7 +1637,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                     // restore unspent index
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(4, addressHash, hash, k), CAddressUnspentValue()));
                 } else if (out.scriptPubKey.IsPayToWitnessScriptHash()) {
-                    LogPrintf("addressUnspentIndex 1111113");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 2, out.scriptPubKey.end(), addressBytes.begin());
@@ -1698,7 +1695,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                 if (fAddressIndex) {
                     const CTxOut& prevout = view.GetOutputFor(tx.vin[j]);
                     if (prevout.scriptPubKey.IsPayToScriptHash()) {
-                        LogPrintf("addressUnspentIndex 1111114");
                         uint256 addressHash;
                         std::vector<unsigned char> addressBytes(32);
                         std::copy(prevout.scriptPubKey.begin() + 2, prevout.scriptPubKey.begin() + 22, addressBytes.begin());
@@ -1712,7 +1708,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
 
 
                     } else if (prevout.scriptPubKey.IsPayToPublicKeyHash()) {
-                        LogPrintf("addressUnspentIndex 1111115");
                         uint256 addressHash;
                         std::vector<unsigned char> addressBytes(32);
                         std::copy(prevout.scriptPubKey.begin() + 3, prevout.scriptPubKey.begin() + 23, addressBytes.begin());
@@ -1751,7 +1746,6 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
                         // restore unspent index
                         addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(4, addressHash, input.prevout.hash, input.prevout.n), CAddressUnspentValue(prevout.nValue, prevout.scriptPubKey, pindex->nHeight)));
                     } else if (prevout.scriptPubKey.IsPayToWitnessScriptHash()) {
-                        LogPrintf("addressUnspentIndex 1111116");
                         uint256 addressHash;
                         std::vector<unsigned char> addressBytes(32);
                         std::copy(prevout.scriptPubKey.begin() + 2, prevout.scriptPubKey.end(), addressBytes.begin());
@@ -2253,7 +2247,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
 
                     if (fAddressIndex && addressType > 0) {
                         // record spending activity
-                        LogPrintf("addressUnspentIndex 1111117");
                         addressIndex.push_back(std::make_pair(CAddressIndexKey(addressType, addressHash, pindex->nHeight, i, txhash, j, true), prevout.nValue * -1));
 
                         // remove address from unspent index
@@ -2300,7 +2293,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                 const CTxOut& out = tx.vout[k];
 
                 if (out.scriptPubKey.IsPayToScriptHash()) {
-                    LogPrintf("addressUnspentIndex 1111118");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 2, out.scriptPubKey.begin() + 22, addressBytes.begin());
@@ -2337,7 +2329,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                     // restore unspent index
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(4, addressHash, txhash, k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight)));
                 } else if (out.scriptPubKey.IsPayToPublicKeyHash()) {
-                    LogPrintf("addressUnspentIndex 1111119");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 3, out.scriptPubKey.begin() + 23, addressBytes.begin());
@@ -2351,7 +2342,6 @@ bool CChainState::ConnectBlock(const CBlock& block, BlockValidationState& state,
                     addressUnspentIndex.push_back(std::make_pair(CAddressUnspentKey(1, addressHash, txhash, k), CAddressUnspentValue(out.nValue, out.scriptPubKey, pindex->nHeight)));
 
                 } else if (out.scriptPubKey.IsPayToWitnessScriptHash()) {
-                    LogPrintf("addressUnspentIndex 1111120");
                     uint256 addressHash;
                     std::vector<unsigned char> addressBytes(32);
                     std::copy(out.scriptPubKey.begin() + 2, out.scriptPubKey.end(), addressBytes.begin());

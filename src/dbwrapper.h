@@ -243,7 +243,6 @@ public:
         leveldb::Status status = pdb->Get(readoptions, slKey, &strValue);
         if (!status.ok()) {
             if (status.IsNotFound()) {
-                LogPrintf("LevelDB read not found");
                 return false;
             }
             LogPrintf("LevelDB read failure: %s\n", status.ToString());
