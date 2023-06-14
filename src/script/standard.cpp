@@ -9,8 +9,6 @@
 #include <pubkey.h>
 #include <script/script.h>
 
-typedef std::vector<unsigned char> valtype;
-
 bool fAcceptDatacarrier = DEFAULT_ACCEPT_DATACARRIER;
 unsigned nMaxDatacarrierBytes = MAX_OP_RETURN_RELAY;
 
@@ -27,8 +25,7 @@ WitnessV0ScriptHash::WitnessV0ScriptHash(const CScript& in)
 
 const char* GetTxnOutputType(txnouttype t)
 {
-    switch (t)
-    {
+    switch (t) {
     case TX_NONSTANDARD: return "nonstandard";
     case TX_PUBKEY: return "pubkey";
     case TX_PUBKEYHASH: return "pubkeyhash";
@@ -58,7 +55,7 @@ static bool MatchPayToPubkey(const CScript& script, valtype& pubkey)
 static bool MatchPayToPubkeyHash(const CScript& script, valtype& pubkeyhash)
 {
     if (script.size() == 25 && script[0] == OP_DUP && script[1] == OP_HASH160 && script[2] == 20 && script[23] == OP_EQUALVERIFY && script[24] == OP_CHECKSIG) {
-        pubkeyhash = valtype(script.begin () + 3, script.begin() + 23);
+        pubkeyhash = valtype(script.begin() + 3, script.begin() + 23);
         return true;
     }
     return false;
@@ -94,9 +91,8 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
 
     // Shortcut for pay-to-script-hash, which are more constrained than the other types:
     // it is always OP_HASH160 20 [20 byte hash] OP_EQUAL
-    if (scriptPubKey.IsPayToScriptHash())
-    {
-        std::vector<unsigned char> hashBytes(scriptPubKey.begin()+2, scriptPubKey.begin()+22);
+    if (scriptPubKey.IsPayToScriptHash()) {
+        std::vector<unsigned char> hashBytes(scriptPubKey.begin() + 2, scriptPubKey.begin() + 22);
         vSolutionsRet.push_back(hashBytes);
         return TX_SCRIPTHASH;
     }
@@ -125,7 +121,7 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
     // So long as script passes the IsUnspendable() test and all but the first
     // byte passes the IsPushOnly() test we don't care what exactly is in the
     // script.
-    if (scriptPubKey.size() >= 1 && scriptPubKey[0] == OP_RETURN && scriptPubKey.IsPushOnly(scriptPubKey.begin()+1)) {
+    if (scriptPubKey.size() >= 1 && scriptPubKey[0] == OP_RETURN && scriptPubKey.IsPushOnly(scriptPubKey.begin() + 1)) {
         return TX_NULL_DATA;
     }
 
@@ -143,7 +139,7 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
     unsigned int required;
     std::vector<std::vector<unsigned char>> keys;
     if (MatchMultisig(scriptPubKey, required, keys)) {
-        vSolutionsRet.push_back({static_cast<unsigned char>(required)}); // safe as required is in range 1..16
+        vSolutionsRet.push_back({static_cast<unsigned char>(required)});    // safe as required is in range 1..16
         vSolutionsRet.insert(vSolutionsRet.end(), keys.begin(), keys.end());
         vSolutionsRet.push_back({static_cast<unsigned char>(keys.size())}); // safe as size is in range 1..16
         return TX_MULTISIG;
@@ -165,14 +161,10 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
 
         addressRet = PKHash(pubKey);
         return true;
-    }
-    else if (whichType == TX_PUBKEYHASH)
-    {
+    } else if (whichType == TX_PUBKEYHASH) {
         addressRet = PKHash(uint160(vSolutions[0]));
         return true;
-    }
-    else if (whichType == TX_SCRIPTHASH)
-    {
+    } else if (whichType == TX_SCRIPTHASH) {
         addressRet = ScriptHash(uint160(vSolutions[0]));
         return true;
     } else if (whichType == TX_WITNESS_V0_KEYHASH) {
@@ -197,6 +189,12 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
     return false;
 }
 
+int GetAddressType(const CScript& scriptPubKey)
+{
+    std::vector<valtype> vSolutions;
+    return Solver(scriptPubKey, vSolutions);
+}
+
 bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet)
 {
     addressRet.clear();
@@ -209,11 +207,9 @@ bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::
         return false;
     }
 
-    if (typeRet == TX_MULTISIG)
-    {
+    if (typeRet == TX_MULTISIG) {
         nRequiredRet = vSolutions.front()[0];
-        for (unsigned int i = 1; i < vSolutions.size()-1; i++)
-        {
+        for (unsigned int i = 1; i < vSolutions.size() - 1; i++) {
             CPubKey pubKey(vSolutions[i]);
             if (!pubKey.IsValid())
                 continue;
@@ -224,40 +220,41 @@ bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::
 
         if (addressRet.empty())
             return false;
-    }
-    else
-    {
+    } else {
         nRequiredRet = 1;
         CTxDestination address;
         if (!ExtractDestination(scriptPubKey, address))
-           return false;
+            return false;
         addressRet.push_back(address);
     }
 
     return true;
 }
 
-namespace
-{
+namespace {
 class CScriptVisitor : public boost::static_visitor<bool>
 {
 private:
-    CScript *script;
-public:
-    explicit CScriptVisitor(CScript *scriptin) { script = scriptin; }
+    CScript* script;
 
-    bool operator()(const CNoDestination &dest) const {
+public:
+    explicit CScriptVisitor(CScript* scriptin) { script = scriptin; }
+
+    bool operator()(const CNoDestination& dest) const
+    {
         script->clear();
         return false;
     }
 
-    bool operator()(const PKHash &keyID) const {
+    bool operator()(const PKHash& keyID) const
+    {
         script->clear();
         *script << OP_DUP << OP_HASH160 << ToByteVector(keyID) << OP_EQUALVERIFY << OP_CHECKSIG;
         return true;
     }
 
-    bool operator()(const ScriptHash &scriptID) const {
+    bool operator()(const ScriptHash& scriptID) const
+    {
         script->clear();
         *script << OP_HASH160 << ToByteVector(scriptID) << OP_EQUAL;
         return true;
@@ -312,7 +309,7 @@ CScript GetScriptForMultisig(int nRequired, const std::vector<CPubKey>& keys)
 
 CScript GetScriptForWitness(const CScript& redeemscript)
 {
-    std::vector<std::vector<unsigned char> > vSolutions;
+    std::vector<std::vector<unsigned char>> vSolutions;
     txnouttype typ = Solver(redeemscript, vSolutions);
     if (typ == TX_PUBKEY) {
         return GetScriptForDestination(WitnessV0KeyHash(Hash160(vSolutions[0].begin(), vSolutions[0].end())));
@@ -322,6 +319,55 @@ CScript GetScriptForWitness(const CScript& redeemscript)
     return GetScriptForDestination(WitnessV0ScriptHash(redeemscript));
 }
 
-bool IsValidDestination(const CTxDestination& dest) {
+bool IsValidDestination(const CTxDestination& dest)
+{
     return dest.which() != 0;
+}
+
+valtype DataVisitor::operator()(const CNoDestination& noDest) const { return valtype(); }
+valtype DataVisitor::operator()(const PKHash& keyID) const { return valtype(keyID.begin(), keyID.end()); }
+valtype DataVisitor::operator()(const ScriptHash& scriptID) const { return valtype(scriptID.begin(), scriptID.end()); }
+valtype DataVisitor::operator()(const WitnessV0ScriptHash& witnessScriptHash) const { return valtype(witnessScriptHash.begin(), witnessScriptHash.end()); }
+valtype DataVisitor::operator()(const WitnessV0KeyHash& witnessKeyHash) const { return valtype(witnessKeyHash.begin(), witnessKeyHash.end()); }
+valtype DataVisitor::operator()(const WitnessUnknown&) const { return valtype(); }
+
+bool ExtractDestination(const COutPoint& prevout, const CScript& scriptPubKey, CTxDestination& addressRet, txnouttype* typeRet)
+{
+    std::vector<valtype> vSolutions;
+    txnouttype whichType = Solver(scriptPubKey, vSolutions);
+
+    if (typeRet) {
+        *typeRet = whichType;
+    }
+
+
+    if (whichType == txnouttype::TX_PUBKEY) {
+        CPubKey pubKey(vSolutions[0]);
+        if (!pubKey.IsValid())
+            return false;
+
+        addressRet = PKHash(pubKey);
+        return true;
+    } else if (whichType == txnouttype::TX_PUBKEYHASH) {
+        addressRet = PKHash(uint160(vSolutions[0]));
+        return true;
+    } else if (whichType == txnouttype::TX_SCRIPTHASH) {
+        addressRet = ScriptHash(uint160(vSolutions[0]));
+        return true;
+    } else if (whichType == txnouttype::TX_WITNESS_V0_KEYHASH) {
+        addressRet = WitnessV0KeyHash(uint160(vSolutions[0]));
+        return true;
+    } else if (whichType == txnouttype::TX_WITNESS_V0_SCRIPTHASH) {
+        addressRet = WitnessV0ScriptHash(uint256(vSolutions[0]));
+        return true;
+
+    } else if (whichType == txnouttype::TX_WITNESS_UNKNOWN) {
+        WitnessUnknown unk;
+        unk.version = vSolutions[0][0];
+        std::copy(vSolutions[1].begin(), vSolutions[1].end(), unk.program);
+        unk.length = vSolutions[1].size();
+        addressRet = unk;
+        return true;
+    }
+    return false;
 }
