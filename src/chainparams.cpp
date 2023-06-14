@@ -123,10 +123,10 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000a84e04c73cb2"); // 5000
+        consensus.nMinimumChainWork =   uint256S("0x000000000000000000000000000000000000000000000000000201ae370cf6d1"); // 25000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37");  // 5000
+        consensus.defaultAssumeValid =  uint256S("0x9d733daebd0126d34dd8d347ed2036f044d83e408c6da01a81e9e69e5e36df78");  // 25000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -186,7 +186,12 @@ public:
                 {4100,      uint256S("0xc3909a7db81f1f266a41f7682d11ab28cd0c9b13b02613f024dc6fe6e842fed2")},  // PoS
                 {4101,      uint256S("0x22590dcc8bdc4c8dbdcc45e0e4490667837a88ae4819e05ea32c9f6db293267b")},
                 {4110,      uint256S("0x4f510e77a0f55bf48772c6a1ec41596969ba4028e399f596c9a939e829097549")},
-                {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")}                
+                {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")},
+                {10000,      uint256S("0x38020087925415205bd182dbe9a8b1f1a0b62c01383cb6d6d747c2d4d17ed8b5")},                
+                {15000,      uint256S("0x4c0c9eb8b04cf2c50090ccfcc62d6509b82e54bbea913a4ca41611ea4322c550")},                
+                {20000,      uint256S("0x6fa9b4241404b896fa6d4bcbc4434c2f9acc5224b53ab548a4dbd521a30383e5")},                
+                {25000,      uint256S("0x9d733daebd0126d34dd8d347ed2036f044d83e408c6da01a81e9e69e5e36df78")}                
+                
             }
         };
 
