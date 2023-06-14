@@ -61,6 +61,7 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     ( 4101, 0xcf516809u ) 
     ( 4110, 0xdb7718d8u ) 
     ( 5000, 0x558c9003u ) 
+    ( 25000, 0x9949e282u ) 
     
     ;
 
