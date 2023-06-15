@@ -154,6 +154,8 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumexplorer.com");
+        vSeeds.emplace_back("dnsseed.suminsight.com");
+        
        // vSeeds.emplace_back("dnsseed.sumcoin.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcoin: addresses begin with 'P' : Hex 3F
