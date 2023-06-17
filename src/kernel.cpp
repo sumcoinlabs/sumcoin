@@ -53,16 +53,17 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     ( 0, 0x0e00670bu )
     ( 1, 0xbc4b99b6u )
     ( 10, 0x87970425u )
-    ( 1000, 0x589d5c5bu ) 
-    ( 2000, 0x44336a68u ) 
-    ( 3000, 0x9fd6067eu ) 
-    ( 4099, 0xe2c66d5du ) 
-    ( 4100, 0x64bea0ddu ) 
-    ( 4101, 0xcf516809u ) 
-    ( 4110, 0xdb7718d8u ) 
-    ( 5000, 0x558c9003u ) 
-    ( 25000, 0x9949e282u ) 
-    
+    ( 1000, 0x589d5c5bu )
+    ( 2000, 0x44336a68u )
+    ( 3000, 0x9fd6067eu )
+    ( 4099, 0xe2c66d5du )
+    ( 4100, 0x64bea0ddu )
+    ( 4101, 0xcf516809u )
+    ( 4110, 0xdb7718d8u )
+    ( 5000, 0x558c9003u )
+    ( 25000, 0x9949e282u )
+    ( 30000, 0xd07305ccu ) 
+
     ;
 
 static std::map<int, unsigned int> mapStakeModifierTestnetCheckpoints =
@@ -378,7 +379,7 @@ static bool GetKernelStakeModifierV05(CBlockIndex* pindexPrev, unsigned int nTim
         else
             return false;
     }
-    // loop to find the stake modifier earlier by 
+    // loop to find the stake modifier earlier by
     // (nStakeMinAge minus a selection interval)
     while (nStakeModifierTime + params.nStakeMinAge - nStakeModifierSelectionInterval >(int64_t) nTimeTx)
     {
@@ -467,7 +468,7 @@ static bool GetKernelStakeModifier(CBlockIndex* pindexPrev, uint256 hashBlockFro
 // this ensures that the chance of getting a coinstake is proportional to the
 // amount of coin age one owns.
 // The reason this hash is chosen is the following:
-//   nStakeModifier: 
+//   nStakeModifier:
 //       (v0.5) uses dynamic stake modifier around 21 days before the kernel,
 //              versus static stake modifier about 9 days after the staked
 //              coin (txPrev) used in v0.3
@@ -476,7 +477,7 @@ static bool GetKernelStakeModifier(CBlockIndex* pindexPrev, uint256 hashBlockFro
 //       (v0.2) nBits (deprecated): encodes all past block timestamps
 //   txPrev.block.nTime: prevent nodes from guessing a good timestamp to
 //                       generate transaction for future advantage
-//   txPrev.offset: offset of txPrev inside block, to reduce the chance of 
+//   txPrev.offset: offset of txPrev inside block, to reduce the chance of
 //                  nodes generating coinstake at the same time
 //   txPrev.nTime: reduce the chance of nodes generating coinstake at the same
 //                 time
@@ -545,7 +546,7 @@ bool CheckStakeKernelHash(unsigned int nBits, CBlockIndex* pindexPrev, const CBl
     {
         if (IsProtocolV03(nTimeTx))
             LogPrintf("CheckStakeKernelHash() : using modifier 0x%016x at height=%d timestamp=%s for block from height=%d timestamp=%s\n",
-                nStakeModifier, nStakeModifierHeight, 
+                nStakeModifier, nStakeModifierHeight,
                 FormatISO8601DateTime(nStakeModifierTime),
                 ::BlockIndex()[blockFrom.GetHash()]->nHeight,
                 FormatISO8601DateTime(blockFrom.GetBlockTime()));
@@ -682,4 +683,3 @@ unsigned int GetStakeEntropyBit(const CBlock& block)
     }
     return nEntropyBit;
 }
-
