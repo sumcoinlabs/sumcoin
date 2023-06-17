@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2022 The Sumcoin developers
+// Copyright (c) 2018-2023 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #ifndef SUMCOIN_QT_MULTISIGADDRESSENTRY_H

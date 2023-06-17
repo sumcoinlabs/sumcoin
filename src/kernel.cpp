@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2022 The Sumcoin developers
+// Copyright (c) 2018-2023 The Sumcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -62,7 +62,7 @@ static std::map<int, unsigned int> mapStakeModifierCheckpoints =
     ( 4110, 0xdb7718d8u )
     ( 5000, 0x558c9003u )
     ( 25000, 0x9949e282u )
-    ( 30000, 0xd07305ccu ) 
+    ( 30000, 0xd07305ccu )
 
     ;
 
