@@ -11,12 +11,11 @@
 #include <boost/variant/apply_visitor.hpp>
 #include <boost/variant/static_visitor.hpp>
 
+#include <algorithm>
 #include <assert.h>
 #include <string.h>
-#include <algorithm>
 
-namespace
-{
+namespace {
 class DestinationEncoder : public boost::static_visitor<std::string>
 {
 private:
@@ -24,6 +23,20 @@ private:
 
 public:
     explicit DestinationEncoder(const CChainParams& params) : m_params(params) {}
+
+    std::string operator()(const CKeyID& id) const
+    {
+        std::vector<unsigned char> data = m_params.Base58Prefix(CChainParams::PUBKEY_ADDRESS);
+        data.insert(data.end(), id.begin(), id.end());
+        return EncodeBase58Check(data);
+    }
+
+    std::string operator()(const CScriptID& id) const
+    {
+        std::vector<unsigned char> data = m_params.Base58Prefix(CChainParams::SCRIPT_ADDRESS);
+        data.insert(data.end(), id.begin(), id.end());
+        return EncodeBase58Check(data);
+    }
 
     std::string operator()(const PKHash& id) const
     {
