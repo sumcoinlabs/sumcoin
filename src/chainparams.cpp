@@ -123,10 +123,10 @@ public:
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
         consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000000a84e04c73cb2"); // 5000
+        consensus.nMinimumChainWork =   uint256S("0x0000000000000000000000000000000000000000000000000003b4eb1036b993"); // 40000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid =  uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37");  // 5000
+        consensus.defaultAssumeValid =  uint256S("0xc07084a2a8ad61680077ace58142b7cb669c29ba4e6d228469d5b90d4558e69b");  // 40000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -154,7 +154,7 @@ public:
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumexplorer.com");
-       // vSeeds.emplace_back("dnsseed.sumcoin.org");
+        vSeeds.emplace_back("dnsseed.suminsight.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcoin: addresses begin with 'P' : Hex 3F
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125); // hex 7D
@@ -186,18 +186,23 @@ public:
                 {4100,      uint256S("0xc3909a7db81f1f266a41f7682d11ab28cd0c9b13b02613f024dc6fe6e842fed2")},  // PoS
                 {4101,      uint256S("0x22590dcc8bdc4c8dbdcc45e0e4490667837a88ae4819e05ea32c9f6db293267b")},
                 {4110,      uint256S("0x4f510e77a0f55bf48772c6a1ec41596969ba4028e399f596c9a939e829097549")},
-                {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")}                
+                {5000,      uint256S("0xb53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37")}, 
+                {10000,      uint256S("0x38020087925415205bd182dbe9a8b1f1a0b62c01383cb6d6d747c2d4d17ed8b5")},                
+                {20000,      uint256S("0x6fa9b4241404b896fa6d4bcbc4434c2f9acc5224b53ab548a4dbd521a30383e5")},                
+                {30000,      uint256S("0x8c7e4792f02e8affc807faec3b2db58ae618518336fa9e7c7cfb7acf59993b1b")},                
+                {40000,      uint256S("0xc07084a2a8ad61680077ace58142b7cb669c29ba4e6d228469d5b90d4558e69b")}                
+            
             }
         };
 
         chainTxData = ChainTxData{
-            // Data as of block b53a2cbae0b2da2f381cd4778fe04b044569b80fd956e09e106073ddfdb63f37 (height 5000).
+            // Data as of block c07084a2a8ad61680077ace58142b7cb669c29ba4e6d228469d5b90d4558e69b (height 40000).
 
             //1554579000
-            1685467894, // * UNIX timestamp of last known number of transactions
-            5000,    // * total number of transactions between genesis and that timestamp
+            1687609926, // * UNIX timestamp of last known number of transactions
+            74729,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the ChainStateFlushed debug.log lines)
-            0.001 // * estimated number of transactions per second after that timestamp
+            0.01 // * estimated number of transactions per second after that timestamp
                         // 1992832/(1635782211-1345400356) = 0.006862798
         };
     }
