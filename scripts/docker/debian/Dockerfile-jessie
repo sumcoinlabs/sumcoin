@@ -3,7 +3,7 @@ FROM debian:jessie
 #Default branch name develop
 ARG BRANCH_NAME=develop
 #Default
-ARG REPO_SLUG=sumcoin/sumcoin
+ARG REPO_SLUG=sumcoinlabs/sumcoin
 ENV REPO_SLUG=${REPO_SLUG}
 ENV REPO_URL=https://github.com/${REPO_SLUG}
 
@@ -12,7 +12,7 @@ RUN apt-get -qq update && \
 	git \
 	sudo
 
-#RUN git clone ${REPO_URL} --branch $BRANCH_NAME --single-branch --depth 1 
+#RUN git clone ${REPO_URL} --branch $BRANCH_NAME --single-branch --depth 1
 
 COPY sumcoin.tar.gz /sumcoin.tar.gz
 RUN tar -xvf /sumcoin.tar.gz

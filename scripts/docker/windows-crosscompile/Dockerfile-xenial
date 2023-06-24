@@ -3,7 +3,7 @@ FROM ubuntu:xenial
 #Default branch name develop
 ARG BRANCH_NAME=develop
 #Default
-ARG REPO_SLUG=sumcoin/sumcoin
+ARG REPO_SLUG=sumcoinlabs/sumcoin
 ENV REPO_SLUG=${REPO_SLUG}
 ENV REPO_URL=https://github.com/${REPO_SLUG}
 
