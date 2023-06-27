@@ -155,7 +155,9 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("dnsseed.sumexplorer.com");
         vSeeds.emplace_back("dnsseed.suminsight.com");
+        vSeeds.emplace_back("dnsseed.sumcoin.trade");
 
+        
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);  // sumcoin: addresses begin with 'P' : Hex 3F
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,125); // hex 7D
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,187); // Hex bb
