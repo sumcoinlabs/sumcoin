@@ -112,8 +112,8 @@ class WalletTest(BitcoinTestFramework):
         # Before `test_balance()`, we have had two nodes with a balance of 50
         # each and then we:
         #
-        # 1) Sent 40 from node A to node B with fee 0.01
-        # 2) Sent 60 from node B to node A with fee 0.01
+        # 1) Sent 40 from node A to node B with fee 0.000015
+        # 2) Sent 60 from node B to node A with fee 0.000015
         #
         # Then we check the balances:
         #
@@ -139,8 +139,8 @@ class WalletTest(BitcoinTestFramework):
         #
         # For example, if the test transactions were:
         #
-        # 1) Sent 40 from node A to node B with fee 0.01
-        # 2) Sent 10 from node B to node A with fee 0.01
+        # 1) Sent 40 from node A to node B with fee 0.000015
+        # 2) Sent 10 from node B to node A with fee 0.000015
         #
         # Then our node would report a confirmed balance of 40 + 50 - 10 = 80
         # BTC, which is more than would be available if transaction 1 were

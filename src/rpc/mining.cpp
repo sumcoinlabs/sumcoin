@@ -867,7 +867,8 @@ static UniValue estimatesmartfee(const JSONRPCRequest& request)
     RPCTypeCheckArgument(request.params[0], UniValue::VNUM);
 
     UniValue result(UniValue::VOBJ);
-    result.pushKV("feerate", 0.01);
+    // Change the fee rate to 0.000015 (0.000015 coins per kilobyte from 0.01 Aug 2 23')
+    result.pushKV("feerate", 0.000015);
     result.pushKV("blocks", ::ChainActive().Height());
     return result;
 }

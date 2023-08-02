@@ -3189,8 +3189,8 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>The amount to pay must be at least one cent (0.01).</source>
-        <translation>Сумма оплаты должна быть больше одного цента (0.01).</translation>
+        <source>The amount to pay must be at least (0.000015).</source>
+        <translation>Сумма платежа должна быть не менее (0.000015).</translation>
     </message>
     <message>
         <location line="+3"/>

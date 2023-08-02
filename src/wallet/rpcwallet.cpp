@@ -2334,8 +2334,8 @@ static UniValue settxfee(const JSONRPCRequest& request)
                     RPCResult::Type::BOOL, "", "Returns true if successful"
                 },
                 RPCExamples{
-                    HelpExampleCli("settxfee", "0.01")
-            + HelpExampleRpc("settxfee", "0.01")
+                    HelpExampleCli("settxfee", "0.000015")
+            + HelpExampleRpc("settxfee", "0.000015")
                 },
             }.Check(request);
 

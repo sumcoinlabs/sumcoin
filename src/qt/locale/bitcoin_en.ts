@@ -3218,7 +3218,7 @@
     </message>
     <message>
         <location line="+3"/>
-        <source>The amount to pay must be at least one cent (0.01).</source>
+        <source>The amount to pay must be at least (0.000015).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
