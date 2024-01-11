@@ -208,6 +208,8 @@ sudo nano /etc/fstab
 ### Dependencies (paste all 3 seperately):
 
 ```
+### On Ubuntu 16.04 - 18.04
+
 sudo apt-get update
 sudo apt-get install git
 sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
@@ -223,6 +225,28 @@ sudo apt-get install -y libminiupnpc-dev
 sudo apt-get install -y libzmq3-dev
 sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 sudo apt-get install -y libqt4-dev libprotobuf-dev protobuf-compiler
+```
+```
+### On Ubuntu 20.04
+
+sudo apt-get update
+sudo apt-get install git
+sudo apt-get install -y build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
+sudo apt-get install -y libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+sudo apt-get install -y libboost-all-dev
+sudo apt-get install -y software-properties-common
+
+sudo snap install bitcoin-core
+
+sudo apt-get -y install libdb-dev
+sudo apt install -y libdb++-dev
+sudo apt-get install -y libminiupnpc-dev
+sudo apt-get install -y libzmq3-dev
+sudo apt-get install -y libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+
+sudo add-apt-repository ppa:rock-core/qt4
+sudo apt install -y qt4-dev-tools libqt4-dev libqtcore4 libqtgui4
+
 ```
 ### Next, Clone the project
 
@@ -256,6 +280,8 @@ Next choose configuration option
 * Build without tests or GUI
 ```
 ./configure --disable-tests --disable-bench --without-gui
+### if Ubuntu 20.04+
+./configure --disable-tests --disable-bench --without-gui --with-incompatible-bdb
 ```
 
 # Make
