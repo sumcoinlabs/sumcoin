@@ -140,7 +140,7 @@ jobs:
         with:
           repository: sumcoin/packaging
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           path: docker
 
@@ -224,7 +224,7 @@ jobs:
         with:
           repository: sumcoin/packaging
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         with:
           path: appimage
 
@@ -300,7 +300,7 @@ jobs:
       - uses: actions/checkout@v2
         if: ${{ steps.detect.outputs.tag-name != 'noop' }}
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4.1.7
         if: ${{ steps.detect.outputs.tag-name != 'noop' }}
 
       - name: Import GPG key
