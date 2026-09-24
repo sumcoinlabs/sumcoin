@@ -13,7 +13,7 @@ NO_QR ?=
 NO_WALLET ?=
 NO_ZMQ ?=
 NO_UPNP ?=
-FALLBACK_DOWNLOAD_PATH ?= https://boostorg.jfrog.io/artifactory/main/release/1.70.0/source/
+FALLBACK_DOWNLOAD_PATH ?= https://download.bitcoinabc.org/depends-sources/
 
 BUILD = $(shell ./config.guess)
 HOST ?= $(BUILD)
