@@ -136,6 +136,8 @@ jobs:
             !*-unsigned.tar.gz
           retention-days: 5
   docker:
+    # Temporarily disabled: the external sumcoin/packaging repository no longer resolves.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     needs: [binary]
     steps:
@@ -200,6 +202,9 @@ jobs:
             --tag ghcr.io/${{ github.repository }}/sumcoind:${{ steps.detect.outputs.tag-name }} \
           .
   appimage:
+    # Temporarily disabled: the packaging repository is unavailable and the
+    # existing AppImage builder image cannot run current GitHub Actions Node.
+    if: ${{ false }}
     runs-on: ubuntu-latest
     container: appimagecrafters/appimage-builder:latest
     needs: [binary]
