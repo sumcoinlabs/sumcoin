@@ -21,7 +21,7 @@ env:
 jobs:
   binary:
     runs-on: ubuntu-latest
-    container: docker:stable-dind
+    container: docker:27-dind
     strategy:
       matrix:
         name:
