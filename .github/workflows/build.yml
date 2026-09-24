@@ -110,6 +110,9 @@ jobs:
           git add share/genbuild.sh
           git commit -m "Update DESC"
 
+      - name: Mark workspace as safe for Git
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
       - name: Build binary
         working-directory: ${{ env.GITIAN_DIR }}
         run: |
