@@ -556,9 +556,24 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
                     }
             }
 
-            while (GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()) < 0.996)
+            while (true)
             {
-                LogPrintf("Minter thread sleeps while sync at %f\n", GuessVerificationProgress(Params().TxData(), ::ChainActive().Tip()));
+                bool caught_up_to_headers;
+                double verification_progress;
+                {
+                    LOCK(cs_main);
+                    const CBlockIndex* tip = ::ChainActive().Tip();
+                    caught_up_to_headers = tip != nullptr &&
+                                           pindexBestHeader != nullptr &&
+                                           tip->nHeight >= pindexBestHeader->nHeight;
+                    verification_progress = GuessVerificationProgress(Params().TxData(), tip);
+                }
+
+                if (caught_up_to_headers && verification_progress >= 0.996)
+                    break;
+
+                LogPrintf("Minter thread sleeps while sync at %f, caught_up_to_headers=%i\n",
+                          verification_progress, caught_up_to_headers);
                 if (strMintWarning != strMintSyncMessage) {
                     strMintWarning = strMintSyncMessage;
                     uiInterface.NotifyAlertChanged(uint256(), CT_UPDATED);
