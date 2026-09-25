@@ -52,7 +52,7 @@ static constexpr int64_t HEADERS_DOWNLOAD_TIMEOUT_PER_HEADER = 1000; // 1ms/head
 static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
-/** During IBD, do not let one peer hold the next required block while its child is already waiting. */
+/** During IBD, do not let one peer hold the next required block indefinitely. */
 static constexpr int64_t IBD_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
@@ -4128,8 +4128,81 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
                     queuedBlock.pindex->pprev == tip &&
                     nPeersWithValidatedDownloads > 1 &&
                     nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
-                LogPrintf("Peer=%d is blocking IBD at height %d, disconnecting for failover\n",
-                        pto->GetId(), queuedBlock.pindex->nHeight);
+                const uint256 blockedHash = queuedBlock.hash;
+                const CBlockIndex* blockedIndex = queuedBlock.pindex;
+                const int blockedHeight = blockedIndex->nHeight;
+
+                CNode* replacement = nullptr;
+                int bestInFlight = MAX_BLOCKS_IN_TRANSIT_PER_PEER + 2;
+                int64_t bestDownloadingSince = -1;
+                int64_t bestPing = std::numeric_limits<int64_t>::max();
+
+                connman->ForEachNode([&](CNode* candidate) {
+                    if (candidate == pto ||
+                            !candidate->fSuccessfullyConnected ||
+                            candidate->fDisconnect ||
+                            candidate->fClient ||
+                            candidate->m_limited_node) {
+                        return;
+                    }
+
+                    CNodeState* candidateState = State(candidate->GetId());
+                    if (candidateState == nullptr ||
+                            candidateState->nBlocksInFlightValidHeaders <= 0 ||
+                            candidateState->nBlocksInFlight > MAX_BLOCKS_IN_TRANSIT_PER_PEER ||
+                            !PeerHasHeader(candidateState, blockedIndex)) {
+                        return;
+                    }
+
+                    int64_t ping = candidate->nPingUsecTime.load();
+                    if (ping <= 0) {
+                        ping = std::numeric_limits<int64_t>::max();
+                    }
+
+                    if (replacement == nullptr ||
+                            candidateState->nBlocksInFlight < bestInFlight ||
+                            (candidateState->nBlocksInFlight == bestInFlight &&
+                             candidateState->nDownloadingSince > bestDownloadingSince) ||
+                            (candidateState->nBlocksInFlight == bestInFlight &&
+                             candidateState->nDownloadingSince == bestDownloadingSince &&
+                             ping < bestPing)) {
+                        replacement = candidate;
+                        bestInFlight = candidateState->nBlocksInFlight;
+                        bestDownloadingSince = candidateState->nDownloadingSince;
+                        bestPing = ping;
+                    }
+                });
+
+                if (replacement != nullptr) {
+                    const NodeId replacementId = replacement->GetId();
+                    const uint32_t fetchFlags =
+                            IsBTC16BIPsEnabled(blockedIndex->nTime) ?
+                            GetFetchFlags(replacement) : 0;
+
+                    MarkBlockAsInFlight(
+                            m_mempool,
+                            replacementId,
+                            blockedHash,
+                            blockedIndex);
+
+                    std::vector<CInv> failoverRequest;
+                    failoverRequest.emplace_back(
+                            MSG_BLOCK | fetchFlags,
+                            blockedHash);
+
+                    connman->PushMessage(
+                            replacement,
+                            CNetMsgMaker(replacement->GetSendVersion()).Make(
+                                    NetMsgType::GETDATA,
+                                    failoverRequest));
+
+                    LogPrintf("Peer=%d is blocking IBD at height %d, handing block directly to peer=%d\n",
+                            pto->GetId(), blockedHeight, replacementId);
+                    return true;
+                }
+
+                LogPrintf("Peer=%d is blocking IBD at height %d, no replacement peer available, disconnecting for failover\n",
+                        pto->GetId(), blockedHeight);
                 pto->fDisconnect = true;
                 return true;
             }
