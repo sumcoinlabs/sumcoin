@@ -52,10 +52,8 @@ static constexpr int64_t HEADERS_DOWNLOAD_TIMEOUT_PER_HEADER = 1000; // 1ms/head
 static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
-/** During IBD, do not let one peer hold the next required block while its child is already waiting. */
+/** During IBD, do not let one peer hold the next required block indefinitely. */
 static constexpr int64_t IBD_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
-/** How long to pause new block requests to an IBD peer after it blocks the active chain. */
-static constexpr int64_t IBD_BLOCK_DOWNLOAD_COOLDOWN = 30 * 1000000; // 30 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
 /** How frequently to check for extra outbound peers and disconnect, in seconds */
@@ -251,8 +249,8 @@ struct CNodeState {
     std::list<QueuedBlock> vBlocksInFlight;
     //! When the first entry in vBlocksInFlight started downloading. Don't care when vBlocksInFlight is empty.
     int64_t nDownloadingSince;
-    //! Until when this peer is temporarily excluded from new IBD block requests.
-    int64_t nIBDBlockDownloadCooldownUntil;
+    //! A block height this peer failed to deliver while it was blocking IBD.
+    int nIBDBlockedHeight;
     int nBlocksInFlight;
     int nBlocksInFlightValidHeaders;
     //! Whether we consider this a preferred download peer.
@@ -392,7 +390,7 @@ struct CNodeState {
         nHeadersSyncTimeout = 0;
         nStallingSince = 0;
         nDownloadingSince = 0;
-        nIBDBlockDownloadCooldownUntil = 0;
+        nIBDBlockedHeight = -1;
         nBlocksInFlight = 0;
         nBlocksInFlightValidHeaders = 0;
         fPreferredDownload = false;
@@ -4134,22 +4132,18 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
                     nPeersWithValidatedDownloads > 1 &&
                     nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
                 const int blockingHeight = queuedBlock.pindex->nHeight;
-                std::vector<uint256> blocksToRelease;
-                blocksToRelease.reserve(state.vBlocksInFlight.size());
-                for (const QueuedBlock& block : state.vBlocksInFlight) {
-                    blocksToRelease.push_back(block.hash);
-                }
+                const uint256 blockingHash = queuedBlock.hash;
 
-                state.nIBDBlockDownloadCooldownUntil =
-                        nNow + IBD_BLOCK_DOWNLOAD_COOLDOWN;
+                // Remember that this peer failed this specific block so it
+                // cannot immediately reclaim the same request.
+                state.nIBDBlockedHeight = blockingHeight;
 
-                for (const uint256& hash : blocksToRelease) {
-                    MarkBlockAsReceived(hash);
-                }
+                // Release only the head-of-line block. Keep the peer connected
+                // and preserve its other in-flight downloads.
+                MarkBlockAsReceived(blockingHash);
 
-                LogPrintf("Peer=%d is blocking IBD at height %d, releasing %u in-flight blocks for reassignment\n",
-                        pto->GetId(), blockingHeight,
-                        static_cast<unsigned int>(blocksToRelease.size()));
+                LogPrintf("Peer=%d is blocking IBD at height %d, releasing block for reassignment\n",
+                        pto->GetId(), blockingHeight);
                 return true;
             }
 
@@ -4201,14 +4195,15 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
         // Message: getdata (blocks)
         //
         std::vector<CInv> vGetData;
-        const bool fIBDBlockDownloadCooldown =
-                ::ChainstateActive().IsInitialBlockDownload() &&
-                nNow < state.nIBDBlockDownloadCooldownUntil;
-        if (!pto->fClient && !fIBDBlockDownloadCooldown && ((fFetch && !pto->m_limited_node) || !::ChainstateActive().IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
+        if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !::ChainstateActive().IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
             std::vector<const CBlockIndex*> vToDownload;
             NodeId staller = -1;
             FindNextBlocksToDownload(pto->GetId(), MAX_BLOCKS_IN_TRANSIT_PER_PEER - state.nBlocksInFlight, vToDownload, staller, consensusParams);
             for (const CBlockIndex *pindex : vToDownload) {
+                if (::ChainstateActive().IsInitialBlockDownload() &&
+                        pindex->nHeight == state.nIBDBlockedHeight) {
+                    continue;
+                }
                 uint32_t nFetchFlags = IsBTC16BIPsEnabled(pindex->nTime) ? GetFetchFlags(pto) : false;
                 vGetData.push_back(CInv(MSG_BLOCK | nFetchFlags, pindex->GetBlockHash()));
                 MarkBlockAsInFlight(m_mempool, pto->GetId(), pindex->GetBlockHash(), pindex);
