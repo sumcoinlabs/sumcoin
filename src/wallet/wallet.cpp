@@ -1163,17 +1163,33 @@ void CWallet::blockConnected(const CBlock& block, int height)
 
 void CWallet::blockDisconnected(const CBlock& block, int height)
 {
-    auto locked_chain = chain().lock();
-    LOCK(cs_wallet);
+    std::vector<uint256> coinstakes_to_abandon;
 
-    // At block disconnection, this will change an abandoned transaction to
-    // be unconfirmed, whether or not the transaction is added back to the mempool.
-    // User may have to call abandontransaction again. It may be addressed in the
-    // future with a stickier abandoned state or even removing abandontransaction call.
-    m_last_block_processed_height = height - 1;
-    m_last_block_processed = block.hashPrevBlock;
-    for (const CTransactionRef& ptx : block.vtx) {
-        SyncTransaction(ptx, {CWalletTx::Status::UNCONFIRMED, /* block height */ 0, /* block hash */ {}, /* index */ 0});
+    {
+        auto locked_chain = chain().lock();
+        LOCK(cs_wallet);
+
+        // At block disconnection, this will change an abandoned transaction to
+        // be unconfirmed, whether or not the transaction is added back to the mempool.
+        // User may have to call abandontransaction again. It may be addressed in the
+        // future with a stickier abandoned state or even removing abandontransaction call.
+        m_last_block_processed_height = height - 1;
+        m_last_block_processed = block.hashPrevBlock;
+        for (const CTransactionRef& ptx : block.vtx) {
+            SyncTransaction(ptx, {CWalletTx::Status::UNCONFIRMED, /* block height */ 0, /* block hash */ {}, /* index */ 0});
+
+            if (ptx->IsCoinStake() && mapWallet.count(ptx->GetHash())) {
+                coinstakes_to_abandon.push_back(ptx->GetHash());
+            }
+        }
+    }
+
+    // A disconnected coinstake cannot be reaccepted into the mempool. Leaving
+    // it unconfirmed makes its original staking input appear spent until the
+    // wallet is restarted. Abandon it immediately so its inputs and any wallet
+    // descendants are released.
+    for (const uint256& hash : coinstakes_to_abandon) {
+        AbandonTransaction(hash);
     }
 }
 

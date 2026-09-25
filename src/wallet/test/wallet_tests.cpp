@@ -619,4 +619,72 @@ BOOST_FIXTURE_TEST_CASE(dummy_input_size_test, TestChain100Setup)
     BOOST_CHECK_EQUAL(CalculateNestedKeyhashInputSize(true), DUMMY_NESTED_P2WPKH_INPUT_SIZE);
 }
 
+
+BOOST_AUTO_TEST_CASE(coinstake_disconnect_releases_staked_input)
+{
+    CKey key;
+    key.MakeNewKey(true);
+    AddKey(m_wallet, key);
+
+    const CScript script = GetScriptForRawPubKey(key.GetPubKey());
+
+    // Create a wallet-owned output which will be consumed by the coinstake.
+    CMutableTransaction prev_tx;
+    prev_tx.vout.emplace_back(10 * COIN, script);
+    const CTransactionRef prev = MakeTransactionRef(prev_tx);
+
+    CWalletTx prev_wtx(&m_wallet, prev);
+    BOOST_REQUIRE(m_wallet.AddToWallet(prev_wtx));
+
+    // Construct a coinstake spending the wallet-owned output. Sumcoin marks
+    // coinstakes by giving them an empty first output.
+    CMutableTransaction stake_tx;
+    stake_tx.vin.emplace_back(COutPoint(prev->GetHash(), 0));
+    stake_tx.vout.emplace_back(0, CScript());
+    stake_tx.vout.emplace_back(10 * COIN, script);
+    const CTransactionRef stake = MakeTransactionRef(stake_tx);
+
+    BOOST_REQUIRE(stake->IsCoinStake());
+
+    CBlock block;
+    block.hashPrevBlock = uint256S("01");
+    block.vtx.push_back(stake);
+
+    const int height = 100;
+    const uint256 block_hash = block.GetHash();
+
+    CWalletTx stake_wtx(&m_wallet, stake);
+    stake_wtx.m_confirm = {
+        CWalletTx::Status::CONFIRMED,
+        height,
+        block_hash,
+        0
+    };
+    BOOST_REQUIRE(m_wallet.AddToWallet(stake_wtx));
+
+    {
+        LOCK(m_wallet.cs_wallet);
+        m_wallet.SetLastBlockProcessed(height, block_hash);
+
+        // Before the block is disconnected, the stake legitimately spends
+        // the original wallet output.
+        BOOST_CHECK(m_wallet.IsSpent(prev->GetHash(), 0));
+    }
+
+    // Simulate the chain disconnecting the block containing our coinstake.
+    m_wallet.blockDisconnected(block, height);
+
+    const CWalletTx* orphaned_stake = m_wallet.GetWalletTx(stake->GetHash());
+    BOOST_REQUIRE(orphaned_stake != nullptr);
+
+    // The disconnected coinstake must be abandoned immediately rather than
+    // remaining zero-depth and falsely consuming its original stake input.
+    BOOST_CHECK(orphaned_stake->isAbandoned());
+
+    {
+        LOCK(m_wallet.cs_wallet);
+        BOOST_CHECK(!m_wallet.IsSpent(prev->GetHash(), 0));
+    }
+}
+
 BOOST_AUTO_TEST_SUITE_END()
