@@ -52,8 +52,8 @@ static constexpr int64_t HEADERS_DOWNLOAD_TIMEOUT_PER_HEADER = 1000; // 1ms/head
 static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
-/** During IBD, do not let one peer hold the next required block while its child is already waiting. */
-static constexpr int64_t IBD_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
+/** While catching up to the known header tip, do not let one peer hold the next required block indefinitely. */
+static constexpr int64_t CATCHUP_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
 /** How frequently to check for extra outbound peers and disconnect, in seconds */
@@ -4122,13 +4122,14 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
             // Sumcoin: during IBD, fail over quickly when this peer is holding
             // the next sequential block needed to advance the active chain.
             const CBlockIndex* tip = ::ChainActive().Tip();
-            if (::ChainstateActive().IsInitialBlockDownload() &&
+            if (pindexBestHeader != nullptr &&
                     queuedBlock.pindex != nullptr &&
                     tip != nullptr &&
+                    tip->nHeight < pindexBestHeader->nHeight &&
                     queuedBlock.pindex->pprev == tip &&
                     nPeersWithValidatedDownloads > 1 &&
-                    nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
-                LogPrintf("Peer=%d is blocking IBD at height %d, disconnecting for failover\n",
+                    nNow > state.nDownloadingSince + CATCHUP_BLOCKING_BLOCK_TIMEOUT) {
+                LogPrintf("Peer=%d is blocking catch-up at height %d, disconnecting for failover\n",
                         pto->GetId(), queuedBlock.pindex->nHeight);
                 pto->fDisconnect = true;
                 return true;
