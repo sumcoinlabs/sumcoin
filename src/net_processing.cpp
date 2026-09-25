@@ -4120,14 +4120,12 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
             QueuedBlock &queuedBlock = state.vBlocksInFlight.front();
 
             // Sumcoin: during IBD, fail over quickly when this peer is holding
-            // the next sequential block while its child has already arrived
-            // from another peer and is waiting for this block to connect.
+            // the next sequential block needed to advance the active chain.
             const CBlockIndex* tip = ::ChainActive().Tip();
             if (::ChainstateActive().IsInitialBlockDownload() &&
                     queuedBlock.pindex != nullptr &&
                     tip != nullptr &&
                     queuedBlock.pindex->pprev == tip &&
-                    mapBlocksWait.count(const_cast<CBlockIndex*>(queuedBlock.pindex)) != 0 &&
                     nPeersWithValidatedDownloads > 1 &&
                     nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
                 LogPrintf("Peer=%d is blocking IBD at height %d, disconnecting for failover\n",
