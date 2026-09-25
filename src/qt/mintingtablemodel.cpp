@@ -297,7 +297,10 @@ MintingTableModel::MintingTableModel(WalletModel *parent) :
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateAge()));
-    timer->start(MODEL_UPDATE_DELAY);
+    // Age and coin-age are expressed in whole days. Refreshing the entire
+    // dynamically sorted minting table every 250ms becomes extremely expensive
+    // for long-running staking wallets with thousands of outputs.
+    timer->start(60 * 1000);
 
     connect(walletModel->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
     m_handler_transaction_changed = walletModel->wallet().handleTransactionChanged(std::bind(NotifyTransactionChanged, this, std::placeholders::_1, std::placeholders::_2));
