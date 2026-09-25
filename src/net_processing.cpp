@@ -52,7 +52,7 @@ static constexpr int64_t HEADERS_DOWNLOAD_TIMEOUT_PER_HEADER = 1000; // 1ms/head
 static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
-/** During IBD, do not let one peer hold the next required block indefinitely. */
+/** During IBD, do not let one peer hold the next required block while its child is already waiting. */
 static constexpr int64_t IBD_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
@@ -249,10 +249,6 @@ struct CNodeState {
     std::list<QueuedBlock> vBlocksInFlight;
     //! When the first entry in vBlocksInFlight started downloading. Don't care when vBlocksInFlight is empty.
     int64_t nDownloadingSince;
-    //! Exact block currently preventing this peer from advancing the active IBD tip.
-    uint256 hashIBDBlockingBlock;
-    //! When this exact block first became the active-chain blocker.
-    int64_t nIBDBlockingSince;
     int nBlocksInFlight;
     int nBlocksInFlightValidHeaders;
     //! Whether we consider this a preferred download peer.
@@ -392,8 +388,6 @@ struct CNodeState {
         nHeadersSyncTimeout = 0;
         nStallingSince = 0;
         nDownloadingSince = 0;
-        hashIBDBlockingBlock.SetNull();
-        nIBDBlockingSince = 0;
         nBlocksInFlight = 0;
         nBlocksInFlightValidHeaders = 0;
         fPreferredDownload = false;
@@ -4125,111 +4119,19 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
         if (state.vBlocksInFlight.size() > 0) {
             QueuedBlock &queuedBlock = state.vBlocksInFlight.front();
 
-            // Sumcoin: explicitly time ownership of the exact block preventing
-            // the active IBD tip from advancing. Do not reuse nDownloadingSince:
-            // that timer follows queue-front bookkeeping, not tip blockage.
+            // Sumcoin: during IBD, fail over quickly when this peer is holding
+            // the next sequential block needed to advance the active chain.
             const CBlockIndex* tip = ::ChainActive().Tip();
-            const QueuedBlock* ibdBlockingBlock = nullptr;
-
-            if (::ChainstateActive().IsInitialBlockDownload() && tip != nullptr) {
-                for (const auto& inFlight : mapBlocksInFlight) {
-                    if (inFlight.second.first != pto->GetId()) {
-                        continue;
-                    }
-
-                    const QueuedBlock& candidate = *inFlight.second.second;
-                    if (candidate.pindex != nullptr &&
-                            candidate.pindex->pprev == tip) {
-                        ibdBlockingBlock = &candidate;
-                        break;
-                    }
-                }
-            }
-
-            if (ibdBlockingBlock != nullptr) {
-                const uint256 blockedHash = ibdBlockingBlock->hash;
-                const CBlockIndex* blockedIndex = ibdBlockingBlock->pindex;
-                const int blockedHeight = blockedIndex->nHeight;
-
-                if (state.hashIBDBlockingBlock != blockedHash) {
-                    state.hashIBDBlockingBlock = blockedHash;
-                    state.nIBDBlockingSince = nNow;
-                } else if (state.nIBDBlockingSince != 0 &&
-                        nNow > state.nIBDBlockingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
-                    CNode* replacement = nullptr;
-                    int bestInFlight = MAX_BLOCKS_IN_TRANSIT_PER_PEER + 2;
-                    int64_t bestPing = std::numeric_limits<int64_t>::max();
-
-                    connman->ForEachNode([&](CNode* candidate) {
-                        if (candidate == pto ||
-                                !candidate->fSuccessfullyConnected ||
-                                candidate->fDisconnect ||
-                                candidate->fClient ||
-                                candidate->m_limited_node) {
-                            return;
-                        }
-
-                        CNodeState* candidateState = State(candidate->GetId());
-                        if (candidateState == nullptr ||
-                                candidateState->nBlocksInFlight > MAX_BLOCKS_IN_TRANSIT_PER_PEER ||
-                                !PeerHasHeader(candidateState, blockedIndex)) {
-                            return;
-                        }
-
-                        int64_t ping = candidate->nPingUsecTime.load();
-                        if (ping <= 0) {
-                            ping = std::numeric_limits<int64_t>::max();
-                        }
-
-                        if (replacement == nullptr ||
-                                candidateState->nBlocksInFlight < bestInFlight ||
-                                (candidateState->nBlocksInFlight == bestInFlight &&
-                                 ping < bestPing)) {
-                            replacement = candidate;
-                            bestInFlight = candidateState->nBlocksInFlight;
-                            bestPing = ping;
-                        }
-                    });
-
-                    if (replacement != nullptr) {
-                        const NodeId replacementId = replacement->GetId();
-                        const uint32_t fetchFlags =
-                                IsBTC16BIPsEnabled(blockedIndex->nTime) ?
-                                GetFetchFlags(replacement) : 0;
-
-                        state.hashIBDBlockingBlock.SetNull();
-                        state.nIBDBlockingSince = 0;
-
-                        MarkBlockAsInFlight(
-                                m_mempool,
-                                replacementId,
-                                blockedHash,
-                                blockedIndex);
-
-                        std::vector<CInv> failoverRequest;
-                        failoverRequest.emplace_back(
-                                MSG_BLOCK | fetchFlags,
-                                blockedHash);
-
-                        connman->PushMessage(
-                                replacement,
-                                CNetMsgMaker(replacement->GetSendVersion()).Make(
-                                        NetMsgType::GETDATA,
-                                        failoverRequest));
-
-                        LogPrintf("Peer=%d blocked IBD at height %d for 15 seconds, direct handoff to peer=%d\n",
-                                pto->GetId(), blockedHeight, replacementId);
-                        return true;
-                    }
-
-                    LogPrintf("Peer=%d blocked IBD at height %d for 15 seconds, no replacement available, disconnecting\n",
-                            pto->GetId(), blockedHeight);
-                    pto->fDisconnect = true;
-                    return true;
-                }
-            } else {
-                state.hashIBDBlockingBlock.SetNull();
-                state.nIBDBlockingSince = 0;
+            if (::ChainstateActive().IsInitialBlockDownload() &&
+                    queuedBlock.pindex != nullptr &&
+                    tip != nullptr &&
+                    queuedBlock.pindex->pprev == tip &&
+                    nPeersWithValidatedDownloads > 1 &&
+                    nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
+                LogPrintf("Peer=%d is blocking IBD at height %d, disconnecting for failover\n",
+                        pto->GetId(), queuedBlock.pindex->nHeight);
+                pto->fDisconnect = true;
+                return true;
             }
 
             int nOtherPeersWithValidatedDownloads = nPeersWithValidatedDownloads - (state.nBlocksInFlightValidHeaders > 0);
