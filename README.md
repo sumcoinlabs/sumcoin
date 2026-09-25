@@ -1,7 +1,7 @@
 # Sumcoin Official Development Repo
 
 
-[![Continuous Integration](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml)
+[![Continuous Integration](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml)
 
 ### What is Sumcoin?
 [Sumcoin](https://sumcoin.org) (abbreviated SUM), is a [cryptocurrency](https://cryptocurrency.fandom.com/wiki/Sumcoin) design of [proof-of-stake consensus](https://sumcoinindex.com/white-paper.html) as a security model minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
