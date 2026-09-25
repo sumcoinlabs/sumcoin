@@ -4471,7 +4471,12 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         } else
             txNew.vout[1].nValue = nCredit - nMinFee;
 
-        LogPrintf("txNew.vout[1].nValue=%d, txNew.vout[2].nValue=%d\n", txNew.vout[1].nValue, txNew.vout[2].nValue);
+        if (txNew.vout.size() > 2) {
+            LogPrintf("txNew.vout[1].nValue=%d, txNew.vout[2].nValue=%d\n",
+                      txNew.vout[1].nValue, txNew.vout[2].nValue);
+        } else {
+            LogPrintf("txNew.vout[1].nValue=%d\n", txNew.vout[1].nValue);
+        }
 
         // Sign
         int nIn = 0;
