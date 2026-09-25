@@ -52,6 +52,8 @@ static constexpr int64_t HEADERS_DOWNLOAD_TIMEOUT_PER_HEADER = 1000; // 1ms/head
 static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
+/** During IBD, do not let one peer hold the next required block while its child is already waiting. */
+static constexpr int64_t IBD_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
 /** How frequently to check for extra outbound peers and disconnect, in seconds */
@@ -4116,6 +4118,24 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
         // to unreasonably increase our timeout.
         if (state.vBlocksInFlight.size() > 0) {
             QueuedBlock &queuedBlock = state.vBlocksInFlight.front();
+
+            // Sumcoin: during IBD, fail over quickly when this peer is holding
+            // the next sequential block while its child has already arrived
+            // from another peer and is waiting for this block to connect.
+            const CBlockIndex* tip = ::ChainActive().Tip();
+            if (::ChainstateActive().IsInitialBlockDownload() &&
+                    queuedBlock.pindex != nullptr &&
+                    tip != nullptr &&
+                    queuedBlock.pindex->pprev == tip &&
+                    mapBlocksWait.count(const_cast<CBlockIndex*>(queuedBlock.pindex)) != 0 &&
+                    nPeersWithValidatedDownloads > 1 &&
+                    nNow > state.nDownloadingSince + IBD_BLOCKING_BLOCK_TIMEOUT) {
+                LogPrintf("Peer=%d is blocking IBD at height %d, disconnecting for failover\n",
+                        pto->GetId(), queuedBlock.pindex->nHeight);
+                pto->fDisconnect = true;
+                return true;
+            }
+
             int nOtherPeersWithValidatedDownloads = nPeersWithValidatedDownloads - (state.nBlocksInFlightValidHeaders > 0);
             if (nNow > state.nDownloadingSince + consensusParams.nPowTargetSpacing * (BLOCK_DOWNLOAD_TIMEOUT_BASE + BLOCK_DOWNLOAD_TIMEOUT_PER_PEER * nOtherPeersWithValidatedDownloads)) {
                 LogPrintf("Timeout downloading block %s from peer=%d, disconnecting\n", queuedBlock.hash.ToString(), pto->GetId());
