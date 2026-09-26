@@ -98,7 +98,8 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
     pblock = &pblocktemplate->block; // pointer for convenience
     pblock->nTime = GetAdjustedTime();
 
-    LOCK2(cs_main, m_mempool.cs);
+    WAIT_LOCK(cs_main, lockMain);
+    WAIT_LOCK(m_mempool.cs, lockMempool);
     CBlockIndex* pindexPrev = ::ChainActive().Tip();
     assert(pindexPrev != nullptr);
     nHeight = pindexPrev->nHeight + 1;
@@ -131,7 +132,32 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
         int64_t nSearchTime = txCoinStake.nTime; // search to current time
         if (nSearchTime > nLastCoinStakeSearchTime)
         {
-            if (pwallet->CreateCoinStake(pwallet, pblock->nBits, nSearchTime-nLastCoinStakeSearchTime, txCoinStake))
+            bool fCoinStakeCreated = false;
+
+            // The wallet kernel scan can take tens of seconds. Release both
+            // the mempool and global chain locks while it searches. The wallet
+            // receives the exact parent used to calculate nBits.
+            {
+                REVERSE_LOCK(lockMempool);
+                {
+                    REVERSE_LOCK(lockMain);
+                    fCoinStakeCreated = pwallet->CreateCoinStake(
+                        pwallet,
+                        pindexPrev,
+                        pblock->nBits,
+                        nSearchTime - nLastCoinStakeSearchTime,
+                        txCoinStake);
+                }
+            }
+
+            // Both locks are held again. Never finish a block template if the
+            // active parent changed while the stake search was running.
+            if (::ChainActive().Tip() != pindexPrev) {
+                LogPrintf("CreateNewBlock(): tip changed during coinstake search, retrying\n");
+                return nullptr;
+            }
+
+            if (fCoinStakeCreated)
             {
                 if (txCoinStake.nTime >= std::max(pindexPrev->GetMedianTimePast()+1, pindexPrev->GetBlockTime() - (IsProtocolV09(pindexPrev->GetBlockTime()) ? MAX_FUTURE_BLOCK_TIME : MAX_FUTURE_BLOCK_TIME_PREV9)))
                 {   // make sure coinstake would meet timestamp protocol
@@ -591,17 +617,14 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
             //
             // Create new block
             //
-            CBlockIndex* pindexPrev = ::ChainActive().Tip();
+            CBlockIndex* pindexPrev = nullptr;
             bool fPoSCancel = false;
             CScript scriptPubKey = GetScriptForDestination(dest);
             CBlock *pblock;
             std::unique_ptr<CBlockTemplate> pblocktemplate;
 
-            {
-                LOCK2(cs_main, pwallet->cs_wallet);
-
-                pblocktemplate = BlockAssembler(*mempool, Params()).CreateNewBlock(scriptPubKey, pwallet.get(), &fPoSCancel);
-            }
+            pblocktemplate = BlockAssembler(*mempool, Params()).CreateNewBlock(
+                scriptPubKey, pwallet.get(), &fPoSCancel);
 
             if (!pblocktemplate.get())
             {
@@ -620,21 +643,38 @@ void PoSMiner(std::shared_ptr<CWallet> pwallet, CConnman* connman, CTxMemPool* m
                 return;
             }
             pblock = &pblocktemplate->block;
-            IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
             // sumcoin: if proof-of-stake block found then process block
             if (pblock->IsProofOfStake())
             {
                 {
                     LOCK2(cs_main, pwallet->cs_wallet);
+
+                    // Revalidate the exact parent immediately before signing.
+                    if (::ChainActive().Tip() == nullptr ||
+                        pblock->hashPrevBlock != ::ChainActive().Tip()->GetBlockHash())
+                    {
+                        LogPrintf("PoSMiner(): discarding stale stake candidate before signing\n");
+                        continue;
+                    }
+
+                    pindexPrev = ::ChainActive().Tip();
+                    IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
+
                     if (!SignBlock(*pblock, *pwallet))
                     {
                         LogPrintf("PoSMiner(): failed to sign PoS block");
                         continue;
                     }
                 }
+
                 LogPrintf("CPUMiner : proof-of-stake block found %s\n", pblock->GetHash().ToString());
-                ProcessBlockFound(pblock, Params());
+
+                // Do not reserve a key or take the post-mint rest period if
+                // the block became stale before ProcessNewBlock accepted it.
+                if (!ProcessBlockFound(pblock, Params()))
+                    continue;
+
                 reservedest.KeepDestination();
                 // Rest for ~3 minutes after successful block to preserve close quick
                 if (!connman->interruptNet.sleep_for(std::chrono::seconds(60 + GetRand(4))))

@@ -4281,12 +4281,12 @@ void CWallet::ConnectScriptPubKeyManNotifiers()
 }
 
 // sumcoin: create coin stake transaction
-bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew)
+bool CWallet::CreateCoinStake(const CWallet* pwallet, CBlockIndex* pindexPrev, unsigned int nBits, int64_t nSearchInterval, CMutableTransaction& txNew)
 {
     // The following split & combine thresholds are important to security
     // Should not be adjusted if you don't understand the consequences
     static unsigned int nStakeSplitAge = (60 * 60 * 24 * 90);
-    int64_t nCombineThreshold = GetProofOfWorkReward(GetLastBlockIndex(::ChainActive().Tip(), false)->nBits, txNew.nTime) / 3;
+    int64_t nCombineThreshold;
 
     CBigNum bnTargetPerCoinDay;
     bnTargetPerCoinDay.SetCompact(nBits);
@@ -4296,7 +4296,16 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         return error("CreateCoinStake : transaction index unavailable");
     const Consensus::Params& params = Params().GetConsensus();
 
-    LOCK2(cs_main, cs_wallet);
+    WAIT_LOCK(cs_main, lockMain);
+    WAIT_LOCK(cs_wallet, lockWallet);
+
+    // The caller calculated nBits from this exact parent. If the chain
+    // already moved before we started searching, discard this attempt.
+    if (::ChainActive().Tip() != pindexPrev)
+        return false;
+
+    nCombineThreshold = GetProofOfWorkReward(GetLastBlockIndex(pindexPrev, false)->nBits, txNew.nTime) / 3;
+
     txNew.vin.clear();
     txNew.vout.clear();
     // Mark coin stake transaction
@@ -4314,12 +4323,16 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
     std::vector<CTransactionRef> vwtxPrev;
     CAmount nValueIn = 0;
     std::vector<COutput> vAvailableCoins;
-    auto locked_chain = chain().lock();
     CCoinControl temp;
     CoinSelectionParams coin_selection_params;
     coin_selection_params.use_bnb = false;
     bool bnb_used;
-    AvailableCoins(*locked_chain, vAvailableCoins, true, &temp, txNew.nTime, 1, MAX_MONEY, MAX_MONEY, 0);
+    {
+        // AvailableCoins requires the Chain interface lock. Keep this
+        // acquisition short so it is gone before the kernel scan below.
+        auto locked_chain = chain().lock();
+        AvailableCoins(*locked_chain, vAvailableCoins, true, &temp, txNew.nTime, 1, MAX_MONEY, MAX_MONEY, 0);
+    }
 
     if (!SelectCoins(vAvailableCoins, nBalance - nReserveBalance, setCoins, nValueIn, temp, coin_selection_params, bnb_used))
         return false;
@@ -4327,8 +4340,19 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         return false;
     CAmount nCredit = 0;
     CScript scriptPubKeyKernel;
+    const bool fSplitCoins = pwallet->m_split_coins;
 
-    for (const auto& pcoin : setCoins) {
+    // Kernel searching can take many seconds on large wallets. Search the
+    // copied coin snapshot without monopolizing cs_main or cs_wallet.
+    // Individual chain- and wallet-sensitive operations take their locks only
+    // for the short period in which they actually need them.
+    {
+        REVERSE_LOCK(lockWallet);
+        {
+            REVERSE_LOCK(lockMain);
+            {
+
+                for (const auto& pcoin : setCoins) {
         CDiskTxPos postx;
         if (!g_txindex->FindTxPosition(pcoin.outpoint.hash, postx))
             continue;
@@ -4355,7 +4379,20 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
             // Search nSearchInterval seconds back up to nMaxStakeSearchInterval
             uint256 hashProofOfStake = uint256();
             COutPoint prevoutStake = pcoin.outpoint;
-            if (CheckStakeKernelHash(nBits, ::ChainActive().Tip(), header, postx.nTxOffset + CBlockHeader::NORMAL_SERIALIZE_SIZE, tx, prevoutStake, txNew.nTime - n, hashProofOfStake)) {
+            bool fKernelMatch = false;
+            {
+                LOCK(cs_main);
+                fKernelMatch = CheckStakeKernelHash(
+                    nBits,
+                    pindexPrev,
+                    header,
+                    postx.nTxOffset + CBlockHeader::NORMAL_SERIALIZE_SIZE,
+                    tx,
+                    prevoutStake,
+                    txNew.nTime - n,
+                    hashProofOfStake);
+            }
+            if (fKernelMatch) {
                 // Found a kernel
                 if (gArgs.GetBoolArg("-debug", false) && gArgs.GetBoolArg("-printcoinstake", false))
                     LogPrintf("CreateCoinStake : kernel found\n");
@@ -4376,10 +4413,13 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
                 {
                     // convert to pay to public key type
                     CKey key;
-                    if (!pwallet->GetLegacyScriptPubKeyMan()->GetKey(CKeyID(uint160(vSolutions[0])), key)) {
-                        if (gArgs.GetBoolArg("-debug", false) && gArgs.GetBoolArg("-printcoinstake", false))
-                            LogPrintf("CreateCoinStake : failed to get key for kernel type=%d\n", whichType);
-                        break; // unable to find corresponding public key
+                    {
+                        LOCK(cs_wallet);
+                        if (!pwallet->GetLegacyScriptPubKeyMan()->GetKey(CKeyID(uint160(vSolutions[0])), key)) {
+                            if (gArgs.GetBoolArg("-debug", false) && gArgs.GetBoolArg("-printcoinstake", false))
+                                LogPrintf("CreateCoinStake : failed to get key for kernel type=%d\n", whichType);
+                            break; // unable to find corresponding public key
+                        }
                     }
                     scriptPubKeyOut << ToByteVector(key.GetPubKey()) << OP_CHECKSIG;
                 } else
@@ -4390,7 +4430,7 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
                 nCredit += pcoin.txout.nValue;
                 vwtxPrev.push_back(tx);
                 txNew.vout.push_back(CTxOut(0, scriptPubKeyOut));
-                if ((header.GetBlockTime() + nStakeSplitAge > txNew.nTime) && pwallet->m_split_coins)
+                if ((header.GetBlockTime() + nStakeSplitAge > txNew.nTime) && fSplitCoins)
                     txNew.vout.push_back(CTxOut(0, scriptPubKeyOut)); // split stake
                 if (gArgs.GetBoolArg("-debug", false) && gArgs.GetBoolArg("-printcoinstake", false))
                     LogPrintf("CreateCoinStake : added kernel type=%d\n", whichType);
@@ -4443,7 +4483,27 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
             nCredit += pcoin.txout.nValue;
             vwtxPrev.push_back(tx);
         }
+            }
+        }
     }
+    }
+
+    // cs_main and cs_wallet are held again here. A kernel found against an
+    // old parent must never be turned into a block on a different active tip.
+    if (::ChainActive().Tip() != pindexPrev) {
+        LogPrintf("CreateCoinStake : tip changed during stake search, retrying\n");
+        return false;
+    }
+
+    // Wallet state may also have changed while the snapshot was being searched.
+    // Never build a coinstake from an input the wallet has since spent.
+    for (const CTxIn& txin : txNew.vin) {
+        if (pwallet->IsSpent(txin.prevout.hash, txin.prevout.n)) {
+            LogPrintf("CreateCoinStake : selected input changed during stake search, retrying\n");
+            return false;
+        }
+    }
+
     // Calculate coin age reward
     {
         uint64_t nCoinAge;
@@ -4451,7 +4511,7 @@ bool CWallet::CreateCoinStake(const CWallet* pwallet, unsigned int nBits, int64_
         if (!GetCoinAge((const CTransaction)txNew, view, nCoinAge, txNew.nTime, true))
             return error("CreateCoinStake : failed to calculate coin age");
 
-        CAmount nReward = GetProofOfStakeReward(nCoinAge, txNew.nTime, ::ChainActive().Tip()->nMoneySupply);
+        CAmount nReward = GetProofOfStakeReward(nCoinAge, txNew.nTime, pindexPrev->nMoneySupply);
         // Refuse to create mint that has zero or negative reward
         if (nReward <= 0) {
             LogPrintf("nCredit=%d, nReward=%d\n", nCredit, nReward);
