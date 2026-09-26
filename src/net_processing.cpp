@@ -53,7 +53,7 @@ static constexpr int32_t MAX_OUTBOUND_PEERS_TO_PROTECT_FROM_DISCONNECT = 4;
 /** Timeout for (unprotected) outbound peers to sync to our chainwork, in seconds */
 static constexpr int64_t CHAIN_SYNC_TIMEOUT = 20 * 60; // 20 minutes
 /** While catching up to the known header tip, do not let one peer hold the next required block indefinitely. */
-static constexpr int64_t CATCHUP_BLOCKING_BLOCK_TIMEOUT = 15 * 1000000; // 15 seconds
+static constexpr int64_t CATCHUP_BLOCKING_BLOCK_TIMEOUT = 8 * 1000000; // 8 seconds
 /** How frequently to check for stale tips, in seconds */
 static constexpr int64_t STALE_CHECK_INTERVAL = 10 * 60; // 10 minutes
 /** How frequently to check for extra outbound peers and disconnect, in seconds */
