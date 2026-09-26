@@ -1,7 +1,21 @@
 # Sumcoin Official Development Repo
 
 
+# Sumcoin Official Development Repo
+
 [![Continuous Integration](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/sumcoinlabs/sumcoin/actions/workflows/build.yml)
+[![Latest Release](https://img.shields.io/github/v/release/sumcoinlabs/sumcoin?display_name=tag)](https://github.com/sumcoinlabs/sumcoin/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/sumcoinlabs/sumcoin/total.svg)](https://github.com/sumcoinlabs/sumcoin/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](COPYING)
+[![Issues](https://img.shields.io/github/issues/sumcoinlabs/sumcoin.svg)](https://github.com/sumcoinlabs/sumcoin/issues)
+[![Last Commit](https://img.shields.io/github/last-commit/sumcoinlabs/sumcoin.svg)](https://github.com/sumcoinlabs/sumcoin/commits/main)
+
+**Official website:** https://sumcoin.org  
+**Downloads:** https://github.com/sumcoinlabs/sumcoin/releases/latest  
+**Documentation:** [doc/](doc/)  
+**Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+
+### What is Sumcoin?
 
 ### What is Sumcoin?
 [Sumcoin](https://sumcoin.org) (abbreviated SUM), is a [cryptocurrency](https://cryptocurrency.fandom.com/wiki/Sumcoin) design of [proof-of-stake consensus](https://sumcoinindex.com/white-paper.html) as a security model minting system. Sumcoin is based on [Bitcoin](https://bitcoin.org), while introducing many important innovations to cryptocurrency field including new security model, energy efficiency, better minting model and more adaptive response to rapid change in network computation power.
@@ -30,7 +44,7 @@ Sumcoin is an Index Based Coin
 
 # What is Sumcoin?
 
-Sumcoin is a cryptographic blockchain using scrypt proof-of-work algorithm. Sumcoin tracks all coins in real time and its value is an aggregate or "SUM" of all top 100 coins by market capitalization. This is done using algorithms that track and calculate the market, without human interaction.  It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can also reduce risk factors.
+Sumcoin is a cryptographic blockchain using scrypt proof-of-stake algorithm. Sumcoin tracks all coins in real time and its value is an aggregate or "SUM" of all top 100 coins by market capitalization. This is done using algorithms that track and calculate the market, without human interaction.  It is for those who want to gain maximum exposure to the crypto space but may only want to hold one coin for simplicity, which can also reduce risk factors.
 
 
 Sumcoin Core integration/staging tree [SUM, 𝚺]
