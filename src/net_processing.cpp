@@ -4183,6 +4183,44 @@ bool PeerLogicValidation::SendMessages(CNode* pto)
         // Message: getdata (blocks)
         //
         std::vector<CInv> vGetData;
+        // Sumcoin: if the exact next block needed to advance the active chain
+        // becomes unassigned while all normal per-peer download slots are full,
+        // immediately give one eligible peer a temporary rescue slot. Without
+        // this, a disconnected peer can leave tip+1 unrequested while all
+        // surviving peers remain occupied with later blocks.
+        if (!pto->fClient &&
+                ((fFetch && !pto->m_limited_node) || !::ChainstateActive().IsInitialBlockDownload()) &&
+                state.nBlocksInFlight == MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
+            const CBlockIndex* activeTip = ::ChainActive().Tip();
+            const CBlockIndex* nextCatchupBlock = nullptr;
+
+            if (activeTip != nullptr &&
+                    pindexBestHeader != nullptr &&
+                    activeTip->nHeight < pindexBestHeader->nHeight) {
+                nextCatchupBlock = pindexBestHeader->GetAncestor(activeTip->nHeight + 1);
+            }
+
+            if (nextCatchupBlock != nullptr &&
+                    nextCatchupBlock->pprev == activeTip &&
+                    !(nextCatchupBlock->nStatus & BLOCK_HAVE_DATA) &&
+                    mapBlocksInFlight.count(nextCatchupBlock->GetBlockHash()) == 0 &&
+                    PeerHasHeader(&state, nextCatchupBlock)) {
+                uint32_t nFetchFlags =
+                        IsBTC16BIPsEnabled(nextCatchupBlock->nTime) ? GetFetchFlags(pto) : false;
+
+                vGetData.push_back(CInv(MSG_BLOCK | nFetchFlags,
+                                        nextCatchupBlock->GetBlockHash()));
+                MarkBlockAsInFlight(m_mempool, pto->GetId(),
+                                    nextCatchupBlock->GetBlockHash(),
+                                    nextCatchupBlock);
+
+                LogPrint(BCLog::NET,
+                         "Catch-up next block %d was unassigned; "
+                         "requesting from peer=%d using rescue slot\n",
+                         nextCatchupBlock->nHeight, pto->GetId());
+            }
+        }
+
         if (!pto->fClient && ((fFetch && !pto->m_limited_node) || !::ChainstateActive().IsInitialBlockDownload()) && state.nBlocksInFlight < MAX_BLOCKS_IN_TRANSIT_PER_PEER) {
             std::vector<const CBlockIndex*> vToDownload;
             NodeId staller = -1;
