@@ -576,7 +576,7 @@ public:
     CChainState(BlockManager& blockman) : m_blockman(blockman) {}
     CChainState();
 
-    BlockManager GetBlockMan() { return m_blockman; }
+    BlockManager& GetBlockMan() { return m_blockman; }
     /**
      * Initialize the CoinsViews UTXO set database management data structures. The in-memory
      * cache is initialized separately.
