@@ -876,8 +876,9 @@ if config.dmg is not None:
         if bg_path is not None:
             # Set background file, then call SetFile to make it invisible.
             # (note: making it invisible first makes set background picture fail)
-            bgscript = Template("""set background picture of theViewOptions to file ".background:$bgpic"
-                   do shell script "SetFile -a V /Volumes/$disk/.background/$bgpic" """)
+            bgscript = Template("""set bgFile to POSIX file "/Volumes/$disk/.background/$bgpic"
+                   set background picture of theViewOptions to bgFile
+                   -- .background is already hidden by its dot-prefixed directory name """)
             params["background_commands"] = bgscript.substitute({"bgpic" : os.path.basename(bg_path), "disk" : params["disk"]})
 
         s = appscript.substitute(params)
