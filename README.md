@@ -63,7 +63,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
   * https://sumcoinindex.com/rates/price2.json
   * https://sumcoinindex.com/rates/marketcap.json
 
-* https://rates.slicewallet.org/api/rates
+* https://rate.slicewallet.org/api/rates
 
 # SUM / BTC / USDT
 ## Rate API Sources
@@ -74,7 +74,7 @@ Sumcoin Core integration/staging tree [SUM, 𝚺]
 # TX fees api
 ## Fee sum/kb API
 * https://rates.sumcoinindex.com/api/fee_per_kb
-* https://rates.slicewallet.org/api/fee_per_kb
+* https://rate.slicewallet.org/api/fee_per_kb
 
 
 
